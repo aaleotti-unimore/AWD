@@ -1,0 +1,97 @@
+{% extends "AWD_Zanasi/base.html" %}
+
+{% block container %}
+
+
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Profile Page
+                </h1>
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="fa fa-dashboard"></i> <a href="index.html">Dashboard</a>
+                    </li>
+                    <li class="active">
+                        <i class="fa fa-file"></i> Profile
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div id="signupbox"
+                {#             margin-top:50px"#}
+             class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">Profile</div>
+                    <div
+                            style="float:right;
+                            font-size: 85%;
+                            position: relative;
+                            top:-10px">
+
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <form id="signupform" class="form-horizontal" role="form" method="post"
+{#                          action="{% url 'editprofile' %}"#}
+                    >
+
+
+
+                        <div class="form-group">
+                            <label for="email" class="col-md-3 control-label">Email</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="username" value="{{ user.username }}">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="firstname" class="col-md-3 control-label">First Name</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="firstname" value="{{ user.first_name }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname" class="col-md-3 control-label">Last Name</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="lastname" value="{{ user.last_name }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-md-3 control-label">Password</label>
+                            <div class="col-md-9">
+                                <input type="password" class="form-control" name="password" placeholder="New Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="repeat-password" class="col-md-3 control-label">Repeat Password</label>
+                            <div class="col-md-9">
+                                <input type="password" class="form-control" name="repeat-password"
+                                       placeholder="Repeat Password">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <!-- Button -->
+                            <div class="col-md-offset-3 col-md-9">
+                                <button id="btn-signup" type="submit" class="btn btn-primary">
+                                    Register
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+
+    {% block javascript %}
+    {% endblock %}
+{% endblock %}
