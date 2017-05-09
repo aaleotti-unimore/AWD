@@ -34,10 +34,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'AWD_Zanasi.apps.AwdZanasiConfig',
     'django.contrib.admin',
+
+    #my app
+    'AWD_Zanasi.apps.AwdZanasiConfig',
+
+    #third-party apps
     'django_jinja',
+    'django_forms_bootstrap',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -116,10 +122,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
-# SESSION_COOKIE_SECURE = False
-# CSRF_COOKIE_SECURE = False
-# SECURE_SSL_REDIRECT = False
-LOGIN_URL = 'login'
+#auth
+LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
+
+#django-registration
+ACCOUNT_ACTIVATION_DAYS = 7  # One-week activation window;
+DEFAULT_FROM_EMAIL = 'webmaster@localhost'
+
+#mail settings
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

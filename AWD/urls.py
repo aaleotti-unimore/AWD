@@ -18,6 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^', include('AWD_Zanasi.urls')),
-    url(r'^awd_zanasi/', include('AWD_Zanasi.urls')),
+    url(r'^pogmodeler/', include('AWD_Zanasi.urls')),
     url(r'^admin/', admin.site.urls),
 ]

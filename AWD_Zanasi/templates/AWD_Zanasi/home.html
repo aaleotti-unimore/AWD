@@ -19,6 +19,9 @@
                     <tr>
                         <th>N</th>
                         <th>Name</th>
+                        {% if user.is_superuser %}
+                            <th>Owner</th>
+                        {% endif %}
                         <th>Description</th>
                         <th>Type</th>
                         <th>Launch Date</th>
@@ -31,8 +34,11 @@
                     <tbody>
                     {% for project in projects %}
                         <tr>
-                            <td>{{ forloop.counter}}</td>
-                            <td>{{ project.matlab_file.name }}</td>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ project.name }}</td>
+                            {% if user.is_superuser %}
+                                <td>{{ project.user.username }}</td>
+                            {% endif %}
                             <td>
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
@@ -65,10 +71,16 @@
                             </td>
                             <td>{{ project.res_type }}</td>
                             <td>{{ project.launch_date }}</td>
-                            <td></td>
-                            <td><i class="fa fa-play"> Launch</i></td>
-                            <td><i class="fa fa-edit"> Edit</i></td>
-                            <th><i class="fa fa-trash-o"> Delete</i></th>
+                            {% for out in project_outputs %}
+                                {% if out.project == project %}
+                                    <td><a href="#"><i class="fa fa-files-o"/> Results</a></td>
+                                {% else %}
+                                    <td>No Results</td>
+                                {% endif %}
+                            {% endfor %}
+                            <td><a href="#"><i class="fa fa-play"/> Launch</a></td>
+                            <td><a href="#"><i class="fa fa-edit"/> Edit</a></td>
+                            <th><a href="#"><i class="fa fa-trash-o"/> Delete</a></th>
                         </tr>
                     {% endfor %}
                     </tbody>

@@ -7,6 +7,7 @@ from django.conf import settings
 
 
 class Project(models.Model):
+    name = models.CharField(max_length=200, default='project')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, default='admin')
     matlab_file = models.FileField(upload_to='matlab_projects/%Y/%m/%d/')
     proj_desc = models.CharField(max_length=400, blank=True, null=True)
@@ -21,8 +22,7 @@ class Project(models.Model):
 
 class ProjectOutput(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
-    txt = models.TextField(blank=True, null=True)
-    img = models.ImageField(blank=True, null=True)
+    output_file = models.FileField(upload_to='matlab_projects/%Y/%m/%d/')
 
     def __str__(self):
-        return self.txt
+        return self.output_file.name
