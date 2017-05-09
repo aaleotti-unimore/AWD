@@ -1,0 +1,23 @@
+{% extends "AWD_Zanasi/base.html" %}
+
+{% block container %}
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Projects
+                    <small>New Project</small>
+                </h1>
+            </div>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label for="inputFile">File</label>
+                <input type="file" id="inputFile">
+                <p class="help-block">Select a valid matlab file</p>
+            </div>
+        </form>
+    </div>
+{% endblock %}
