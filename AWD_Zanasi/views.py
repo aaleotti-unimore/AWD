@@ -46,3 +46,6 @@ def create_project(request):
         HttpResponse(request, 'ERROR')
 
     return render(request, 'AWD_Zanasi/projects/createproject.html', {'form': NewProjectForm()})
+
+def project_results(request):
+    pass
