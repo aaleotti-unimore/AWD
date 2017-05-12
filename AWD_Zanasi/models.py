@@ -17,7 +17,7 @@ class Project(models.Model):
     # accounting_data = ???
 
     def __str__(self):
-        return self.matlab_file.name
+        return self.name
 
 
 class ProjectOutput(models.Model):

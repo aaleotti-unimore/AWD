@@ -13,35 +13,11 @@
                 </h1>
             </div>
         </div>
-        <form class="form-horizontal" action="{% url 'create_project' %}" method="post">
-            {% csrf_token %}
-            {{ form|crispy }}
-            <p class="text-right">
-                <input type="submit" value="Submit" class="btn btn-primary"></p>
 
-        </form>
+        {{ form.non_field_errors }}
+
+        {% crispy form %}
+
     </div>
 
 {% endblock %}
-
-{#{% block style %}#}
-{#    <style>#}
-{#        #radioBtn .notActive {#}
-{#            color: #3276b1;#}
-{#            background-color: #fff;#}
-{#        }#}
-{#    </style>#}
-{#{% endblock %}#}
-{##}
-{#{% block javascript %}#}
-{#    <script>#}
-{#        $('#radioBtn').find('a').on('click', function () {#}
-{#            var sel = $(this).data('title');#}
-{#            var tog = $(this).data('toggle');#}
-{#            $('#' + tog).prop('value', sel);#}
-{##}
-{#            $('a[data-toggle="' + tog + '"]').not('[data-title="' + sel + '"]').removeClass('active').addClass('notActive');#}
-{#            $('a[data-toggle="' + tog + '"][data-title="' + sel + '"]').removeClass('notActive').addClass('active');#}
-{#        })#}
-{#    </script>#}
-{#{% endblock %}#}
