@@ -36,14 +36,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.admin',
 
-    #my app
+    # my app
     'AWD_Zanasi.apps.AwdZanasiConfig',
 
-    #third-party apps
+    # third-party apps
     'django_jinja',
-    'django_forms_bootstrap',
+    'crispy_forms',
 ]
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -122,16 +121,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#auth
+# auth
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
 
-#django-registration
+# django-registration
 ACCOUNT_ACTIVATION_DAYS = 7  # One-week activation window;
 DEFAULT_FROM_EMAIL = 'webmaster@localhost'
 
-#mail settings
+# mail settings
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# crisy forms
+CRISPY_TEMPLATE_PACK = 'bootstrap3'

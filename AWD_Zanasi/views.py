@@ -3,9 +3,10 @@ from __future__ import unicode_literals
 
 import logging
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .models import Project, ProjectOutput
+from .forms import NewProjectForm
 
 # Create your views here.
 logger = logging.getLogger(__name__)
@@ -29,4 +30,8 @@ def index(request):
 
 
 def create_project(request):
-    return render(request, 'AWD_Zanasi/projects/createproject.html')
+    form = NewProjectForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            return redirect('index')
+    return render(request, 'AWD_Zanasi/projects/createproject.html', {'form': form})

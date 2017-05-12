@@ -2,7 +2,7 @@
 
 
 {% block container %}
-    {% load bootstrap_tags %}
+    {% load crispy_forms_tags %}
 
     <div class="container-fluid">
         <div id="registerbox"
@@ -19,7 +19,7 @@
                         {% csrf_token %}
                         {% load bootstrap_tags %}
 
-                        {{ form|as_bootstrap }}
+                        {{ form|crispy }}
 
                         <input class="btn btn-primary" type="submit" value="Submit"/>
                     </form>
