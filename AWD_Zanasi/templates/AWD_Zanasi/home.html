@@ -12,6 +12,20 @@
                     </h1>
                 </div>
             </div>
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <div
+                                {% if message.tags == 'success' %}
+                                    class="alert alert-success"
+                                {% else %}
+                                    class="alert alert-danger"
+                                {% endif %}
+                                    role="alert">{% if message.tags %}
+                            <strong>{{ message.tags|capfirst }}:</strong> {% endif %} {{ message }}</div>
+                    {% endfor %}
+                </ul>
+            {% endif %}
             <!-- /.row -->
             <div class="table-responsive">
                 <table class="table table-hover table-striped">
@@ -41,7 +55,7 @@
                             {% endif %}
                             <td>
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                                <button type="button" class="btn btn-default btn-sm" data-toggle="modal"
                                         data-target="#modal-{{ forloop.counter }}">
                                     Description
                                 </button>
@@ -71,16 +85,28 @@
                             </td>
                             <td>{{ project.res_type }}</td>
                             <td>{{ project.launch_date }}</td>
-                            {% for out in project_outputs %}
-                                {% if out.project == project %}
-                                    <td><a href="#"><i class="fa fa-files-o"></i> Results</a></td>
-                                {% else %}
-                                    <td>No Results</td>
-                                {% endif %}
-                            {% endfor %}
-                            <td><a href="#"><i class="fa fa-play"></i> Launch</a></td>
-                            <td><a href="#"><i class="fa fa-edit"></i> Edit</a></td>
-                            <th><a href="#"><i class="fa fa-trash-o"></i> Delete</a></th>
+
+                            {% if project.launch_date %}
+                                <td><a class="btn btn-default btn-sm" role="button" href="{% url 'project_results' project.id %}"><i class="fa fa-files-o"></i>
+                                    Results</a></td>
+                            {% else %}
+                                <td>No Results</td>
+                            {% endif %}
+                            <td><a class="btn btn-default btn-sm" role="button" href="#"><i class="fa fa-play"></i> Launch</a></td>
+                            <td><a class="btn btn-default btn-sm" role="button" href="{% url 'edit_project' project.id %}"><i class="fa fa-edit"></i> Edit</a></td>
+                            <th>
+                                <form id="deleteForm"
+                                      class="form-horizontal"
+                                      action="{% url 'delete_project' project.id %}"
+                                      method="POST"
+                                      onsubmit="return confirm('Are you sure you want to delete Project {{ project.name }}?' );">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger btn-sm" value="Submit Button">
+                                        <i class=" fa fa-trash-o"></i> Delete
+                                    </button>
+                                </form>
+                            </th>
+
                         </tr>
                     {% endfor %}
                     </tbody>

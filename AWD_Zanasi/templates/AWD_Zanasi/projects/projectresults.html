@@ -2,6 +2,8 @@
 
 {% block container %}
     {% load crispy_forms_tags %}
+    {% load filename %}
+
 
     <div class="container-fluid">
         <!-- Page Heading -->
@@ -9,9 +11,58 @@
             <div class="col-lg-12">
                 <h1 class="page-header">
                     Projects
-                    <small>Results</small>
+                    <small>Results for Project: {{ project.name }}</small>
                 </h1>
             </div>
         </div>
+
+        <h3>Description</h3>
+        <p>{{ project.proj_desc }}</p>
+
+        <h3>Code</h3>
+        <div class="row">
+            <div class="col-lg-8">
+                <pre>
+                    {{ project.display_source_file }}
+                </pre>
+            </div>
+        </div>
+
+        <h3>Output</h3>
+        <div class="row">
+            {% for out in project_output %}
+                {% if out.image_file %}
+                    <div class="col-xs-6 col-md-6">
+                        <div class="thumbnail">
+                            <img class="img-responsive watch-right" alt="not found" src="{{ out.image_file.url }}"/>
+                            <div class="caption">
+                                <small><a href="{{ out.image_file.url }}"><i class="fa fa-download"
+                                                                             aria-hidden="true"></i>
+                                    Download {{ out.image_file|filename }}</a></small>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="row">
+            {% for out in project_output %}
+                {% if out.text_file %}
+                    <div class="col-lg-6">
+                                <pre>
+                                    {{ out.display_text_file }}
+                                </pre>
+                        <a href="{{ out.text_file.url }}">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                            Download {{ out.text_file|filename }}
+                        </a>
+                    </div>
+
+                {% endif %}
+            {% endfor %}
+        </div>
+
+
     </div>
 {% endblock %}

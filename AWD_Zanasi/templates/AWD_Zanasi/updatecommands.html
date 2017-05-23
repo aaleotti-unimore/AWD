@@ -1,0 +1,45 @@
+{% extends "AWD_Zanasi/base.html" %}
+{% block container %}
+    {% load crispy_forms_tags %}
+
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">
+                    Edit Commands List
+                </h3>
+            </div>
+        </div>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <div
+                            {% if message.tags == 'success' %}
+                                class="alert alert-success"
+                            {% else %}
+                                class="alert alert-danger"
+                            {% endif %}
+                                role="alert">{% if message.tags %}
+                        <strong>{{ message.tags|capfirst }}:</strong> {% endif %} {{ message }}</div>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {{ form.non_field_errors }}
+
+        {% crispy form %}
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>
+                    Commands List
+                </h3>
+            </div>
+        </div>
+        <pre>
+        {% for cmd in command %}
+            {{ cmd.name }} - {{ cmd.default_value }} - {{ cmd.description_eng }}
+        {% endfor %}
+        </pre>
+    </div>
+{% endblock %}
