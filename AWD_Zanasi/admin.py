@@ -5,7 +5,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.template.response import TemplateResponse
 
-from .models import Project, ProjectOutput, CommandBlock, CommandBranch, CommandMetaBlock, CommandSystem
+from .models import *
 
 # Register your models here.
 admin.site.register(Project)

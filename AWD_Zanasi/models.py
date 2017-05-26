@@ -42,26 +42,38 @@ class ProjectOutput(models.Model):
 
 
 class Command(models.Model):
-    name = models.TextField(max_length=8)
-    default_value = models.TextField(max_length=16, blank=True, null=True)
-    description_eng = models.TextField(max_length=400, blank=True, null=True)
-    description_ita = models.TextField(max_length=400, blank=True, null=True)
+    Sigla = models.CharField(max_length=8)
+    Help_ENG = models.CharField(max_length=400, blank=True, null=True)
+    Help = models.CharField(max_length=400, blank=True, null=True)
 
     class Meta:
         abstract = True
 
 
 class CommandBranch(Command):
+    Nome = models.CharField(max_length=16, blank=True, null=True)
+    Value = models.CharField(max_length=16, blank=True, null=True)
+    StrNum = models.CharField(max_length=16, blank=True, null=True)
+    Vincoli = models.CharField(max_length=16, blank=True, null=True)
+    Type = models.CharField(max_length=16, blank=True, null=True)
     pass
 
 
 class CommandBlock(Command):
+    Tipo_di_Ramo = models.CharField(max_length=16, blank=True, null=True)
+    Diretto = models.CharField(max_length=16, blank=True, null=True)
+    Out = models.CharField(max_length=16, blank=True, null=True)
+    E_name = models.CharField(max_length=16, blank=True, null=True)
+    K_name = models.CharField(max_length=16, blank=True, null=True)
+    Q_name = models.CharField(max_length=16, blank=True, null=True)
+    F_name = models.CharField(max_length=16, blank=True, null=True)
+    Comandi = models.CharField(max_length=16, blank=True, null=True)
     pass
 
 
-class CommandMetaBlock(Command):
+class CommandMetaBlock(CommandBlock):
     pass
 
 
-class CommandSystem(Command):
+class CommandSystem(CommandBranch):
     pass

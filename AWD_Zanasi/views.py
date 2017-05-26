@@ -9,6 +9,8 @@ from django.contrib.auth.decorators import user_passes_test
 
 from .forms import NewProjectForm, EditProjectForm, LoadCommandsListForm
 from .models import *
+from pprint import pprint
+import csv, codecs
 
 # Create your views here.
 logger = logging.getLogger(__name__)
@@ -36,7 +38,7 @@ def create_project(request):
         form = NewProjectForm(request.POST, request.FILES)
         if form.is_valid():
             new_project = Project(
-                name=form.cleaned_data['name'],
+                name=form.cleaned_data["Sigla"],
                 user=request.user,
                 matlab_file=form.cleaned_data['matlab_file'],
                 proj_desc=form.cleaned_data['proj_desc'],
@@ -106,21 +108,18 @@ def delete_project(request, project_id):
 
 @user_passes_test(lambda u: u.is_superuser)
 def update_commands(request):
-    # cmd_list = CommandBlock.objects.all()
-    # cmd_list += CommandSystem.objects.all()
-    # cmd_list += CommandMetaBlock.objects.all()
-    # cmd_list += CommandBranch.objects.all()
+    import io
     cmd_list=[]
     form = LoadCommandsListForm()
     if request.method == 'POST':
         form = LoadCommandsListForm(request.POST, request.FILES)
         if form.is_valid():
-            txt = request.FILES['commands_list'].read()
-            lines = txt.split('\n')
-            from pprint import pprint
-            # pprint(lines)
-            for line in lines:
-                cmd = line.split('\t')
-                pprint(cmd)
+            csvfile = request.FILES['commands_list'].read().decode('iso-8859-1').encode('utf8')
+            csv_reader = csv.reader(csvfile, dialect='excel',delimiter=str(u','))
+            for row in csv_reader:
+                print(row)
 
     return render(request, 'AWD_Zanasi/updatecommands.html', {'form': form, 'commands': cmd_list})
+
+
+
