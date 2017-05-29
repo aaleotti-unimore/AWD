@@ -64,12 +64,15 @@
                         <li>
                             <a href="{% url 'create_project' %}"><i class="fa fa-fw fa-plus"></i>Create</a>
                         </li>
-{#                        <li>#}
-{#                            <a href="#"><i class="fa fa-fw fa-edit"></i>Edit</a>#}
-{#                        </li>#}
-{#                        <li>#}
-{#                            <a href="#"><i class="fa fa-fw fa-area-chart"></i>Results</a>#}
-{#                        </li>#}
+                        <li>
+                            <a href="{% url 'help_page' %}"><i class="fa fa-fw fa-crosshairs"></i>Help</a>
+                        </li>
+                        {#                        <li>#}
+                        {#                            <a href="#"><i class="fa fa-fw fa-edit"></i>Edit</a>#}
+                        {#                        </li>#}
+                        {#                        <li>#}
+                        {#                            <a href="#"><i class="fa fa-fw fa-area-chart"></i>Results</a>#}
+                        {#                        </li>#}
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -81,7 +84,7 @@
                             <li>
                                 <a href="/admin/"><i class="fa fa-magic"></i> Admin</a>
                             </li>
-                             <li>
+                            <li>
                                 <a href="{% url 'update_commands' %}"><i class="fa fa-list"></i> Update Commands</a>
                             </li>
                         {% endif %}

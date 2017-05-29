@@ -73,9 +73,26 @@ class EditProjectForm(forms.Form):
         )
     )
 
+
 class LoadCommandsListForm(forms.Form):
-    commands_list = forms.FileField(
-        label="Commands List",
+    blocks_list = forms.FileField(
+        label="Blocks command List",
+        required=False,
+    )
+    meta_blocks_list = forms.FileField(
+        label="Meta-Blocks Command List",
+        required=False,
+
+    )
+    branches_list = forms.FileField(
+        label="Branches command List",
+        required=False,
+
+    )
+    system_list = forms.FileField(
+        label="System command List",
+        required=False,
+
     )
 
     helper = FormHelper()
@@ -85,7 +102,10 @@ class LoadCommandsListForm(forms.Form):
     helper.label_class = 'col-lg-2'
     helper.field_class = 'col-lg-8'
     helper.layout = Layout(
-        'commands_list',
+        'blocks_list',
+        'meta_blocks_list',
+        'branches_list',
+        'system_list',
         FormActions(
             Submit('save_changes', 'Submit List', css_class="btn-primary"),
             Submit('cancel', 'Cancel', onclick='history.go(-1);'),

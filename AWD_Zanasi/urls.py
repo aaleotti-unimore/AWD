@@ -12,4 +12,5 @@ urlpatterns = [
                   url(r'^projects/(?P<project_id>[0-9]+)/edit/$', views.edit_project, name='edit_project'),
                   url(r'^projects/(?P<project_id>[0-9]+)/delete/$', views.delete_project, name='delete_project'),
                   url(r'^admin/updatecommands$', views.update_commands, name='update_commands'),
+                  url(r'^help/$', views.help_page, name='help_page')
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

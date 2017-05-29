@@ -115,24 +115,30 @@ def update_commands(request):
     if request.method == 'POST':
         form = LoadCommandsListForm(request.POST, request.FILES)
         if form.is_valid():
-            csvfile = request.FILES['commands_list']
-            #
-            # dialect = csv.Sniffer().sniff(codecs.EncodedFile(csvfile, "iso-8859-1").readline())
-            # cmd_list = csv.reader(
-            #     codecs.EncodedFile(csvfile, "iso-8859-1"),
-            #     # csvfile,
-            #     delimiter=str(u','),
-            #     dialect=dialect)
+            if (request.FILES['blocks_list']):
+                csvfile = request.FILES['blocks_list']
+                cmd_list = unicode_csv_reader(csvfile)
+                iterlist = iter(cmd_list)
+                next(iterlist)
+                for row in iterlist:
+                    cmd = CommandBlock()
+                    cmd.Sigla = row[0]
+                    cmd.Tipo_di_Ramo = row[1]
+                    cmd.Diretto = row[2]
+                    cmd.Out = row[3]
+                    cmd.E_name = row[4]
+                    cmd.K_name = row[5]
+                    cmd.Q_name = row[6]
+                    cmd.F_name = row[7]
+                    cmd.Help = row[8]
+                    cmd.Comandi = row[9]
+                    cmd.Help_ENG = row[10]
+                    cmd.save()
 
-            cmd_list = unicode_csv_reader(csvfile)
-
-            return render(request, 'AWD_Zanasi/updatecommands.html',
-                          {'form': LoadCommandsListForm(), 'commands': cmd_list})
+                return render(request, 'AWD_Zanasi/updatecommands.html',
+                              {'form': LoadCommandsListForm(), 'commands': cmd_list})
 
     return render(request, 'AWD_Zanasi/updatecommands.html', {'form': form, 'commands': cmd_list})
-
-
-import csv
 
 
 # noinspection PyCompatibility
@@ -140,3 +146,10 @@ def unicode_csv_reader(utf8_data, dialect=csv.excel, **kwargs):
     csv_reader = csv.reader(utf8_data, dialect=dialect, **kwargs)
     for row in csv_reader:
         yield [unicode(cell, 'ISO-8859-1') for cell in row]
+
+
+def help_page(request):
+    blocks = CommandBlock.objects.all()
+    for block in blocks:
+        pprint(block.Help_ENG)
+    return render(request, 'AWD_Zanasi/help.html', {"blocks": blocks})

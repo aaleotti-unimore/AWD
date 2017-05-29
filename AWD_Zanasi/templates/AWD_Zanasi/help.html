@@ -1,0 +1,54 @@
+{% extends "AWD_Zanasi/base.html" %}
+{% block container %}
+    {% load crispy_forms_tags %}
+
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">
+                    Commands List
+                </h3>
+            </div>
+        </div>
+        <h3>
+            Blocks
+        </h3>
+        <table class="table table-striped">
+            <thead class="thead-default">
+            <tr>
+
+                <th>Sigla</th>
+                <th>Tipo di Ramo</th>
+                <th>Diretto</th>
+                <th>Out</th>
+                <th>E name</th>
+                <th>K name</th>
+                <th>Q name</th>
+                <th>F name</th>
+                <th>Help</th>
+                <th>Comandi</th>
+                <th>Help ENG</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for cmd in blocks %}
+                <tr>
+                    <td> {{ cmd.Sigla }}</td>
+                    <td>{{ cmd.Tipo_di_Ramo }}</td>
+                    <td>{{ cmd.Diretto }}</td>
+                    <td> {{ cmd.Out }}</td>
+                    <td>{{ cmd.E_name }}</td>
+                    <td>{{ cmd.K_name }}</td>
+                    <td>{{ cmd.Q_name }}</td>
+                    <td>{{ cmd.F_name }}</td>
+                    <td>{{ cmd.Help }}</td>
+                    <td>{{ cmd.Comandi }}</td>
+                    <td>{{ cmd.Help_ENG }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
