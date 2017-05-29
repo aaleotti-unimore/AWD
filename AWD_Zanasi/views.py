@@ -10,7 +10,8 @@ from django.contrib.auth.decorators import user_passes_test
 from .forms import NewProjectForm, EditProjectForm, LoadCommandsListForm
 from .models import *
 from pprint import pprint
-import csv, codecs
+import csv
+import codecs
 
 # Create your views here.
 logger = logging.getLogger(__name__)
@@ -115,10 +116,27 @@ def update_commands(request):
         form = LoadCommandsListForm(request.POST, request.FILES)
         if form.is_valid():
             csvfile = request.FILES['commands_list']
-            dialect = csv.Sniffer().sniff(codecs.EncodedFile(csvfile, "iso-8859-1").readline())
-            csvfile.open()
-            reader = csv.reader(codecs.EncodedFile(csvfile, "iso-8859-1"), delimiter=str(u','), dialect=dialect)
-            for row in reader:
-                print(row)
+            #
+            # dialect = csv.Sniffer().sniff(codecs.EncodedFile(csvfile, "iso-8859-1").readline())
+            # cmd_list = csv.reader(
+            #     codecs.EncodedFile(csvfile, "iso-8859-1"),
+            #     # csvfile,
+            #     delimiter=str(u','),
+            #     dialect=dialect)
+
+            cmd_list = unicode_csv_reader(csvfile)
+
+            return render(request, 'AWD_Zanasi/updatecommands.html',
+                          {'form': LoadCommandsListForm(), 'commands': cmd_list})
 
     return render(request, 'AWD_Zanasi/updatecommands.html', {'form': form, 'commands': cmd_list})
+
+
+import csv
+
+
+# noinspection PyCompatibility
+def unicode_csv_reader(utf8_data, dialect=csv.excel, **kwargs):
+    csv_reader = csv.reader(utf8_data, dialect=dialect, **kwargs)
+    for row in csv_reader:
+        yield [unicode(cell, 'ISO-8859-1') for cell in row]
