@@ -109,17 +109,16 @@ def delete_project(request, project_id):
 @user_passes_test(lambda u: u.is_superuser)
 def update_commands(request):
     import io
-    cmd_list=[]
+    cmd_list = []
     form = LoadCommandsListForm()
     if request.method == 'POST':
         form = LoadCommandsListForm(request.POST, request.FILES)
         if form.is_valid():
-            csvfile = request.FILES['commands_list'].read().decode('iso-8859-1').encode('utf8')
-            csv_reader = csv.reader(csvfile, dialect='excel',delimiter=str(u','))
-            for row in csv_reader:
+            csvfile = request.FILES['commands_list']
+            dialect = csv.Sniffer().sniff(codecs.EncodedFile(csvfile, "iso-8859-1").readline())
+            csvfile.open()
+            reader = csv.reader(codecs.EncodedFile(csvfile, "iso-8859-1"), delimiter=str(u','), dialect=dialect)
+            for row in reader:
                 print(row)
 
     return render(request, 'AWD_Zanasi/updatecommands.html', {'form': form, 'commands': cmd_list})
-
-
-
