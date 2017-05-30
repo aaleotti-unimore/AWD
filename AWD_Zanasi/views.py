@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+import csv
 import logging
-
-from django.shortcuts import render, redirect, HttpResponse, HttpResponseRedirect
+from pprint import pprint
+from django.db import Error
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
+from django.shortcuts import render, redirect, HttpResponse
 
 from .forms import NewProjectForm, EditProjectForm, LoadCommandsListForm
 from .models import *
-from pprint import pprint
-import csv
-import codecs
 
 # Create your views here.
 logger = logging.getLogger(__name__)
@@ -39,11 +38,10 @@ def create_project(request):
         form = NewProjectForm(request.POST, request.FILES)
         if form.is_valid():
             new_project = Project(
-                name=form.cleaned_data["Sigla"],
+                name=form.cleaned_data['name'],
                 user=request.user,
                 matlab_file=form.cleaned_data['matlab_file'],
                 proj_desc=form.cleaned_data['proj_desc'],
-                res_type=form.cleaned_data['res_type']
             )
             new_project.save()
             return redirect('index')
@@ -107,49 +105,97 @@ def delete_project(request, project_id):
     return redirect('index')
 
 
+# noinspection PyCompatibility
 @user_passes_test(lambda u: u.is_superuser)
 def update_commands(request):
-    import io
     cmd_list = []
     form = LoadCommandsListForm()
     if request.method == 'POST':
         form = LoadCommandsListForm(request.POST, request.FILES)
         if form.is_valid():
-            if (request.FILES['blocks_list']):
+            if 'blocks_list' in request.FILES:
                 csvfile = request.FILES['blocks_list']
-                cmd_list = unicode_csv_reader(csvfile)
-                iterlist = iter(cmd_list)
-                next(iterlist)
-                for row in iterlist:
-                    cmd = CommandBlock()
-                    cmd.Sigla = row[0]
-                    cmd.Tipo_di_Ramo = row[1]
-                    cmd.Diretto = row[2]
-                    cmd.Out = row[3]
-                    cmd.E_name = row[4]
-                    cmd.K_name = row[5]
-                    cmd.Q_name = row[6]
-                    cmd.F_name = row[7]
-                    cmd.Help = row[8]
-                    cmd.Comandi = row[9]
-                    cmd.Help_ENG = row[10]
+
+                # try:
+                cmd_list = csv.DictReader(csvfile, delimiter=str(u';'), dialect=csv.excel)
+
+                CommandBlock.objects.all().delete()
+
+                for row in cmd_list:
+                    cmd = CommandBlock(
+                        Sigla=unicode(row['Sigla']),
+                        Tipo_di_Ramo=unicode(row['Tipo_di_Ramo']),
+                        Diretto=row['Diretto'],
+                        Out=unicode(row['Out']),
+                        E_name=unicode(row['E_name']),
+                        K_name=unicode(row['K_name']),
+                        Q_name=unicode(row['Q_name']),
+                        F_name=unicode(row['F_name']),
+                        Help=unicode(row['Help']),
+                        Help_ENG=unicode(row['Help_ENG']),
+                        Comandi=unicode(row['Comandi']),
+                    )
+                    cmd.save()
+                    pprint(cmd.Sigla)
+
+                messages.add_message(request, messages.SUCCESS, u'Blocks Commands Successfully Updated')
+
+            if 'branches_list' in request.FILES:
+                csvfile = request.FILES['branches_list']
+                cmd_list = csv.DictReader(csvfile, delimiter=str(u';'), dialect=csv.excel)
+
+                CommandBranch.objects.all().delete()
+
+                for row in cmd_list:
+                    cmd = CommandBranch(
+                        # Nome, Value, Sigla, StrNum, Vincoli, Range, Type, Help, Help_ENG
+                        Nome=unicode(row['Nome']),
+                        Value=unicode(row['Value']),
+                        Sigla=unicode(row['Sigla']),
+                        StrNum=unicode(row['StrNum']),
+                        Vincoli=unicode(row['Vincoli']),
+                        Range=unicode(row['Range']),
+                        Type=unicode(row['Type']),
+                        Help=unicode(row['Help']),
+                        Help_ENG=unicode(row['Help_ENG']),
+                    )
                     cmd.save()
 
-                return render(request, 'AWD_Zanasi/updatecommands.html',
-                              {'form': LoadCommandsListForm(), 'commands': cmd_list})
+                messages.add_message(request, messages.SUCCESS, u'Branches Commands Successfully Updated')
 
-    return render(request, 'AWD_Zanasi/updatecommands.html', {'form': form, 'commands': cmd_list})
+            if 'system_list' in request.FILES:
+                csvfile = request.FILES['system_list']
+                cmd_list = csv.DictReader(csvfile, delimiter=str(u';'), dialect=csv.excel)
 
+                CommandSystem.objects.all().delete()
 
-# noinspection PyCompatibility
-def unicode_csv_reader(utf8_data, dialect=csv.excel, **kwargs):
-    csv_reader = csv.reader(utf8_data, dialect=dialect, **kwargs)
-    for row in csv_reader:
-        yield [unicode(cell, 'ISO-8859-1') for cell in row]
+                for row in cmd_list:
+                    cmd = CommandSystem(
+                        # Nome, Value, Sigla, StrNum, Vincoli, Range, Type, Help, Help_ENG
+                        Nome=unicode(row['Nome']),
+                        Value=unicode(row['Value']),
+                        Sigla=unicode(row['Sigla']),
+                        StrNum=unicode(row['StrNum']),
+                        Vincoli=unicode(row['Vincoli']),
+                        Range=unicode(row['Range']),
+                        Type=unicode(row['Type']),
+                        Help=unicode(row['Help']),
+                        Help_ENG=unicode(row['Help_ENG']),
+                    )
+                    cmd.save()
+
+                messages.add_message(request, messages.SUCCESS, u'System Commands Successfully Updated')
+
+    return render(request, 'AWD_Zanasi/updatecommands.html',
+                  {'form': form})  # noinspection PyCompatibility
 
 
 def help_page(request):
     blocks = CommandBlock.objects.all()
-    for block in blocks:
-        pprint(block.Help_ENG)
-    return render(request, 'AWD_Zanasi/help.html', {"blocks": blocks})
+    system = CommandSystem.objects.all()
+    branches = CommandBranch.objects.all()
+
+    return render(request, 'AWD_Zanasi/help.html',
+                  {"blocks": blocks,
+                   "branches": branches,
+                   "system": system})

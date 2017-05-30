@@ -1,6 +1,8 @@
 {% extends "AWD_Zanasi/base.html" %}
 {% block container %}
     {% load crispy_forms_tags %}
+    {% load i18n %}
+    {% get_current_language as LANGUAGE_CODE %}
 
     <div class="container-fluid">
         <!-- Page Heading -->
@@ -11,44 +13,165 @@
                 </h3>
             </div>
         </div>
-        <h3>
-            Blocks
-        </h3>
-        <table class="table table-striped">
-            <thead class="thead-default">
-            <tr>
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Blocks panel -->
+                <div class="panel panel-default">
+                    <div id="blocks" class="panel-heading">
+                        <h2 class="panel-title">Blocks</h2>
+                    </div>
+                    <table class="table">
+                        <thead class="thead-inverse">
+                        <tr>
+                            {% if LANGUAGE_CODE == 'it-it' %}
+                                <th>Codice</th>
+                                <th>Effort</th>
+                                <th>Parameter</th>
+                                <th>Internal</th>
+                                <th>Flow</th>
+                                <th>Descrizione</th>
+                            {% else %}
+                                <th>Code</th>
+                                <th>Effort</th>
+                                <th>Parameter</th>
+                                <th>Internal</th>
+                                <th>Flow</th>
+                                <th>Description</th>
+                            {% endif %}
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for cmd in blocks %}
+                            <tr>
+                                <td> {{ cmd.Sigla }}</td>
 
-                <th>Sigla</th>
-                <th>Tipo di Ramo</th>
-                <th>Diretto</th>
-                <th>Out</th>
-                <th>E name</th>
-                <th>K name</th>
-                <th>Q name</th>
-                <th>F name</th>
-                <th>Help</th>
-                <th>Comandi</th>
-                <th>Help ENG</th>
+                                <td>{{ cmd.E_name }}</td>
+                                <td>{{ cmd.K_name }}</td>
+                                <td>{{ cmd.Q_name }}</td>
+                                <td>{{ cmd.F_name }}</td>
+                                {% if LANGUAGE_CODE == 'it-it' %}
+                                    <td>{{ cmd.Help }}</td>
+                                {% else %}
+                                    <td>{{ cmd.Help_ENG }}</td>
+                                {% endif %}
 
-            </tr>
-            </thead>
-            <tbody>
-            {% for cmd in blocks %}
-                <tr>
-                    <td> {{ cmd.Sigla }}</td>
-                    <td>{{ cmd.Tipo_di_Ramo }}</td>
-                    <td>{{ cmd.Diretto }}</td>
-                    <td> {{ cmd.Out }}</td>
-                    <td>{{ cmd.E_name }}</td>
-                    <td>{{ cmd.K_name }}</td>
-                    <td>{{ cmd.Q_name }}</td>
-                    <td>{{ cmd.F_name }}</td>
-                    <td>{{ cmd.Help }}</td>
-                    <td>{{ cmd.Comandi }}</td>
-                    <td>{{ cmd.Help_ENG }}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-default">
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="#blocks">Blocks</a></li>
+                        <li class="list-group-item"><a href="#branches">Branches</a></li>
+                        <li class="list-group-item"><a href="#system">System</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Blocks panel -->
+                <div class="panel panel-default">
+                    <div id="branches" class="panel-heading">
+                        <h2 class="panel-title">Branches</h2>
+                    </div>
+                    <table class="table">
+                        <thead class="thead-inverse">
+                        <tr>
+                            {% if LANGUAGE_CODE == 'it-it' %}
+                                <th>Nome</th>
+                                <th>Tipo</th>
+                                <th>Intervallo</th>
+                                <th>Descrizione</th>
+                            {% else %}
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Range</th>
+                                <th>Description</th>
+                            {% endif %}
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for cmd in branches %}
+                            <tr>
+                                <td> {{ cmd.Nome }}</td>
+                                <td>{{ cmd.Type }}</td>
+                                <td>{{ cmd.Range }}</td>
+                                {% if LANGUAGE_CODE == 'it-it' %}
+                                    <td>{{ cmd.Help }}</td>
+                                {% else %}
+                                    <td>{{ cmd.Help_ENG }}</td>
+                                {% endif %}
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-default">
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="#blocks">Blocks</a></li>
+                        <li class="list-group-item"><a href="#branches">Branches</a></li>
+                        <li class="list-group-item"><a href="#system">System</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Blocks panel -->
+                <div class="panel panel-default">
+                    <div id="system" class="panel-heading">
+                        <h2 class="panel-title">System</h2>
+                    </div>
+                    <table class="table">
+                        <thead class="thead-inverse">
+                        <tr>
+                            {% if LANGUAGE_CODE == 'it-it' %}
+                                <th>Nome</th>
+                                <th>Tipo</th>
+                                <th>Intervallo</th>
+                                <th>Descrizione</th>
+                            {% else %}
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Range</th>
+                                <th>Description</th>
+                            {% endif %}
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for cmd in system %}
+                            <tr>
+                                <td> {{ cmd.Nome }}</td>
+                                <td>{{ cmd.Type }}</td>
+                                <td>{{ cmd.Range }}</td>
+                                {% if LANGUAGE_CODE == 'it-it' %}
+                                    <td>{{ cmd.Help }}</td>
+                                {% else %}
+                                    <td>{{ cmd.Help_ENG }}</td>
+                                {% endif %}
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-default">
+                    <ul class="list-group">
+                        <li class="list-group-item"><a href="#blocks">Blocks</a></li>
+                        <li class="list-group-item"><a href="#branches">Branches</a></li>
+                        <li class="list-group-item"><a href="#system">System</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
+
+
 {% endblock %}

@@ -13,7 +13,6 @@ admin.site.register(ProjectOutput)
 # commands
 admin.site.register(CommandBranch)
 admin.site.register(CommandBlock)
-admin.site.register(CommandMetaBlock)
 admin.site.register(CommandSystem)
 
 #

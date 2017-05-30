@@ -6,12 +6,16 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
+def user_directory_path(instance, filename):
+    # file will be uploaded to MEDIA_ROOT/user_<id>/<project_name>/<filename>
+    return 'user_{0}/{1}/{2}'.format(instance.user.id, instance.name, filename)
+
+
 class Project(models.Model):
     name = models.CharField(max_length=200, default='project')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, default='admin')
-    matlab_file = models.FileField(upload_to='matlab_projects/%Y/%m/%d/')
+    matlab_file = models.FileField(upload_to=user_directory_path)
     proj_desc = models.CharField(max_length=400, blank=True, null=True)
-    res_type = models.CharField(max_length=3, verbose_name='Resolution Type')
     launch_date = models.DateField(verbose_name='Launch Date', blank=True, null=True)
 
     def display_source_file(self):
@@ -42,7 +46,7 @@ class ProjectOutput(models.Model):
 
 
 class Command(models.Model):
-    Sigla = models.CharField(max_length=8)
+    Sigla = models.CharField(max_length=16)
     Help_ENG = models.CharField(max_length=400, blank=True, null=True)
     Help = models.CharField(max_length=400, blank=True, null=True)
 
@@ -51,15 +55,17 @@ class Command(models.Model):
 
 
 class CommandBranch(Command):
+    # Nome, Value, Sigla, StrNum, Vincoli, Range, Type, Help, Help_ENG
     Nome = models.CharField(max_length=16, blank=True, null=True)
     Value = models.CharField(max_length=16, blank=True, null=True)
     StrNum = models.CharField(max_length=16, blank=True, null=True)
     Vincoli = models.CharField(max_length=16, blank=True, null=True)
+    Range = models.CharField(max_length=48, blank=True, null=True)
     Type = models.CharField(max_length=16, blank=True, null=True)
-    pass
 
 
 class CommandBlock(Command):
+    # Sigla, Tipo_di_Ramo, Diretto, Out, E_name, K_name, Q_name, F_name, Help, Comandi, Help_ENG
     Tipo_di_Ramo = models.CharField(max_length=16, blank=True, null=True)
     Diretto = models.CharField(max_length=16, blank=True, null=True)
     Out = models.CharField(max_length=16, blank=True, null=True)
@@ -68,12 +74,8 @@ class CommandBlock(Command):
     Q_name = models.CharField(max_length=16, blank=True, null=True)
     F_name = models.CharField(max_length=16, blank=True, null=True)
     Comandi = models.CharField(max_length=16, blank=True, null=True)
-    pass
-
-
-class CommandMetaBlock(CommandBlock):
-    pass
 
 
 class CommandSystem(CommandBranch):
+    # Nome, Value, Sigla, StrNum, Vincoli, Range, Type, Help, Help_ENG
     pass

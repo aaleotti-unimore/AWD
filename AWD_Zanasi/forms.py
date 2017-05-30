@@ -3,7 +3,6 @@ from crispy_forms.bootstrap import FormActions
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit
 from django import forms
-from django.core.urlresolvers import reverse
 
 
 class NewProjectForm(forms.Form):
@@ -22,16 +21,6 @@ class NewProjectForm(forms.Form):
         required=False
     )
 
-    res_type = forms.ChoiceField(
-        choices=(
-            ('NUM', "Numerical"),
-            ('SYM', "Symbolical")
-        ),
-        widget=forms.RadioSelect,
-        initial='NUM',
-        label="Resolution Type",
-    )
-
     helper = FormHelper()
     helper.form_action = 'create_project'
     helper.form_method = 'POST'
@@ -42,7 +31,6 @@ class NewProjectForm(forms.Form):
         'name',
         'matlab_file',
         'proj_desc',
-        'res_type',
         FormActions(
             Submit('save_changes', 'Save changes', css_class="btn-primary"),
             Submit('cancel', 'Cancel', onclick='history.go(-1);'),
@@ -79,11 +67,7 @@ class LoadCommandsListForm(forms.Form):
         label="Blocks command List",
         required=False,
     )
-    meta_blocks_list = forms.FileField(
-        label="Meta-Blocks Command List",
-        required=False,
 
-    )
     branches_list = forms.FileField(
         label="Branches command List",
         required=False,
@@ -103,7 +87,6 @@ class LoadCommandsListForm(forms.Form):
     helper.field_class = 'col-lg-8'
     helper.layout = Layout(
         'blocks_list',
-        'meta_blocks_list',
         'branches_list',
         'system_list',
         FormActions(
