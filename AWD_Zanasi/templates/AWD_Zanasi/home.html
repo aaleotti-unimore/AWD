@@ -12,6 +12,9 @@
                     </h1>
                 </div>
             </div>
+            <!-- /.row -->
+
+            <!-- Messages -->
             {% if messages %}
                 <ul class="messages">
                     {% for message in messages %}
@@ -26,7 +29,8 @@
                     {% endfor %}
                 </ul>
             {% endif %}
-            <!-- /.row -->
+
+            <!-- Content -->
             <div class="table-responsive">
                 <table class="table table-hover table-striped">
                     <thead>
@@ -37,7 +41,6 @@
                             <th>Owner</th>
                         {% endif %}
                         <th>Description</th>
-                        <th>Type</th>
                         <th>Launch Date</th>
                         <th>Results</th>
                         <th></th>
@@ -83,17 +86,19 @@
 
 
                             </td>
-                            <td>{{ project.res_type }}</td>
                             <td>{{ project.launch_date }}</td>
 
                             {% if project.launch_date %}
-                                <td><a class="btn btn-default btn-sm" role="button" href="{% url 'project_results' project.id %}"><i class="fa fa-files-o"></i>
+                                <td><a class="btn btn-default btn-sm" role="button"
+                                       href="{% url 'project_results' project.id %}"><i class="fa fa-files-o"></i>
                                     Results</a></td>
                             {% else %}
                                 <td>No Results</td>
                             {% endif %}
-                            <td><a class="btn btn-default btn-sm" role="button" href="#"><i class="fa fa-play"></i> Launch</a></td>
-                            <td><a class="btn btn-default btn-sm" role="button" href="{% url 'edit_project' project.id %}"><i class="fa fa-edit"></i> Edit</a></td>
+                            <td><a class="btn btn-default btn-sm" role="button" href="#"><i class="fa fa-play"></i>
+                                Launch</a></td>
+                            <td><a class="btn btn-default btn-sm" role="button"
+                                   href="{% url 'edit_project' project.id %}"><i class="fa fa-edit"></i> Edit</a></td>
                             <th>
                                 <form id="deleteForm"
                                       class="form-horizontal"

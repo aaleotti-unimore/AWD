@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 import csv
 import logging
 from pprint import pprint
-from django.db import Error
+
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import render, redirect, HttpResponse
@@ -196,6 +196,24 @@ def help_page(request):
     branches = CommandBranch.objects.all()
 
     return render(request, 'AWD_Zanasi/help.html',
+                  {"blocks": blocks,
+                   "branches": branches,
+                   "system": system})
+
+
+from django.core import serializers
+from django.http import JsonResponse
+
+
+def project_editor(request):
+    blocks = CommandBlock.objects.all()
+    system = CommandSystem.objects.all()
+    branches = CommandBranch.objects.all()
+
+    if request.method == 'POST':
+        return JsonResponse(serializers.serialize('json', blocks), safe=False)
+
+    return render(request, 'AWD_Zanasi/projects/newprojecteditor.html',
                   {"blocks": blocks,
                    "branches": branches,
                    "system": system})

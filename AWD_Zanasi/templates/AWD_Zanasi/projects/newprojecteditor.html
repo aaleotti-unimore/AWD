@@ -1,0 +1,95 @@
+{% extends "AWD_Zanasi/base.html" %}
+
+{% block container %}
+    {% load crispy_forms_tags %}
+
+
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Projects
+                    <small>Generator</small>
+                </h1>
+            </div>
+        </div>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <div
+                            {% if message.tags == 'success' %}
+                                class="alert alert-success"
+                            {% else %}
+                                class="alert alert-danger"
+                            {% endif %}
+                                role="alert">{% if message.tags %}
+                        <strong>{{ message.tags|capfirst }}:</strong> {% endif %} {{ message }}</div>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <div class="row">
+            <div class="col-lg-12" id="container">
+
+                <form id="generator-form" action="{% url 'editor' %}" method="POST">
+                    {% csrf_token %}
+
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    <script id="entry-template" type="text/x-handlebars-template">
+        <div class="entry">
+            <select class="custom-select">
+                {% for cmd in blocks %}
+                    <option>{{ cmd.Sigla }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </script>
+
+    {% csrf_token %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            populateBlocks()
+
+        });
+
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
+
+
+        function populateBlocks() {
+            var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+            $.ajax({
+                beforeSend: function (xhr, settings) {
+                    if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                    }
+                },
+                url: '/pogmodeler/projects/create_project/editor/',
+                type: 'POST',
+                dataType: 'json',
+                success: function (response) {
+                    var source = $("#entry-template").html();
+                    var template = Handlebars.compile(source);
+                    var context = {blocks: response};
+                    var html = template(context);
+                    $("#container").append(html)
+                },
+                error: function (xhr, err) {
+                    console.log("readyState: " + xhr.readyState + "\nstatus: " + xhr.status);
+                    console.log("responseText: " + xhr.responseText);
+                }
+            });
+        }
+    </script>
+
+
+{% endblock %}
+
