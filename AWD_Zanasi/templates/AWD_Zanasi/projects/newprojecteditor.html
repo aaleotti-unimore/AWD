@@ -81,16 +81,18 @@
                 }
             });
 
-            $(wrapper).on("click", ".delete", function (e) {
+            $(wrapper).on("click", "#delete", function (e) {
                 e.preventDefault();
-                $(this).parent('div').remove();
-                x--;
+                if (x > 1) {
+                    $(this).parent('div').parent('div').remove();
+                    x--;
+                }
             })
         });
     </script>
 
     <script id="entry-template" type="text/x-handlebars-template">
-        <div class="row">
+        <div class="row blockrow">
             <div class="col-md-1">
                 <div class="entry">
                     <select class="form-control">
@@ -111,12 +113,11 @@
             <div class="col-md-1"><input id=input-Q" class="form-control"/></div>
             <div class="col-md-1"><input id=input-K" class="form-control"/></div>
             <div class="col-md-1">
-                <button class="btn btn-danger"><i id="delete" class="fa fa-minus"></i></button>
+                <a id="delete" href="#" class="btn btn-danger"><i class="fa fa-minus"></i></a>
             </div>
         </div>
         <p/>
     </script>
-
     {% csrf_token %}
     <script type="text/javascript">
         $(document).ready(function () {
