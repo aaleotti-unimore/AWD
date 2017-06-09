@@ -14,17 +14,22 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
-                <h3>Use the Internal Editor</h3>
-                <a href="{% url 'editor' %}"
-                   id="btn-editor"
-                   class="btn btn-primary btn-lg"> Editor </a>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="btn-editor" class="control-label col-lg-2">Use the Internal Editor
+                    </label>
+                    <div class="controls col-lg-8">
+                        <a href="{% url 'editor' %}"
+                           id="btn-editor"
+                           class="btn btn-success"> &nbsp; &nbsp; Editor &nbsp; &nbsp; </a>
 
-            </div>
+                    </div>
+                </div>
+            </form>
         </div>
         <br>
-        <span>OR</span>
-        <h3>Upload a file</h3>
+        <label>Or directly upload a file</label>
+
         {{ form.non_field_errors }}
 
         {% crispy form %}

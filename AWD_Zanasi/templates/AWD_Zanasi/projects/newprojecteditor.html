@@ -28,27 +28,93 @@
                 {% endfor %}
             </ul>
         {% endif %}
-        <div class="row">
-            <div class="col-lg-12" id="container">
+        <div class="container-fluid">
+            <div class="row">
 
-                <form id="generator-form" action="{% url 'editor' %}" method="POST">
-                    {% csrf_token %}
+                <div class="col-lg-1">
+                    <button class="add_form_field btn btn-success btn-sm"><i class="fa fa-plus"></i></button>
+                </div>
 
-                </form>
+
+                <div class="col-lg-11" id="wrapperaa">
+                    <div class="row">
+                        <div class="col-md-1"><h5>Command</h5></div>
+                        <div class="col-md-2"><h5>Blocks</h5></div>
+                        <div class="col-md-1"><h5>Effort</h5></div>
+                        <div class="col-md-1"><h5>Flow</h5></div>
+                        <div class="col-md-1"><h5>Internal</h5></div>
+                        <div class="col-md-1"><h5>K</h5></div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-11">
+                    <form id="generator-form" class="form-horizontal" action="{% url 'editor' %}" method="POST">
+                        {% csrf_token %}
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 {% endblock %}
 
 {% block javascript %}
+    <script>
+        $(document).ready(function () {
+            var max_fields = 100;
+            var wrapper = $("#generator-form");
+            var add_button = $(".add_form_field");
+
+            var x = 1;
+            $(add_button).click(function (e) {
+                e.preventDefault();
+                if (x < max_fields) {
+                    x++;
+                    {#                    $(wrapper).append('<p/><div><input class="input-sm" type="text" name="mytext[]"/>  <label href="#" class="delete">Delete</label></div>'); //add input box#}
+                    $(wrapper).append(populateBlocks())
+                }
+                else {
+                    alert('You Reached the limits')
+                }
+            });
+
+            $(wrapper).on("click", ".delete", function (e) {
+                e.preventDefault();
+                $(this).parent('div').remove();
+                x--;
+            })
+        });
+    </script>
+
     <script id="entry-template" type="text/x-handlebars-template">
-        <div class="entry">
-            <select class="custom-select">
-                {% for cmd in blocks %}
-                    <option>{{ cmd.Sigla }}</option>
-                {% endfor %}
-            </select>
+        <div class="row">
+            <div class="col-md-1">
+                <div class="entry">
+                    <select class="form-control">
+                        {% for cmd in blocks %}
+                            <option>{{ cmd.Sigla }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-6"><input id="input-block-1" class="form-control"/></div>
+                    <div class="col-md-6"><input id="input-block-2" class="form-control"/></div>
+                </div>
+            </div>
+            <div class="col-md-1"><input id=input-E" class="form-control"/></div>
+            <div class="col-md-1"><input id=input-F" class="form-control"/></div>
+            <div class="col-md-1"><input id=input-Q" class="form-control"/></div>
+            <div class="col-md-1"><input id=input-K" class="form-control"/></div>
+            <div class="col-md-1">
+                <button class="btn btn-danger"><i id="delete" class="fa fa-minus"></i></button>
+            </div>
         </div>
+        <p/>
     </script>
 
     {% csrf_token %}
@@ -80,7 +146,7 @@
                     var template = Handlebars.compile(source);
                     var context = {blocks: response};
                     var html = template(context);
-                    $("#container").append(html)
+                    $("#generator-form").append(html)
                 },
                 error: function (xhr, err) {
                     console.log("readyState: " + xhr.readyState + "\nstatus: " + xhr.status);
@@ -89,7 +155,5 @@
             });
         }
     </script>
-
-
 {% endblock %}
 
