@@ -28,53 +28,86 @@
                 {% endfor %}
             </ul>
         {% endif %}
-        <div class="container-fluid">
-            <div class="row">
+        <div class="row">
 
-                <div class="col-lg-1">
-                    <button class="add_form_field btn btn-success btn-sm"><i class="fa fa-plus"></i></button>
-                </div>
+            <div class="col-lg-1">
+                <button class="add_form_field btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp;Add Block
+                </button>
+            </div>
 
-
-                <div class="col-lg-11" id="wrapperaa">
-                    <div class="row">
-                        <div class="col-md-1"><h5>Command</h5></div>
-                        <div class="col-md-2"><h5>Blocks</h5></div>
-                        <div class="col-md-1"><h5>Effort</h5></div>
-                        <div class="col-md-1"><h5>Flow</h5></div>
-                        <div class="col-md-1"><h5>Internal</h5></div>
-                        <div class="col-md-1"><h5>K</h5></div>
-                    </div>
-
+            <div class="col-lg-11">
+                <div class="row">
+                    <div class="col-md-1"><h5>Command</h5></div>
+                    <div class="col-md-2"><h5>Blocks</h5></div>
+                    <div class="col-md-1"><h5>Effort</h5></div>
+                    <div class="col-md-1"><h5>Flow</h5></div>
+                    <div class="col-md-1"><h5>Internal</h5></div>
+                    <div class="col-md-1"><h5>K</h5></div>
                 </div>
 
             </div>
-            <div class="row">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-11">
-                    <form id="generator-form" class="form-horizontal" action="{% url 'editor' %}" method="POST">
-                        {% csrf_token %}
-                    </form>
-                </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-11">
+                <form id="generator-form" class="form-horizontal" action="{% url 'editor' %}" method="POST">
+                    {% csrf_token %}
+                </form>
             </div>
         </div>
     </div>
+
 {% endblock %}
 
 {% block javascript %}
-    <script>
+    <script id="entry-template" type="text/x-handlebars-template">
+        <div class="row blockrow">
+            <div class="col-md-1">
+                <div class="entry">
+                    <select onchange="refresh()" id="cmd-select" class="form-control">
+                        {% for cmd in blocks %}
+                            <option value="{{ cmd.Sigla }}">{{ cmd.Sigla }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="row">
+                    <div class="col-md-6"><input id="input-block-1-{{ index }}" class="form-control"/></div>
+                    <div class="col-md-6"><input id="input-block-2-{{ index }}" class="form-control"/></div>
+                </div>
+            </div>
+            <div class="col-md-1"><input id="input-E-{{ index }}" class="form-control"/></div>
+            <div class="col-md-1"><input id="input-F-{{ index }}" class="form-control"/></div>
+            <div class="col-md-1"><input id="input-Q-{{ index }}" class="form-control"/></div>
+            <div class="col-md-1"><input id="input-K-{{ index }}" class="form-control"/></div>
+            <div class="col-md-1">
+                <a id="delete" href="#" class="btn btn-danger"><i class="fa fa-minus"></i></a>
+            </div>
+        </div>
+        <p></p>
+    </script>
+    {% csrf_token %}
+    <script type="text/javascript">
         $(document).ready(function () {
             var max_fields = 100;
             var wrapper = $("#generator-form");
             var add_button = $(".add_form_field");
-
+            var blks = populateBlocks();
+            var source = $("#entry-template").html();
+            var template = Handlebars.compile(source);
             var x = 1;
+            var context = {blocks: blks, index: x};
+            wrapper.append(template(context));
+
             $(add_button).click(function (e) {
                 e.preventDefault();
                 if (x < max_fields) {
                     x++;
-                    {#                    $(wrapper).append('<p/><div><input class="input-sm" type="text" name="mytext[]"/>  <label href="#" class="delete">Delete</label></div>'); //add input box#}
-                    $(wrapper).append(populateBlocks())
+                    var context = {blocks: blks, index: x};
+                    var html = template(context);
+                    $(wrapper).append(html)
                 }
                 else {
                     alert('You Reached the limits')
@@ -87,41 +120,8 @@
                     $(this).parent('div').parent('div').remove();
                     x--;
                 }
-            })
-        });
-    </script>
+            });
 
-    <script id="entry-template" type="text/x-handlebars-template">
-        <div class="row blockrow">
-            <div class="col-md-1">
-                <div class="entry">
-                    <select class="form-control">
-                        {% for cmd in blocks %}
-                            <option>{{ cmd.Sigla }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="row">
-                    <div class="col-md-6"><input id="input-block-1" class="form-control"/></div>
-                    <div class="col-md-6"><input id="input-block-2" class="form-control"/></div>
-                </div>
-            </div>
-            <div class="col-md-1"><input id=input-E" class="form-control"/></div>
-            <div class="col-md-1"><input id=input-F" class="form-control"/></div>
-            <div class="col-md-1"><input id=input-Q" class="form-control"/></div>
-            <div class="col-md-1"><input id=input-K" class="form-control"/></div>
-            <div class="col-md-1">
-                <a id="delete" href="#" class="btn btn-danger"><i class="fa fa-minus"></i></a>
-            </div>
-        </div>
-        <p/>
-    </script>
-    {% csrf_token %}
-    <script type="text/javascript">
-        $(document).ready(function () {
-            populateBlocks()
 
         });
 
@@ -143,17 +143,26 @@
                 type: 'POST',
                 dataType: 'json',
                 success: function (response) {
-                    var source = $("#entry-template").html();
-                    var template = Handlebars.compile(source);
-                    var context = {blocks: response};
-                    var html = template(context);
-                    $("#generator-form").append(html)
+                    return response;
                 },
                 error: function (xhr, err) {
                     console.log("readyState: " + xhr.readyState + "\nstatus: " + xhr.status);
                     console.log("responseText: " + xhr.responseText);
+                    return null;
                 }
             });
+        }
+
+        function refresh() {
+            var sel1 = document.getElementById("cmd-select");
+            var strUser1 = sel1.options[sel1.selectedIndex].value;
+            console.log(strUser1);
+            alert(strUser1);
+            // Inorder to get the Test as value i.e "Communication"
+            var sel2 = document.getElementById("cmd-select");
+            var strUser2 = sel2.options[sel2.selectedIndex].text;
+            console.log(strUser2);
+            alert(strUser2);
         }
     </script>
 {% endblock %}
