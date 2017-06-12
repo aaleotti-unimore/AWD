@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 
 import csv
 import logging
-from pprint import pprint
 
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
@@ -203,17 +202,19 @@ def help_page(request):
 
 from django.core import serializers
 from django.http import JsonResponse
+import pprint
+import json
+import simplejson
+from django.core.serializers.json import DjangoJSONEncoder
 
 
 def project_editor(request):
-    blocks = CommandBlock.objects.all()
+    blocks = CommandBlock.objects.values("Sigla", "E_name", "K_name", "Q_name", "F_name", "Help",
+                                         "Help_ENG")
     system = CommandSystem.objects.all()
     branches = CommandBranch.objects.all()
-
+    pp = pprint.PrettyPrinter(indent=4)
     if request.method == 'POST':
-        return JsonResponse(serializers.serialize('json', blocks), safe=False)
+        return JsonResponse({'blocks': list(blocks)})
 
-    return render(request, 'AWD_Zanasi/projects/newprojecteditor.html',
-                  {"blocks": blocks,
-                   "branches": branches,
-                   "system": system})
+    return render(request, 'AWD_Zanasi/projects/newprojecteditor.html')

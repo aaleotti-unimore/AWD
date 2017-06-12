@@ -61,53 +61,70 @@
 {% endblock %}
 
 {% block javascript %}
-    <script id="entry-template" type="text/x-handlebars-template">
-        <div class="row blockrow">
-            <div class="col-md-1">
-                <div class="entry">
-                    <select onchange="refresh()" id="cmd-select" class="form-control">
-                        {% for cmd in blocks %}
-                            <option value="{{ cmd.Sigla }}">{{ cmd.Sigla }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="row">
-                    <div class="col-md-6"><input id="input-block-1-{{ index }}" class="form-control"/></div>
-                    <div class="col-md-6"><input id="input-block-2-{{ index }}" class="form-control"/></div>
-                </div>
-            </div>
-            <div class="col-md-1"><input id="input-E-{{ index }}" class="form-control"/></div>
-            <div class="col-md-1"><input id="input-F-{{ index }}" class="form-control"/></div>
-            <div class="col-md-1"><input id="input-Q-{{ index }}" class="form-control"/></div>
-            <div class="col-md-1"><input id="input-K-{{ index }}" class="form-control"/></div>
-            <div class="col-md-1">
-                <a id="delete" href="#" class="btn btn-danger"><i class="fa fa-minus"></i></a>
-            </div>
-        </div>
-        <p></p>
-    </script>
+    {% load static %}
     {% csrf_token %}
+    <script type="text/javascript" src="{% static "AWD_Zanasi/js/editor_block_template.js" %}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
+            $.ajax({
+                beforeSend: function (xhr, settings) {
+                    if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                    }
+                },
+                url: '/pogmodeler/projects/create_project/editor/',
+                type: 'POST',
+                dataType: 'json',
+                success: blocksresponse,
+                error: function (xhr, err) {
+                    console.log("readyState: " + xhr.readyState + "\nstatus: " + xhr.status);
+                    console.log("responseText: " + xhr.responseText);
+                    return null;
+                }
+            });
+
+
+            function csrfSafeMethod(method) {
+                // these HTTP methods do not require CSRF protection
+                return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+            }
+
+        });
+
+        function blocksresponse(response) {
+
             var max_fields = 100;
             var wrapper = $("#generator-form");
             var add_button = $(".add_form_field");
-            var blks = populateBlocks();
-            var source = $("#entry-template").html();
-            var template = Handlebars.compile(source);
+            var blks = response["blocks"];
             var x = 1;
-            var context = {blocks: blks, index: x};
-            wrapper.append(template(context));
+            var context = {
+                blocks: blks,
+                idx: x
+            };
+            var template = Handlebars.templates.editor_block_template(context);
+            wrapper.append(template);
 
             $(add_button).click(function (e) {
                 e.preventDefault();
                 if (x < max_fields) {
                     x++;
-                    var context = {blocks: blks, index: x};
-                    var html = template(context);
-                    $(wrapper).append(html)
+                    var context2 = {
+                        blocks: blks,
+                        idx: x
+                    };
+                    var html = Handlebars.templates.editor_block_template(context2);
+                    wrapper.append(html);
+
+                    $("select[id=cmd-select]").on('change', function (event) {
+                        console.log('Event ' + event.target.id + ' target value', event.target.value);
+                        var block = blks[event.target.value];
+                        document.getElementById("input-E-" + event.target.name).value = block["E_name"] + "_" + event.target.name;
+                        document.getElementById("input-F-" + event.target.name).value = block["F_name"] + "_" + event.target.name;
+                        document.getElementById("input-Q-" + event.target.name).value = block["Q_name"] + "_" + event.target.name;
+                        document.getElementById("input-K-" + event.target.name).value = block["K_name"] + "_" + event.target.name;
+                    });
                 }
                 else {
                     alert('You Reached the limits')
@@ -122,48 +139,19 @@
                 }
             });
 
+            $("select[id^=cmd-select]").on('change', function (event) {
+                console.log('Event ' + event.target.id + ' target value', event.target.value);
+                var block = blks[event.target.value];
+                document.getElementById("input-E-" + event.target.name).value = block["E_name"] + "_" + event.target.name;
+                document.getElementById("input-F-" + event.target.name).value = block["F_name"] + "_" + event.target.name;
+                document.getElementById("input-Q-" + event.target.name).value = block["Q_name"] + "_" + event.target.name;
+                document.getElementById("input-K-" + event.target.name).value = block["K_name"] + "_" + event.target.name;
 
-        });
-
-        function csrfSafeMethod(method) {
-            // these HTTP methods do not require CSRF protection
-            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-        }
-
-
-        function populateBlocks() {
-            var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
-            $.ajax({
-                beforeSend: function (xhr, settings) {
-                    if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
-                    }
-                },
-                url: '/pogmodeler/projects/create_project/editor/',
-                type: 'POST',
-                dataType: 'json',
-                success: function (response) {
-                    return response;
-                },
-                error: function (xhr, err) {
-                    console.log("readyState: " + xhr.readyState + "\nstatus: " + xhr.status);
-                    console.log("responseText: " + xhr.responseText);
-                    return null;
-                }
             });
+
         }
 
-        function refresh() {
-            var sel1 = document.getElementById("cmd-select");
-            var strUser1 = sel1.options[sel1.selectedIndex].value;
-            console.log(strUser1);
-            alert(strUser1);
-            // Inorder to get the Test as value i.e "Communication"
-            var sel2 = document.getElementById("cmd-select");
-            var strUser2 = sel2.options[sel2.selectedIndex].text;
-            console.log(strUser2);
-            alert(strUser2);
-        }
+
     </script>
 {% endblock %}
 

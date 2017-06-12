@@ -1,0 +1,29 @@
+<div class="row blockrow">
+    <div class="col-md-1">
+        <div class="entry">
+            <select id="cmd-select" name="{{ idx }}" class="form-control">
+                <!--onchange="refresh(this)"-->
+
+                {{#each blocks}}
+                    <option value="{{@index}}">{{ this.Sigla }}</option>
+                {{/each}}
+            </select>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="row">
+
+            <div class="col-md-6"><input id="input-block-1-{{ idx }}" class="form-control"/></div>
+            <div class="col-md-6"><input id="input-block-2-{{ idx }}" class="form-control"/></div>
+        </div>
+    </div>
+    <div class="col-md-1"><input id="input-E-{{ idx }}" class="form-control"/></div>
+    <div class="col-md-1"><input id="input-F-{{ idx }}" class="form-control"/></div>
+    <div class="col-md-1"><input id="input-Q-{{ idx }}" class="form-control"/></div>
+    <div class="col-md-1"><input id="input-K-{{ idx }}" class="form-control"/></div>
+    <div class="col-md-1">
+        <a id="delete" href="#" class="btn btn-danger"><i class="fa fa-minus"></i></a>
+
+    </div>
+</div>
+<p></p>
