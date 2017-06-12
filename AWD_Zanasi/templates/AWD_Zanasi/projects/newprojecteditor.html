@@ -29,16 +29,53 @@
             </ul>
         {% endif %}
         <div class="row">
-
             <div class="col-lg-1">
-                <button class="add_form_field btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp;Add Block
+                <button class="add_coord btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp;Add Node
+                </button>
+            </div>
+
+            <div class="col-lg-11">
+                <div class="row">
+                    <div class="col-md-1"><h5>Name</h5></div>
+                    <div class="col-md-2"><h5>Coordinates</h5></div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-1">
+
+            </div>
+
+            <div class="col-lg-11">
+                <div class="row">
+                    <form id="coord-form" class="form-horizontal">
+                        <div class="col-md-1"><input class="form-control"></div>
+                        <div class="col-md-1"><input class="form-control"></div>
+                        <div class="col-md-1"><input class="form-control"></div>
+                        <div class="col-md-1">
+                            <a id="delete-coord" href="#" class="btn btn-danger"><i class="fa fa-minus"></i></a>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="col-lg-1">
+            </div>
+        </div>
+        <p></p>
+        <div class="row">
+            <div class="col-lg-1">
+                <button class="add_block_btn btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp;Add Block
                 </button>
             </div>
 
             <div class="col-lg-11">
                 <div class="row">
                     <div class="col-md-1"><h5>Command</h5></div>
-                    <div class="col-md-2"><h5>Blocks</h5></div>
+                    <div class="col-md-2"><h5>Nodes</h5></div>
                     <div class="col-md-1"><h5>Effort</h5></div>
                     <div class="col-md-1"><h5>Flow</h5></div>
                     <div class="col-md-1"><h5>Internal</h5></div>
@@ -54,6 +91,14 @@
                 <form id="generator-form" class="form-horizontal" action="{% url 'editor' %}" method="POST">
                     {% csrf_token %}
                 </form>
+            </div>
+        </div>
+        <p></p>
+        <div class="row">
+            <div class="col-lg-12">
+                <button class="submit_form btn btn-primary btn-sm">
+                    &nbsp; Submit &nbsp;
+                </button>
             </div>
         </div>
     </div>
@@ -76,7 +121,7 @@
                 url: '/pogmodeler/projects/create_project/editor/',
                 type: 'POST',
                 dataType: 'json',
-                success: blocksresponse,
+                success: handle_response,
                 error: function (xhr, err) {
                     console.log("readyState: " + xhr.readyState + "\nstatus: " + xhr.status);
                     console.log("responseText: " + xhr.responseText);
@@ -92,11 +137,11 @@
 
         });
 
-        function blocksresponse(response) {
+        function handle_response(response) {
 
             var max_fields = 100;
             var wrapper = $("#generator-form");
-            var add_button = $(".add_form_field");
+            var add_button = $(".add_block_btn");
             var blks = response["blocks"];
             var x = 1;
             var context = {
@@ -116,15 +161,6 @@
                     };
                     var html = Handlebars.templates.editor_block_template(context2);
                     wrapper.append(html);
-
-                    $("select[id=cmd-select]").on('change', function (event) {
-                        console.log('Event ' + event.target.id + ' target value', event.target.value);
-                        var block = blks[event.target.value];
-                        document.getElementById("input-E-" + event.target.name).value = block["E_name"] + "_" + event.target.name;
-                        document.getElementById("input-F-" + event.target.name).value = block["F_name"] + "_" + event.target.name;
-                        document.getElementById("input-Q-" + event.target.name).value = block["Q_name"] + "_" + event.target.name;
-                        document.getElementById("input-K-" + event.target.name).value = block["K_name"] + "_" + event.target.name;
-                    });
                 }
                 else {
                     alert('You Reached the limits')
@@ -139,18 +175,16 @@
                 }
             });
 
-            $("select[id^=cmd-select]").on('change', function (event) {
+            $(wrapper).on('change', "#cmd-select", function (event) {
                 console.log('Event ' + event.target.id + ' target value', event.target.value);
                 var block = blks[event.target.value];
                 document.getElementById("input-E-" + event.target.name).value = block["E_name"] + "_" + event.target.name;
                 document.getElementById("input-F-" + event.target.name).value = block["F_name"] + "_" + event.target.name;
                 document.getElementById("input-Q-" + event.target.name).value = block["Q_name"] + "_" + event.target.name;
                 document.getElementById("input-K-" + event.target.name).value = block["K_name"] + "_" + event.target.name;
-
             });
 
         }
-
 
     </script>
 {% endblock %}

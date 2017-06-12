@@ -17,10 +17,14 @@
             <div class="col-md-6"><input id="input-block-2-{{ idx }}" class="form-control"/></div>
         </div>
     </div>
-    <div class="col-md-1"><input id="input-E-{{ idx }}" class="form-control"/></div>
-    <div class="col-md-1"><input id="input-F-{{ idx }}" class="form-control"/></div>
-    <div class="col-md-1"><input id="input-Q-{{ idx }}" class="form-control"/></div>
-    <div class="col-md-1"><input id="input-K-{{ idx }}" class="form-control"/></div>
+    <div class="col-md-1"><input id="input-E-{{ idx }}" class="form-control" value="{{ blocks.0.E_name }}_{{idx}}"/>
+    </div>
+    <div class="col-md-1"><input id="input-F-{{ idx }}" class="form-control" value="{{ blocks.0.F_name }}_{{idx}}"/>
+    </div>
+    <div class="col-md-1"><input id="input-Q-{{ idx }}" class="form-control" value="{{ blocks.0.Q_name }}_{{idx}}"/>
+    </div>
+    <div class="col-md-1"><input id="input-K-{{ idx }}" class="form-control" value="{{ blocks.0.K_name }}_{{idx}}"/>
+    </div>
     <div class="col-md-1">
         <a id="delete" href="#" class="btn btn-danger"><i class="fa fa-minus"></i></a>
 
