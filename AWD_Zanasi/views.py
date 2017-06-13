@@ -211,10 +211,9 @@ from django.core.serializers.json import DjangoJSONEncoder
 def project_editor(request):
     blocks = CommandBlock.objects.values("Sigla", "E_name", "K_name", "Q_name", "F_name", "Help",
                                          "Help_ENG")
-    system = CommandSystem.objects.all()
-    branches = CommandBranch.objects.all()
-    pp = pprint.PrettyPrinter(indent=4)
+    system = CommandSystem.objects.values("Nome","Range","Help_ENG")
+    branches = CommandBranch.objects.values("Nome","Range","Help_ENG")
     if request.method == 'POST':
-        return JsonResponse({'blocks': list(blocks)})
+        return JsonResponse({'blocks': list(blocks), 'sysvar': list(system)})
 
     return render(request, 'AWD_Zanasi/projects/newprojecteditor.html')
