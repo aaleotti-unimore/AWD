@@ -3,7 +3,6 @@
 {% block container %}
     {% load crispy_forms_tags %}
 
-
     <div class="container-fluid">
         <!-- Page Heading -->
         <div class="row">
@@ -30,40 +29,32 @@
         {% endif %}
         <div class="row">
             <div class="col-lg-1">
-                <button class="add_coord btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp;Add Node
+                <button id="add_coord_btn" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp;Add Node
                 </button>
             </div>
-
             <div class="col-lg-11">
                 <div class="row">
                     <div class="col-md-1"><h5>Name</h5></div>
                     <div class="col-md-2"><h5>Coordinates</h5></div>
                 </div>
-
             </div>
-
         </div>
         <div class="row">
-            <div class="col-lg-1">
-
-            </div>
-
+            <div class="col-lg-1"></div>
             <div class="col-lg-11">
-                <div class="row">
-                    <form id="coord-form" class="form-horizontal">
-                        <div class="col-md-1"><input class="form-control"></div>
-                        <div class="col-md-1"><input class="form-control"></div>
-                        <div class="col-md-1"><input class="form-control"></div>
+                <form id="coord-form" class="form-horizontal">
+                    <div class="row">
+                        <div class="col-md-1"><input id="coord-name-0" class="form-control" placeholder="Name" title="">
+                        </div>
+                        <div class="col-md-1"><input id="coord_X-0" class="form-control" placeholder="X" title=""></div>
+                        <div class="col-md-1"><input id="coord_Y-0" class="form-control" placeholder="Y" title=""></div>
                         <div class="col-md-1">
                             <a id="delete-coord" href="#" class="btn btn-danger"><i class="fa fa-minus"></i></a>
-
                         </div>
-                    </form>
-                </div>
-
+                    </div>
+                </form>
             </div>
-            <div class="col-lg-1">
-            </div>
+            <div class="col-lg-1"></div>
         </div>
         <p></p>
         <div class="row">
@@ -88,7 +79,7 @@
         <div class="row">
             <div class="col-lg-1"></div>
             <div class="col-lg-11">
-                <form id="generator-form" class="form-horizontal" action="{% url 'editor' %}" method="POST">
+                <form id="blocks-form" class="form-horizontal" action="{% url 'editor' %}" method="POST">
                     {% csrf_token %}
                 </form>
             </div>
@@ -108,84 +99,22 @@
 {% block javascript %}
     {% load static %}
     {% csrf_token %}
-    <script type="text/javascript" src="{% static "AWD_Zanasi/js/editor_block_template.js" %}"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            var csrftoken = jQuery("[name=csrfmiddlewaretoken]").val();
-            $.ajax({
-                beforeSend: function (xhr, settings) {
-                    if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                        xhr.setRequestHeader("X-CSRFToken", csrftoken);
-                    }
-                },
-                url: '/pogmodeler/projects/create_project/editor/',
-                type: 'POST',
-                dataType: 'json',
-                success: handle_response,
-                error: function (xhr, err) {
-                    console.log("readyState: " + xhr.readyState + "\nstatus: " + xhr.status);
-                    console.log("responseText: " + xhr.responseText);
-                    return null;
-                }
-            });
+    <script type="text/x-handlebars-template" id="coord-template">
+        {% verbatim %}
+            <p></p>
 
-
-            function csrfSafeMethod(method) {
-                // these HTTP methods do not require CSRF protection
-                return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-            }
-
-        });
-
-        function handle_response(response) {
-
-            var max_fields = 100;
-            var wrapper = $("#generator-form");
-            var add_button = $(".add_block_btn");
-            var blks = response["blocks"];
-            var x = 1;
-            var context = {
-                blocks: blks,
-                idx: x
-            };
-            var template = Handlebars.templates.editor_block_template(context);
-            wrapper.append(template);
-
-            $(add_button).click(function (e) {
-                e.preventDefault();
-                if (x < max_fields) {
-                    x++;
-                    var context2 = {
-                        blocks: blks,
-                        idx: x
-                    };
-                    var html = Handlebars.templates.editor_block_template(context2);
-                    wrapper.append(html);
-                }
-                else {
-                    alert('You Reached the limits')
-                }
-            });
-
-            $(wrapper).on("click", "#delete", function (e) {
-                e.preventDefault();
-                if (x > 1) {
-                    $(this).parent('div').parent('div').remove();
-                    x--;
-                }
-            });
-
-            $(wrapper).on('change', "#cmd-select", function (event) {
-                console.log('Event ' + event.target.id + ' target value', event.target.value);
-                var block = blks[event.target.value];
-                document.getElementById("input-E-" + event.target.name).value = block["E_name"] + "_" + event.target.name;
-                document.getElementById("input-F-" + event.target.name).value = block["F_name"] + "_" + event.target.name;
-                document.getElementById("input-Q-" + event.target.name).value = block["Q_name"] + "_" + event.target.name;
-                document.getElementById("input-K-" + event.target.name).value = block["K_name"] + "_" + event.target.name;
-            });
-
-        }
-
+            <div class="row">
+                <div class="col-md-1"><input id="coord-name-{{ idx }}" class="form-control" placeholder="Name" title="">
+                </div>
+                <div class="col-md-1"><input id="coord_X-{{ idx }}" class="form-control" placeholder="X" title=""></div>
+                <div class="col-md-1"><input id="coord_Y-{{ idx }}" class="form-control" placeholder="Y" title=""></div>
+                <div class="col-md-1">
+                    <a id="delete-coord" href="#" class="btn btn-danger"><i class="fa fa-minus"></i></a>
+                </div>
+            </div>
+        {% endverbatim %}
     </script>
+    <script type="text/javascript" src="{% static "AWD_Zanasi/js/editor_block_template.js" %}"></script>
+    <script type="text/javascript" src="{% static "AWD_Zanasi/js/project_editor.js" %}"></script>
 {% endblock %}
 
