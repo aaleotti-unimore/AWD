@@ -19,6 +19,7 @@ $(document).ready(function () {
 
     coordinates();
 
+
     function csrfSafeMethod(method) {
         // these HTTP methods do not require CSRF protection
         return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
@@ -27,6 +28,7 @@ $(document).ready(function () {
 });
 
 function handle_response(response) {
+    var lang = navigator.language || navigator.userLanguage;
     var max_fields = 100;
     var blocks_wrapper = $("#blocks-form");
     var add_block_button = $(".add_block_btn");
@@ -67,8 +69,15 @@ function handle_response(response) {
         document.getElementById("input-F-" + event.target.name).value = block["F_name"] + "_" + event.target.name;
         document.getElementById("input-Q-" + event.target.name).value = block["Q_name"] + "_" + event.target.name;
         document.getElementById("input-K-" + event.target.name).value = block["K_name"] + "_" + event.target.name;
-        document.getElementById("help-label-" + event.target.name).textContent = block["Help_ENG"];
+        var help = block["Help_ENG"];
+        if (lang === "it") {
+            help = block["Help"];
+        }
+        document.getElementById("help-label-" + event.target.name).textContent = help;
     });
+
+
+    // --------------- SYSVAR
 
     var sysvar_wrapper = $("#sysvar-form");
     var add_sysvar_button = $(".add_sysvar_btn");
@@ -107,9 +116,57 @@ function handle_response(response) {
 
     $(sysvar_wrapper).on('change', "#sysvar-select", function (event) {
         var sysv = sysvar[event.target.value];
-        var help =$("#sysvar-help-label-" + event.target.name);
-        help.text(sysv["Help_ENG"]);
+        var help = $("#sysvar-help-label-" + event.target.name);
+        var help_text = sysv["Help_ENG"];
+        if (lang === "it") {
+            help_text = sysv["Help"];
+        }
+        help.text(help_text);
+        help.show();
+        $("#sysvar-range-" + event.target.name).attr("placeholder", sysv["Range"])
     });
+
+    // ----------- BRANCHES
+
+
+    var branch = response["branches"];
+    var branch_counter = 1;
+
+    $(document).on("click", "#add-branch-button", function (e) {
+        e.preventDefault();
+        if (branch_counter < max_fields) {
+            branch_counter++;
+            var branch_context2 = {
+                branches: branch,
+                idx: branch_counter
+            };
+            var branch_template = Handlebars.compile($("#branch-template").html());
+            var branch_html = branch_template(branch_context2);
+            $(this).parent('div').parents('.row:first').after(branch_html);
+        }
+    });
+
+
+    $(document).on("click", "#delete-branch", function (e) {
+        e.preventDefault();
+        if (branch_counter > 1) {
+            $(this).parent('div').parent('div').remove();
+            branch_counter--;
+        }
+    });
+
+    $(document).on('change', "#branch-select", function (event) {
+        var sysv = branch[event.target.value];
+        var help = $("#branch-help-label-" + event.target.name);
+        var help_text = sysv["Help_ENG"];
+        if (lang === "it") {
+            help_text = sysv["Help"];
+        }
+        help.text(help_text);
+        help.show();
+        $("#branch-range-" + event.target.name).attr("placeholder", sysv["Range"])
+    });
+
 
 }
 
@@ -132,4 +189,12 @@ function coordinates() {
             coord_counter--;
         }
     });
+}
+
+function sysvar(response) {
+
+}
+
+function submitall(){
+    $('#allforms').submit();
 }

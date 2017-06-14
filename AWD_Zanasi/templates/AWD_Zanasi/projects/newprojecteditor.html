@@ -29,98 +29,107 @@
             </ul>
         {% endif %}
         <!-- coordinates -->
-        <div class="row">
-            <div class="col-lg-1">
-                <button id="add_coord_btn" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp;Add Node
-                </button>
-            </div>
-            <div class="col-lg-11">
-                <div class="row">
-                    <div class="col-md-1"><h5>Name</h5></div>
-                    <div class="col-md-2"><h5>Coordinates</h5></div>
+        <form id="allforms" action="{% url 'editor_response' %}" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-1">
+                    <button id="add_coord_btn" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp;Add Node
+                    </button>
+                </div>
+                <div class="col-lg-11">
+                    <div class="row">
+                        <div class="col-md-1"><h5>Name</h5></div>
+                        <div class="col-md-2"><h5>Coordinates</h5></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1"></div>
-            <div class="col-lg-11">
-                <form id="coord-form" class="form-horizontal">
-                    <div class="row">
-                        <div class="col-md-1"><input id="coord-name-0" class="form-control" placeholder="Name" title="">
-                        </div>
-                        <div class="col-md-1"><input id="coord_X-0" class="form-control" placeholder="X" title=""></div>
-                        <div class="col-md-1"><input id="coord_Y-0" class="form-control" placeholder="Y" title=""></div>
-                        <div class="col-md-1">
-                            <a id="delete-coord" href="#" class="btn btn-danger"><i class="fa fa-minus"></i></a>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-11">
+                    <div id="coord-form">
+                        <div class="row">
+                            <div class="col-md-1"><input id="coord-name-0" class="form-control" placeholder="Name"
+                                                         title="">
+                            </div>
+                            <div class="col-md-1"><input id="coord_X-0" class="form-control" placeholder="X" title="">
+                            </div>
+                            <div class="col-md-1"><input id="coord_Y-0" class="form-control" placeholder="Y" title="">
+                            </div>
+                            <div class="col-md-1">
+                                <a id="delete-coord" href="#" class="btn btn-danger"><i class="fa fa-minus"></i></a>
+                            </div>
                         </div>
                     </div>
-                </form>
+                </div>
+                <div class="col-lg-1"></div>
             </div>
-            <div class="col-lg-1"></div>
-        </div>
-        <p></p>
-        <!-- blocks -->
-        <div class="row">
-            <div class="col-lg-1">
-                <button class="add_block_btn btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp;Add Block
-                </button>
-            </div>
+            <p></p>
+            <hr>
+            <!-- blocks -->
+            <div class="row">
+                <div class="col-lg-1">
+                    <button class="add_block_btn btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp;Add Block
+                    </button>
+                </div>
 
-            <div class="col-lg-11">
-                <div class="row">
-                    <div class="col-md-1"><h5>Command</h5></div>
-                    <div class="col-md-2"><h5>Nodes</h5></div>
-                    <div class="col-md-1"><h5>Effort</h5></div>
-                    <div class="col-md-1"><h5>Flow</h5></div>
-                    <div class="col-md-1"><h5>Internal</h5></div>
-                    <div class="col-md-1"><h5>K</h5></div>
+                <div class="col-lg-11">
+                    <div class="row">
+                        <div class="col-md-1"><h5>Command</h5></div>
+                        <div class="col-md-2"><h5>Nodes</h5></div>
+                        <div class="col-md-1"><h5>Effort</h5></div>
+                        <div class="col-md-1"><h5>Flow</h5></div>
+                        <div class="col-md-1"><h5>Internal</h5></div>
+                        <div class="col-md-1"><h5>K</h5></div>
+                    </div>
+
                 </div>
 
             </div>
-
-        </div>
-        <div class="row">
-            <div class="col-lg-1"></div>
-            <div class="col-lg-11">
-                <form id="blocks-form" class="form-horizontal" action="{% url 'editor' %}" method="POST">
-                    {% csrf_token %}
-                </form>
-            </div>
-        </div>
-        <p></p>
-        <!-- system variables -->
-        <div class="row">
-            <div class="col-lg-1">
-                <button class="add_sysvar_btn btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp;Sysvar
-                </button>
-            </div>
-            <div class="col-lg-11">
-                <div class="row">
-                    <div class="col-lg-3">Name</div>
-                    <div class="col-lg-3">Value</div>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-11">
+                    <div id="blocks-form">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-1">
+            <p></p>
+            <hr>
+            <!-- system variables -->
+            <div class="row">
+                <div class="col-lg-1">
+                    <button class="add_sysvar_btn btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp;Sysvar
+                    </button>
+                </div>
+                <div class="col-lg-11">
+                    <div class="row">
+                        <div class="col-lg-3">Name</div>
+                        <div class="col-lg-3">Value</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1">
 
-            </div>
-            <div class="col-lg-11">
-                <form id="sysvar-form" class="form-horizontal">
+                </div>
+                <div class="col-lg-11">
+                    <div id="sysvar-form" class="form-horizontal">
 
-                </form>
+                    </div>
+                </div>
             </div>
-        </div>
-        <p></p>
-        <!-- submit button -->
-        <div class="row">
-            <div class="col-lg-1">
-                <button class="submit_form btn btn-primary btn-sm">
-                    &nbsp; Submit &nbsp;
-                </button>
+            <p></p>
+            <hr>
+            <!-- submit button -->
+            <div class="row">
+                <div class="col-lg-1">
+                    <button id="submitall" class=" btn btn-primary btn-sm" onclick="submitall()">
+                        &nbsp; Submit &nbsp;
+                    </button>
+                </div>
             </div>
-        </div>
+        </form>
     </div>
+
 
 {% endblock %}
 
@@ -154,12 +163,38 @@
                         {{/each }}
                     </select>
                 </div>
-                <div class="col-lg-3"><input title="" class="form-control" placeholder="value"/></div>
+                <div class="col-lg-3"><input id="sysvar-range-{{ idx }}" title="" class="form-control"
+                                             placeholder="Range"/></div>
                 <div class="col-lg-1"><a id="delete-sysvar" href="#" class="btn btn-danger"><i
                         class="fa fa-minus"></i></a>
                 </div>
                 <div class="col-md-1">
-                    <span id="sysvar-help-label-{{ idx }}" class="label label-default">
+                    <span id="sysvar-help-label-{{ idx }}" class="label label-default" style="display:none">
+                    </span>
+                </div>
+            </div>
+        {% endverbatim %}
+    </script>
+    <script type="text/x-handlebars-template" id="branch-template">
+        {% verbatim %}
+            <p></p>
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                    <select id="branch-select" class="form-control" name={{ idx }} title="">
+                        <option disabled selected value> -- select an option --</option>
+                        {{#each branches }}
+                        <option value="{{@index}}">{{ this.Nome }}</option>
+                        {{/each }}
+                    </select>
+                </div>
+                <div class="col-lg-1"><input id="branch-range-{{ idx }}" title="" class="form-control"
+                                             placeholder="value"/></div>
+                <div class="col-lg-1"><a id="delete-branch" href="#" class="btn btn-sm btn-danger"><i
+                        class="fa fa-minus"></i></a>
+                </div>
+                <div class="col-md-1">
+                    <span id="branch-help-label-{{ idx }}" class="label label-default" style="display:none">
                     </span>
                 </div>
             </div>

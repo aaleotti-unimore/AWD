@@ -6,6 +6,7 @@ import logging
 
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
+from django.http import JsonResponse
 from django.shortcuts import render, redirect, HttpResponse
 
 from .forms import NewProjectForm, EditProjectForm, LoadCommandsListForm
@@ -135,7 +136,6 @@ def update_commands(request):
                         Comandi=unicode(row['Comandi']),
                     )
                     cmd.save()
-                    pprint(cmd.Sigla)
 
                 messages.add_message(request, messages.SUCCESS, u'Blocks Commands Successfully Updated')
 
@@ -200,20 +200,22 @@ def help_page(request):
                    "system": system})
 
 
-from django.core import serializers
-from django.http import JsonResponse
-import pprint
-import json
-import simplejson
-from django.core.serializers.json import DjangoJSONEncoder
-
-
 def project_editor(request):
-    blocks = CommandBlock.objects.values("Sigla", "E_name", "K_name", "Q_name", "F_name", "Help",
-                                         "Help_ENG")
-    system = CommandSystem.objects.values("Nome","Range","Help_ENG")
-    branches = CommandBranch.objects.values("Nome","Range","Help_ENG")
+    blocks = CommandBlock.objects.values("Sigla", "E_name", "K_name", "Q_name", "F_name", "Help", "Help_ENG")
+    system = CommandSystem.objects.values("Nome", "Range", "Help_ENG", "Help")
+    branches = CommandBranch.objects.values("Nome", "Range", "Help_ENG", "Help")
     if request.method == 'POST':
-        return JsonResponse({'blocks': list(blocks), 'sysvar': list(system)})
+        return JsonResponse({'blocks': list(blocks), 'sysvar': list(system), "branches": list(branches)})
 
     return render(request, 'AWD_Zanasi/projects/newprojecteditor.html')
+
+
+from pprint import pprint
+
+
+def project_editor_response(request):
+    if request.method == 'POST':
+        for key, value in request.POST.items():
+            print(key, value)
+        return HttpResponse("OK")
+    return HttpResponse("Not Ok")

@@ -13,5 +13,6 @@ urlpatterns = [
                   url(r'^projects/(?P<project_id>[0-9]+)/delete/$', views.delete_project, name='delete_project'),
                   url(r'^admin/updatecommands$', views.update_commands, name='update_commands'),
                   url(r'^help/$', views.help_page, name='help_page'),
-                  url(r'^projects/create_project/editor/$', views.project_editor, name='editor')
+                  url(r'^projects/create_project/editor/$', views.project_editor, name='editor'),
+                  url(r'^projects/create_project/editor_response/$', views.project_editor_response, name='editor_response')
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
