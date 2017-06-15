@@ -47,18 +47,6 @@
                 <div class="col-lg-1"></div>
                 <div class="col-lg-11">
                     <div id="coord-form">
-                        <div class="row">
-                            <div class="col-md-1"><input id="coord-name-0" class="form-control" placeholder="Name"
-                                                         title="">
-                            </div>
-                            <div class="col-md-1"><input id="coord_X-0" class="form-control" placeholder="X" title="">
-                            </div>
-                            <div class="col-md-1"><input id="coord_Y-0" class="form-control" placeholder="Y" title="">
-                            </div>
-                            <div class="col-md-1">
-                                <a id="delete-coord" href="#" class="btn btn-danger"><i class="fa fa-minus"></i></a>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-lg-1"></div>
@@ -141,10 +129,10 @@
             <p></p>
 
             <div class="row">
-                <div class="col-md-1"><input id="coord-name-{{ idx }}" class="form-control" placeholder="Name" title="">
+                <div class="col-md-1"><input name="coord-name-{{ idx }}" class="form-control" placeholder="Name" title="">
                 </div>
-                <div class="col-md-1"><input id="coord_X-{{ idx }}" class="form-control" placeholder="X" title=""></div>
-                <div class="col-md-1"><input id="coord_Y-{{ idx }}" class="form-control" placeholder="Y" title=""></div>
+                <div class="col-md-1"><input name="coord_X-{{ idx }}" class="form-control" placeholder="X" title=""></div>
+                <div class="col-md-1"><input name="coord_Y-{{ idx }}" class="form-control" placeholder="Y" title=""></div>
                 <div class="col-md-1">
                     <a id="delete-coord" href="#" class="btn btn-danger"><i class="fa fa-minus"></i></a>
                 </div>
@@ -156,20 +144,20 @@
             <p></p>
             <div class="row">
                 <div class="col-lg-3">
-                    <select id="sysvar-select" class="form-control" name={{ idx }} title="">
+                    <select id="sysvar-select" class="form-control" name="sysvar-select-{{ idx }}" title="">
                         <option disabled selected value> -- select an option --</option>
                         {{#each sysvar }}
                         <option value="{{@index}}">{{ this.Nome }}</option>
                         {{/each }}
                     </select>
                 </div>
-                <div class="col-lg-3"><input id="sysvar-range-{{ idx }}" title="" class="form-control"
+                <div class="col-lg-3"><input id="sysvar-range" name="sysvar-range-{{ idx }}" title="" class="form-control"
                                              placeholder="Range"/></div>
                 <div class="col-lg-1"><a id="delete-sysvar" href="#" class="btn btn-danger"><i
                         class="fa fa-minus"></i></a>
                 </div>
                 <div class="col-md-1">
-                    <span id="sysvar-help-label-{{ idx }}" class="label label-default" style="display:none">
+                    <span id="sysvar-help-label" class="label label-default" style="display:none">
                     </span>
                 </div>
             </div>
@@ -181,20 +169,20 @@
             <div class="row">
                 <div class="col-lg-1"></div>
                 <div class="col-lg-2">
-                    <select id="branch-select" class="form-control" name={{ idx }} title="">
+                    <select id="branch-select" class="form-control" name="branch-select-{{ idx }}" title="">
                         <option disabled selected value> -- select an option --</option>
                         {{#each branches }}
                         <option value="{{@index}}">{{ this.Nome }}</option>
                         {{/each }}
                     </select>
                 </div>
-                <div class="col-lg-1"><input id="branch-range-{{ idx }}" title="" class="form-control"
+                <div class="col-lg-1"><input id="branch-range" name="branch-range-{{ idx }}" title="" class="form-control"
                                              placeholder="value"/></div>
                 <div class="col-lg-1"><a id="delete-branch" href="#" class="btn btn-sm btn-danger"><i
                         class="fa fa-minus"></i></a>
                 </div>
                 <div class="col-md-1">
-                    <span id="branch-help-label-{{ idx }}" class="label label-default" style="display:none">
+                    <span id="branch-help-label" class="label label-default" style="display:none">
                     </span>
                 </div>
             </div>

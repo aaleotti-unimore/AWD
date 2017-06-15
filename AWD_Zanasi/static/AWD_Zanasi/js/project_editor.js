@@ -28,6 +28,7 @@ $(document).ready(function () {
 });
 
 function handle_response(response) {
+    // --------------- BLOCKS
     var lang = navigator.language || navigator.userLanguage;
     var max_fields = 100;
     var blocks_wrapper = $("#blocks-form");
@@ -65,15 +66,16 @@ function handle_response(response) {
 
     $(blocks_wrapper).on('change', "#cmd-select", function (event) {
         var block = blks[event.target.value];
-        document.getElementById("input-E-" + event.target.name).value = block["E_name"] + "_" + event.target.name;
-        document.getElementById("input-F-" + event.target.name).value = block["F_name"] + "_" + event.target.name;
-        document.getElementById("input-Q-" + event.target.name).value = block["Q_name"] + "_" + event.target.name;
-        document.getElementById("input-K-" + event.target.name).value = block["K_name"] + "_" + event.target.name;
+        var rowblock =  $(this).parent('div').parent('div');
+        rowblock.find('#input-E').val(block["E_name"] + "_" + event.target.name);
+        rowblock.find('#input-F').val(block["F_name"] + "_" + event.target.name);
+        rowblock.find('#input-Q').val(block["Q_name"] + "_" + event.target.name);
+        rowblock.find('#input-K').val(block["K_name"] + "_" + event.target.name);
         var help = block["Help_ENG"];
         if (lang === "it") {
             help = block["Help"];
         }
-        document.getElementById("help-label-" + event.target.name).textContent = help;
+        rowblock.find('#help-label').text(help);
     });
 
 
@@ -116,14 +118,15 @@ function handle_response(response) {
 
     $(sysvar_wrapper).on('change', "#sysvar-select", function (event) {
         var sysv = sysvar[event.target.value];
-        var help = $("#sysvar-help-label-" + event.target.name);
+        var help = $(this).parent('div').parent('div').find('#sysvar-help-label');
+        // var help = $("#sysvar-help-label-" + event.target.name);
         var help_text = sysv["Help_ENG"];
         if (lang === "it") {
             help_text = sysv["Help"];
         }
         help.text(help_text);
         help.show();
-        $("#sysvar-range-" + event.target.name).attr("placeholder", sysv["Range"])
+        $(this).parent('div').parent('div').find('#sysvar-range').attr("placeholder", sysv["Range"])
     });
 
     // ----------- BRANCHES
@@ -157,24 +160,26 @@ function handle_response(response) {
 
     $(document).on('change', "#branch-select", function (event) {
         var sysv = branch[event.target.value];
-        var help = $("#branch-help-label-" + event.target.name);
+        var help = $(this).parent('div').parent('div').find('#branch-help-label');
         var help_text = sysv["Help_ENG"];
         if (lang === "it") {
             help_text = sysv["Help"];
         }
         help.text(help_text);
         help.show();
-        $("#branch-range-" + event.target.name).attr("placeholder", sysv["Range"])
+        $(this).parent('div').parent('div').find('#branch-range').attr("placeholder", sysv["Range"])
     });
 
 
 }
 
 function coordinates() {
-    var coord_counter = 1;
+    var coord_counter = 0;
     var coord_template = Handlebars.compile($("#coord-template").html());
     var coord_html = coord_template({idx: coord_counter});
     var coord_wrapper = $("#coord-form");
+    coord_wrapper.append(coord_html);
+
     $("#add_coord_btn").click(function (e) {
         e.preventDefault();
         if (coord_counter < 100) {
@@ -191,10 +196,7 @@ function coordinates() {
     });
 }
 
-function sysvar(response) {
 
-}
-
-function submitall(){
+function submitall() {
     $('#allforms').submit();
 }

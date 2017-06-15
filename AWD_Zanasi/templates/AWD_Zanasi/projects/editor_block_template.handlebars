@@ -1,36 +1,39 @@
 <div class="row" id="blockrow">
     <div class="col-md-1">
-        <div class="entry">
-            <select id="cmd-select" name="{{ idx }}" class="form-control">
-                <!--onchange="refresh(this)"-->
-                {{#each blocks}}
-                    <option value="{{@index}}">{{ this.Sigla }}</option>
-                {{/each}}
-            </select>
-        </div>
+        <select id="cmd-select" name="{{ idx }}" class="form-control">
+            <!--onchange="refresh(this)"-->
+            {{#each blocks}}
+                <option value="{{@index}}">{{ this.Sigla }}</option>
+            {{/each}}
+        </select>
     </div>
     <div class="col-md-2">
         <div class="row">
 
-            <div class="col-md-6"><input placeholder="Node" name="input-block-1-{{ idx }}" class="form-control"/></div>
-            <div class="col-md-6"><input placeholder="Node" name="input-block-2-{{ idx }}" class="form-control"/></div>
+            <div class="col-md-6"><input placeholder="Node" name="input-node-1-{{ idx }}" class="form-control"/></div>
+            <div class="col-md-6"><input placeholder="Node" name="input-node-2-{{ idx }}" class="form-control"/></div>
         </div>
     </div>
-    <div class="col-md-1"><input id="input-E-{{ idx }}" class="form-control" value="{{ blocks.0.E_name }}_{{idx}}"/>
+    <div class="col-md-1">
+        <input id="input-E" name="input-E-{{idx}}" class="form-control" value="{{ blocks.0.E_name }}_{{idx}}"/>
     </div>
-    <div class="col-md-1"><input id="input-F-{{ idx }}" class="form-control" value="{{ blocks.0.F_name }}_{{idx}}"/>
+    <div class="col-md-1">
+        <input id="input-F" name="input-F-{{idx}}" class="form-control" value="{{ blocks.0.F_name }}_{{idx}}"/>
     </div>
-    <div class="col-md-1"><input id="input-Q-{{ idx }}" class="form-control" value="{{ blocks.0.Q_name }}_{{idx}}"/>
+    <div class="col-md-1">
+        <input id="input-Q" name="input-Q-{{idx}}" class="form-control" value="{{ blocks.0.Q_name }}_{{idx}}"/>
     </div>
-    <div class="col-md-1"><input id="input-K-{{ idx }}" class="form-control" value="{{ blocks.0.K_name }}_{{idx}}"/>
+    <div class="col-md-1">
+        <input id="input-K" name="input-K-{{idx}}" class="form-control" value="{{ blocks.0.K_name }}_{{idx}}"/>
     </div>
     <div class="col-md-1">
         <div class="row">
             <a id="delete" href="#" class="btn btn-danger"><i class="fa fa-minus"></i></a>
-            <a id="add-branch-button" href="#" class="btn btn-success"><i class="fa fa-plus"></i></a></div>
+            <a id="add-branch-button" href="#" class="btn btn-success"><i class="fa fa-plus"></i></a>
+        </div>
     </div>
     <div class="col-md-1">
-         <span id="help-label-{{idx}}" class="label label-default">
+         <span id="help-label" class="label label-default">
              {{ blocks.0.Help_ENG }}
          </span>
     </div>
