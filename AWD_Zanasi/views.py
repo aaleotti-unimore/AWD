@@ -210,12 +210,36 @@ def project_editor(request):
     return render(request, 'AWD_Zanasi/projects/newprojecteditor.html')
 
 
-from pprint import pprint
-
-
 def project_editor_response(request):
+    blocks = list(CommandBlock.objects.values("Sigla"))
     if request.method == 'POST':
-        for key, value in request.POST.items():
-            print(key, value)
-        return HttpResponse("OK")
-    return HttpResponse("Not Ok")
+        cmd = {key: value for key, value in request.POST.items() if
+               value and (not key == 'csrfmiddlewaretoken') and key.startswith("cmd")}
+        for key, value in cmd.iteritems():
+            split = key.split("_")
+
+            stri = ""
+            if split[1]=="select":
+                print(key+", " +value)
+                block= blocks[int(value)]["Sigla"]
+                print(block)
+                stri= ("%s, " %(block))
+                print(stri)
+            # if key.startswith
+
+        # for key, value in request.POST.items():
+        #     if value and (not key == 'csrfmiddlewaretoken'):
+        #         cmd_list = key.split("_")
+        #         if key[1] == "select":
+        #             for key, value in request()
+        #
+        # #
+        # print(gen)
+
+
+
+        messages.add_message(request, messages.SUCCESS, 'Project successfully created')
+        return redirect('index')
+
+    messages.add_message(request, messages.ERROR, 'Error Editing Project')
+    return redirect('editor')

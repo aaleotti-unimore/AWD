@@ -34,7 +34,7 @@ function handle_response(response) {
     var blocks_wrapper = $("#blocks-form");
     var add_block_button = $(".add_block_btn");
     var blks = response["blocks"];
-    var blocks_counter = 1;
+    var blocks_counter = 0;
     var context = {
         blocks: blks,
         idx: blocks_counter
@@ -57,9 +57,11 @@ function handle_response(response) {
 
 
     $(blocks_wrapper).on("click", "#delete", function (e) {
+        var blockrow = $(this).closest("#blockrow");
         e.preventDefault();
-        if (blocks_counter > 1) {
-            $(this).parent('div').parent('div').remove();
+        if (blocks_counter > 0) {
+            blockrow.nextUntil("#blockrow").addBack().remove();
+            // blockrow.empty();
             blocks_counter--;
         }
     });
@@ -67,10 +69,11 @@ function handle_response(response) {
     $(blocks_wrapper).on('change', "#cmd-select", function (event) {
         var block = blks[event.target.value];
         var rowblock =  $(this).parent('div').parent('div');
-        rowblock.find('#input-E').val(block["E_name"] + "_" + event.target.name);
-        rowblock.find('#input-F').val(block["F_name"] + "_" + event.target.name);
-        rowblock.find('#input-Q').val(block["Q_name"] + "_" + event.target.name);
-        rowblock.find('#input-K').val(block["K_name"] + "_" + event.target.name);
+        var index = event.target.getAttribute("tabindex");
+        rowblock.find('#input-E').val(block["E_name"] + "_" + index );
+        rowblock.find('#input-F').val(block["F_name"] + "_" + index);
+        rowblock.find('#input-Q').val(block["Q_name"] + "_" + index);
+        rowblock.find('#input-K').val(block["K_name"] + "_" + index);
         var help = block["Help_ENG"];
         if (lang === "it") {
             help = block["Help"];
@@ -84,7 +87,7 @@ function handle_response(response) {
     var sysvar_wrapper = $("#sysvar-form");
     var add_sysvar_button = $(".add_sysvar_btn");
     var sysvar = response["sysvar"];
-    var sysvar_counter = 1;
+    var sysvar_counter = 0;
     var sysvar_context = {
         sysvar: sysvar,
         idx: sysvar_counter
@@ -110,7 +113,7 @@ function handle_response(response) {
 
     $(sysvar_wrapper).on("click", "#delete-sysvar", function (e) {
         e.preventDefault();
-        if (sysvar_counter > 1) {
+        if (sysvar_counter > 0) {
             $(this).parent('div').parent('div').remove();
             sysvar_counter--;
         }
@@ -133,7 +136,7 @@ function handle_response(response) {
 
 
     var branch = response["branches"];
-    var branch_counter = 1;
+    var branch_counter = 0;
 
     $(document).on("click", "#add-branch-button", function (e) {
         e.preventDefault();
@@ -152,7 +155,7 @@ function handle_response(response) {
 
     $(document).on("click", "#delete-branch", function (e) {
         e.preventDefault();
-        if (branch_counter > 1) {
+        if (branch_counter > 0) {
             $(this).parent('div').parent('div').remove();
             branch_counter--;
         }
@@ -195,7 +198,6 @@ function coordinates() {
         }
     });
 }
-
 
 function submitall() {
     $('#allforms').submit();

@@ -1,6 +1,6 @@
 <div class="row" id="blockrow">
     <div class="col-md-1">
-        <select id="cmd-select" name="{{ idx }}" class="form-control">
+        <select id="cmd-select" name="cmd_select_{{ idx }}" tabindex="{{idx}}" class="form-control">
             <!--onchange="refresh(this)"-->
             {{#each blocks}}
                 <option value="{{@index}}">{{ this.Sigla }}</option>
@@ -10,21 +10,21 @@
     <div class="col-md-2">
         <div class="row">
 
-            <div class="col-md-6"><input placeholder="Node" name="input-node-1-{{ idx }}" class="form-control"/></div>
-            <div class="col-md-6"><input placeholder="Node" name="input-node-2-{{ idx }}" class="form-control"/></div>
+            <div class="col-md-6"><input placeholder="Node" name="cmd_node-1_{{ idx }}" class="form-control"/></div>
+            <div class="col-md-6"><input placeholder="Node" name="cmd_node-2_{{ idx }}" class="form-control"/></div>
         </div>
     </div>
     <div class="col-md-1">
-        <input id="input-E" name="input-E-{{idx}}" class="form-control" value="{{ blocks.0.E_name }}_{{idx}}"/>
+        <input id="input-E" name="cmd_input-E_{{idx}}" class="form-control" value="{{ blocks.0.E_name }}_{{idx}}"/>
     </div>
     <div class="col-md-1">
-        <input id="input-F" name="input-F-{{idx}}" class="form-control" value="{{ blocks.0.F_name }}_{{idx}}"/>
+        <input id="input-F" name="cmd_input-F_{{idx}}" class="form-control" value="{{ blocks.0.F_name }}_{{idx}}"/>
     </div>
     <div class="col-md-1">
-        <input id="input-Q" name="input-Q-{{idx}}" class="form-control" value="{{ blocks.0.Q_name }}_{{idx}}"/>
+        <input id="input-Q" name="cmd_input-Q_{{idx}}" class="form-control" value="{{ blocks.0.Q_name }}_{{idx}}"/>
     </div>
     <div class="col-md-1">
-        <input id="input-K" name="input-K-{{idx}}" class="form-control" value="{{ blocks.0.K_name }}_{{idx}}"/>
+        <input id="input-K" name="cmd_input-K_{{idx}}" class="form-control" value="{{ blocks.0.K_name }}_{{idx}}"/>
     </div>
     <div class="col-md-1">
         <div class="row">
