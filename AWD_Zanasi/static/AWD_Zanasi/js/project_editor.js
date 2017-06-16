@@ -68,9 +68,9 @@ function handle_response(response) {
 
     $(blocks_wrapper).on('change', "#cmd-select", function (event) {
         var block = blks[event.target.value];
-        var rowblock =  $(this).parent('div').parent('div');
+        var rowblock = $(this).parent('div').parent('div');
         var index = event.target.getAttribute("tabindex");
-        rowblock.find('#input-E').val(block["E_name"] + "_" + index );
+        rowblock.find('#input-E').val(block["E_name"] + "_" + index);
         rowblock.find('#input-F').val(block["F_name"] + "_" + index);
         rowblock.find('#input-Q').val(block["Q_name"] + "_" + index);
         rowblock.find('#input-K').val(block["K_name"] + "_" + index);
@@ -140,12 +140,14 @@ function handle_response(response) {
 
     $(document).on("click", "#add-branch-button", function (e) {
         e.preventDefault();
+        var block_n = $(this).attr("tabindex");
         if (branch_counter < max_fields) {
-            branch_counter++;
             var branch_context2 = {
                 branches: branch,
-                idx: branch_counter
+                idx: branch_counter,
+                block_n: block_n
             };
+            branch_counter++;
             var branch_template = Handlebars.compile($("#branch-template").html());
             var branch_html = branch_template(branch_context2);
             $(this).parent('div').parents('.row:first').after(branch_html);

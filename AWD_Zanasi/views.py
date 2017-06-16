@@ -212,31 +212,47 @@ def project_editor(request):
 
 def project_editor_response(request):
     blocks = list(CommandBlock.objects.values("Sigla"))
+    branches = list(CommandBranch.objects.values("Sigla"))
+    sysvar = list(CommandSystem.objects.values("Sigla"))
     if request.method == 'POST':
-        cmd = {key: value for key, value in request.POST.items() if
-               value and (not key == 'csrfmiddlewaretoken') and key.startswith("cmd")}
-        for key, value in cmd.iteritems():
-            split = key.split("_")
+        blk = {}  # blocks dictionary
+        brnch = {}  # branches dictionary
+        ssvr = {}  # sysvars dictionary
 
-            stri = ""
-            if split[1]=="select":
-                print(key+", " +value)
-                block= blocks[int(value)]["Sigla"]
-                print(block)
-                stri= ("%s, " %(block))
-                print(stri)
-            # if key.startswith
+        # commands dictionaries generation
+        for key, value in request.POST.items():
+            if value and (not key == 'csrfmiddlewaretoken'):
+                if key.startswith("cmd_select"):
+                    blk[key] = value
+                if key.startswith("branch_select"):
+                    brnch[key] = value
+                if key.startswith("sysvar_select"):
+                    ssvr[key] = value
 
-        # for key, value in request.POST.items():
-        #     if value and (not key == 'csrfmiddlewaretoken'):
-        #         cmd_list = key.split("_")
-        #         if key[1] == "select":
-        #             for key, value in request()
-        #
-        # #
-        # print(gen)
+        # blocks commands generation
+        for key, value in blk.iteritems():
+            type, attr, index = key.split("_")  # example cmd_select_1
+
+            # if it's one of the selected commands
+            # if attr == "select":
+            # gen = {k: v for k, v in blk.iteritems() if k.startswith("cmd") & k.endswith(index)}
+            # print(gen)
+            select = blocks[int(value)]['Sigla'] + ", "
+            nodes = request.POST['cmd_node-1_' + index] + ", " + request.POST['cmd_node-2_' + index] + ", "
+            k_n = "Kn, " + request.POST['cmd_input-K_' + index] + ", "
+            e_n = "En, " + request.POST['cmd_input-E_' + index] + ", "
+            f_n = "Fn, " + request.POST['cmd_input-F_' + index] + ", "
+            q_n = "Qn, " + request.POST['cmd_input-Q_' + index] + ", "
+            branches_str = ""
+            # branches
+            for key, value in brnch.iteritems():
+                type, attr, branch_index, block = key.split("_")
+                if block == index:
+                    branches_str += branches[int(value)]['Sigla'] + ", " + request.POST[
+                        "branch_range_" + branch_index + "_" + index] + ", "
 
 
+            print(select + nodes + k_n + e_n + f_n + q_n + branches_str)
 
         messages.add_message(request, messages.SUCCESS, 'Project successfully created')
         return redirect('index')
