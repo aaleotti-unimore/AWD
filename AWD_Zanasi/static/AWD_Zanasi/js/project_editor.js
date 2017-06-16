@@ -25,6 +25,18 @@ $(document).ready(function () {
         return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
     }
 
+    $(document).on("click", "#submitall", function (event) {
+        var empty = $(document).find("input").filter(function () {
+            return this.value === "";
+        });
+        if (empty.length) {
+            //At least one input is empty
+            alert("Please fill all the blank inputs")
+        } else {
+            $('#allforms').submit();
+        }
+    })
+
 });
 
 function handle_response(response) {
@@ -88,18 +100,11 @@ function handle_response(response) {
     var add_sysvar_button = $(".add_sysvar_btn");
     var sysvar = response["sysvar"];
     var sysvar_counter = 0;
-    var sysvar_context = {
-        sysvar: sysvar,
-        idx: sysvar_counter
-    };
-    var sysvar_template = Handlebars.compile($("#sysvar-template").html());
-    var sysvar_html = sysvar_template(sysvar_context);
-    sysvar_wrapper.append(sysvar_html);
 
     $(add_sysvar_button).click(function (e) {
         e.preventDefault();
+        $("#sysvar-table-titles").show();
         if (sysvar_counter < max_fields) {
-            sysvar_counter++;
             var sysvar_context2 = {
                 sysvar: sysvar,
                 idx: sysvar_counter
@@ -107,6 +112,7 @@ function handle_response(response) {
             var sysvar_template = Handlebars.compile($("#sysvar-template").html());
             var sysvar_html = sysvar_template(sysvar_context2);
             sysvar_wrapper.append(sysvar_html);
+            sysvar_counter++;
         }
     });
 
@@ -116,6 +122,9 @@ function handle_response(response) {
         if (sysvar_counter > 0) {
             $(this).parent('div').parent('div').remove();
             sysvar_counter--;
+        }
+        if (sysvar_counter == 0) {
+            $("#sysvar-table-titles").hide()
         }
     });
 
@@ -189,6 +198,7 @@ function coordinates() {
         e.preventDefault();
         if (coord_counter < 100) {
             coord_counter++;
+            coord_html = coord_template({idx: coord_counter});
             coord_wrapper.append(coord_html)
         }
     });
@@ -202,5 +212,14 @@ function coordinates() {
 }
 
 function submitall() {
-    $('#allforms').submit();
+    // var empty = $(document).find("input").filter(function () {
+    //     return this.value === "";
+    // });
+    // var empty = 0
+    // if (!empty) {
+    //     //At least one input is empty
+    alert("Please fill all the blank inputs")
+    // } else {
+    //     $('#allforms').submit();
+    // }
 }
