@@ -6,6 +6,7 @@ import logging
 
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
+from django.db import IntegrityError
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, HttpResponse
 
@@ -211,14 +212,18 @@ def project_editor(request):
 
 
 def project_editor_response(request):
-    blocks = list(CommandBlock.objects.values("Sigla"))
-    branches = list(CommandBranch.objects.values("Sigla"))
-    sysvar = list(CommandSystem.objects.values("Sigla"))
+    blocks_obj = list(CommandBlock.objects.values("Sigla"))
+    branches_obj = list(CommandBranch.objects.values("Sigla"))
+    sysvar_obj = list(CommandSystem.objects.values("Sigla"))
     if request.method == 'POST':
         blk = {}  # blocks dictionary
         brnch = {}  # branches dictionary
         ssvr = {}  # sysvars dictionary
         nds = {}  # nodes dictionary
+
+        blocks_str = ""
+        sysvar_str = ""
+        node_str = "*P"
 
         # commands dictionaries generation
         for key, value in request.POST.items():
@@ -235,41 +240,64 @@ def project_editor_response(request):
         # sysvars
         for key, value in ssvr.iteritems():
             type, attr, index = key.split("_")
-            sysvar_str = "**, %s, %s" % (str(sysvar[int(value)]['Sigla']), str(request.POST['sysvar_range_' + index]))
-            print(sysvar_str)
+            s_str = "\'**, %s, %s\'" % (
+                str(sysvar_obj[int(value)]['Sigla']), str(request.POST['sysvar_range_' + index]))
+            sysvar_str += s_str + "\n"
 
         # nodes
-        node_str = "*P, "
-
         for key, value in nds.iteritems():
             # esample  *P, A=(1+1i*1.5), 1=(2+1i*5), c=(-1+1i*3)
             type, attr, index = key.split("_")
-            node_str += "%s=(%s+1i*%s), " % (value, request.POST["coord_x_" + index], request.POST["coord_y_" + index])
+            node_str += ", %s=(%s+1i*%s)" % (value, request.POST["coord_x_" + index], request.POST["coord_y_" + index])
 
-        print(node_str)
+        node_str = "\'" + node_str + "\'\n"
 
         # blocks commands generation
         for key, value in blk.iteritems():
             type, attr, index = key.split("_")  # example cmd_select_1
+            k_n, q_n, e_n, f_n =  ["","","",""]
 
-            select = blocks[int(value)]['Sigla'] + ", "
-            nodes = request.POST['cmd_node-1_' + index] + ", " + request.POST['cmd_node-2_' + index] + ", "
-            k_n = "Kn, " + request.POST['cmd_input-K_' + index] + ", "
-            e_n = "En, " + request.POST['cmd_input-E_' + index] + ", "
-            f_n = "Fn, " + request.POST['cmd_input-F_' + index] + ", "
-            q_n = "Qn, " + request.POST['cmd_input-Q_' + index] + ", "
+            select = blocks_obj[int(value)]['Sigla'] + ", "
+            nodes = request.POST['cmd_node-1_' + index] + ", " + request.POST['cmd_node-2_' + index]
+            if request.POST['cmd_input-K_' + index]:
+                k_n = ", Kn, " + request.POST['cmd_input-K_' + index]
+
+            if request.POST['cmd_input-E_' + index]:
+                e_n = ", En, " + request.POST['cmd_input-E_' + index]
+
+            if request.POST['cmd_input-F_' + index]:
+                f_n = ", Fn, " + request.POST['cmd_input-F_' + index]
+
+            if request.POST['cmd_input-Q_' + index]:
+                q_n = ", Qn, " + request.POST['cmd_input-Q_' + index]
+
+
             branches_str = ""
             # branches
             for key, value in brnch.iteritems():
                 type, attr, branch_index, block = key.split("_")
                 if block == index:
-                    branches_str += branches[int(value)]['Sigla'] + ", " + request.POST[
-                        "branch_range_" + branch_index + "_" + index] + ", "
+                    branches_str += ", " + branches_obj[int(value)]['Sigla'] + ", " + request.POST[
+                        "branch_range_" + branch_index + "_" + index]
+            b_str = "\'" + (select + nodes + k_n + e_n + f_n + q_n + branches_str) + "\'"
+            blocks_str += b_str + "\n"
 
-            print(select + nodes + k_n + e_n + f_n + q_n + branches_str)
+        proj_str = sysvar_str + node_str + blocks_str
+        print proj_str
 
-        messages.add_message(request, messages.SUCCESS, 'Project successfully created')
-        return redirect('index')
+        new_project = Project(
+            name=request.POST['project-name'],
+            user=request.user,
+            matlab_file=ContentFile(proj_str, request.POST['project-name']+".txt"),
+            proj_desc=request.POST['project-desc'],
+        )
 
-    messages.add_message(request, messages.ERROR, 'Error Editing Project')
+        try:
+            new_project.save()
+            messages.add_message(request, messages.SUCCESS, 'Project successfully created')
+            return redirect('index')
+        except IntegrityError as e:
+            messages.add_message(request, messages.ERROR, 'Error Editing Project, Retry')
+            return redirect('editor')
+
     return redirect('editor')

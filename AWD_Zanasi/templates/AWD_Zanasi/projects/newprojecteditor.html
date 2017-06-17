@@ -32,6 +32,18 @@
         <form id="allforms" action="{% url 'editor_response' %}" method="POST">
             {% csrf_token %}
             <div class="row">
+                <div class="col-lg-5">
+                    <label for="project-name">Project Name</label><input class="form-control" name="project-name"
+                                                                         id="project-name"/>
+                    <p></p>
+                    <label for="project-desc">Project Description</label><textarea class="form-control"
+                                                                                   name="project-desc"
+                                                                                   id="project-desc"
+                                                                                   rows="3"></textarea>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
                 <div class="col-lg-1">
                     <button id="add_coord_btn" class="btn btn-success btn-sm"><i class="fa fa-plus"></i>&nbsp;Add Node
                     </button>
@@ -66,8 +78,8 @@
                         <div class="col-md-2"><h5>Nodes</h5></div>
                         <div class="col-md-1"><h5>Effort</h5></div>
                         <div class="col-md-1"><h5>Flow</h5></div>
-                        <div class="col-md-1"><h5>Internal</h5></div>
-                        <div class="col-md-1"><h5>K</h5></div>
+                        <div class="col-md-1"><h5>Internal Energy</h5></div>
+                        <div class="col-md-1"><h5>Internal Param</h5></div>
                     </div>
 
                 </div>
@@ -107,11 +119,8 @@
             </div>
             <p></p>
         </form>
-
         <hr>
-
         <!-- submit button -->
-
         <div class="row">
             <div class="col-lg-1">
                 <button id="submitall" class="btn btn-primary btn-sm">

@@ -26,12 +26,12 @@ $(document).ready(function () {
     }
 
     $(document).on("click", "#submitall", function (event) {
-        var empty = $(document).find("input").filter(function () {
+        var empty = $(document).find("input").not("#input-E, #input-F, #input-K, #input-Q").filter(function () {
             return this.value === "";
         });
         if (empty.length) {
             //At least one input is empty
-            alert("Please fill all the blank inputs")
+            alert("Please fill all the required inputs")
         } else {
             $('#allforms').submit();
         }
@@ -82,10 +82,10 @@ function handle_response(response) {
         var block = blks[event.target.value];
         var rowblock = $(this).parent('div').parent('div');
         var index = event.target.getAttribute("tabindex");
-        rowblock.find('#input-E').val(block["E_name"] + "_" + index);
-        rowblock.find('#input-F').val(block["F_name"] + "_" + index);
-        rowblock.find('#input-Q').val(block["Q_name"] + "_" + index);
-        rowblock.find('#input-K').val(block["K_name"] + "_" + index);
+        rowblock.find('#input-E').attr("placeholder", block["E_name"]);
+        rowblock.find('#input-F').attr("placeholder", block["F_name"]);
+        rowblock.find('#input-Q').attr("placeholder", block["Q_name"]);
+        rowblock.find('#input-K').attr("placeholder", block["K_name"]);
         var help = block["Help_ENG"];
         if (lang === "it") {
             help = block["Help"];
@@ -211,15 +211,3 @@ function coordinates() {
     });
 }
 
-function submitall() {
-    // var empty = $(document).find("input").filter(function () {
-    //     return this.value === "";
-    // });
-    // var empty = 0
-    // if (!empty) {
-    //     //At least one input is empty
-    alert("Please fill all the blank inputs")
-    // } else {
-    //     $('#allforms').submit();
-    // }
-}

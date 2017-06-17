@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from django.core.files.base import ContentFile
 
 from django.conf import settings
 from django.contrib.auth.models import User
@@ -17,6 +18,9 @@ class Project(models.Model):
     matlab_file = models.FileField(upload_to=user_directory_path)
     proj_desc = models.CharField(max_length=400, blank=True, null=True)
     launch_date = models.DateField(verbose_name='Launch Date', blank=True, null=True)
+
+    def save_text_file(self, content):
+        self.matlab_file = ContentFile(content)
 
     def display_source_file(self):
         with open(self.matlab_file.path) as fp:
