@@ -60,7 +60,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(default='project', max_length=200)),
-                ('matlab_file', models.FileField(upload_to=AWD_Zanasi.models.user_directory_path)),
+                ('matlab_file', models.FileField(upload_to=AWD_Zanasi.models.project_file_path)),
                 ('proj_desc', models.CharField(blank=True, max_length=400, null=True)),
                 ('launch_date', models.DateField(blank=True, null=True, verbose_name='Launch Date')),
                 ('user', models.ForeignKey(default='admin', on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),

@@ -10,6 +10,7 @@ from django.db import IntegrityError
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, HttpResponse
 
+from watchdog_handler import MyHandler
 from .forms import NewProjectForm, EditProjectForm, LoadCommandsListForm
 from .models import *
 
@@ -56,6 +57,10 @@ def project_results(request, project_id):
     if project_id:
         project = Project.objects.get(id=project_id)
         output = ProjectOutput.objects.filter(project=project)
+        outs = list(output)
+        for out in outs:
+            print("file output url: " + str(out))
+
         if project:
             return render(request, 'AWD_Zanasi/projects/projectresults.html',
                           {'project': project, 'project_output': output})
@@ -255,7 +260,7 @@ def project_editor_response(request):
         # blocks commands generation
         for key, value in blk.iteritems():
             type, attr, index = key.split("_")  # example cmd_select_1
-            k_n, q_n, e_n, f_n =  ["","","",""]
+            k_n, q_n, e_n, f_n = ["", "", "", ""]
 
             select = blocks_obj[int(value)]['Sigla'] + ", "
             nodes = request.POST['cmd_node-1_' + index] + ", " + request.POST['cmd_node-2_' + index]
@@ -270,7 +275,6 @@ def project_editor_response(request):
 
             if request.POST['cmd_input-Q_' + index]:
                 q_n = ", Qn, " + request.POST['cmd_input-Q_' + index]
-
 
             branches_str = ""
             # branches
@@ -288,7 +292,7 @@ def project_editor_response(request):
         new_project = Project(
             name=request.POST['project-name'],
             user=request.user,
-            matlab_file=ContentFile(proj_str, request.POST['project-name']+".txt"),
+            matlab_file=ContentFile(proj_str, request.POST['project-name'] + ".txt"),
             proj_desc=request.POST['project-desc'],
         )
 
@@ -301,3 +305,33 @@ def project_editor_response(request):
             return redirect('editor')
 
     return redirect('editor')
+
+
+def launch_project(request, project_id):
+    if project_id:
+        project = Project.objects.get(id=project_id)
+        messages.add_message(request, messages.SUCCESS, 'Project ' + project.name + ' launched')
+        from watchdog.observers import Observer
+        import time, os
+
+        filepath = os.path.dirname(project.matlab_file.name)
+
+        # observer = Observer()
+        observer = Observer()
+        observer.setName("obsv-"+project_id)
+        event_handler = MyHandler(observer, project)
+        path = settings.MEDIA_ROOT + "/" + filepath
+        print("path observed: " + path)
+
+        observer.schedule(event_handler, path=path, recursive=True)
+        observer.start()
+
+        time.sleep(15)
+        observer.stop()
+        observer.join()
+        if observer.is_alive:
+            print(observer.name + ": i'm still alive")
+
+        return redirect('index')
+
+    return redirect('index')

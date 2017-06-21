@@ -95,7 +95,7 @@
                             {% else %}
                                 <td>No Results</td>
                             {% endif %}
-                            <td><a class="btn btn-default btn-sm" role="button" href="#"><i class="fa fa-play"></i>
+                            <td><a class="btn btn-default btn-sm" role="button" href="{% url 'launch_project' project.id %}"><i class="fa fa-play"></i>
                                 Launch</a></td>
                             <td><a class="btn btn-default btn-sm" role="button"
                                    href="{% url 'edit_project' project.id %}"><i class="fa fa-edit"></i> Edit</a></td>
