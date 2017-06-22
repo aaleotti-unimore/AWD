@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 import csv
-import logging
+import logging.config
 
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
@@ -10,11 +10,11 @@ from django.db import IntegrityError
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, HttpResponse
 
-from watchdog_handler import MyHandler
+from watchdog_handler import watchdog
 from .forms import NewProjectForm, EditProjectForm, LoadCommandsListForm
 from .models import *
 
-# Create your views here.
+logging.config.fileConfig("AWD_Zanasi/configs/logging.conf")
 logger = logging.getLogger(__name__)
 
 
@@ -59,7 +59,7 @@ def project_results(request, project_id):
         output = ProjectOutput.objects.filter(project=project)
         outs = list(output)
         for out in outs:
-            print("file output url: " + str(out))
+            logger.debug("file output url: " + str(out))
 
         if project:
             return render(request, 'AWD_Zanasi/projects/projectresults.html',
@@ -287,7 +287,7 @@ def project_editor_response(request):
             blocks_str += b_str + "\n"
 
         proj_str = sysvar_str + node_str + blocks_str
-        print proj_str
+        logger.debug(proj_str)
 
         new_project = Project(
             name=request.POST['project-name'],
@@ -311,27 +311,8 @@ def launch_project(request, project_id):
     if project_id:
         project = Project.objects.get(id=project_id)
         messages.add_message(request, messages.SUCCESS, 'Project ' + project.name + ' launched')
-        from watchdog.observers import Observer
-        import time, os
 
-        filepath = os.path.dirname(project.matlab_file.name)
-
-        # observer = Observer()
-        observer = Observer()
-        observer.setName("obsv-"+project_id)
-        event_handler = MyHandler(observer, project)
-        path = settings.MEDIA_ROOT + "/" + filepath
-        print("path observed: " + path)
-
-        observer.schedule(event_handler, path=path, recursive=True)
-        observer.start()
-
-        time.sleep(15)
-        observer.stop()
-        observer.join()
-        if observer.is_alive:
-            print(observer.name + ": i'm still alive")
-
+        watchdog(project)
         return redirect('index')
 
     return redirect('index')
