@@ -34,7 +34,7 @@
                 {% if out.image_file %}
                     <div class="col-xs-6 col-md-6">
                         <div class="thumbnail">
-                            <img class="img-responsive watch-right" alt="not found" src="{{ out.image_file.url }}"/>
+                            <img class="img-responsive watch-right" alt="not found" src="{{ out.image_file.url }}?v={{ project.launch_date }}"/>
                             <div class="caption">
                                 <small><a href="{{ out.image_file.url }}"><i class="fa fa-download"
                                                                              aria-hidden="true"></i>

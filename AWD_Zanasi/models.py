@@ -23,7 +23,8 @@ class Project(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, default='admin')
     matlab_file = models.FileField(upload_to=matlab_file_path)
     proj_desc = models.CharField(max_length=400, blank=True, null=True)
-    launch_date = models.DateField(verbose_name='Launch Date', blank=True, null=True)
+    launch_date = models.DateTimeField(verbose_name='Launch Date', blank=True,
+                                       null=True)
 
     def save_text_file(self, content):
         self.matlab_file = ContentFile(content)
@@ -57,7 +58,6 @@ class ProjectOutput(models.Model):
     def save_image(self, filename, filepath):
         with open(filepath, 'rb') as doc_file:
             self.image_file.save(filename, File(doc_file), save=True)
-
 
     def save_text(self, filename, filepath):
         with open(filepath, 'rb') as doc_file:

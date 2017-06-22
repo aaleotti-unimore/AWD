@@ -127,7 +127,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
 # auth
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = 'index'
@@ -146,3 +145,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 # CRISPY_FAIL_SILENTLY = not DEBUG
 
+# logging
+LOGGING_CONFIG = None
+import logging.config
+logging.config.fileConfig("AWD_Zanasi/configs/logging.conf")

@@ -14,7 +14,6 @@ from watchdog_handler import watchdog
 from .forms import NewProjectForm, EditProjectForm, LoadCommandsListForm
 from .models import *
 
-logging.config.fileConfig("AWD_Zanasi/configs/logging.conf")
 logger = logging.getLogger(__name__)
 
 
@@ -310,9 +309,8 @@ def project_editor_response(request):
 def launch_project(request, project_id):
     if project_id:
         project = Project.objects.get(id=project_id)
-        messages.add_message(request, messages.SUCCESS, 'Project ' + project.name + ' launched')
-
         watchdog(project)
+        messages.add_message(request, messages.SUCCESS, 'Project ' + project.name + ': elaboration complete')
         return redirect('index')
 
     return redirect('index')

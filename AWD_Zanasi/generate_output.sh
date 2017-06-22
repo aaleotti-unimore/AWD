@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 PATH=$1
 
-cp -rf "/home/archeffect/out/" "/home/archeffect/PycharmProjects/media/user_16/Schema Elettrico Complesso/"
+/usr/bin/cp -rf "/home/archeffect/out/" $PATH
 echo "out moved to $PATH"
