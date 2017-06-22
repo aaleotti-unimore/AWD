@@ -25,6 +25,7 @@ class Project(models.Model):
     proj_desc = models.CharField(max_length=400, blank=True, null=True)
     launch_date = models.DateTimeField(verbose_name='Launch Date', blank=True,
                                        null=True)
+    is_example = models.BooleanField(default=False)
 
     def save_text_file(self, content):
         self.matlab_file = ContentFile(content)

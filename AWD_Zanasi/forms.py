@@ -39,9 +39,16 @@ class NewProjectForm(forms.Form):
 
 
 class EditProjectForm(forms.Form):
-    proj_desc = forms.CharField(
+    proj_name = forms.CharField(required=True, label="Project Name")
+    proj_code = forms.CharField(
         widget=forms.Textarea(attrs={'cols': 30, 'rows': 20}),
         label='Project Code',
+        required=False,
+        # strip=False
+    )
+    proj_desc = forms.CharField(
+        widget=forms.Textarea(attrs={'cols': 30, 'rows': 3}),
+        label='Project Description',
         required=False,
         # strip=False
     )
@@ -54,6 +61,8 @@ class EditProjectForm(forms.Form):
     helper.label_class = 'col-lg-2'
     helper.field_class = 'col-lg-8'
     helper.layout = Layout(
+        'proj_name',
+        'proj_code',
         'proj_desc',
         FormActions(
             Submit('save_changes', 'Save changes', css_class="btn-primary"),

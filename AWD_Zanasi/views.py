@@ -3,12 +3,14 @@ from __future__ import unicode_literals
 
 import csv
 import logging.config
+import codecs
 
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
 from django.db import IntegrityError
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, HttpResponse
+from django.contrib.auth.decorators import login_required
 
 from watchdog_handler import watchdog
 from .forms import NewProjectForm, EditProjectForm, LoadCommandsListForm
@@ -34,6 +36,7 @@ def index(request):
     return render(request, 'AWD_Zanasi/home.html')
 
 
+@login_required
 def create_project(request):
     if request.method == 'POST':
         form = NewProjectForm(request.POST, request.FILES)
@@ -46,55 +49,78 @@ def create_project(request):
             )
             new_project.save()
             return redirect('index')
+        else:
+            messages.add_message(request, messages.ERROR, "Invalid Form")
     else:
         HttpResponse(request, 'ERROR')
 
     return render(request, 'AWD_Zanasi/projects/createproject.html', {'form': NewProjectForm()})
 
 
+@login_required
 def project_results(request, project_id):
     if project_id:
-        project = Project.objects.get(id=project_id)
-        output = ProjectOutput.objects.filter(project=project)
-        outs = list(output)
-        for out in outs:
-            logger.debug("file output url: " + str(out))
+        try:
+            project = Project.objects.get(id=project_id)
 
-        if project:
-            return render(request, 'AWD_Zanasi/projects/projectresults.html',
-                          {'project': project, 'project_output': output})
+            output = ProjectOutput.objects.filter(project=project)
+            outs = list(output)
+
+            [logger.debug("file output url: " + str(out)) for out in outs if settings.DEBUG]
+
+            if check_encoding(settings.MEDIA_ROOT + "/" + project.matlab_file.name):
+                return render(request, 'AWD_Zanasi/projects/projectresults.html',
+                              {'project': project, 'project_output': output})
+            else:
+                messages.add_message(request, messages.ERROR, 'Error Opening project file: bad encoding')
+        except Project.DoesNotExist:
+            logger.error("Project " + project_id + " does not exists")
+            messages.add_message(request, messages.ERROR, 'Project ID not found')
+
     return redirect('index')
 
 
+@login_required
 def edit_project(request, project_id):
-    if project_id:
+    try:
         project = Project.objects.get(id=project_id)
+        filename = project.matlab_file.path
+
+        if not check_encoding(filename):
+            messages.add_message(request, messages.ERROR, "Error opening project: Bad Encoding")
+            return redirect('index')
 
         if request.method == 'POST':
             form = EditProjectForm(request.POST)
+
             if form.is_valid():
-                filename = project.matlab_file.path
 
                 with open(filename, 'r+') as f:
                     f.seek(0)
-                    f.write(form.cleaned_data['proj_desc'])
+                    f.write(form.cleaned_data['proj_code'])
                     f.truncate()
 
+                project.name = form.cleaned_data['proj_name']
+                project.proj_desc = form.cleaned_data['proj_desc']
                 project.save()
                 messages.add_message(request, messages.SUCCESS, 'Project successfully edited')
                 return redirect('index')
             else:
-                messages.add_message(request, messages.ERROR, 'Error Editing Project')
+                messages.add_message(request, messages.ERROR, 'Error Editing Project: unable to open project file')
                 return redirect('edit_project', project_id)
 
-        if project:
-            form = EditProjectForm(initial={'proj_desc': project.display_source_file()})
-            return render(request, 'AWD_Zanasi/projects/editproject.html',
-                          {'project': project, 'form': form})
+        form = EditProjectForm(initial={'proj_name': project.name, 'proj_code': project.display_source_file(),
+                                        'proj_desc': project.proj_desc})
+        return render(request, 'AWD_Zanasi/projects/editproject.html',
+                      {'project': project, 'form': form})
+
+    except Project.DoesNotExist:
+        messages.add_message(request, messages.ERROR, "Project ID not found")
 
     return redirect('index')
 
 
+@login_required
 def delete_project(request, project_id):
     if request.method == 'POST':
         if project_id:
@@ -205,6 +231,7 @@ def help_page(request):
                    "system": system})
 
 
+@login_required
 def project_editor(request):
     blocks = CommandBlock.objects.values("Sigla", "E_name", "K_name", "Q_name", "F_name", "Help", "Help_ENG")
     system = CommandSystem.objects.values("Nome", "Range", "Help_ENG", "Help")
@@ -215,6 +242,7 @@ def project_editor(request):
     return render(request, 'AWD_Zanasi/projects/newprojecteditor.html')
 
 
+@login_required
 def project_editor_response(request):
     blocks_obj = list(CommandBlock.objects.values("Sigla"))
     branches_obj = list(CommandBranch.objects.values("Sigla"))
@@ -306,6 +334,7 @@ def project_editor_response(request):
     return redirect('editor')
 
 
+@login_required
 def launch_project(request, project_id):
     if project_id:
         project = Project.objects.get(id=project_id)
@@ -314,3 +343,21 @@ def launch_project(request, project_id):
         return redirect('index')
 
     return redirect('index')
+
+
+def check_encoding(filename):
+    try:
+        f = codecs.open(filename, encoding='utf-8', errors='strict')
+        for line in f:
+            pass
+        logger.debug("Valid utf-8")
+        return True
+    except UnicodeDecodeError:
+        logger.error("invalid utf-8")
+        return False
+
+
+@login_required
+def examples(request):
+    projects = Project.objects.filter(is_example=True)
+    return render(request, 'AWD_Zanasi/examples.html', {'projects': projects})

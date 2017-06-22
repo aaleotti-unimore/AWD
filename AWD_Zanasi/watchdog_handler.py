@@ -3,6 +3,7 @@ from datetime import datetime
 from watchdog.events import FileSystemEventHandler
 from .models import *
 from django.utils import timezone
+import subprocess
 
 logger = logging.getLogger(__name__)
 
@@ -17,18 +18,32 @@ def watchdog(project):
     ALIVE = True
     filepath = os.path.dirname(project.matlab_file.name)
 
-    # observer = Observer()
     observer = Observer()
     observer.setName("obsv-" + str(project.id))
     event_handler = MyHandler(project)
+
     path = settings.MEDIA_ROOT + "/" + filepath
-    import subprocess
     logger.debug("path observed: " + path)
 
     observer.schedule(event_handler, path=path, recursive=True)
     observer.start()
     time.sleep(1)
-    subprocess.call(['AWD_Zanasi/generate_output.sh', path])
+
+    #### calling a test script
+    if settings.DEBUG:
+
+        ## get input ##
+        myfile = path + "/out/.done"
+
+        ## try to delete file ##
+        try:
+            if os.path.isfile(myfile):
+                os.remove(myfile)
+                logger.debug("removed " + myfile)
+        except OSError, e:  ## if failed, report it back to the user ##
+            logger.exception("Error: %s - %s." % (e.filename, e.strerror))
+
+        subprocess.call(['AWD_Zanasi/generate_output.sh', path])
 
     i = 0
     while ALIVE:
@@ -64,7 +79,6 @@ class MyHandler(FileSystemEventHandler):
 
         if event.src_path.endswith(".txt"):
             root, text_file_path = event.src_path.split(settings.MEDIA_ROOT + "/")
-            logger.debug("root " + root)
             logger.debug("out file path " + text_file_path)
 
             out, created = ProjectOutput.objects.get_or_create(project=self.project, text_file=text_file_path)
