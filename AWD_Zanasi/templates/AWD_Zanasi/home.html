@@ -136,9 +136,10 @@
 {% block javascript %}
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#launchproj').click(function () {
-                alert('Sign new href executed.');
+            $(document).on("click", "#launchproj", function () {
+                alert("launched project")
             });
+
         });
     </script>
 {% endblock %}

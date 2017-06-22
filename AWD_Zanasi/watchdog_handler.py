@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 from watchdog.observers import Observer
 import time, os
 
-MAXTIME = 15  # timeout
+MAXTIME = 45  # timeout
 
 
 def watchdog(project):
