@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+"""
+Views Module
+"""
 from __future__ import unicode_literals
 
 import csv
@@ -20,6 +23,11 @@ logger = logging.getLogger(__name__)
 
 
 def index(request):
+    """
+    Index page. request if a user is authenticated and prompts him to login. 
+    If the user is already signed shows the home page containing all the users' projects 
+    """
+
     if request.user.is_authenticated:
         if request.user.is_superuser:
             projects = Project.objects.all()
@@ -38,6 +46,12 @@ def index(request):
 
 @login_required
 def create_project(request):
+    """
+    View for Create Project page. Accepts a POST request containing the project name, description and project .txt files. 
+    The Form is validated by Django Forms before assignment then a new project is created with those informations.
+    A success message is showed to the user after a new project is saved and the user redirected to the index page.
+    
+    """
     if request.method == 'POST':
         form = NewProjectForm(request.POST, request.FILES)
         if form.is_valid():
@@ -54,11 +68,18 @@ def create_project(request):
     else:
         HttpResponse(request, 'ERROR')
 
-    return render(request, 'AWD_Zanasi/projects/createproject.html', {'form': NewProjectForm()})
+    return render(request, 'AWD_Zanasi/projects/create_project.html', {'form': NewProjectForm()})
 
 
 @login_required
 def project_results(request, project_id):
+    """
+    Renders a :model:'AWD_Zanasi.Project' with his results files. 
+    if the files are not utf-8 encoded, the function returns an error message and redirects to index page
+    :param request: http request
+    :param project_id: project id
+    :return: renders :template:'AWD_Zanasi/projects/project_results.html' if there are no errors, otherwise :template:`AWD_Zanasi/home.html'`
+    """
     if project_id:
         try:
             project = Project.objects.get(id=project_id)
@@ -68,8 +89,8 @@ def project_results(request, project_id):
 
             [logger.debug("file output url: " + str(out)) for out in outs if settings.DEBUG]
 
-            if check_encoding(settings.MEDIA_ROOT + "/" + project.matlab_file.name):
-                return render(request, 'AWD_Zanasi/projects/projectresults.html',
+            if __check_encoding(settings.MEDIA_ROOT + "/" + project.matlab_file.name):
+                return render(request, 'AWD_Zanasi/projects/project_results.html',
                               {'project': project, 'project_output': output})
             else:
                 messages.add_message(request, messages.ERROR, 'Error Opening project file: bad encoding')
@@ -82,11 +103,22 @@ def project_results(request, project_id):
 
 @login_required
 def edit_project(request, project_id):
+    """
+    Edit project page renders :template:`AWD_Zanasi/projects/edit_project.html`. 
+    if the page receives a POST request containing the edited code, saves the file to its :model:'AWD_Zanasi.Project' and redirects to index.
+    
+    if the files are not utf-8 encoded, the function returns an error message and redirects to index page
+
+    
+    :param request: http request
+    :param project_id: project id
+    :return: 
+    """
     try:
         project = Project.objects.get(id=project_id)
         filename = project.matlab_file.path
 
-        if not check_encoding(filename):
+        if not __check_encoding(filename):
             messages.add_message(request, messages.ERROR, "Error opening project: Bad Encoding")
             return redirect('index')
 
@@ -111,7 +143,7 @@ def edit_project(request, project_id):
 
         form = EditProjectForm(initial={'proj_name': project.name, 'proj_code': project.display_source_file(),
                                         'proj_desc': project.proj_desc})
-        return render(request, 'AWD_Zanasi/projects/editproject.html',
+        return render(request, 'AWD_Zanasi/projects/edit_project.html',
                       {'project': project, 'form': form})
 
     except Project.DoesNotExist:
@@ -122,6 +154,12 @@ def edit_project(request, project_id):
 
 @login_required
 def delete_project(request, project_id):
+    """
+    receives a project delete requst from the index page "delete" button. if the project id exists, deletes it
+    :param request: HTTP request
+    :param project_id: project ID
+    :return: redirects to index
+    """
     if request.method == 'POST':
         if project_id:
             project = Project.objects.get(id=project_id)
@@ -139,6 +177,14 @@ def delete_project(request, project_id):
 # noinspection PyCompatibility
 @user_passes_test(lambda u: u.is_superuser)
 def update_commands(request):
+    """
+    Admin page only. 
+    Used to update POG commands to the database.
+    the function accepts a POST request containing CSV files of POG commands. The files are read, converted into dictionaries and saved to database
+    
+    :param request: http request
+    :return: renders :template:'AWD_Zanasi.updatecommands.html'
+    """
     cmd_list = []
     form = LoadCommandsListForm()
     if request.method == 'POST':
@@ -221,6 +267,12 @@ def update_commands(request):
 
 
 def help_page(request):
+    """
+    Help Page
+    Renders all three POG command lists
+    :param request: HTTP request
+    :return: renders :template:'AWD_Zanasi.help.html'
+    """
     blocks = CommandBlock.objects.all()
     system = CommandSystem.objects.all()
     branches = CommandBranch.objects.all()
@@ -232,32 +284,48 @@ def help_page(request):
 
 
 @login_required
-def project_editor(request):
+def project_generator(request):
+    """
+    Renders the project generator page. accessed by "Create Project" menu
+    :param request: HTTP Request
+    :return: renders :template:'AWD_Zanasi/projects/project_generator.html'
+    """
     blocks = CommandBlock.objects.values("Sigla", "E_name", "K_name", "Q_name", "F_name", "Help", "Help_ENG")
     system = CommandSystem.objects.values("Nome", "Range", "Help_ENG", "Help")
     branches = CommandBranch.objects.values("Nome", "Range", "Help_ENG", "Help")
     if request.method == 'POST':
         return JsonResponse({'blocks': list(blocks), 'sysvar': list(system), "branches": list(branches)})
 
-    return render(request, 'AWD_Zanasi/projects/newprojecteditor.html')
+    return render(request, 'AWD_Zanasi/projects/project_generator.html')
 
 
 @login_required
-def project_editor_response(request):
+def project_generator_handler(request):
+    """
+    Handles the request of a new project from the Projet generator page.
+    Reads a dictionary from the request.POST objects and converts it in a POG modeler code string saved into a Project file.
+    The request.POST dictionary is read and divided into different dictionaries meaning the different parts of the POG code. 
+    First are defined the system variables ( CommandSystem ), prefixed by "**" in the POG Code and wrote into a string one line per System command ( named sysvar in this code)
+    Second are defined the nodes which every block is defined (prefixed by the "*P" string )
+    Third are defined the Blocks with their nodes, then the K,Q,F,E variable names and finally the CommandBranch strings.
+    
+    :param request: 
+    :return: 
+    """
     blocks_obj = list(CommandBlock.objects.values("Sigla"))
     branches_obj = list(CommandBranch.objects.values("Sigla"))
     sysvar_obj = list(CommandSystem.objects.values("Sigla"))
     if request.method == 'POST':
-        blk = {}  # blocks dictionary
-        brnch = {}  # branches dictionary
-        ssvr = {}  # sysvars dictionary
-        nds = {}  # nodes dictionary
+        blk = {}  # blocks dictionary - CommandBlock model
+        brnch = {}  # branches dictionary - CommandBranch model
+        ssvr = {}  # sysvars dictionary - CommandSystem models
+        nds = {}  # nodes dictionary - nodes for the CommandBlock items
 
         blocks_str = ""
         sysvar_str = ""
         node_str = "*P"
 
-        # commands dictionaries generation
+        # Command dictionaries generation. Checks the prefix of every dictionary entry, dividing it into different dictionaries
         for key, value in request.POST.items():
             if value and (not key == 'csrfmiddlewaretoken'):
                 if key.startswith("cmd_select"):
@@ -269,28 +337,34 @@ def project_editor_response(request):
                 if key.startswith("coord_name"):
                     nds[key] = value
 
-        # sysvars
+        # Command System objects
         for key, value in ssvr.iteritems():
             type, attr, index = key.split("_")
             s_str = "\'**, %s, %s\'" % (
                 str(sysvar_obj[int(value)]['Sigla']), str(request.POST['sysvar_range_' + index]))
             sysvar_str += s_str + "\n"
 
-        # nodes
+        # Nodes string generation
         for key, value in nds.iteritems():
-            # esample  *P, A=(1+1i*1.5), 1=(2+1i*5), c=(-1+1i*3)
-            type, attr, index = key.split("_")
+            type, attr, index = key.split("_")  # example  *P, A=(1+1i*1.5), 1=(2+1i*5), c=(-1+1i*3)
             node_str += ", %s=(%s+1i*%s)" % (value, request.POST["coord_x_" + index], request.POST["coord_y_" + index])
 
         node_str = "\'" + node_str + "\'\n"
 
-        # blocks commands generation
+        # CommandBlocks generation
         for key, value in blk.iteritems():
             type, attr, index = key.split("_")  # example cmd_select_1
+
+            # block variables names. corresponding to E_name, K_name, Q_name, F_name
             k_n, q_n, e_n, f_n = ["", "", "", ""]
 
+            # Sigla value of a CommandBlock
             select = blocks_obj[int(value)]['Sigla'] + ", "
+
+            # Nodes of a CommandBlock
             nodes = request.POST['cmd_node-1_' + index] + ", " + request.POST['cmd_node-2_' + index]
+
+            # Checking if E_name, K_name, Q_name, F_name are present
             if request.POST['cmd_input-K_' + index]:
                 k_n = ", Kn, " + request.POST['cmd_input-K_' + index]
 
@@ -302,18 +376,21 @@ def project_editor_response(request):
 
             if request.POST['cmd_input-Q_' + index]:
                 q_n = ", Qn, " + request.POST['cmd_input-Q_' + index]
+            # ----- End variables definition
 
+            # Branches attached to a CommandBlock
             branches_str = ""
-            # branches
             for key, value in brnch.iteritems():
                 type, attr, branch_index, block = key.split("_")
                 if block == index:
                     branches_str += ", " + branches_obj[int(value)]['Sigla'] + ", " + request.POST[
                         "branch_range_" + branch_index + "_" + index]
-            b_str = "\'" + (select + nodes + k_n + e_n + f_n + q_n + branches_str) + "\'"
-            blocks_str += b_str + "\n"
+            # ----- End Branches definition
 
-        proj_str = sysvar_str + node_str + blocks_str
+            b_str = "\'" + (select + nodes + k_n + e_n + f_n + q_n + branches_str) + "\'"  # single block line
+            blocks_str += b_str + "\n"  # multipe blocks string
+
+        proj_str = sysvar_str + node_str + blocks_str  # project code string
         logger.debug(proj_str)
 
         new_project = Project(
@@ -336,6 +413,13 @@ def project_editor_response(request):
 
 @login_required
 def launch_project(request, project_id):
+    """
+    Responds to a projects execution request
+    Calls the watchdog function from watchdog_handler.py to handle the matlab execution
+    :param request: HTTP Request
+    :param project_id: Project Id
+    :return: Renders Index with a success message when the elaboration is finished 
+    """
     if project_id:
         project = Project.objects.get(id=project_id)
         watchdog(project)
@@ -345,7 +429,12 @@ def launch_project(request, project_id):
     return redirect('index')
 
 
-def check_encoding(filename):
+def __check_encoding(filename):
+    """
+    Private function, check if the txt file is utf-8 encoded. prevents rendering errors
+    :param filename: txt file
+    :return: returns a boolean  for success or fail
+    """
     try:
         f = codecs.open(filename, encoding='utf-8', errors='strict')
         for line in f:
@@ -359,5 +448,10 @@ def check_encoding(filename):
 
 @login_required
 def examples(request):
+    """
+    Renders the example page
+    :param request: HTTP Request
+    :return: renders the Example Page
+    """
     projects = Project.objects.filter(is_example=True)
     return render(request, 'AWD_Zanasi/examples.html', {'projects': projects})

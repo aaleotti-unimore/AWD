@@ -6,6 +6,11 @@ from django import forms
 
 
 class NewProjectForm(forms.Form):
+    """
+    Crispy Forms object for a new :model:`AWD_Zanasi.Project` form. The helper object defines the graphical layout of the form.
+    Used inside  :template:`AWD_Zanasi/projects/create_project.html`
+    """
+
     name = forms.CharField(
         label='Project Name',
         max_length=200,
@@ -39,6 +44,10 @@ class NewProjectForm(forms.Form):
 
 
 class EditProjectForm(forms.Form):
+    """
+    Crispy Forms object to edit a :model:`AWD_Zanasi.Project`. The helper object defines the graphical layout of the form
+    Used inside  :template:`AWD_Zanasi/projects/edit_project.html`
+    """
     proj_name = forms.CharField(required=True, label="Project Name")
     proj_code = forms.CharField(
         widget=forms.Textarea(attrs={'cols': 30, 'rows': 20}),
@@ -72,6 +81,10 @@ class EditProjectForm(forms.Form):
 
 
 class LoadCommandsListForm(forms.Form):
+    """
+     Crispy Forms object for to upade :model:`AWD_Zanasi.Command` . The helper object defines the graphical layout of the form.
+     Used inside  :template:`AWD_Zanasi/updatecommands.html`
+     """
     blocks_list = forms.FileField(
         label="Blocks command List",
         required=False,

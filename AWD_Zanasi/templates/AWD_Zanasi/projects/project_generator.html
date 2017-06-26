@@ -29,7 +29,7 @@
             </ul>
         {% endif %}
         <!-- coordinates -->
-        <form id="allforms" action="{% url 'editor_response' %}" method="POST">
+        <form id="allforms" action="{% url 'generator_response' %}" method="POST">
             {% csrf_token %}
             <div class="row">
                 <div class="col-lg-5">
@@ -137,6 +137,7 @@
     {% load static %}
     {% csrf_token %}
     <script type="text/x-handlebars-template" id="coord-template">
+        {#        Template for a the coordinate form element the idx suffix defines the different iterations #}
         {% verbatim %}
             <p></p>
 
@@ -207,6 +208,6 @@
         {% endverbatim %}
     </script>
     <script type="text/javascript" src="{% static "AWD_Zanasi/js/editor_block_template.js" %}"></script>
-    <script type="text/javascript" src="{% static "AWD_Zanasi/js/project_editor.js" %}"></script>
+    <script type="text/javascript" src="{% static "AWD_Zanasi/js/project_generator.js" %}"></script>
 {% endblock %}
 
