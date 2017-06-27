@@ -4,12 +4,9 @@
 
 # IntelliJ project files
 .idea
-*.iml
-out
 gen
 
 /AWD_Zanasi/media/matlab_projects
-/.idea/
 /media/
 /db.sqlite3
 /AWD_Zanasi/migrations/

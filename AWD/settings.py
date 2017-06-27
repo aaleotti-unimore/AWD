@@ -146,6 +146,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 # CRISPY_FAIL_SILENTLY = not DEBUG
 
 # logging
-LOGGING_CONFIG = None
-import logging.config
-logging.config.fileConfig("AWD_Zanasi/configs/logging.conf")
+# LOGGING_CONFIG = None
+# import logging.config
+# logging.config.fileConfig("AWD_Zanasi/configs/logging.conf")
