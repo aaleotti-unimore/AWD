@@ -1,0 +1,155 @@
+{% extends "AWD_Zanasi/base.html" %}
+{% block container %}
+    {% load i18n %}
+    {% get_current_language as LANGUAGE_CODE %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Page Heading -->
+            <div class="col-lg-12">
+                <h3 class="page-header">
+                    Manuale
+                </h3>
+                <p>
+                    Pagina di manuale per le principali funzioni del sito
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>
+                    Home
+                </h4>
+                <p>
+                    Pagina principale del sito, mostra una panoramica dei progetti per ogni utente (l'admin li
+                    visualizzerà tutti, in ordine di inserimento). Sono presenti 5 Bottoni funzione: </p>
+
+                <ul>
+                    <li>Description: mostra una descrizione del progetto, inserita da utente</li>
+                    <li>Results: Mostra una pagina con i risultati elaborati da Matlabl assieme al codice sorgente del
+                        progetto
+                    </li>
+                    <li>Launch: lancia un progetto, lasciando in attesa l'utente fino a quando non è completato (o per
+                        un massimo di {{ WATCHDOG_TIMEOUT }} secondi
+                    </li>
+                    <li>Edit: Permette di modificare nome, descrizione e codice di un progetto</li>
+                    <li>Delete: Permette di cancellare un progetto ed i suoi risultati. i files rimarranno nelle
+                        cartelle in cui sono stati salvati: {{ MEDIA_ROOT }}</li>
+                </ul>
+                <p>Dal menu contestuale è possibile accedere ad ulteriori funzioni, spiegate di seguito.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>
+                    Menu Projects: Create
+                </h4>
+                <p>
+                    Pagina di creazione progetto. è possibile accedere all'editor progetti oppure inserire direttamente
+                    un file .txt contenente il codice per completare immediatamente la creazione
+                </p>
+                <h4>
+                    Editor progetti
+                </h4>
+                <p>Permette di creare in maniera user-friendly un progetto. è possibile definire</p>
+                <ul>
+                    <li>Nodi tra cui ogni blocco viene definito indicando nome e coordinate cartesiane del nodo.
+                    </li>
+                    <li>Blocchi del modello, ciascuno deve essere definito tra due nodi indicati precedentemente.
+                        Inoltre è possibile dare un nome personalizzato ad ognuna delle 4 variabili interne e indicare
+                        delle opzioni personali per ogni blocco premendo il tasto + a fianco di ogni riga di blocco.
+                    </li>
+                    <li>Variabil di Sistema che infuluenzeranno l'intero progetto. nel testo placeholder è indicato il
+                        range in cui le variabili possono essere definite. uscire dal range causerà errore nei risultati
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>
+                    Menu Projects: Commands List
+                </h4>
+                <p> Lista di possibili comandi da inserire nel codice con la loro descrizione</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>
+                    Menu Projects: Examples
+                </h4>
+                <p> Lista di progetti esempio, contenenti codice e risultati elaborati corretti. da usare come
+                    riferimento.</p>
+                {% if request.user.is_superuser %}
+                    <pre style="color:red">
+                        ADMIN: Per inserire un esempio, inserire un nuovo progetto, successivamente dalla pagina admin, aprire
+                        la pagina di modifica del progetto, aggiungere la spunta alla voce "is_example" e salvare.
+                    </pre>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>
+                    Menu Utente: Profile
+                </h4>
+                <p> pagina per la modifica della password.</p>
+            </div>
+        </div>
+        {% if request.user.is_superuser %}
+            <hr>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4 style="color:red">
+                        Manuale Admin
+                    </h4>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4>
+                        Menu Utente: Update Commands
+                    </h4>
+                    <p> Pagina per l'aggiornamento dei comandi. I file vanno caricati nelle corrette voci di input. i
+                        file devono contere obbligatoriamente i seguenti campi, anche vuoti:</p>
+                    <ul>
+                        <li>Branch - Rami: Nome, Value, Sigla, StrNum, Vincoli, Range, Type, Help, Help_ENG</li>
+                        <li>Block - Blocchi: Sigla, Tipo_di_Ramo, Diretto, Out, E_name, K_name, Q_name, F_name, Help,
+                            Comandi, Help_ENG
+                        </li>
+                        <li>System - Sistema: Nome, Value, Sigla, StrNum, Vincoli, Range, Type, Help, Help_ENG</li>
+                    </ul>
+                    <p>Una volta caricati saranno disponibili nell'Editor progetti e nella Command List dal menu
+                        Projects</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4>
+                        Menu Utente: Admin
+                    </h4>
+                    <p> Pagia di amministrazione del database. Da qui è possibile fare tutte le modifiche manuali alle
+                        voci presenti nel database:</p>
+                    <ul>
+                        <li>Gruppi: ignorare, non utilizzato dal sito</li>
+                        <li>Utenti: Modifiche agli utenti.</li>
+                        <li>Project Outputs: Pagina di modifica degli output progetto. ogni voce corrisponde ad un file
+                            di output i quasi sono assegnati ad un solo progetto.
+                            All'interno è possibile modificare i file di output presenti ed il progetto assegnato
+                            <b>si raccomanda attenzione nell'inserimento di immagini e testo nei campi corretti o si
+                                renderà impossibile la visualizzazione dei risultati</b></li>
+
+                        <li>Projects: Pagina di modifica progetti, da qui è possibile modificare nome, descrizione ed
+                            assegnare un differente file di codice. è possibile inoltre assegnare un progetto come
+                            "esempio" per gli utenti, aggiungendo la spunta ad "is_example"
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+
+{% endblock %}

@@ -1,7 +1,4 @@
-from django.conf import settings
 from django.conf.urls import url, include
-from django.conf.urls.static import static
-from django.views.static import serve
 
 from . import views
 
@@ -15,6 +12,7 @@ urlpatterns = [
     url(r'^projects/(?P<project_id>[0-9]+)/delete/$', views.delete_project, name='delete_project'),
     url(r'^admin/updatecommands$', views.update_commands, name='update_commands'),
     url(r'^help/$', views.help_page, name='help_page'),
+    url(r'^manual/$', views.manual, name='manual'),
     url(r'^projects/create_project/generator/$', views.project_generator, name='generator'),
     url(r'^projects/create_project/generator_response/$', views.project_generator_handler,
         name='generator_response'),

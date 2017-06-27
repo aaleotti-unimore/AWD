@@ -455,3 +455,8 @@ def examples(request):
     """
     projects = Project.objects.filter(is_example=True)
     return render(request, 'AWD_Zanasi/examples.html', {'projects': projects})
+
+@login_required()
+def manual(request):
+    from watchdog_handler import MAXTIME
+    return render(request, 'AWD_Zanasi/manual.html', {'WATCHDOG_TIMEOUT': MAXTIME})
