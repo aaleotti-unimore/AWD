@@ -1,0 +1,312 @@
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:40] path observed: C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 0
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 1
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 2
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 3
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 4
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 5
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 6
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 7
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 8
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 9
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 10
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 11
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 12
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 13
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 14
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 15
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 16
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 17
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 18
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 19
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 20
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 21
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 22
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 23
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 24
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 25
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 26
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 27
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 28
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 29
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 30
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 31
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 32
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 33
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 34
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 35
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 36
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 37
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 38
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 39
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 40
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 41
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 42
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 43
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 44
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 45
+[27/Jul/2017 18:25:17] DEBUG [AWD_Zanasi.watchdog_handler:65] obsv-64: is dead
+[27/Jul/2017 18:25:26] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:40] path observed: C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 0
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 1
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 2
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 3
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 4
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 5
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 6
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 7
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 8
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 9
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 10
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 11
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 12
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 13
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 14
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 15
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 16
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 17
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 18
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 19
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 20
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 21
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 22
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 23
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 24
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 25
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 26
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 27
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 28
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 29
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 30
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 31
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 32
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 33
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 34
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 35
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 36
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 37
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 38
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 39
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 40
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 41
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 42
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 43
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 44
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-63: still alive 45
+[27/Jul/2017 18:25:32] DEBUG [AWD_Zanasi.watchdog_handler:65] obsv-63: is dead
+[27/Jul/2017 18:25:36] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:40] path observed: C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 0
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 1
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 2
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 3
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 4
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 5
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 6
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 7
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 8
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 9
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 10
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 11
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 12
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 13
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 14
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 15
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 16
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 17
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 18
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 19
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 20
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 21
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 22
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 23
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 24
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 25
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 26
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 27
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 28
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 29
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 30
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 31
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 32
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 33
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 34
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 35
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 36
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 37
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 38
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 39
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 40
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 41
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 42
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 43
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 44
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 45
+[27/Jul/2017 18:29:05] DEBUG [AWD_Zanasi.watchdog_handler:65] obsv-64: is dead
+[27/Jul/2017 18:29:09] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:40] path observed: C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 0
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 1
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 2
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 3
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 4
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 5
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 6
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 7
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 8
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 9
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 10
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 11
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 12
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 13
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 14
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 15
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 16
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 17
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 18
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 19
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 20
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 21
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 22
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 23
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 24
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 25
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 26
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 27
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 28
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 29
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 30
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 31
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 32
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 33
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 34
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 35
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 36
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 37
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 38
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 39
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 40
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 41
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 42
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 43
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 44
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:60] obsv-64: still alive 45
+[31/Jul/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:65] obsv-64: is dead
+[31/Jul/2017 10:50:00] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[31/Jul/2017 10:51:24] DEBUG [AWD_Zanasi.watchdog_handler:40] path observed: C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3
+[31/Jul/2017 10:52:59] DEBUG [AWD_Zanasi.watchdog_handler:40] path observed: C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3
+[31/Jul/2017 11:41:59] DEBUG [AWD_Zanasi.watchdog_handler:40] path observed: C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3
+[31/Jul/2017 11:43:35] DEBUG [AWD_Zanasi.watchdog_handler:40] path observed: C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3
+[31/Jul/2017 12:00:20] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\test.m created
+[31/Jul/2017 12:06:40] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\New folder created
+[31/Jul/2017 12:07:25] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\test.fig created
+[31/Jul/2017 12:07:25] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out modified
+[31/Jul/2017 12:07:25] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\test.fig modified
+[31/Jul/2017 12:07:25] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\test.fig modified
+[31/Jul/2017 12:07:26] DEBUG [AWD_Zanasi.watchdog_handler:107] root 
+[31/Jul/2017 12:07:26] DEBUG [AWD_Zanasi.watchdog_handler:108] out file path user_admin/asd13sd3\out\test.png
+[31/Jul/2017 12:07:27] DEBUG [AWD_Zanasi.watchdog_handler:113] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\test.png saved to databse to project asd13sd3
+[31/Jul/2017 12:07:27] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\test.png created
+[31/Jul/2017 12:07:27] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out modified
+[31/Jul/2017 12:07:27] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out modified
+[31/Jul/2017 12:07:31] DEBUG [AWD_Zanasi.watchdog_handler:107] root 
+[31/Jul/2017 12:07:31] DEBUG [AWD_Zanasi.watchdog_handler:108] out file path user_admin/asd13sd3\out\test.png
+[31/Jul/2017 12:07:31] DEBUG [AWD_Zanasi.watchdog_handler:115] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\test.png updated to databse to project asd13sd3
+[31/Jul/2017 12:07:31] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\test.png created
+[31/Jul/2017 12:07:32] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out modified
+[31/Jul/2017 12:07:32] DEBUG [AWD_Zanasi.watchdog_handler:107] root 
+[31/Jul/2017 12:07:32] DEBUG [AWD_Zanasi.watchdog_handler:108] out file path user_admin/asd13sd3\out\test.png
+[31/Jul/2017 12:07:32] DEBUG [AWD_Zanasi.watchdog_handler:115] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\test.png updated to databse to project asd13sd3
+[31/Jul/2017 12:07:32] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\test.png modified
+[31/Jul/2017 12:07:32] DEBUG [AWD_Zanasi.watchdog_handler:107] root 
+[31/Jul/2017 12:07:32] DEBUG [AWD_Zanasi.watchdog_handler:108] out file path user_admin/asd13sd3\out\test.png
+[31/Jul/2017 12:07:32] DEBUG [AWD_Zanasi.watchdog_handler:115] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\test.png updated to databse to project asd13sd3
+[31/Jul/2017 12:07:32] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\test.png modified
+[31/Jul/2017 12:07:35] DEBUG [AWD_Zanasi.watchdog_handler:96] out file path user_admin/asd13sd3\out\ASHDAHFJAf.txt
+[31/Jul/2017 12:07:35] DEBUG [AWD_Zanasi.watchdog_handler:101] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\ASHDAHFJAf.txt saved to databse to project asd13sd3
+[31/Jul/2017 12:07:35] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\ASHDAHFJAf.txt created
+[31/Jul/2017 12:07:35] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out modified
+[31/Jul/2017 12:07:49] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/asd13sd3/out/test.png
+[31/Jul/2017 12:07:49] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/asd13sd3/out/ASHDAHFJAf.txt
+[31/Jul/2017 12:08:10] DEBUG [AWD_Zanasi.watchdog_handler:96] out file path user_admin/asd13sd3\ASHDAHFJAf.txt
+[31/Jul/2017 12:08:10] DEBUG [AWD_Zanasi.watchdog_handler:101] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\ASHDAHFJAf.txt saved to databse to project asd13sd3
+[31/Jul/2017 12:08:10] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\ASHDAHFJAf.txt created
+[31/Jul/2017 12:08:10] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out modified
+[31/Jul/2017 12:08:21] DEBUG [AWD_Zanasi.watchdog_handler:40] path observed: C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3
+[31/Jul/2017 12:08:29] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/asd13sd3/out/test.png
+[31/Jul/2017 12:08:29] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/asd13sd3/out/ASHDAHFJAf.txt
+[31/Jul/2017 12:08:29] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/asd13sd3/ASHDAHFJAf.txt
+[31/Jul/2017 12:08:29] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[31/Jul/2017 12:09:02] DEBUG [AWD_Zanasi.watchdog_handler:96] out file path user_admin/asd13sd3\out\ASHDAHFJAf.txt
+[31/Jul/2017 12:09:02] DEBUG [AWD_Zanasi.watchdog_handler:96] out file path user_admin/asd13sd3\out\ASHDAHFJAf.txt
+[31/Jul/2017 12:09:03] DEBUG [AWD_Zanasi.watchdog_handler:103] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\ASHDAHFJAf.txtupdate to databse to project asd13sd3
+[31/Jul/2017 12:09:03] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\ASHDAHFJAf.txt created
+[31/Jul/2017 12:09:03] DEBUG [AWD_Zanasi.watchdog_handler:96] out file path user_admin/asd13sd3\out\ASHDAHFJAf.txt
+[31/Jul/2017 12:09:03] DEBUG [AWD_Zanasi.watchdog_handler:103] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\ASHDAHFJAf.txtupdate to databse to project asd13sd3
+[31/Jul/2017 12:09:03] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\ASHDAHFJAf.txt created
+[31/Jul/2017 12:09:03] DEBUG [AWD_Zanasi.watchdog_handler:96] out file path user_admin/asd13sd3\out\ASHDAHFJAf.txt
+[31/Jul/2017 12:09:03] DEBUG [AWD_Zanasi.watchdog_handler:103] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\ASHDAHFJAf.txtupdate to databse to project asd13sd3
+[31/Jul/2017 12:09:03] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\ASHDAHFJAf.txt modified
+[31/Jul/2017 12:09:03] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out modified
+[31/Jul/2017 12:09:03] DEBUG [AWD_Zanasi.watchdog_handler:103] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\ASHDAHFJAf.txtupdate to databse to project asd13sd3
+[31/Jul/2017 12:09:03] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out\ASHDAHFJAf.txt modified
+[31/Jul/2017 12:09:03] DEBUG [AWD_Zanasi.watchdog_handler:122] C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd13sd3\out modified
+[31/Jul/2017 12:09:15] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/asd13sd3/out/test.png
+[31/Jul/2017 12:09:15] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/asd13sd3/out/ASHDAHFJAf.txt
+[31/Jul/2017 12:09:15] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/asd13sd3/ASHDAHFJAf.txt
+[31/Jul/2017 12:09:15] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[31/Jul/2017 12:12:16] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/asd/out/img037.jpg
+[31/Jul/2017 12:12:16] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[31/Jul/2017 12:12:26] DEBUG [AWD_Zanasi.watchdog_handler:40] path observed: C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/asd
+[31/Jul/2017 12:12:34] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/asd/out/img037.jpg
+[31/Jul/2017 12:12:34] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[31/Jul/2017 17:36:03] DEBUG [AWD_Zanasi.watchdog_handler:39] path observed: C:\Apache24\htdocs\AWD\AWD_Zanasi/media/user_admin/ggg
+[31/Jul/2017 17:36:05] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 0
+[31/Jul/2017 17:36:06] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 1
+[31/Jul/2017 17:36:07] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 2
+[31/Jul/2017 17:36:08] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 3
+[31/Jul/2017 17:36:09] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 4
+[31/Jul/2017 17:36:10] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 5
+[31/Jul/2017 17:36:11] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 6
+[31/Jul/2017 17:36:12] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 7
+[31/Jul/2017 17:36:13] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 8
+[31/Jul/2017 17:36:14] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 9
+[31/Jul/2017 17:36:15] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 10
+[31/Jul/2017 17:36:16] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 11
+[31/Jul/2017 17:36:17] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 12
+[31/Jul/2017 17:36:18] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 13
+[31/Jul/2017 17:36:19] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 14
+[31/Jul/2017 17:36:20] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 15
+[31/Jul/2017 17:36:21] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 16
+[31/Jul/2017 17:36:22] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 17
+[31/Jul/2017 17:36:23] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 18
+[31/Jul/2017 17:36:24] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 19
+[31/Jul/2017 17:36:25] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 20
+[31/Jul/2017 17:36:26] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 21
+[31/Jul/2017 17:36:27] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 22
+[31/Jul/2017 17:36:28] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 23
+[31/Jul/2017 17:36:29] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 24
+[31/Jul/2017 17:36:30] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 25
+[31/Jul/2017 17:36:31] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 26
+[31/Jul/2017 17:36:32] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 27
+[31/Jul/2017 17:36:33] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 28
+[31/Jul/2017 17:36:34] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 29
+[31/Jul/2017 17:36:35] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 30
+[31/Jul/2017 17:36:36] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 31
+[31/Jul/2017 17:36:37] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 32
+[31/Jul/2017 17:36:39] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 33
+[31/Jul/2017 17:36:40] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 34
+[31/Jul/2017 17:36:41] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 35
+[31/Jul/2017 17:36:42] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 36
+[31/Jul/2017 17:36:43] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 37
+[31/Jul/2017 17:36:44] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 38
+[31/Jul/2017 17:36:45] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 39
+[31/Jul/2017 17:36:46] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 40
+[31/Jul/2017 17:36:47] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 41
+[31/Jul/2017 17:36:48] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 42
+[31/Jul/2017 17:36:49] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 43
+[31/Jul/2017 17:36:50] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 44
+[31/Jul/2017 17:36:51] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-65: still alive 45
+[31/Jul/2017 17:36:51] DEBUG [AWD_Zanasi.watchdog_handler:77] obsv-65: is dead
+[31/Jul/2017 17:37:18] DEBUG [AWD_Zanasi.views:442] Valid utf-8

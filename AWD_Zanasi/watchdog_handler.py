@@ -5,7 +5,7 @@ Handles the matlab script execution.
 
 import logging.config
 import subprocess
-
+from subprocess import Popen
 from django.utils import timezone
 from watchdog.events import FileSystemEventHandler
 
@@ -56,7 +56,11 @@ def watchdog(project):
         # except OSError, e:  ## if failed, report it back to the user ##
         #     logger.exception("Error: %s - %s." % (e.filename, e.strerror))
 
-        subprocess.call(['AWD_Zanasi/generate_output.sh', path])
+        # subprocess.call(['AWD_Zanasi/generate_output.sh', path])
+		p = Popen("matlab.bat", cwd=r"C:\\Apache24\\htdocs\\AWD\\AWD_Zanasi", shell=True)
+		stdout, stderr = p.communicate()
+		
+		pass
     else:
         # TODO call for the matlab script
         # subprocess.call(['AWD_Zanasi/generate_output.sh', path])

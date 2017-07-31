@@ -26,7 +26,7 @@ SECRET_KEY = '+8*(m2o%w_n9@pb5ed2+yusu5x@oru8dtev*y41)6y92e1=h!*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+	# 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -122,10 +123,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'AWD_Zanasi/static')
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'AWD_Zanasi/media')
 
 # auth
 LOGIN_URL = '/accounts/login/'
@@ -134,12 +136,14 @@ LOGOUT_REDIRECT_URL = 'index'
 
 # django-registration
 ACCOUNT_ACTIVATION_DAYS = 7  # One-week activation window;
-DEFAULT_FROM_EMAIL = 'webmaster@localhost'
+DEFAULT_FROM_EMAIL = 'roberto.zanasi@unimore.it'
 
 # mail settings
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = 1025
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+if DEBUG:
+	DEFAULT_FROM_EMAIL = "webmaster@example.com"
+	EMAIL_HOST = 'localhost'
+	EMAIL_PORT = 1025
+	EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # crisy forms
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -149,3 +153,49 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 # LOGGING_CONFIG = None
 # import logging.config
 # logging.config.fileConfig("AWD_Zanasi/configs/logging.conf")
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'standard': {
+            'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+            'datefmt' : "%d/%b/%Y %H:%M:%S"
+        },
+    },
+    'handlers': {
+        #'null': {
+        #    'level':'DEBUG',
+        #    'class':'django.utils.log.NullHandler',
+        #},
+        'logfile': {
+            'level':'DEBUG',
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': BASE_DIR + "/logfile",
+            'maxBytes': 50000,
+            'backupCount': 2,
+            'formatter': 'standard',
+        },
+        'console':{
+            'level':'INFO',
+            'class':'logging.StreamHandler',
+            'formatter': 'standard'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers':['console'],
+            'propagate': True,
+            'level':'WARN',
+        },
+        'django.db.backends': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'AWD_Zanasi': {
+            'handlers': ['console', 'logfile'],
+            'level': 'DEBUG',
+        },
+    }
+}
