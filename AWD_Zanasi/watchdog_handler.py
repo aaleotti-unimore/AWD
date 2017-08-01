@@ -3,6 +3,7 @@ Watchdog Module
 Handles the matlab script execution. 
 """
 
+import os
 import logging.config
 import subprocess
 from subprocess import Popen
@@ -18,6 +19,10 @@ import time, os
 
 MAXTIME = 45  # watchdog timeout
 
+import matlab.engine
+eng = matlab.engine.start_matlab()
+
+separator="\\"
 
 def watchdog(project):
     """
@@ -34,38 +39,18 @@ def watchdog(project):
     observer = Observer()
     observer.setName("obsv-" + str(project.id))
     event_handler = MyHandler(project)
-
-    path = settings.MEDIA_ROOT + "/" + filepath
+    path = settings.MEDIA_ROOT + separator + filepath
+    
     logger.debug("path observed: " + path)
 
     observer.schedule(event_handler, path=path, recursive=True)
     observer.start()
     time.sleep(1)
 
-    #### calling a test script
-    if settings.DEBUG:
+    res = subprocess.call(".\matlab_script.cmd " + filepath, shell=True)
 
-        # ## get input ##
-        # myfile = path + "/out/.done"
-        #
-        # ## try to delete file ##
-        # try:
-        #     if os.path.isfile(myfile):
-        #         os.remove(myfile)
-        #         logger.debug("removed " + myfile)
-        # except OSError, e:  ## if failed, report it back to the user ##
-        #     logger.exception("Error: %s - %s." % (e.filename, e.strerror))
-
-        # subprocess.call(['AWD_Zanasi/generate_output.sh', path])
-		p = Popen("matlab.bat", cwd=r"C:\\Apache24\\htdocs\\AWD\\AWD_Zanasi", shell=True)
-		stdout, stderr = p.communicate()
-		
-		pass
-    else:
-        # TODO call for the matlab script
-        # subprocess.call(['AWD_Zanasi/generate_output.sh', path])
-        pass
-
+            
+        
     i = 0
     while ALIVE:
         time.sleep(1)
@@ -104,7 +89,7 @@ class MyHandler(FileSystemEventHandler):
         """
 
         if event.src_path.endswith(".txt"):
-            root, text_file_path = event.src_path.split(settings.MEDIA_ROOT + "/")
+            root, text_file_path = event.src_path.split(settings.MEDIA_ROOT + separator)
             logger.debug("out file path " + text_file_path)
 
             out, created = ProjectOutput.objects.get_or_create(project=self.project, text_file=text_file_path)
@@ -115,7 +100,7 @@ class MyHandler(FileSystemEventHandler):
                 logger.debug(event.src_path + "update to databse to project " + str(out.project.name))
 
         if event.src_path.endswith(".png"):
-            root, img_file_path = event.src_path.split(settings.MEDIA_ROOT + "/")
+            root, img_file_path = event.src_path.split(settings.MEDIA_ROOT + separator)
             logger.debug("root " + root)
             logger.debug("out file path " + img_file_path)
 
