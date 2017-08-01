@@ -21,6 +21,7 @@ MAXTIME = 45  # watchdog timeout
 
 separator="/"
 
+
 def watchdog(project):
     """
     Called to launch a matlab execution from views.launch_project. 
@@ -37,10 +38,10 @@ def watchdog(project):
     observer = Observer()
     observer.setName("obsv-" + str(project.id))
     event_handler = MyHandler(project)
-    path = settings.MEDIA_ROOT + separator + filepath
+    path = settings.MEDIA_ROOT + separator + os.path.dirname(project.matlab_file.name)
     logger.debug("scheduler path "+path)
 
-   
+    path = path.replace("/","\\")
     
     logger.debug("scheduler path "+path)
 
@@ -50,11 +51,8 @@ def watchdog(project):
     observer.start()
     time.sleep(1)
     
-    #subprocess.call("mys.cmd " + filepath, shell=True)
-    STR="matlab -nosplash -nodesktop -minimize -logfile output.log -r \" Analizza_il_Sistema(\'"+filepath+"\')"
-    logger.debug(STR)
-    
     subprocess.call(".\AWD_Zanasi\matlab_script.bat "+filepath, shell=True)
+   
     
             
     i = 0
@@ -95,8 +93,11 @@ class MyHandler(FileSystemEventHandler):
         """
 
         if event.src_path.endswith(".txt"):
-            root, text_file_path = event.src_path.split(settings.MEDIA_ROOT + separator)
+            logger.debug("event src path " + event.src_path)
+            logger.debug("media root " + settings.MEDIA_ROOT)
+            root, text_file_path = event.src_path.split(settings.MEDIA_ROOT+"\\")
             logger.debug("out file path " + text_file_path)
+            logger.debug("root "+root)
 
             out, created = ProjectOutput.objects.get_or_create(project=self.project, text_file=text_file_path)
 
@@ -106,7 +107,9 @@ class MyHandler(FileSystemEventHandler):
                 logger.debug(event.src_path + "update to databse to project " + str(out.project.name))
 
         if event.src_path.endswith(".png"):
-            root, img_file_path = event.src_path.split(settings.MEDIA_ROOT + separator)
+            logger.debug("event src path " + event.src_path)
+            logger.debug("media root " + settings.MEDIA_ROOT)
+            root, img_file_path = event.src_path.split(settings.MEDIA_ROOT+"\\")
             logger.debug("root " + root)
             logger.debug("out file path " + img_file_path)
 

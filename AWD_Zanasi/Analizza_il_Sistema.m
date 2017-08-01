@@ -2747,8 +2747,8 @@ while Riduci==1
             T(jj,:)=-AA(Nr_x+ii,:)/AA(Nr_x+ii,jj);
             T=T(:,[1:jj-1 jj+1:Nr_x+ii-1 Nr_x+ii+1:Nr_A]);
             XX=XX([1:jj-1 jj+1:Nr_x]);
-            LL=simple(T.'*LL*T);
-            AA=simple(T.'*AA*T);
+            LL=simplify(T.'*LL*T);
+            AA=simplify(T.'*AA*T);
             BB=T.'*BB;
             CC=CC*T;
             Nr_x=Nr_x-1;            % Una vera variabile di stato è stata eliminata
@@ -2766,7 +2766,7 @@ if not(isempty(A21))
     T=[  eye(Nr_x)   ; ...          % Matrici di trasformazione
         -inv(A22)*A21];             %   x = T*x' + Tb*u
     LT=T.'*LL*T;                    % Matrice energia del sistema "ridotto"
-    AT=simple(T.'*AA*T);            % Matrice di potenza del sistema "ridotto"
+    AT=simplify(T.'*AA*T);            % Matrice di potenza del sistema "ridotto"
     if isempty(B2)
         BT=[];                      % Matrice degli ingressi del sistema "ridotto"
         CT=[];                      % Matrice di uscita del sistema "ridotto"
@@ -2774,23 +2774,23 @@ if not(isempty(A21))
     else
         Tb=[zeros(Nr_x,Nr_u); ...  	%
                  -inv(A22)*B2];    	%
-        CT=simple(CC*T);          	% Matrice di uscita del sistema "ridotto"
-        BT=simple(T.'*(BB+AA*Tb));	% Matrice degli ingressi del sistema "ridotto"
-        DT=simple(DD+CC*Tb);       	% Matrice ingresso-uscita del sistema "ridotto"
+        CT=simplify(CC*T);          	% Matrice di uscita del sistema "ridotto"
+        BT=simplify(T.'*(BB+AA*Tb));	% Matrice degli ingressi del sistema "ridotto"
+        DT=simplify(DD+CC*Tb);       	% Matrice ingresso-uscita del sistema "ridotto"
     end
 elseif isempty(A22)
     LT=LL;                          % Matrice energia del sistema "ridotto"
     AT=AA;                          % Matrice di potenza del sistema "ridotto"
     CT=CC;                          % Matrice di uscita del sistema "ridotto"
     BT=BB;                          % Matrice degli ingressi del sistema "ridotto"
-    DT=simple(DD);                  % Matrice ingresso-uscita del sistema "ridotto"
+    DT=simplify(DD);                  % Matrice ingresso-uscita del sistema "ridotto"
 else
     LT=[];                          % Matrice energia del sistema "ridotto"
     AT=[];                          % Matrice di potenza del sistema "ridotto"
     BT=[];                          % Matrice degli ingressi del sistema "ridotto"
     CT=[];                          % Matrice di uscita del sistema "ridotto"
     Tb=[zeros(Nr_x,Nr_u);-inv(A22)*B2];
-    DT=simple(DD+CC*Tb);        	% Matrice ingresso-uscita del sistema "ridotto"
+    DT=simplify(DD+CC*Tb);        	% Matrice ingresso-uscita del sistema "ridotto"
 end
 XT=XX;                             	% Vettore di stato  del sistema "ridotto"
 UT=UU;                             	% Vettore degli ingressi del sistema "ridotto"
