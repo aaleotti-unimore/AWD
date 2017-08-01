@@ -19,10 +19,7 @@ import time, os
 
 MAXTIME = 45  # watchdog timeout
 
-import matlab.engine
-eng = matlab.engine.start_matlab()
-
-separator="\\"
+separator="/"
 
 def watchdog(project):
     """
@@ -34,23 +31,32 @@ def watchdog(project):
     """
     global ALIVE  # observer life variable
     ALIVE = True
-    filepath = os.path.dirname(project.matlab_file.name)
-
+    # filepath = os.path.dirname(project.matlab_file.name)
+    filepath = project.matlab_file.name
+    
     observer = Observer()
     observer.setName("obsv-" + str(project.id))
     event_handler = MyHandler(project)
     path = settings.MEDIA_ROOT + separator + filepath
-    
-    logger.debug("path observed: " + path)
+    logger.debug("scheduler path "+path)
 
+   
+    
+    logger.debug("scheduler path "+path)
+
+    
+    logger.debug("path observed: " + filepath)
     observer.schedule(event_handler, path=path, recursive=True)
     observer.start()
     time.sleep(1)
-
-    res = subprocess.call(".\matlab_script.cmd " + filepath, shell=True)
-
+    
+    #subprocess.call("mys.cmd " + filepath, shell=True)
+    STR="matlab -nosplash -nodesktop -minimize -logfile output.log -r \" Analizza_il_Sistema(\'"+filepath+"\')"
+    logger.debug(STR)
+    
+    subprocess.call(".\AWD_Zanasi\matlab_script.bat "+filepath, shell=True)
+    
             
-        
     i = 0
     while ALIVE:
         time.sleep(1)
