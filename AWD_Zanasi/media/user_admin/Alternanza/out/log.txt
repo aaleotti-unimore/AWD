@@ -37,10 +37,6 @@ Schema Nr.: 1 -> Alternanza_R_C
 [> In sym/subs (line 62)
   In Analizza_il_Sistema>EQUAZIONI_NELLO_SPAZIO_DEGLI_STATI (line 2857)
   In Analizza_il_Sistema (line 26)] 
-[Warning: File not found or permission denied] 
-[> In Analizza_il_Sistema>MOSTRA_ABC (line 3325)
-  In Analizza_il_Sistema>EQUAZIONI_NELLO_SPAZIO_DEGLI_STATI (line 2905)
-  In Analizza_il_Sistema (line 26)] 
 State space equations:
 L*dot_X = A*X + B*U
       Y = C*X + D*U

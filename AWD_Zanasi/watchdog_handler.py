@@ -33,7 +33,7 @@ def watchdog(project):
     global ALIVE  # observer life variable
     ALIVE = True
     # filepath = os.path.dirname(project.matlab_file.name)
-    filepath = project.matlab_file.name
+    filepath = settings.MEDIA_ROOT + separator + project.matlab_file.name
     
     observer = Observer()
     observer.setName("obsv-" + str(project.id))
@@ -42,17 +42,17 @@ def watchdog(project):
     logger.debug("scheduler path "+path)
 
     path = path.replace("/","\\")
-    
+    filepath = filepath.replace("/","\\")
     logger.debug("scheduler path "+path)
 
     
-    logger.debug("path observed: " + filepath)
+    logger.debug("launching: " + filepath)
     observer.schedule(event_handler, path=path, recursive=True)
     observer.start()
     time.sleep(1)
     
-    subprocess.call(".\AWD_Zanasi\matlab_script.bat "+filepath, shell=True)
-   
+    chk = subprocess.check_output("C:\Apache24\htdocs\AWD\AWD_Zanasi\matlab_script.bat \"%s\" \"%s\" "%(path,filepath), shell=True)
+    logger.debug("%s" %chk)
     
             
     i = 0

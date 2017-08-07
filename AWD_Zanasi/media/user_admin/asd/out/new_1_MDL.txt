@@ -1,0 +1,52 @@
+State space equations:
+L*dot_X = A*X + B*U
+      Y = C*X + D*U
+ 
+Energy matrix L:
+Power matrix A:
+[ empty sym ]
+ 
+Input matrix B:
+[ empty sym ]
+ 
+Output matrix C:
+[ empty sym ]
+ 
+Input-output matrix D:
+1/R_4
+ 
+State vector X:
+Empty sym: 0-by-1
+ 
+Input vector U:
+V_2
+ 
+Output vector Y:
+I_2
+ 
+State space equations:
+L*dot_X = A*X + B*U
+      Y = C*X + D*U
+ 
+Energy matrix L:
+Power matrix A:
+[ empty sym ]
+ 
+Input matrix B:
+[ empty sym ]
+ 
+Output matrix C:
+[ empty sym ]
+ 
+Input-output matrix D:
+1/R_4
+ 
+State vector X:
+Empty sym: 0-by-1
+ 
+Input vector U:
+V_2
+ 
+Output vector Y:
+I_2
+ 

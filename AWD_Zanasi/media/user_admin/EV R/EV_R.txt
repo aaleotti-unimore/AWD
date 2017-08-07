@@ -1,0 +1,8 @@
+**, Us, No, ShX, Si, Sn, Si, SN, Si, Sr, Si, ShY, Si, ClY,y, FnY,8
+**, Gr, Si, As, Si, Pr, Si, Ng, Alternanza_R_C, GTy, png, POG, Si, pGTy, png
+**, Old, No, Sd, No, ClX,r 
+'*P, C=(1+1i*1), D=(1+1i*0), A=(0+1i*0), B=(1+1i*0)'
+'--, C, D'
+'eV, D, A'
+'--, A, B'
+'eR, B, C'

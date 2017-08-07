@@ -5,7 +5,7 @@ clear global
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 disp(Sistema)
 if ischar(Sistema)
-    Sistema=[ '.\media\' strrep(Sistema,'/','\')];
+    % Sistema=[ '.\media\' strrep(Sistema,'/','\')];
     Sistema=LEGGI_SCHEMA_DA_FILE(Sistema);
 end
 %%%% Definisce alcune variabili di sistema
