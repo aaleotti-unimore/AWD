@@ -4719,3 +4719,884 @@ C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
 [09/Aug/2017 10:14:52] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/asdasdasdasd/out/logfile.txt
 [09/Aug/2017 10:14:52] DEBUG [AWD_Zanasi.views:442] Valid utf-8
 [09/Aug/2017 10:16:03] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 10:42:59] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:42:59] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_SCH.png
+[09/Aug/2017 10:42:59] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_POG.png
+[09/Aug/2017 10:42:59] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 10:43:14] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 10:43:18] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 10:43:30] DEBUG [AWD_Zanasi.watchdog_handler:42] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_admin/Alternanza
+[09/Aug/2017 10:43:30] DEBUG [AWD_Zanasi.watchdog_handler:46] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza
+[09/Aug/2017 10:43:30] DEBUG [AWD_Zanasi.watchdog_handler:49] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt
+[09/Aug/2017 10:43:31] DEBUG [AWD_Zanasi.watchdog_handler:55] 
+C:\Apache24>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -logfile "C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt" -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[09/Aug/2017 10:43:31] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 10:43:31] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:43:31] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 10:43:31] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 10:43:31] DEBUG [AWD_Zanasi.watchdog_handler:105] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt saved to databse to project Alternanza
+[09/Aug/2017 10:43:31] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt created
+[09/Aug/2017 10:43:32] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 0
+[09/Aug/2017 10:43:32] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 10:43:32] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:43:32] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 10:43:32] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 10:43:32] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txtupdate to databse to project Alternanza
+[09/Aug/2017 10:43:32] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt modified
+[09/Aug/2017 10:43:33] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 1
+[09/Aug/2017 10:43:33] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 10:43:33] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:43:33] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 10:43:33] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 10:43:33] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txtupdate to databse to project Alternanza
+[09/Aug/2017 10:43:33] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt modified
+[09/Aug/2017 10:43:34] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out modified
+[09/Aug/2017 10:43:34] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 2
+[09/Aug/2017 10:43:34] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 10:43:34] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:43:34] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 10:43:34] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 10:43:34] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txtupdate to databse to project Alternanza
+[09/Aug/2017 10:43:34] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt modified
+[09/Aug/2017 10:43:35] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 3
+[09/Aug/2017 10:43:36] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out modified
+[09/Aug/2017 10:43:36] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:43:36] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:43:36] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:43:36] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 10:43:36] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txtupdate to databse to project Alternanza
+[09/Aug/2017 10:43:36] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt created
+[09/Aug/2017 10:43:36] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out modified
+[09/Aug/2017 10:43:36] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:43:36] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:43:36] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:43:36] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 10:43:36] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txtupdate to databse to project Alternanza
+[09/Aug/2017 10:43:36] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt modified
+[09/Aug/2017 10:43:36] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 4
+[09/Aug/2017 10:43:37] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 5
+[09/Aug/2017 10:43:37] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 10:43:37] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:43:37] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 10:43:37] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 10:43:37] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png updated to databse to project Alternanza
+[09/Aug/2017 10:43:37] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png modified
+[09/Aug/2017 10:43:38] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 10:43:38] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:43:38] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 10:43:38] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 10:43:38] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png updated to databse to project Alternanza
+[09/Aug/2017 10:43:38] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png modified
+[09/Aug/2017 10:43:38] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 10:43:38] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:43:38] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 10:43:38] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 10:43:38] DEBUG [AWD_Zanasi.watchdog_handler:105] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt saved to databse to project Alternanza
+[09/Aug/2017 10:43:38] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt modified
+[09/Aug/2017 10:43:38] DEBUG [AWD_Zanasi.watchdog_handler:124] .done file found. terminating observer
+[09/Aug/2017 10:43:38] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\.done modified
+[09/Aug/2017 10:43:38] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 6
+[09/Aug/2017 10:43:38] DEBUG [AWD_Zanasi.watchdog_handler:66] obsv-72: is dead
+[09/Aug/2017 10:43:42] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:43:42] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_SCH.png
+[09/Aug/2017 10:43:42] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_POG.png
+[09/Aug/2017 10:43:42] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/logfile.txt
+[09/Aug/2017 10:43:42] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/diary.txt
+[09/Aug/2017 10:43:42] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 10:49:39] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:49:39] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_SCH.png
+[09/Aug/2017 10:49:39] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_POG.png
+[09/Aug/2017 10:49:39] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/logfile.txt
+[09/Aug/2017 10:49:39] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/diary.txt
+[09/Aug/2017 10:49:39] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 10:49:47] DEBUG [AWD_Zanasi.watchdog_handler:42] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_admin/Alternanza
+[09/Aug/2017 10:49:47] DEBUG [AWD_Zanasi.watchdog_handler:46] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza
+[09/Aug/2017 10:49:47] DEBUG [AWD_Zanasi.watchdog_handler:49] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt
+[09/Aug/2017 10:49:49] DEBUG [AWD_Zanasi.watchdog_handler:55] 
+C:\Apache24>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -logfile "C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt" -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[09/Aug/2017 10:49:49] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 10:49:49] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:49:49] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 10:49:49] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 10:49:49] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txtupdate to databse to project Alternanza
+[09/Aug/2017 10:49:49] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt modified
+[09/Aug/2017 10:49:50] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 0
+[09/Aug/2017 10:49:51] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 1
+[09/Aug/2017 10:49:52] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 2
+[09/Aug/2017 10:49:53] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 3
+[09/Aug/2017 10:49:54] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 4
+[09/Aug/2017 10:49:55] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 5
+[09/Aug/2017 10:49:56] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 6
+[09/Aug/2017 10:49:57] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 7
+[09/Aug/2017 10:49:58] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 8
+[09/Aug/2017 10:49:59] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 9
+[09/Aug/2017 10:50:00] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 10
+[09/Aug/2017 10:50:01] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 11
+[09/Aug/2017 10:50:02] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 12
+[09/Aug/2017 10:50:03] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 13
+[09/Aug/2017 10:50:04] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 14
+[09/Aug/2017 10:50:05] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 15
+[09/Aug/2017 10:50:06] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 16
+[09/Aug/2017 10:50:07] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 17
+[09/Aug/2017 10:50:08] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 18
+[09/Aug/2017 10:50:09] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 19
+[09/Aug/2017 10:50:10] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 20
+[09/Aug/2017 10:50:11] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 21
+[09/Aug/2017 10:50:12] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 22
+[09/Aug/2017 10:50:13] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 23
+[09/Aug/2017 10:50:14] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 24
+[09/Aug/2017 10:50:15] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 25
+[09/Aug/2017 10:50:16] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 26
+[09/Aug/2017 10:50:17] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 27
+[09/Aug/2017 10:50:18] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 28
+[09/Aug/2017 10:50:19] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 29
+[09/Aug/2017 10:50:20] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 30
+[09/Aug/2017 10:50:21] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 31
+[09/Aug/2017 10:50:22] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 32
+[09/Aug/2017 10:50:23] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 33
+[09/Aug/2017 10:50:24] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 34
+[09/Aug/2017 10:50:25] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 35
+[09/Aug/2017 10:50:26] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 36
+[09/Aug/2017 10:50:27] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 37
+[09/Aug/2017 10:50:28] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 38
+[09/Aug/2017 10:50:29] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 39
+[09/Aug/2017 10:50:30] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 40
+[09/Aug/2017 10:50:31] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 41
+[09/Aug/2017 10:50:32] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 42
+[09/Aug/2017 10:50:33] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 43
+[09/Aug/2017 10:50:34] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 44
+[09/Aug/2017 10:50:35] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 45
+[09/Aug/2017 10:50:35] DEBUG [AWD_Zanasi.watchdog_handler:66] obsv-72: is dead
+[09/Aug/2017 10:50:57] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:50:57] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_SCH.png
+[09/Aug/2017 10:50:57] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_POG.png
+[09/Aug/2017 10:50:57] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/logfile.txt
+[09/Aug/2017 10:50:57] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/diary.txt
+[09/Aug/2017 10:50:58] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 10:55:02] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:55:02] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_SCH.png
+[09/Aug/2017 10:55:02] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_POG.png
+[09/Aug/2017 10:55:02] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/logfile.txt
+[09/Aug/2017 10:55:02] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/diary.txt
+[09/Aug/2017 10:55:02] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 10:55:06] DEBUG [AWD_Zanasi.watchdog_handler:42] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_admin/Alternanza
+[09/Aug/2017 10:55:06] DEBUG [AWD_Zanasi.watchdog_handler:46] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza
+[09/Aug/2017 10:55:06] DEBUG [AWD_Zanasi.watchdog_handler:49] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt
+[09/Aug/2017 10:55:08] DEBUG [AWD_Zanasi.watchdog_handler:55] 
+C:\Apache24>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -logfile "C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt" -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[09/Aug/2017 10:55:09] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 0
+[09/Aug/2017 10:55:10] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 1
+[09/Aug/2017 10:55:11] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 2
+[09/Aug/2017 10:55:11] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 10:55:11] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:55:11] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 10:55:11] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 10:55:11] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txtupdate to databse to project Alternanza
+[09/Aug/2017 10:55:11] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt modified
+[09/Aug/2017 10:55:12] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 3
+[09/Aug/2017 10:55:13] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 4
+[09/Aug/2017 10:55:14] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 5
+[09/Aug/2017 10:55:15] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 6
+[09/Aug/2017 10:55:16] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 7
+[09/Aug/2017 10:55:17] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 8
+[09/Aug/2017 10:55:18] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 9
+[09/Aug/2017 10:55:19] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 10
+[09/Aug/2017 10:55:20] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 11
+[09/Aug/2017 10:55:21] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 12
+[09/Aug/2017 10:55:22] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 13
+[09/Aug/2017 10:55:23] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 14
+[09/Aug/2017 10:55:24] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 15
+[09/Aug/2017 10:55:25] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 16
+[09/Aug/2017 10:55:26] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 17
+[09/Aug/2017 10:55:27] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 18
+[09/Aug/2017 10:55:28] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 19
+[09/Aug/2017 10:55:29] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 20
+[09/Aug/2017 10:55:29] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:55:29] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:55:29] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:55:29] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 10:55:29] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txtupdate to databse to project Alternanza
+[09/Aug/2017 10:55:29] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt modified
+[09/Aug/2017 10:55:30] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 21
+[09/Aug/2017 10:55:31] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 22
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png updated to databse to project Alternanza
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png modified
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png updated to databse to project Alternanza
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png modified
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 23
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png updated to databse to project Alternanza
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png modified
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txtupdate to databse to project Alternanza
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt modified
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:124] .done file found. terminating observer
+[09/Aug/2017 10:55:32] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\.done modified
+[09/Aug/2017 10:55:33] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 24
+[09/Aug/2017 10:55:33] DEBUG [AWD_Zanasi.watchdog_handler:66] obsv-72: is dead
+[09/Aug/2017 10:55:36] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:55:36] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_SCH.png
+[09/Aug/2017 10:55:36] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_POG.png
+[09/Aug/2017 10:55:36] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/logfile.txt
+[09/Aug/2017 10:55:36] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/diary.txt
+[09/Aug/2017 10:55:36] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 10:56:01] DEBUG [AWD_Zanasi.watchdog_handler:42] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_admin/Alternanza
+[09/Aug/2017 10:56:01] DEBUG [AWD_Zanasi.watchdog_handler:46] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza
+[09/Aug/2017 10:56:01] DEBUG [AWD_Zanasi.watchdog_handler:49] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt
+[09/Aug/2017 10:56:02] DEBUG [AWD_Zanasi.watchdog_handler:55] 
+C:\Apache24>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -logfile "C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt" -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[09/Aug/2017 10:56:03] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 10:56:03] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:56:03] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 10:56:03] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 10:56:03] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txtupdate to databse to project Alternanza
+[09/Aug/2017 10:56:03] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt modified
+[09/Aug/2017 10:56:03] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 0
+[09/Aug/2017 10:56:04] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 1
+[09/Aug/2017 10:56:05] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 2
+[09/Aug/2017 10:56:06] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 3
+[09/Aug/2017 10:56:07] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:56:07] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:56:07] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:56:07] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 10:56:07] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txtupdate to databse to project Alternanza
+[09/Aug/2017 10:56:07] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt modified
+[09/Aug/2017 10:56:07] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 4
+[09/Aug/2017 10:56:08] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 5
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png updated to databse to project Alternanza
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png modified
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png updated to databse to project Alternanza
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png modified
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txtupdate to databse to project Alternanza
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt modified
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:124] .done file found. terminating observer
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\.done modified
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 6
+[09/Aug/2017 10:56:09] DEBUG [AWD_Zanasi.watchdog_handler:66] obsv-72: is dead
+[09/Aug/2017 10:56:12] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:56:12] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_SCH.png
+[09/Aug/2017 10:56:12] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_POG.png
+[09/Aug/2017 10:56:12] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/logfile.txt
+[09/Aug/2017 10:56:12] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/diary.txt
+[09/Aug/2017 10:56:12] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 10:56:57] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 10:57:08] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 10:57:12] DEBUG [AWD_Zanasi.watchdog_handler:42] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_admin/Alternanza
+[09/Aug/2017 10:57:12] DEBUG [AWD_Zanasi.watchdog_handler:46] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza
+[09/Aug/2017 10:57:12] DEBUG [AWD_Zanasi.watchdog_handler:49] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt
+[09/Aug/2017 10:57:13] DEBUG [AWD_Zanasi.watchdog_handler:55] 
+C:\Apache24>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -logfile "C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt" -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[09/Aug/2017 10:57:13] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 10:57:13] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:57:13] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 10:57:13] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 10:57:13] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txtupdate to databse to project Alternanza
+[09/Aug/2017 10:57:13] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt modified
+[09/Aug/2017 10:57:14] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 0
+[09/Aug/2017 10:57:15] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 1
+[09/Aug/2017 10:57:16] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 2
+[09/Aug/2017 10:57:17] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 3
+[09/Aug/2017 10:57:17] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:57:17] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:57:17] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:57:17] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 10:57:17] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txtupdate to databse to project Alternanza
+[09/Aug/2017 10:57:17] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt modified
+[09/Aug/2017 10:57:18] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 4
+[09/Aug/2017 10:57:19] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 5
+[09/Aug/2017 10:57:19] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 10:57:19] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:57:19] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 10:57:19] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 10:57:19] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png updated to databse to project Alternanza
+[09/Aug/2017 10:57:19] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png modified
+[09/Aug/2017 10:57:19] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 10:57:19] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:57:19] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 10:57:19] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 10:57:19] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png updated to databse to project Alternanza
+[09/Aug/2017 10:57:19] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png modified
+[09/Aug/2017 10:57:20] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 10:57:20] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:57:20] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 10:57:20] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 10:57:20] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png updated to databse to project Alternanza
+[09/Aug/2017 10:57:20] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png modified
+[09/Aug/2017 10:57:20] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 10:57:20] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 10:57:20] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 10:57:20] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 10:57:20] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txtupdate to databse to project Alternanza
+[09/Aug/2017 10:57:20] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt modified
+[09/Aug/2017 10:57:20] DEBUG [AWD_Zanasi.watchdog_handler:124] .done file found. terminating observer
+[09/Aug/2017 10:57:20] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\.done modified
+[09/Aug/2017 10:57:20] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 6
+[09/Aug/2017 10:57:20] DEBUG [AWD_Zanasi.watchdog_handler:66] obsv-72: is dead
+[09/Aug/2017 10:57:24] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_MDL.txt
+[09/Aug/2017 10:57:24] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_SCH.png
+[09/Aug/2017 10:57:24] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_POG.png
+[09/Aug/2017 10:57:24] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/logfile.txt
+[09/Aug/2017 10:57:24] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/diary.txt
+[09/Aug/2017 10:57:24] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:00:15] DEBUG [AWD_Zanasi.watchdog_handler:42] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_admin/Alternanza
+[09/Aug/2017 11:00:15] DEBUG [AWD_Zanasi.watchdog_handler:46] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza
+[09/Aug/2017 11:00:15] DEBUG [AWD_Zanasi.watchdog_handler:49] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt
+[09/Aug/2017 11:00:16] DEBUG [AWD_Zanasi.watchdog_handler:55] 
+C:\Apache24>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -logfile "C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt" -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[09/Aug/2017 11:00:16] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 11:00:16] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:00:16] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 11:00:16] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:00:16] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:00:16] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt modified
+[09/Aug/2017 11:00:17] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 0
+[09/Aug/2017 11:00:18] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 1
+[09/Aug/2017 11:00:19] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 2
+[09/Aug/2017 11:00:19] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 11:00:19] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:00:19] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 11:00:19] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:00:19] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:00:19] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt modified
+[09/Aug/2017 11:00:19] DEBUG [AWD_Zanasi.watchdog_handler:124] .done file found. terminating observer
+[09/Aug/2017 11:00:19] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\.done modified
+[09/Aug/2017 11:00:20] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 11:00:20] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:00:20] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 11:00:20] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:00:20] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:00:20] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt modified
+[09/Aug/2017 11:00:20] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 3
+[09/Aug/2017 11:00:20] DEBUG [AWD_Zanasi.watchdog_handler:66] obsv-72: is dead
+[09/Aug/2017 11:00:23] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:00:23] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_SCH.png
+[09/Aug/2017 11:00:23] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_POG.png
+[09/Aug/2017 11:00:23] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/logfile.txt
+[09/Aug/2017 11:00:23] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/diary.txt
+[09/Aug/2017 11:00:23] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:01:55] DEBUG [AWD_Zanasi.watchdog_handler:42] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_admin/Alternanza
+[09/Aug/2017 11:01:55] DEBUG [AWD_Zanasi.watchdog_handler:46] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza
+[09/Aug/2017 11:01:55] DEBUG [AWD_Zanasi.watchdog_handler:49] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt
+[09/Aug/2017 11:01:56] DEBUG [AWD_Zanasi.watchdog_handler:55] 
+C:\Apache24>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -logfile "C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt" -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[09/Aug/2017 11:01:57] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 11:01:57] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:01:57] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 11:01:57] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:01:57] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:01:57] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt modified
+[09/Aug/2017 11:01:57] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 0
+[09/Aug/2017 11:01:58] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 1
+[09/Aug/2017 11:01:59] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 2
+[09/Aug/2017 11:02:00] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 3
+[09/Aug/2017 11:02:01] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 4
+[09/Aug/2017 11:02:02] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 5
+[09/Aug/2017 11:02:03] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:02:03] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:02:03] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:02:03] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:02:03] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:02:03] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt modified
+[09/Aug/2017 11:02:03] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 6
+[09/Aug/2017 11:02:04] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 7
+[09/Aug/2017 11:02:05] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 8
+[09/Aug/2017 11:02:06] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:02:06] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:02:06] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:02:06] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:02:06] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png updated to databse to project Alternanza
+[09/Aug/2017 11:02:06] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png modified
+[09/Aug/2017 11:02:07] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 9
+[09/Aug/2017 11:02:07] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:02:07] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:02:07] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:02:07] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:02:07] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png updated to databse to project Alternanza
+[09/Aug/2017 11:02:07] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png modified
+[09/Aug/2017 11:02:07] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 11:02:07] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:02:07] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 11:02:07] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:02:07] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:02:07] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt modified
+[09/Aug/2017 11:02:07] DEBUG [AWD_Zanasi.watchdog_handler:124] .done file found. terminating observer
+[09/Aug/2017 11:02:07] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\.done modified
+[09/Aug/2017 11:02:08] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 10
+[09/Aug/2017 11:02:08] DEBUG [AWD_Zanasi.watchdog_handler:66] obsv-72: is dead
+[09/Aug/2017 11:02:10] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:02:10] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_SCH.png
+[09/Aug/2017 11:02:10] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_POG.png
+[09/Aug/2017 11:02:10] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/logfile.txt
+[09/Aug/2017 11:02:10] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/diary.txt
+[09/Aug/2017 11:02:10] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:04:54] DEBUG [AWD_Zanasi.watchdog_handler:42] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_admin/Alternanza
+[09/Aug/2017 11:04:54] DEBUG [AWD_Zanasi.watchdog_handler:46] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza
+[09/Aug/2017 11:04:54] DEBUG [AWD_Zanasi.watchdog_handler:49] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt
+[09/Aug/2017 11:04:55] DEBUG [AWD_Zanasi.watchdog_handler:55] 
+C:\Apache24>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -logfile "C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt" -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[09/Aug/2017 11:04:55] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 11:04:55] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:04:55] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 11:04:55] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:04:55] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:04:55] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt modified
+[09/Aug/2017 11:04:56] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 0
+[09/Aug/2017 11:04:57] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 1
+[09/Aug/2017 11:04:58] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 2
+[09/Aug/2017 11:04:59] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 3
+[09/Aug/2017 11:05:00] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 4
+[09/Aug/2017 11:05:00] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:05:00] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:05:00] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:05:00] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:05:00] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:05:00] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt modified
+[09/Aug/2017 11:05:01] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 5
+[09/Aug/2017 11:05:02] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 6
+[09/Aug/2017 11:05:03] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 7
+[09/Aug/2017 11:05:03] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:05:03] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:05:03] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:05:03] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:05:03] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png updated to databse to project Alternanza
+[09/Aug/2017 11:05:03] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png modified
+[09/Aug/2017 11:05:04] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:05:04] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:05:04] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:05:04] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:05:04] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png updated to databse to project Alternanza
+[09/Aug/2017 11:05:04] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png modified
+[09/Aug/2017 11:05:04] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 11:05:04] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:05:04] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 11:05:04] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:05:04] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:05:04] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt modified
+[09/Aug/2017 11:05:04] DEBUG [AWD_Zanasi.watchdog_handler:124] .done file found. terminating observer
+[09/Aug/2017 11:05:04] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\.done modified
+[09/Aug/2017 11:05:04] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 8
+[09/Aug/2017 11:05:04] DEBUG [AWD_Zanasi.watchdog_handler:66] obsv-72: is dead
+[09/Aug/2017 11:05:18] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:05:18] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_SCH.png
+[09/Aug/2017 11:05:18] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_POG.png
+[09/Aug/2017 11:05:18] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/logfile.txt
+[09/Aug/2017 11:05:18] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/diary.txt
+[09/Aug/2017 11:05:18] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:05:52] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:05:57] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:06:01] DEBUG [AWD_Zanasi.watchdog_handler:42] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_admin/Alternanza
+[09/Aug/2017 11:06:01] DEBUG [AWD_Zanasi.watchdog_handler:46] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza
+[09/Aug/2017 11:06:01] DEBUG [AWD_Zanasi.watchdog_handler:49] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt
+[09/Aug/2017 11:06:02] DEBUG [AWD_Zanasi.watchdog_handler:55] 
+C:\Apache24>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -logfile "C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt" -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[09/Aug/2017 11:06:03] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 11:06:03] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:06:03] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 11:06:03] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:06:03] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:06:03] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt modified
+[09/Aug/2017 11:06:03] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 0
+[09/Aug/2017 11:06:04] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 1
+[09/Aug/2017 11:06:05] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 2
+[09/Aug/2017 11:06:06] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 3
+[09/Aug/2017 11:06:07] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:06:07] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:06:07] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:06:07] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:06:07] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:06:07] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt modified
+[09/Aug/2017 11:06:07] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 4
+[09/Aug/2017 11:06:08] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 5
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png updated to databse to project Alternanza
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png modified
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png updated to databse to project Alternanza
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png modified
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt modified
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:124] .done file found. terminating observer
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\.done modified
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 6
+[09/Aug/2017 11:06:09] DEBUG [AWD_Zanasi.watchdog_handler:66] obsv-72: is dead
+[09/Aug/2017 11:06:13] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:06:13] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_SCH.png
+[09/Aug/2017 11:06:13] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_POG.png
+[09/Aug/2017 11:06:13] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/logfile.txt
+[09/Aug/2017 11:06:13] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/diary.txt
+[09/Aug/2017 11:06:13] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:10:55] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:11:01] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:11:01] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_SCH.png
+[09/Aug/2017 11:11:01] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_POG.png
+[09/Aug/2017 11:11:01] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/logfile.txt
+[09/Aug/2017 11:11:01] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/diary.txt
+[09/Aug/2017 11:11:01] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:11:07] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:11:14] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:11:19] DEBUG [AWD_Zanasi.watchdog_handler:42] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_admin/Alternanza
+[09/Aug/2017 11:11:19] DEBUG [AWD_Zanasi.watchdog_handler:46] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza
+[09/Aug/2017 11:11:19] DEBUG [AWD_Zanasi.watchdog_handler:49] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt
+[09/Aug/2017 11:11:20] DEBUG [AWD_Zanasi.watchdog_handler:55] 
+C:\Apache24>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -logfile "C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt" -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[09/Aug/2017 11:11:21] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 11:11:21] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:11:21] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 11:11:21] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:11:21] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:11:21] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt modified
+[09/Aug/2017 11:11:21] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 0
+[09/Aug/2017 11:11:22] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 1
+[09/Aug/2017 11:11:23] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 2
+[09/Aug/2017 11:11:24] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 3
+[09/Aug/2017 11:11:25] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:11:25] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:11:25] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:11:25] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:11:25] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:11:25] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt modified
+[09/Aug/2017 11:11:25] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 4
+[09/Aug/2017 11:11:26] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 5
+[09/Aug/2017 11:11:27] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:11:27] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:11:27] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:11:27] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:11:27] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png updated to databse to project Alternanza
+[09/Aug/2017 11:11:27] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png modified
+[09/Aug/2017 11:11:27] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 6
+[09/Aug/2017 11:11:28] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:11:28] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:11:28] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:11:28] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:11:28] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png updated to databse to project Alternanza
+[09/Aug/2017 11:11:28] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png modified
+[09/Aug/2017 11:11:28] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 11:11:28] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:11:28] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 11:11:28] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:11:28] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:11:28] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt modified
+[09/Aug/2017 11:11:28] DEBUG [AWD_Zanasi.watchdog_handler:124] .done file found. terminating observer
+[09/Aug/2017 11:11:28] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\.done modified
+[09/Aug/2017 11:11:29] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 7
+[09/Aug/2017 11:11:29] DEBUG [AWD_Zanasi.watchdog_handler:66] obsv-72: is dead
+[09/Aug/2017 11:11:32] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:11:32] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_SCH.png
+[09/Aug/2017 11:11:32] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_POG.png
+[09/Aug/2017 11:11:32] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/logfile.txt
+[09/Aug/2017 11:11:32] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/diary.txt
+[09/Aug/2017 11:11:32] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:16:49] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:16:54] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:16:58] DEBUG [AWD_Zanasi.watchdog_handler:42] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_admin/Alternanza
+[09/Aug/2017 11:16:58] DEBUG [AWD_Zanasi.watchdog_handler:46] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza
+[09/Aug/2017 11:16:58] DEBUG [AWD_Zanasi.watchdog_handler:49] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt
+[09/Aug/2017 11:16:59] DEBUG [AWD_Zanasi.watchdog_handler:55] 
+C:\Apache24>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -logfile "C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt" -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\Alternanza_R_C.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[09/Aug/2017 11:16:59] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 11:16:59] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:16:59] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\logfile.txt
+[09/Aug/2017 11:16:59] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:16:59] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:16:59] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\logfile.txt modified
+[09/Aug/2017 11:17:00] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 0
+[09/Aug/2017 11:17:01] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 1
+[09/Aug/2017 11:17:02] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 2
+[09/Aug/2017 11:17:03] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 3
+[09/Aug/2017 11:17:04] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:17:04] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:17:04] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:17:04] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:17:04] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:17:04] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_MDL.txt modified
+[09/Aug/2017 11:17:04] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 4
+[09/Aug/2017 11:17:05] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 5
+[09/Aug/2017 11:17:05] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:17:05] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:17:05] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:17:05] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:17:05] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png updated to databse to project Alternanza
+[09/Aug/2017 11:17:05] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_SCH.png modified
+[09/Aug/2017 11:17:06] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:17:06] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:17:06] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:17:06] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alternanza\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:17:06] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png updated to databse to project Alternanza
+[09/Aug/2017 11:17:06] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\Alternanza_R_C_POG.png modified
+[09/Aug/2017 11:17:06] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 11:17:06] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:17:06] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alternanza\out\diary.txt
+[09/Aug/2017 11:17:06] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:17:06] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txtupdate to databse to project Alternanza
+[09/Aug/2017 11:17:06] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\diary.txt modified
+[09/Aug/2017 11:17:06] DEBUG [AWD_Zanasi.watchdog_handler:124] .done file found. terminating observer
+[09/Aug/2017 11:17:06] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\.done modified
+[09/Aug/2017 11:17:06] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-72: still alive 6
+[09/Aug/2017 11:17:06] DEBUG [AWD_Zanasi.watchdog_handler:66] obsv-72: is dead
+[09/Aug/2017 11:17:09] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:17:09] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_SCH.png
+[09/Aug/2017 11:17:09] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_POG.png
+[09/Aug/2017 11:17:09] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/logfile.txt
+[09/Aug/2017 11:17:09] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alternanza/out/diary.txt
+[09/Aug/2017 11:17:09] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:17:57] DEBUG [AWD_Zanasi.watchdog_handler:42] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_admin/Alt
+[09/Aug/2017 11:17:57] DEBUG [AWD_Zanasi.watchdog_handler:46] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt
+[09/Aug/2017 11:17:57] DEBUG [AWD_Zanasi.watchdog_handler:49] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\Alternanza_R_C.txt
+[09/Aug/2017 11:17:58] DEBUG [AWD_Zanasi.watchdog_handler:55] 
+C:\Apache24>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -logfile "C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\logfile.txt" -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\Alternanza_R_C.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[09/Aug/2017 11:17:59] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-82: still alive 0
+[09/Aug/2017 11:18:00] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-82: still alive 1
+[09/Aug/2017 11:18:01] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out created
+[09/Aug/2017 11:18:01] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-82: still alive 2
+[09/Aug/2017 11:18:02] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-82: still alive 3
+[09/Aug/2017 11:18:03] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:18:03] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:03] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alt\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:18:03] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:18:03] DEBUG [AWD_Zanasi.watchdog_handler:105] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_MDL.txt saved to databse to project Alt
+[09/Aug/2017 11:18:03] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_MDL.txt created
+[09/Aug/2017 11:18:03] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:18:03] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:03] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alt\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:18:03] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:18:03] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_MDL.txtupdate to databse to project Alt
+[09/Aug/2017 11:18:03] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_MDL.txt modified
+[09/Aug/2017 11:18:03] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-82: still alive 4
+[09/Aug/2017 11:18:04] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out modified
+[09/Aug/2017 11:18:04] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:18:04] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:04] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:18:04] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alt\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:18:04] DEBUG [AWD_Zanasi.watchdog_handler:119] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_SCH.png saved to databse to project Alt
+[09/Aug/2017 11:18:04] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_SCH.png created
+[09/Aug/2017 11:18:04] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out modified
+[09/Aug/2017 11:18:04] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-82: still alive 5
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out modified
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alt\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_SCH.png updated to databse to project Alt
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_SCH.png created
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out modified
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alt\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_SCH.png updated to databse to project Alt
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_SCH.png modified
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alt\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:119] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_POG.png saved to databse to project Alt
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_POG.png created
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out modified
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out modified
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alt\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_POG.png updated to databse to project Alt
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_POG.png created
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out modified
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alt\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_POG.png updated to databse to project Alt
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_POG.png modified
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\diary.txt
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alt\out\diary.txt
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:105] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\diary.txt saved to databse to project Alt
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\diary.txt created
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out modified
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\diary.txt
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alt\out\diary.txt
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\diary.txtupdate to databse to project Alt
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\diary.txt modified
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:124] .done file found. terminating observer
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\.done created
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-82: still alive 6
+[09/Aug/2017 11:18:05] DEBUG [AWD_Zanasi.watchdog_handler:66] obsv-82: is dead
+[09/Aug/2017 11:18:09] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alt/out/Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:18:09] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alt/out/Alternanza_R_C_SCH.png
+[09/Aug/2017 11:18:09] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alt/out/Alternanza_R_C_POG.png
+[09/Aug/2017 11:18:09] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alt/out/diary.txt
+[09/Aug/2017 11:18:09] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:18:15] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:18:19] DEBUG [AWD_Zanasi.watchdog_handler:42] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_admin/Alt
+[09/Aug/2017 11:18:19] DEBUG [AWD_Zanasi.watchdog_handler:46] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt
+[09/Aug/2017 11:18:19] DEBUG [AWD_Zanasi.watchdog_handler:49] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\Alternanza_R_C.txt
+[09/Aug/2017 11:18:20] DEBUG [AWD_Zanasi.watchdog_handler:55] 
+C:\Apache24>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -logfile "C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\logfile.txt" -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\Alternanza_R_C.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[09/Aug/2017 11:18:21] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\logfile.txt
+[09/Aug/2017 11:18:21] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:21] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alt\out\logfile.txt
+[09/Aug/2017 11:18:21] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:18:21] DEBUG [AWD_Zanasi.watchdog_handler:105] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\logfile.txt saved to databse to project Alt
+[09/Aug/2017 11:18:21] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\logfile.txt created
+[09/Aug/2017 11:18:21] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-82: still alive 0
+[09/Aug/2017 11:18:22] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\logfile.txt
+[09/Aug/2017 11:18:22] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:22] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alt\out\logfile.txt
+[09/Aug/2017 11:18:22] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:18:22] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\logfile.txtupdate to databse to project Alt
+[09/Aug/2017 11:18:22] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\logfile.txt modified
+[09/Aug/2017 11:18:22] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-82: still alive 1
+[09/Aug/2017 11:18:23] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\logfile.txt
+[09/Aug/2017 11:18:23] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:23] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alt\out\logfile.txt
+[09/Aug/2017 11:18:23] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:18:23] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\logfile.txtupdate to databse to project Alt
+[09/Aug/2017 11:18:23] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\logfile.txt modified
+[09/Aug/2017 11:18:23] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out modified
+[09/Aug/2017 11:18:23] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-82: still alive 2
+[09/Aug/2017 11:18:24] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\logfile.txt
+[09/Aug/2017 11:18:24] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:24] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alt\out\logfile.txt
+[09/Aug/2017 11:18:24] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:18:24] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\logfile.txtupdate to databse to project Alt
+[09/Aug/2017 11:18:24] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\logfile.txt modified
+[09/Aug/2017 11:18:24] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-82: still alive 3
+[09/Aug/2017 11:18:25] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:18:25] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:25] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alt\out\Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:18:25] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:18:25] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_MDL.txtupdate to databse to project Alt
+[09/Aug/2017 11:18:25] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_MDL.txt modified
+[09/Aug/2017 11:18:25] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-82: still alive 4
+[09/Aug/2017 11:18:26] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-82: still alive 5
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alt\out\Alternanza_R_C_SCH.png
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_SCH.png updated to databse to project Alt
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_SCH.png modified
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\Alt\out\Alternanza_R_C_POG.png
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_POG.png updated to databse to project Alt
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\Alternanza_R_C_POG.png modified
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\diary.txt
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\Alt\out\diary.txt
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\diary.txtupdate to databse to project Alt
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\diary.txt modified
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:124] .done file found. terminating observer
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alt\out\.done modified
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-82: still alive 6
+[09/Aug/2017 11:18:27] DEBUG [AWD_Zanasi.watchdog_handler:66] obsv-82: is dead
+[09/Aug/2017 11:18:30] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alt/out/Alternanza_R_C_MDL.txt
+[09/Aug/2017 11:18:30] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alt/out/Alternanza_R_C_SCH.png
+[09/Aug/2017 11:18:30] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alt/out/Alternanza_R_C_POG.png
+[09/Aug/2017 11:18:30] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alt/out/diary.txt
+[09/Aug/2017 11:18:30] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alt/out/logfile.txt
+[09/Aug/2017 11:18:30] DEBUG [AWD_Zanasi.views:442] Valid utf-8
