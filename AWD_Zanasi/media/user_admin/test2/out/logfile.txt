@@ -1,56 +1,35 @@
 MATLAB is running in headless mode.  Figure windows will not be displayed.
-Warning: Unable to locate a personal folder for $documents\MATLAB
-[Warning: Userpath must be an absolute path and must exist on disk.] 
  
 To get started, type one of these: helpwin, helpdesk, or demo.
 For product information, visit www.mathworks.com.
  
-Warning: Unable to locate a personal folder for $documents\MATLAB
-[Warning: Userpath must be an absolute path and must exist on disk.] 
-Warning: Unable to locate a personal folder for $documents\MATLAB
 C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\test2\file.txt
 Schema Nr.: 1 -> file
     '**, Us, No, ShX, Si, Sn, Si, SN, Si, Sr, Si, ShY, Si, ClY,y, FnY,8'
+    ''
     '**, Gr, Si, As, Si, Pr, Si, Ng, Alternanza_R_C, GTy, png, POG, Si, pGTy, png'
+    ''
     '**, Old, No, Sd, No, ClX,r '
-    '*P, C=(1+1i*1), D=(1+1i*0), A=(0+1i*0), B=(1+1i*0)'
-    '--, C, D'
-    'eV, D, A'
-    '--, A, B'
-    'eR, B, C'
-    '**, Gr, Si, As, Si, Ng, file, Dir_out, C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\test2\o...'
+    ''
+    '*P, A=(0+1i*1), D=(1+1i*0), C=(0+1i*0), B=(1+1i*1)'
+    ''
+    '--, C, D'  
+    ''
+    'eV, A, C'  
+    ''
+    '--, A, B'  
+    ''
+    'eR, B, D'  
+    [1x174 char]
 
-[Warning: SUBS(S,OLD,NEW,0) will not accept 0 in a future release. Use SUBS(S,OLD,NEW) instead.] 
-[> In sym/subs (line 62)
-  In Analizza_il_Sistema>EQUAZIONI_NELLO_SPAZIO_DEGLI_STATI (line 2856)
-  In Analizza_il_Sistema (line 26)] 
-[Warning: SUBS(S,OLD,NEW,0) will not accept 0 in a future release. Use SUBS(S,OLD,NEW) instead.] 
-[> In sym/subs (line 62)
-  In Analizza_il_Sistema>EQUAZIONI_NELLO_SPAZIO_DEGLI_STATI (line 2857)
-  In Analizza_il_Sistema (line 26)] 
-State space equations:
-L*dot_X = A*X + B*U
-      Y = C*X + D*U
- 
-Energy matrix L:
-Power matrix A:
-[ empty sym ]
- 
-Input matrix B:
-[ empty sym ]
- 
-Output matrix C:
-[ empty sym ]
- 
-Input-output matrix D:
-1/R_4
- 
-State vector X:
-Empty sym: 0-by-1
- 
-Input vector U:
-V_2
- 
-Output vector Y:
-I_2
- 
+{Attempted to access Ind(3); index out of bounds because numel(Ind)=1.
+
+Error in Analizza_il_Sistema>SOSTITUZIONE_DEI_METABLOCCHI (line 1441)
+    Prima_Riga  = Riga(1:Ind(3)-1);         % Prima_Riga = "Tipo_di_Blocco,Nodo_From,Nodo_To"
+
+Error in Analizza_il_Sistema>CREA_LO_SCHEMA (line 1700)
+Sistema= SOSTITUZIONE_DEI_METABLOCCHI(Sistema);
+
+Error in Analizza_il_Sistema (line 24)
+    Sistema = CREA_LO_SCHEMA(Sistema);
+} 
