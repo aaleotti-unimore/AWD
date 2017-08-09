@@ -53,6 +53,17 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+        
+    
+    def save(self, *args, **kwargs):
+        self.full_clean() #full validation and clean
+        if not self.id:
+             self.name = self.name.replace(' ','_')
+        super(Project, self).save(*args, **kwargs)
+        
+    def clean(self):
+        if self.name:
+            self.name = self.name.replace(' ','_')
 
 
 class ProjectOutput(models.Model):

@@ -3811,3 +3811,8 @@ C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
 [07/Aug/2017 11:18:28] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/test2/out/file_SCH.png
 [07/Aug/2017 11:18:28] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/test2/out/file_POG.png
 [07/Aug/2017 11:18:28] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 10:38:29] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/test2/out/logfile.txt
+[09/Aug/2017 10:38:29] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/test2/out/file_MDL.txt
+[09/Aug/2017 10:38:29] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/test2/out/file_SCH.png
+[09/Aug/2017 10:38:29] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/test2/out/file_POG.png
+[09/Aug/2017 10:38:29] DEBUG [AWD_Zanasi.views:442] Valid utf-8

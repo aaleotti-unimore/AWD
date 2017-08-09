@@ -340,7 +340,7 @@ def project_generator_handler(request):
         # Command System objects
         for key, value in ssvr.iteritems():
             type, attr, index = key.split("_")
-            s_str = "\'**, %s, %s\'" % (
+            s_str = "**, %s, %s" % (
                 str(sysvar_obj[int(value)]['Sigla']), str(request.POST['sysvar_range_' + index]))
             sysvar_str += s_str + "\n"
 
@@ -349,7 +349,7 @@ def project_generator_handler(request):
             type, attr, index = key.split("_")  # example  *P, A=(1+1i*1.5), 1=(2+1i*5), c=(-1+1i*3)
             node_str += ", %s=(%s+1i*%s)" % (value, request.POST["coord_x_" + index], request.POST["coord_y_" + index])
 
-        node_str = "\'" + node_str + "\'\n"
+        node_str = "" + node_str + "\n"
 
         # CommandBlocks generation
         for key, value in blk.iteritems():
@@ -387,7 +387,7 @@ def project_generator_handler(request):
                         "branch_range_" + branch_index + "_" + index]
             # ----- End Branches definition
 
-            b_str = "\'" + (select + nodes + k_n + e_n + f_n + q_n + branches_str) + "\'"  # single block line
+            b_str = (select + nodes + k_n + e_n + f_n + q_n + branches_str)  # single block line
             blocks_str += b_str + "\n"  # multipe blocks string
 
         proj_str = sysvar_str + node_str + blocks_str  # project code string

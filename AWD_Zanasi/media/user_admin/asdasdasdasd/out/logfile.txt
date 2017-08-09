@@ -1,0 +1,11 @@
+MATLAB is running in headless mode.  Figure windows will not be displayed.
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+Schema Nr.: 1 -> asdasdasdasd
+    '*P, A=(0+1i*0), B=(1+1i*0)'
+    ''
+    '--, A, B'  
+    [1x207 char]
+
