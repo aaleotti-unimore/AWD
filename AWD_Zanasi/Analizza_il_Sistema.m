@@ -3,40 +3,59 @@ function Sistema=Analizza_il_Sistema(Sistema)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clear global
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-disp(Sistema)
-if ischar(Sistema)
-    % Sistema=[ '.\media\' strrep(Sistema,'/','\')];
-    Sistema=LEGGI_SCHEMA_DA_FILE(Sistema);
+if exist('diary.txt','file')
+    delete('diary.txt')
 end
-%%%% Definisce alcune variabili di sistema
-Sistema.Show_Schema_In='Si';
-Sistema.Show_Schema_ASCII='No';
-Sistema.Crea_Files_CSV='No';
-%%%% Aggiunge le strutture di base alla variabile "Sistema"
-Sistema = ADD_THE_BASIC_STRUCTURES(Sistema);
-%%%% Se lo "Schema_In" è vuoto si procede a crearlo graficamente
-if isempty(Sistema.Schema_In)
-    % Costruisci  lo schema
-    disp(' '); disp('Lo Schema fornito NON è corretto'); disp(' ')
+diary('diary.txt')
+try
+    if ischar(Sistema)
+        Ind=strfind(Sistema,'/');
+        if not(isempty(Ind))
+            Sistema=[ '.\media\' strrep(Sistema,'/','\')];
+        end
+        Sistema=LEGGI_SCHEMA_DA_FILE(Sistema);        
+    end
+    if not(isfield(Sistema,'Dir_out'))
+        Sistema.Dir_out='.\';
+    end
+    %%%% Definisce alcune variabili di sistema
+    Sistema.Show_Schema_In='Si';
+    Sistema.Show_Schema_ASCII='No';
+    Sistema.Crea_Files_CSV='No';
+    %%%% Aggiunge le strutture di base alla variabile "Sistema"
+    Sistema = ADD_THE_BASIC_STRUCTURES(Sistema);
+    %%%% Se lo "Schema_In" è vuoto si procede a crearlo graficamente
+    if isempty(Sistema.Schema_In)
+        % Costruisci  lo schema
+        disp(' '); disp('Lo Schema fornito NON è corretto'); disp(' ')
+    end
+    %%%% Se lo "Schema_In" non è vuoto si procede ad analizzarlo
+    if not(isempty(Sistema))
+        Sistema = CREA_LO_SCHEMA(Sistema);
+        if strcmp(Sistema.Analizza_lo_Schema,'Si')&&strcmp(Sistema.Domini_Omogenei,'Si')
+            Sistema = EQUAZIONI_NELLO_SPAZIO_DEGLI_STATI(Sistema);
+        end
+        if strcmp(Sistema.Grafico.Show_Grafico,'Si')
+            Sistema = DISEGNA_LO_SCHEMA(Sistema);
+        end
+        if strcmp(Sistema.Schema_Analizzato,'Si')&&strcmp(Sistema.Crea_lo_Schema_POG,'Si')
+            Sistema = SHOW_SCHEMA_A_BLOCCHI_POG(Sistema);
+        end
+        if strcmp(Sistema.Schema_POG_Generato,'Si')&&strcmp(Sistema.Crea_lo_Schema_SLX,'Si')
+            Sistema = CREA_LO_SCHEMA_SIMULINK(Sistema);
+        end
+        if strcmp(Sistema.Schema_SLX_Generato,'Si')&&strcmp(Sistema.Simula_lo_Schema_SLX,'Si')
+            Sistema = SIMULA_LO_SCHEMA_SIMULINK(Sistema);
+        end
+    end
+catch My_Err
+    Sistema.My_Err=My_Err;
 end
-%%%% Se lo "Schema_In" non è vuoto si procede ad analizzarlo
-if not(isempty(Sistema))
-    Sistema = CREA_LO_SCHEMA(Sistema);
-    if strcmp(Sistema.Analizza_lo_Schema,'Si')&&strcmp(Sistema.Domini_Omogenei,'Si')
-        Sistema = EQUAZIONI_NELLO_SPAZIO_DEGLI_STATI(Sistema);
-    end
-    if strcmp(Sistema.Grafico.Show_Grafico,'Si')
-        Sistema = DISEGNA_LO_SCHEMA(Sistema);
-    end
-    if strcmp(Sistema.Schema_Analizzato,'Si')&&strcmp(Sistema.Crea_lo_Schema_POG,'Si')
-        Sistema = SHOW_SCHEMA_A_BLOCCHI_POG(Sistema);
-    end
-    if strcmp(Sistema.Schema_POG_Generato,'Si')&&strcmp(Sistema.Crea_lo_Schema_SLX,'Si')
-        Sistema = CREA_LO_SCHEMA_SIMULINK(Sistema);
-    end
-    if strcmp(Sistema.Schema_SLX_Generato,'Si')&&strcmp(Sistema.Simula_lo_Schema_SLX,'Si')
-        Sistema = SIMULA_LO_SCHEMA_SIMULINK(Sistema);
-    end
+diary off
+if not(strcmp(Sistema.Dir_out,'.\'))
+    movefile('diary.txt',[Sistema.Dir_out 'diary.txt'])
+    FID=fopen([Sistema.Dir_out '.done'],'w');
+    fclose(FID);
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 return
@@ -330,6 +349,8 @@ if not(isempty(Ind))
     end
     Dir_out=[Percorso_File '\'];
     File_base=File_base(Ind(end)+1:end);
+else
+    Dir_out='';
 end
 if exist(File,'file')
     A=importdata(File,'\n',20000); 
@@ -337,8 +358,9 @@ if exist(File,'file')
     for ii=1:Nr
         A(ii)=strrep(A(ii),'''','');
     end
-    A(Nr+1)={['**, Gr, Si, As, Si, Ng, ' File_base ', Dir_out, ' Dir_out ', Pr, Si, GTy, png, POG, Si, pPr, Si, pGTy, png, Sch, Si, SLX, No, SIM, No']};
+    A(Nr+1)={['**, Gr, Si, As, Si, Ng, ' File_base ', Dir_out, ' Dir_out ', Pr, Si, GTy, png, POG, Si, pPr, Si, pGTy, png, Sch, Si, SLX, No, xPr, Si, SIM, No, sPr, Si']};
     Sistema.Title= File_base;
+    Sistema.Dir_out= Dir_out;
     Sistema.Schema_In= A;
     Sistema.Nr_Schema= 1;
 else
@@ -2747,8 +2769,8 @@ while Riduci==1
             T(jj,:)=-AA(Nr_x+ii,:)/AA(Nr_x+ii,jj);
             T=T(:,[1:jj-1 jj+1:Nr_x+ii-1 Nr_x+ii+1:Nr_A]);
             XX=XX([1:jj-1 jj+1:Nr_x]);
-            LL=simplify(T.'*LL*T);
-            AA=simplify(T.'*AA*T);
+            LL=simple(T.'*LL*T);
+            AA=simple(T.'*AA*T);
             BB=T.'*BB;
             CC=CC*T;
             Nr_x=Nr_x-1;            % Una vera variabile di stato è stata eliminata
@@ -2766,7 +2788,7 @@ if not(isempty(A21))
     T=[  eye(Nr_x)   ; ...          % Matrici di trasformazione
         -inv(A22)*A21];             %   x = T*x' + Tb*u
     LT=T.'*LL*T;                    % Matrice energia del sistema "ridotto"
-    AT=simplify(T.'*AA*T);            % Matrice di potenza del sistema "ridotto"
+    AT=simple(T.'*AA*T);            % Matrice di potenza del sistema "ridotto"
     if isempty(B2)
         BT=[];                      % Matrice degli ingressi del sistema "ridotto"
         CT=[];                      % Matrice di uscita del sistema "ridotto"
@@ -2774,23 +2796,23 @@ if not(isempty(A21))
     else
         Tb=[zeros(Nr_x,Nr_u); ...  	%
                  -inv(A22)*B2];    	%
-        CT=simplify(CC*T);          	% Matrice di uscita del sistema "ridotto"
-        BT=simplify(T.'*(BB+AA*Tb));	% Matrice degli ingressi del sistema "ridotto"
-        DT=simplify(DD+CC*Tb);       	% Matrice ingresso-uscita del sistema "ridotto"
+        CT=simple(CC*T);          	% Matrice di uscita del sistema "ridotto"
+        BT=simple(T.'*(BB+AA*Tb));	% Matrice degli ingressi del sistema "ridotto"
+        DT=simple(DD+CC*Tb);       	% Matrice ingresso-uscita del sistema "ridotto"
     end
 elseif isempty(A22)
     LT=LL;                          % Matrice energia del sistema "ridotto"
     AT=AA;                          % Matrice di potenza del sistema "ridotto"
     CT=CC;                          % Matrice di uscita del sistema "ridotto"
     BT=BB;                          % Matrice degli ingressi del sistema "ridotto"
-    DT=simplify(DD);                  % Matrice ingresso-uscita del sistema "ridotto"
+    DT=simple(DD);                  % Matrice ingresso-uscita del sistema "ridotto"
 else
     LT=[];                          % Matrice energia del sistema "ridotto"
     AT=[];                          % Matrice di potenza del sistema "ridotto"
     BT=[];                          % Matrice degli ingressi del sistema "ridotto"
     CT=[];                          % Matrice di uscita del sistema "ridotto"
     Tb=[zeros(Nr_x,Nr_u);-inv(A22)*B2];
-    DT=simplify(DD+CC*Tb);        	% Matrice ingresso-uscita del sistema "ridotto"
+    DT=simple(DD+CC*Tb);        	% Matrice ingresso-uscita del sistema "ridotto"
 end
 XT=XX;                             	% Vettore di stato  del sistema "ridotto"
 UT=UU;                             	% Vettore degli ingressi del sistema "ridotto"
@@ -3321,12 +3343,12 @@ if nargin==1
 end
 n=size(Equazioni_In.L,1);
 if n>=0
-    if not(isempty(File))
+    if exist(File,'file')
         delete(File)
-        echo off
-        diary(File)
-        diary on
+%         diary on
     end
+    echo off
+    diary(File)
     disp('State space equations:')  
 %     disp(' ')
     disp('L*dot_X = A*X + B*U')
@@ -3341,7 +3363,8 @@ if n>=0
     disp('Input vector U:');disp(Equazioni_In.U)
     disp('Output vector Y:');disp(Equazioni_In.Y)
     if not(isempty(File))
-        diary off
+        %         diary off
+        diary('diary.txt')
     end
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -4798,5 +4821,4 @@ return
 % ** 59 **  (15/06/2017) Cambiata la struttura dei file Parms_Rami e Parms_Sistemi
 % ** 60 **  (xx/06/2017) 
 
-% Analizza_il_Sistema('.\media\user_admin\Alt\Alternanza_R_C.txt')
-
+% Analizza_il_Sistema('.\media\user_Alessandro\proj_2\Alternanza_R_C.txt')

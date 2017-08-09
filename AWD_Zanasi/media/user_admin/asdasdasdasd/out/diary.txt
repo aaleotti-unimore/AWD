@@ -1,0 +1,6 @@
+Schema Nr.: 1 -> asdasdasdasd
+    '*P, A=(0+1i*0), B=(1+1i*0)'
+    ''
+    '--, A, B'  
+    [1x207 char]
+
