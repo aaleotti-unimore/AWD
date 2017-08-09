@@ -5600,3 +5600,65 @@ C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
 [09/Aug/2017 11:18:30] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alt/out/diary.txt
 [09/Aug/2017 11:18:30] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/Alt/out/logfile.txt
 [09/Aug/2017 11:18:30] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:38:56] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:40:56] DEBUG [AWD_Zanasi.views:394] *P, A=(0 +1i*0), 1=(0+1i*1)
+eC, 1, A
+
+[09/Aug/2017 11:40:59] DEBUG [AWD_Zanasi.watchdog_handler:42] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_admin/progetto_1
+[09/Aug/2017 11:40:59] DEBUG [AWD_Zanasi.watchdog_handler:46] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1
+[09/Aug/2017 11:40:59] DEBUG [AWD_Zanasi.watchdog_handler:49] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\progetto_1.txt
+[09/Aug/2017 11:41:00] DEBUG [AWD_Zanasi.watchdog_handler:55] 
+C:\Apache24>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -logfile "C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out\logfile.txt" -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\progetto_1.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[09/Aug/2017 11:41:01] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-85: still alive 0
+[09/Aug/2017 11:41:02] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-85: still alive 1
+[09/Aug/2017 11:41:03] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out created
+[09/Aug/2017 11:41:03] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-85: still alive 2
+[09/Aug/2017 11:41:04] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-85: still alive 3
+[09/Aug/2017 11:41:05] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out\progetto_1_SCH.png
+[09/Aug/2017 11:41:05] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:41:05] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:41:05] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\progetto_1\out\progetto_1_SCH.png
+[09/Aug/2017 11:41:05] DEBUG [AWD_Zanasi.watchdog_handler:119] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out\progetto_1_SCH.png saved to databse to project progetto_1
+[09/Aug/2017 11:41:05] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out\progetto_1_SCH.png created
+[09/Aug/2017 11:41:05] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out modified
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-85: still alive 4
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out modified
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out\progetto_1_SCH.png
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\progetto_1\out\progetto_1_SCH.png
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out\progetto_1_SCH.png updated to databse to project progetto_1
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out\progetto_1_SCH.png created
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out modified
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:110] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out\progetto_1_SCH.png
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:111] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:113] root 
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:114] out file path user_admin\progetto_1\out\progetto_1_SCH.png
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:121] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out\progetto_1_SCH.png updated to databse to project progetto_1
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out\progetto_1_SCH.png modified
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out\diary.txt
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\progetto_1\out\diary.txt
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:105] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out\diary.txt saved to databse to project progetto_1
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out\diary.txt created
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out modified
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:96] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out\diary.txt
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:97] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:99] out file path user_admin\progetto_1\out\diary.txt
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:100] root 
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:107] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out\diary.txtupdate to databse to project progetto_1
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out\diary.txt modified
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:124] .done file found. terminating observer
+[09/Aug/2017 11:41:06] DEBUG [AWD_Zanasi.watchdog_handler:128] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_1\out\.done created
+[09/Aug/2017 11:41:07] DEBUG [AWD_Zanasi.watchdog_handler:61] obsv-85: still alive 5
+[09/Aug/2017 11:41:07] DEBUG [AWD_Zanasi.watchdog_handler:66] obsv-85: is dead
+[09/Aug/2017 11:41:10] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/progetto_1/out/progetto_1_SCH.png
+[09/Aug/2017 11:41:10] DEBUG [AWD_Zanasi.views:90] file output url: /media/user_admin/progetto_1/out/diary.txt
+[09/Aug/2017 11:41:10] DEBUG [AWD_Zanasi.views:442] Valid utf-8
+[09/Aug/2017 11:45:01] DEBUG [AWD_Zanasi.views:442] Valid utf-8

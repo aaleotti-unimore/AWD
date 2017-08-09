@@ -1,0 +1,5 @@
+Schema Nr.: 1 -> progetto_1
+    '*P, A=(0 +1i*0), 1=(0+1i*1)'    'eC, 1, A'    [1x203 char]
+
+Errore!
+Schema non consistente e Rami_Tipo_da_Orientare = empty
