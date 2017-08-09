@@ -9,7 +9,7 @@ Schema Nr.: 1 -> Alternanza_R_C
 
   Column 15
 
-    [1x207 char]
+    [1x200 char]
 
 [Warning: File not found or permission denied] 
 [> In Analizza_il_Sistema>MOSTRA_ABC at 3353

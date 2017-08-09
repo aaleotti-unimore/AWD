@@ -355,13 +355,19 @@ end
 if exist(File,'file')
     A=importdata(File,'\n',20000); 
     Nr=size(A,1);
+    jj=1;
     for ii=1:Nr
         A(ii)=strrep(A(ii),'''','');
+        if not(strcmp(A(ii),'')||strcmp(A(ii),''''''))
+            B(jj)=A(ii);
+            jj=jj+1;
+        end
     end
-    A(Nr+1)={['**, Gr, Si, As, Si, Ng, ' File_base ', Dir_out, ' Dir_out ', Pr, Si, GTy, png, POG, Si, pPr, Si, pGTy, png, Sch, Si, SLX, No, xPr, Si, SIM, No, sPr, Si']};
+    A(ii+1)={['**, Gr, Si, As, Si, Ng, ' File_base ', Dir_out, ' Dir_out ', Pr, Si, GTy, png, POG, Si, pPr, Si, pGTy, png, Sch, Si, SLX, No, xPr, Si, SIM, No, sPr, Si']};
+    B(jj)={['**, Gr, Si, As, Si, Ng, ' File_base ', Dir_out, ' Dir_out ', Pr, Si, GTy, png, POG, Si, pPr, Si, pGTy, png, Sch, Si, SLX, No, xPr, Si, SIM, No, sPr, Si']};
     Sistema.Title= File_base;
     Sistema.Dir_out= Dir_out;
-    Sistema.Schema_In= A;
+    Sistema.Schema_In= B;
     Sistema.Nr_Schema= 1;
 else
     Sistema='';

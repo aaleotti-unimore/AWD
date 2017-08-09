@@ -1,0 +1,64 @@
+MATLAB is running in headless mode.  Figure windows will not be displayed.
+Warning: Unable to locate a personal folder for $documents\MATLAB
+[Warning: Userpath must be an absolute path and must exist on disk.] 
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+Schema Nr.: 1 -> Alternanza_R_C
+  Columns 1 through 7
+
+    [1x66 char]    [1x76 char]    [1x27 char]    [1x43 char]    [1x26 char]    [1x34 char]    '--, 0, 3'
+
+  Columns 8 through 14
+
+    [1x26 char]    [1x34 char]    '--, 3, 5'    [1x26 char]    [1x34 char]    '--, 5, 7'    [1x36 char]
+
+  Column 15
+
+    [1x200 char]
+
+[Warning: File not found or permission denied] 
+[> In Analizza_il_Sistema>MOSTRA_ABC at 3353
+  In Analizza_il_Sistema>EQUAZIONI_NELLO_SPAZIO_DEGLI_STATI at 2933
+  In Analizza_il_Sistema at 36] 
+State space equations:
+L*dot_X = A*X + B*U
+      Y = C*X + D*U
+ 
+Energy matrix L:
+[ C_1,   0,   0]
+[   0, C_2,   0]
+[   0,   0, C_3]
+ 
+Power matrix A:
+[ - G_1 - G_2,         G_2,    0]
+[         G_2, - G_2 - G_3,  G_3]
+[           0,         G_3, -G_3]
+ 
+Input matrix B:
+[ G_1, 0]
+[   0, 0]
+[   0, 1]
+ 
+Output matrix C:
+[ -G_1, 0, 0]
+[    0, 0, 1]
+ 
+Input-output matrix D:
+[ G_1, 0]
+[   0, 0]
+ 
+State vector X:
+ V_1
+ V_2
+ V_3
+ 
+Input vector U:
+ V_a
+ I_b
+ 
+Output vector Y:
+ I_a
+ V_b
+ 
