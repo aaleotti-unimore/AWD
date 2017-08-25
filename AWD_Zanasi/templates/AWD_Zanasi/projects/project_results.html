@@ -25,9 +25,36 @@
                 <pre>
                     {{ project.display_source_file }}
                 </pre>
+                <a href="{{ project.matlab_file.url }}">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                            Download {{ project.matlab_file|filename }}
+                        </a>
             </div>
         </div>
+        
+        
+        <hr>
+        <h3>File scaricabili</h3>
+        <div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6">
 
+            <ul class="list-group">
+            {% for out in project_output %}
+                {% if out.generic_file %}
+                  <li class="list-group-item">
+                        <a href="{{ out.generic_file.url }}">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                            Download {{ out.generic_file|filename }}
+                        </a>
+                  </li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+            </div>
+        </div>  
+        </div>
+        <hr>
         <h3>Output</h3>
         <div class="row">
             {% for out in project_output %}
@@ -45,7 +72,7 @@
                 {% endif %}
             {% endfor %}
         </div>
-
+        <hr>
         <div class="row">
             {% for out in project_output %}
                 {% if out.text_file %}
@@ -62,7 +89,8 @@
                 {% endif %}
             {% endfor %}
         </div>
-
+        
+               
 
     </div>
 {% endblock %}

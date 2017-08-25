@@ -1,35 +1,20 @@
-MATLAB is running in headless mode.  Figure windows will not be displayed.
- 
-To get started, type one of these: helpwin, helpdesk, or demo.
-For product information, visit www.mathworks.com.
- 
 Schema Nr.: 1 -> Alternanza_R_C
     '**, Us, No, ShX, Si, Sn, Si, SN, Si, Sr, Si, ShY, Si, ClY,y, FnY,8'
-    ''
     '**, Gr, Si, As, Si, Pr, Si, Ng, Alternanza_R_C, GTy, png, POG, Si, pGTy, png'
-    ''
     '**, Old, No, Sd, No, ClX,r '
-    ''
-    'eV, 1, 0, Fn, I_a, En, V_B, An,-90, Sh, 0.0'
-    ''
+    'eV, 1, 0, Fn, I_a, En, V_a, An,-90, Sh, 0.0'
     'eG, 1, 2, Kn, G_1, En, Vr1'
-    ''
     'eC, 2, 3, Kn, C_1, En, V_1, An,-90'
-    ''
-    '--, 0, 3'  
-    ''
+    '--, 0, 3'
     'eG, 2, 4, Kn, G_2, En, Vr2'
-    ''
     'eC, 4, 5, Kn, C_2, En, V_2, An,-90'
-    ''
-    '--, 3, 5'  
-    ''
+    '--, 3, 5'
     'eG, 4, 6, Kn, G_3, En, Vr3'
-    ''
     'eC, 6, 7, Kn, C_3, En, V_3, An,-90'
-    ''
-    '--, 5, 7'  
-    ''
+    '--, 5, 7'
     'eI, 6, 7, En, V_b, Fn, I_b , Sh, 0.6'
-    [1x201 char]
+    '**, Ng, Alternanza_R_C'
+    '**, Dir_out, C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\alr23\out\'
+    '**, Gr, Si, As, Si, Pr, Si, GTy, png, POG, Si, pPr, Si, pGTy, png'
+    '**, Sch, Si, SLX, No, xPr, Si, SIM, No, sPr, Si'
 

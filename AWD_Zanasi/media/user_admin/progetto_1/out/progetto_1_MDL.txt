@@ -1,0 +1,32 @@
+State space equations:
+L*dot_X = A*X + B*U
+      Y = C*X + D*U
+ 
+Energy matrix L:
+[ C_2,   0]
+[   0, L_4]
+ 
+Power matrix A:
+[ -1/R_3,   -1]
+[      1, -R_6]
+ 
+Input matrix B:
+ 1
+ 0
+ 
+Output matrix C:
+[ 1, 0]
+ 
+Input-output matrix D:
+0
+ 
+State vector X:
+ V_2
+ I_4
+ 
+Input vector U:
+I_1
+ 
+Output vector Y:
+V_1
+ 

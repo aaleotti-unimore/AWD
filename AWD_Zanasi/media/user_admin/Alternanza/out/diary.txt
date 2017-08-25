@@ -1,17 +1,20 @@
 Schema Nr.: 1 -> Alternanza_R_C
-  Columns 1 through 7
+    '**, Us, No, ShX, Si, Sn, Si, SN, Si, Sr, Si, ShY, Si, ClY,y, FnY,8'
+    '**, Gr, Si, As, Si, Pr, Si, Ng, Alternanza_R_C, GTy, png, POG, Si, pGTy, png'
+    '**, Old, No, Sd, No, ClX,r '
+    'eV, 1, 0, Fn, I_a, En, V_b, An,-90, Sh, 0.0'
+    'eG, 1, 2, Kn, G_1, En, Vr1'
+    'eC, 2, 3, Kn, C_1, En, V_1, An,-90'
+    '--, 0, 3'
+    'eG, 2, 4, Kn, G_2, En, Vr2'
+    'eC, 4, 5, Kn, C_2, En, V_2, An,-90'
+    '--, 3, 5'
+    'eG, 4, 6, Kn, G_3, En, Vr3'
+    'eC, 6, 7, Kn, C_3, En, V_3, An,-90'
+    '--, 5, 7'
+    'eI, 6, 7, En, V_b, Fn, I_b , Sh, 0.6'
+    '**, Ng, Alternanza_R_C'
+    '**, Dir_out, C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\'
+    '**, Gr, Si, As, Si, Pr, Si, GTy, png, POG, Si, pPr, Si, pGTy, png'
+    '**, Sch, Si, SLX, No, xPr, Si, SIM, No, sPr, Si'
 
-    [1x66 char]    [1x76 char]    [1x27 char]    [1x43 char]    [1x26 char]    [1x34 char]    '--, 0, 3'
-
-  Columns 8 through 14
-
-    [1x26 char]    [1x34 char]    '--, 3, 5'    [1x26 char]    [1x34 char]    '--, 5, 7'    [1x36 char]
-
-  Column 15
-
-    [1x207 char]
-
-[Warning: File not found or permission denied] 
-[> In Analizza_il_Sistema>MOSTRA_ABC at 3353
-  In Analizza_il_Sistema>EQUAZIONI_NELLO_SPAZIO_DEGLI_STATI at 2933
-  In Analizza_il_Sistema at 36] 

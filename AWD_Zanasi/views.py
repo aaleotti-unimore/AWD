@@ -7,6 +7,7 @@ from __future__ import unicode_literals
 import csv
 import logging.config
 import codecs
+import shutil
 
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
@@ -164,7 +165,10 @@ def delete_project(request, project_id):
         if project_id:
             project = Project.objects.get(id=project_id)
             if project:
+                # folder_to_delete = settings.MEDIA_ROOT + "\\" + project.project_folder
+                # logger.debug("folder to delete %s" % folder_to_delete )
                 project.delete()
+                # shutil.rmtree(folder_to_delete)
                 messages.add_message(request, messages.SUCCESS, 'Project successfully deleted')
             else:
                 messages.add_message(request, messages.ERROR, 'Project not found')
@@ -422,6 +426,7 @@ def launch_project(request, project_id):
     """
     if project_id:
         project = Project.objects.get(id=project_id)
+		
         watchdog(project)
         messages.add_message(request, messages.SUCCESS, 'Project ' + project.name + ': elaboration complete')
         return redirect('index')

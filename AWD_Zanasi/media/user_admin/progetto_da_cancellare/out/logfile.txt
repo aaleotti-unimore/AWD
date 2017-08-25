@@ -9,7 +9,7 @@ Schema Nr.: 1 -> Alternanza_R_C
     '**, Us, No, ShX, Si, Sn, Si, SN, Si, Sr, Si, ShY, Si, ClY,y, FnY,8'
     '**, Gr, Si, As, Si, Pr, Si, Ng, Alternanza_R_C, GTy, png, POG, Si, pGTy, png'
     '**, Old, No, Sd, No, ClX,r '
-    'eV, 1, 0, Fn, I_a, En, V_b, An,-90, Sh, 0.0'
+    'eV, 1, 0, Fn, I_a, En, V_a, An,-90, Sh, 0.0'
     'eG, 1, 2, Kn, G_1, En, Vr1'
     'eC, 2, 3, Kn, C_1, En, V_1, An,-90'
     '--, 0, 3'
@@ -21,7 +21,7 @@ Schema Nr.: 1 -> Alternanza_R_C
     '--, 5, 7'
     'eI, 6, 7, En, V_b, Fn, I_b , Sh, 0.6'
     '**, Ng, Alternanza_R_C'
-    '**, Dir_out, C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Alternanza\out\'
+    '**, Dir_out, C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\progetto_da_cancellare\out\'
     '**, Gr, Si, As, Si, Pr, Si, GTy, png, POG, Si, pPr, Si, pGTy, png'
     '**, Sch, Si, SLX, No, xPr, Si, SIM, No, sPr, Si'
 
@@ -58,7 +58,7 @@ State vector X:
  V_3
  
 Input vector U:
- V_b
+ V_a
  I_b
  
 Output vector Y:

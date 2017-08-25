@@ -24,6 +24,8 @@ def project_output_path(instance, filename):
     return 'user_{0}/{1}/out/{2}'.format(instance.project.user.username, instance.project.name, filename)
 
 
+    
+    
 class Project(models.Model):
     """
     Stores a single Project entry. it's definied by its name, user and a txt file containing the matlab code.
@@ -64,6 +66,9 @@ class Project(models.Model):
     def clean(self):
         if self.name:
             self.name = self.name.replace(' ','_')
+            
+    def project_folder(self):
+        return 'user_{0}\\{1}'.format(self.project.user.username, self.project.name)
 
 
 class ProjectOutput(models.Model):
@@ -75,7 +80,10 @@ class ProjectOutput(models.Model):
                                  help_text="Use only for text files")
     image_file = models.ImageField(upload_to=project_output_path, blank=True, null=True,
                                    help_text="Use only for image files")
-
+    generic_file = models.FileField(upload_to=project_output_path, blank=True, null=True,
+                                 help_text="Generic Type file" )
+	
+	
     def __str__(self):
         if self.text_file:
             return self.text_file.url

@@ -56,6 +56,7 @@ if not(strcmp(Sistema.Dir_out,'.\'))
     movefile('diary.txt',[Sistema.Dir_out 'diary.txt'])
     FID=fopen([Sistema.Dir_out '.done'],'w');
     fclose(FID);
+    zip([Sistema.Dir_out Sistema.Title],{[Sistema.Dir_out '*.txt'],[Sistema.Dir_out '*.png']})
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 return
@@ -186,7 +187,7 @@ Sistema.Parms_Rami={...
     {'Lung'         ,'1'  ,'Ln' ,'Num','Real','[0.1 10]'      ,'Plot','Lunghezza del ramo','Length of the physical branch'},...
     {'Shift'        ,'0'  ,'Sh' ,'Num','Real','[-5 5]'        ,'Plot','Spostamento laterale del ramo','Lateral shift of the physical branch'},...
     {'Lateral'      ,'0.4','La' ,'Num','Real','[-2 2]'        ,'Plot','Distanza laterale da un altro ramo','Lateral distance from another physical branch'},...
-    {'Trasla'       ,'0'  ,'Tr' ,'Num','Real','[-0.9 0.9]'    ,'Plot','Traslazione orizzontale dell''elemento sul ramo','Translational shift of the element along the physical branch'},...
+    {'Trasla'       ,'0'  ,'Tr' ,'Num','Real','[-10 10]'      ,'Plot','Traslazione orizzontale dell''elemento sul ramo','Translational shift of the element along the physical branch'},...
     {'Visibile'     ,'Si' ,'Vs' ,'Str','Set' ,{'Si','No'}      ,'Plot','Indica se il ramo deve essere visualizzato o no','Indicates if the physical branch must be visualized'},...
     {'E_up_down'    ,'-1' ,'Eu' ,'Num','Set' ,'[-1 1]'         ,'Plot','Posizione Up/Down della trans-variabile En','Up/Down position of the across-variable En'},...
     {'K_up_down'    ,'1'  ,'Ku' ,'Num','Set' ,'[-1 1]'         ,'Plot','Posizione Up/Down del parametro interno Kn','Up/Down position of the internal parameter Kn'},...
@@ -358,13 +359,16 @@ if exist(File,'file')
     jj=1;
     for ii=1:Nr
         A(ii)=strrep(A(ii),'''','');
-        if not(strcmp(A(ii),'')||strcmp(A(ii),''''''))
+        if not(strcmp(A(ii),'')||strcmp(A(ii),''''''))      % Toglie le righe vuote
             B(jj)=A(ii);
             jj=jj+1;
         end
     end
-    A(ii+1)={['**, Gr, Si, As, Si, Ng, ' File_base ', Dir_out, ' Dir_out ', Pr, Si, GTy, png, POG, Si, pPr, Si, pGTy, png, Sch, Si, SLX, No, xPr, Si, SIM, No, sPr, Si']};
-    B(jj)={['**, Gr, Si, As, Si, Ng, ' File_base ', Dir_out, ' Dir_out ', Pr, Si, GTy, png, POG, Si, pPr, Si, pGTy, png, Sch, Si, SLX, No, xPr, Si, SIM, No, sPr, Si']};
+    B(jj)  ={['**, Ng, ' File_base]};
+    B(jj+1)  ={['**, Dir_out, ' Dir_out ]};
+    B(jj+2)={ '**, Gr, Si, As, Si, Pr, Si, GTy, png, POG, Si, pPr, Si, pGTy, png'};
+    B(jj+3)={ '**, Sch, Si, SLX, No, xPr, Si, SIM, No, sPr, Si'};
+    B=B(:);
     Sistema.Title= File_base;
     Sistema.Dir_out= Dir_out;
     Sistema.Schema_In= B;
@@ -3350,8 +3354,11 @@ end
 n=size(Equazioni_In.L,1);
 if n>=0
     if exist(File,'file')
-        delete(File)
-%         diary on
+        diary off
+        FID=fopen(File,'w');
+        fclose(FID);
+%         delete(File)
+        diary on
     end
     echo off
     diary(File)
@@ -4828,3 +4835,4 @@ return
 % ** 60 **  (xx/06/2017) 
 
 % Analizza_il_Sistema('.\media\user_Alessandro\proj_2\Alternanza_R_C.txt')
+% Sistema=Analizza_il_Sistema('C:\Users\roberto\Documents\POG\Sistemi_POG\media\user_admin\Alt\Alternanza_R_C.txt');

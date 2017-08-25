@@ -31,7 +31,7 @@ State vector X:
  V_3
  
 Input vector U:
- V_b
+ V_a
  I_b
  
 Output vector Y:

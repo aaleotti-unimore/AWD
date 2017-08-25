@@ -95,6 +95,8 @@
                             {% else %}
                                 <td>No Results</td>
                             {% endif %}
+                            
+                            {% if user.username == project.user.username  %}
                             <td><a id="launchproj" class="btn btn-default btn-sm" role="button"
                                    href="{% url 'launch_project' project.id %}"><i class="fa fa-play"></i>
                                 Launch</a></td>
@@ -112,6 +114,7 @@
                                     </button>
                                 </form>
                             </th>
+                            {% endif %}
 
                         </tr>
                     {% endfor %}
@@ -120,9 +123,9 @@
             </div>
         {% else %}
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                     <div class="jumbotron">
-                        <h1>Welcome!</h1>
+                        <h1>Benvenuti</h1>
                         <p>Login here to start working</p>
                         <p><a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Login</a></p>
                     </div>
@@ -137,8 +140,8 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $(document).on("click", "#launchproj", function () {
-                alert("Project Launched")
-            });
+                alert("Project Launched") 
+                });
 
         });
     </script>

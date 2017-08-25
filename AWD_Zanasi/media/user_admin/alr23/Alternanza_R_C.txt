@@ -1,7 +1,6 @@
 **, Us, No, ShX, Si, Sn, Si, SN, Si, Sr, Si, ShY, Si, ClY,y, FnY,8
 **, Gr, Si, As, Si, Pr, Si, Ng, Alternanza_R_C, GTy, png, POG, Si, pGTy, png
 **, Old, No, Sd, No, ClX,r 
-
 eV, 1, 0, Fn, I_a, En, V_a, An,-90, Sh, 0.0
 eG, 1, 2, Kn, G_1, En, Vr1
 eC, 2, 3, Kn, C_1, En, V_1, An,-90
