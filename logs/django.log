@@ -12284,3 +12284,24 @@ C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
 [30/Aug/2017 14:16:42] DEBUG [AWD_Zanasi.views:451] Valid utf-8
 [30/Aug/2017 14:25:50] WARNING [AWD_Zanasi.views:67] NEW EMPTY FILE
 [30/Aug/2017 14:27:07] WARNING [AWD_Zanasi.views:67] NEW EMPTY FILE
+[30/Aug/2017 14:31:24] DEBUG [AWD_Zanasi.views:94] file output url: /media/user_Tebaldi/kers/out/File_Vuoto_SCH.png
+[30/Aug/2017 14:31:24] DEBUG [AWD_Zanasi.views:94] file output url: /media/user_Tebaldi/kers/out/diary.txt
+[30/Aug/2017 14:31:24] DEBUG [AWD_Zanasi.views:94] file output url: /media/user_Tebaldi/kers/out/logfile.txt
+[30/Aug/2017 14:31:24] DEBUG [AWD_Zanasi.views:94] file output url: /media/user_Tebaldi/kers/out/File_Vuoto_MDL.txt
+[30/Aug/2017 14:31:24] DEBUG [AWD_Zanasi.views:94] file output url: /media/user_Tebaldi/kers/out/File_Vuoto_POG.png
+[30/Aug/2017 14:31:24] DEBUG [AWD_Zanasi.views:450] Valid utf-8
+[30/Aug/2017 14:35:12] DEBUG [AWD_Zanasi.views:94] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_MDL.txt
+[30/Aug/2017 14:35:12] DEBUG [AWD_Zanasi.views:94] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_SCH.png
+[30/Aug/2017 14:35:12] DEBUG [AWD_Zanasi.views:94] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_POG.png
+[30/Aug/2017 14:35:12] DEBUG [AWD_Zanasi.views:94] file output url: /media/user_admin/Alternanza/out/logfile.txt
+[30/Aug/2017 14:35:12] DEBUG [AWD_Zanasi.views:94] file output url: /media/user_admin/Alternanza/out/diary.txt
+[30/Aug/2017 14:35:12] DEBUG [AWD_Zanasi.views:94] file output url: Alternanza
+[30/Aug/2017 14:35:12] DEBUG [AWD_Zanasi.views:94] file output url: /media/user_admin/Alternanza/out/Nonantola_1999_1.jpg
+[30/Aug/2017 14:35:12] DEBUG [AWD_Zanasi.views:450] Valid utf-8
+[30/Aug/2017 14:36:12] DEBUG [AWD_Zanasi.views:94] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_MDL.txt
+[30/Aug/2017 14:36:12] DEBUG [AWD_Zanasi.views:94] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_SCH.png
+[30/Aug/2017 14:36:12] DEBUG [AWD_Zanasi.views:94] file output url: /media/user_admin/Alternanza/out/Alternanza_R_C_POG.png
+[30/Aug/2017 14:36:12] DEBUG [AWD_Zanasi.views:94] file output url: /media/user_admin/Alternanza/out/logfile.txt
+[30/Aug/2017 14:36:12] DEBUG [AWD_Zanasi.views:94] file output url: /media/user_admin/Alternanza/out/diary.txt
+[30/Aug/2017 14:36:12] DEBUG [AWD_Zanasi.views:94] file output url: Alternanza
+[30/Aug/2017 14:36:12] DEBUG [AWD_Zanasi.views:450] Valid utf-8
