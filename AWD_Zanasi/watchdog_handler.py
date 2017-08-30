@@ -110,7 +110,7 @@ class MyHandler(FileSystemEventHandler):
             else:
                 logger.debug(event.src_path + "update to databse to project " + str(out.project.name))
                 
-        if event.src_path.endswith(".png"):
+        if (event.src_path.endswith(".png") | event.src_path.endswith(".jpg")):
             #cerca nuovi file png
             logger.debug("event src path " + event.src_path)
             logger.debug("media root " + settings.MEDIA_ROOT)
@@ -124,7 +124,8 @@ class MyHandler(FileSystemEventHandler):
                 logger.debug(event.src_path + " saved to databse to project " + str(out.project.name))
             else:
                 logger.debug(event.src_path + " updated to databse to project " + str(out.project.name))
-              
+         
+        
         # if event:
             # #generic file
             # logger.debug("event src path " + event.src_path)

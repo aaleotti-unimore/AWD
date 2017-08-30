@@ -15,6 +15,7 @@ from django.db import IntegrityError
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.core.files.base import ContentFile
 
 from watchdog_handler import watchdog
 from .forms import NewProjectForm, EditProjectForm, LoadCommandsListForm
@@ -62,6 +63,7 @@ def create_project(request):
                 matlab_file=form.cleaned_data['matlab_file'],
                 proj_desc=form.cleaned_data['proj_desc'],
             )
+                               
             new_project.save()
             return redirect('index')
         else:

@@ -18,6 +18,7 @@ class NewProjectForm(forms.Form):
 
     matlab_file = forms.FileField(
         label="Project File",
+        required=False
     )
 
     proj_desc = forms.CharField(
