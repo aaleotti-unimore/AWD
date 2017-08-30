@@ -7,8 +7,8 @@
 gen
 
 /AWD_Zanasi/media/matlab_projects
-/media/
-/db.sqlite3
+/AWD_Zanasi/media/*
+db.sqlite3
 /AWD_Zanasi/migrations/
 /AWD_Zanasi/pog_models/
 /logs/
