@@ -70,5 +70,14 @@
   % Python e Apache possono essere copiati. 
   % Nella variabile Path di Windows occorre aggiungere: C:\Python27;  C:\Python27\Scripts; C:\Apache24\bin
   
+  #### GIT
+  nella cartella C:\Apache24\htdocs\AWD
+  tasto destro del mouse -> git bash here
+  
+  git add -A && git commit -m "modifiche"
+  git push
+  
+  git pull
+  
   
   
