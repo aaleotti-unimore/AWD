@@ -1,17 +1,17 @@
 
  %%% Riavvio di Apache
- (Aprire PowerShell come superuser) 
+ (Aprire PowerShell come superuser)
  httpd -k restart       % per far ripartire il gestore
- 
+
  %%% Stop di Apache
   httpd -k stop          % per fermare il gestore
-  
+
  %%% Per fare una migrazione
 
   cd C:\Apache24\htdocs\AWD             % Vai  nei direttorio
   python .\manage.py makemigrations     % Prova a fare la migrazione
   python .\manage.py migrate            % Esegui la migrazione
-  
+
  %%% Attiva python in modalità debugger (da utilizzare in sviluppo)
   python .\manage.py runserver
 
@@ -22,62 +22,59 @@
   127.0.0.1
 
   %%% --->  Disattivare Editor  (fatto)
-  %%% --->  Attivare edit di file vuoto  (fatto)
+  %%% --->  Attivare edit di file vuoto
   %%% --->  Attivare copia di un altro progetto
   %%% --->  Il download dei file matlab.txt ha spaziatura doppia (da correggere)
-  %%% --->  Provare a mandare una email di benvenuto. 
-  %%% --->  Aggiungere email tra i campi visualizzati ad "admin" 
-  %%% --->  "Admin" dovrebbe prima vedere i propri progetti e poi quelli di tutti gli altri 
-  %%% --->  Attivare l'ordinamento alfabetico dei vari campi. 
-  %%% --->  L'utente dovrebbe poter modicifare anche la sua email 
-  %%% --->  Il manuale va tradotto in inglese  
+  %%% --->  Provare a mandare una email di benvenuto.
+  %%% --->  Aggiungere email tra i campi visualizzati ad "admin"
+  %%% --->  "Admin" dovrebbe prima vedere i propri progetti e poi quelli di tutti gli altri
+  %%% --->  Attivare l'ordinamento alfabetico dei vari campi.
+  %%% --->  L'utente dovrebbe poter modificare anche la sua email
+  %%% --->  Il manuale va tradotto in inglese
   %%% --->  "Scegli file" -> tradurre in inglese
-  
-  
-  
-  
-    
+
+
+
+
+
   %%%%%%%%%%%%%%%%%%%%%%%%%%
   Us: admin
   Pw: *********
   %%%%%%%%%%%%%%%%%%%%%%%%%%
-  Us: Alessandro, 
+  Us: Alessandro,
   Pw: zanasi_roberto
-  
+
   %%%%%%%%%%%%%%%%%%%%%%%%%%
-  
+
   manage.py             % File di partenza
   db.sqlite3            % Database (readonly)
   .gitignore            % ???
-  AWD/AWD               % ??? Può essere tolta ? (forse no) 
+  AWD/AWD               % ??? Può essere tolta ? (forse no)
   AWD/.idea             % ??? Può essere tolta ?
   AWD/logs/django.log   % Log file
-  
+
   urls.py               % Destinazioni da raggiungere quando si clicca su di un link associatoad un nome
   views.py              % Definizione delle funzioni del sito
   models.py             % Definizione degli elementi del database
-  
+
   %%% In AWD\AWD_Zanasi\templates\AWD_Zanasi\
   base.html         % File HTML di partenza per la definizione della pagina iniziale (blocks_in:style+container+javascript)
   home.html         % Inizia con "{% extends "AWD_Zanasi/base.html" %}": è un'estensione del precedente file (blocks_out:container+javascript)
   manual.html       % Contiene il manuale del programma
-  
-  
+
+
   % "jumbotron"  è un componente della  lireria grafica CSS/HTML "bootstrap"
   % Sito web di "bootstrap" : https://getbootstrap.com/
   % Ambiente per lop sviluppo di software: https://www.jetbrains.com/pycharm/
-  
-  % Python e Apache possono essere copiati. 
+
+  % Python e Apache possono essere copiati.
   % Nella variabile Path di Windows occorre aggiungere: C:\Python27;  C:\Python27\Scripts; C:\Apache24\bin
-  
+
   #### GIT
   nella cartella C:\Apache24\htdocs\AWD
   tasto destro del mouse -> git bash here
-  
+
   git add -A && git commit -m "modifiche"
   git push
-  
+
   git pull
-  
-  
-  

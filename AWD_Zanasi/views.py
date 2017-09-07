@@ -8,6 +8,7 @@ import csv
 import logging.config
 import codecs
 import shutil
+import os
 
 from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
@@ -63,7 +64,7 @@ def create_project(request):
                 matlab_file=form.cleaned_data['matlab_file'],
                 proj_desc=form.cleaned_data['proj_desc'],
             )
-                               
+
             new_project.save()
             return redirect('index')
         else:
@@ -92,7 +93,7 @@ def project_results(request, project_id):
 
             [logger.debug("file output url: " + str(out)) for out in outs if settings.DEBUG]
 
-            if __check_encoding(settings.MEDIA_ROOT + "/" + project.matlab_file.name):
+            if __check_encoding(os.path.join(settings.MEDIA_ROOT, project.matlab_file.name)):
                 return render(request, 'AWD_Zanasi/projects/project_results.html',
                               {'project': project, 'project_output': output})
             else:
@@ -119,9 +120,11 @@ def edit_project(request, project_id):
     """
     try:
         project = Project.objects.get(id=project_id)
-        filename = project.matlab_file.path
+        matlab_filename = project.matlab_file.path
 
-        if not __check_encoding(filename):
+        print('PROJECT ' + project.name)
+        print('file %s' % project.matlab_file.path)
+        if not __check_encoding(matlab_filename):
             messages.add_message(request, messages.ERROR, "Error opening project: Bad Encoding")
             return redirect('index')
 
@@ -129,15 +132,19 @@ def edit_project(request, project_id):
             form = EditProjectForm(request.POST)
 
             if form.is_valid():
+                new_project = Project(
+                    name=form.cleaned_data['proj_name'],
+                    user=request.user,
+                    proj_desc=form.cleaned_data['proj_desc'],
+                )
+                new_project.matlab_file.save("%s.txt" % form.cleaned_data['proj_name'],
+                                             ContentFile(form.cleaned_data['proj_code']))
+                new_project.save()
 
-                with open(filename, 'r+') as f:
-                    f.seek(0)
-                    f.write(form.cleaned_data['proj_code'])
-                    f.truncate()
+                old_proj_path = "%s\\user_%s\\%s" % (settings.MEDIA_ROOT, request.user, project.name)
+                project.delete()
+                shutil.rmtree(old_proj_path)
 
-                project.name = form.cleaned_data['proj_name']
-                project.proj_desc = form.cleaned_data['proj_desc']
-                project.save()
                 messages.add_message(request, messages.SUCCESS, 'Project successfully edited')
                 return redirect('index')
             else:
@@ -169,8 +176,13 @@ def delete_project(request, project_id):
             if project:
                 # folder_to_delete = settings.MEDIA_ROOT + "\\" + project.project_folder
                 # logger.debug("folder to delete %s" % folder_to_delete )
+                outpath = "%s\\user_%s\\%s" % (settings.MEDIA_ROOT, request.user, project.name)
+                logger.debug("OUT PATH TO DELETE %s" % outpath)
+                shutil.rmtree(outpath)
+                logger.debug("Directory deleted")
+
                 project.delete()
-                # shutil.rmtree(folder_to_delete)
+
                 messages.add_message(request, messages.SUCCESS, 'Project successfully deleted')
             else:
                 messages.add_message(request, messages.ERROR, 'Project not found')
@@ -178,6 +190,16 @@ def delete_project(request, project_id):
             messages.add_message(request, messages.ERROR, 'Project id not valid')
 
     return redirect('index')
+
+
+def delete_empty_dir(project=None):
+    import os
+    for root, dirs, files in os.walk(settings.MEDIA_ROOT):
+        for d in dirs:
+            dir = os.path.join(root, d)
+            # check if dir is empty
+            if not os.listdir(dir):
+                os.rmdir(dir)
 
 
 # noinspection PyCompatibility
@@ -428,7 +450,16 @@ def launch_project(request, project_id):
     """
     if project_id:
         project = Project.objects.get(id=project_id)
-		
+        project_out = ProjectOutput.objects.filter(project=project)
+        if project_out:
+            for out in project_out:
+                out.delete()
+
+            outpath = "%s\\user_%s\\%s\\out" % (settings.MEDIA_ROOT, request.user, project.name)
+            logger.debug("OUT PATH TO DELETE %s" % outpath)
+            shutil.rmtree(outpath)
+            logger.debug("Directory deleted")
+
         watchdog(project)
         messages.add_message(request, messages.SUCCESS, 'Project ' + project.name + ': elaboration complete')
         return redirect('index')
@@ -462,6 +493,7 @@ def examples(request):
     """
     projects = Project.objects.filter(is_example=True)
     return render(request, 'AWD_Zanasi/examples.html', {'projects': projects})
+
 
 @login_required()
 def manual(request):

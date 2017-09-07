@@ -2,7 +2,7 @@ Schema Nr.: 1 -> Alternanza_R_C
     '**, Us, No, ShX, Si, Sn, Si, SN, Si, Sr, Si, ShY, Si, ClY,y, FnY,8'
     '**, Gr, Si, As, Si, Pr, Si, Ng, Alternanza_R_C, GTy, png, POG, Si, pGTy, png'
     '**, Old, No, Sd, No, ClX,r '
-    'eV, 1, 0, Fn, I_a, En, V_b, An,-90, Sh, 0.0'
+    'eV, 1, 0, Fn, I_a, En, V_a, An,-90, Sh, 0.0'
     'eG, 1, 2, Kn, G_1, En, Vr1'
     'eC, 2, 3, Kn, C_1, En, V_1, An,-90'
     '--, 0, 3'
@@ -18,3 +18,4 @@ Schema Nr.: 1 -> Alternanza_R_C
     '**, Gr, Si, As, Si, Pr, Si, GTy, png, POG, Si, pPr, Si, pGTy, png'
     '**, Sch, Si, SLX, No, xPr, Si, SIM, No, sPr, Si'
 
+ 
