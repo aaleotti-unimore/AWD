@@ -13,6 +13,20 @@
                 </h1>
             </div>
         </div>
+        {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <div
+                                {% if message.tags == 'success' %}
+                                    class="alert alert-success"
+                                {% else %}
+                                    class="alert alert-danger"
+                                {% endif %}
+                                    role="alert">{% if message.tags %}
+                            <strong>{{ message.tags|capfirst }}:</strong> {% endif %} {{ message }}</div>
+                    {% endfor %}
+                </ul>
+            {% endif %}
  <!--   <div class="row">
             <form class="form-horizontal">
                 <div class="form-group">

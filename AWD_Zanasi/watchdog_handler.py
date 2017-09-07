@@ -34,9 +34,10 @@ def watchdog(project):
     ALIVE = True
     # filepath = os.path.dirname(project.matlab_file.name)
     filepath = settings.MEDIA_ROOT + separator + project.matlab_file.name
-    
+
     observer = Observer() # nuovo oggetto observer
-    observer.setName("obsv-" + str(project.id)) 
+    observer.setName("obsv-" + str(project.id))
+
     event_handler = MyHandler(project) # gestore degli eventi per l'observer
     
     ## percosi delle cartelle da osservare  / da dare a matlab

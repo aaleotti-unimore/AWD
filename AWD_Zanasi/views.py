@@ -23,6 +23,7 @@ from .forms import NewProjectForm, EditProjectForm, LoadCommandsListForm
 from .models import *
 
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 
 def index(request):
@@ -33,10 +34,10 @@ def index(request):
 
     if request.user.is_authenticated:
         if request.user.is_superuser:
-            projects = Project.objects.all()
+            projects = Project.objects.all().order_by('name')
             results = ProjectOutput.objects.all()
         else:
-            projects = Project.objects.filter(user=request.user)
+            projects = Project.objects.filter(user=request.user).order_by('name')
             results = ProjectOutput.objects.filter(project__in=projects)
         return render(request, 'AWD_Zanasi/home.html',
                       {
@@ -58,6 +59,12 @@ def create_project(request):
     if request.method == 'POST':
         form = NewProjectForm(request.POST, request.FILES)
         if form.is_valid():
+            # controlla se esiste gia
+            existing = Project.objects.filter(name=form.cleaned_data['name'])
+            if existing:
+                messages.add_message(request, messages.ERROR, "Project name already existing")
+                return render(request, 'AWD_Zanasi/projects/create_project.html', {'form': NewProjectForm()})
+            # crea nuovo progetto
             new_project = Project(
                 name=form.cleaned_data['name'],
                 user=request.user,
@@ -122,8 +129,8 @@ def edit_project(request, project_id):
         project = Project.objects.get(id=project_id)
         matlab_filename = project.matlab_file.path
 
-        print('PROJECT ' + project.name)
-        print('file %s' % project.matlab_file.path)
+        logger.debug('PROJECT ' + project.name)
+        logger.debug('matlab file %s' % project.matlab_file.path)
         if not __check_encoding(matlab_filename):
             messages.add_message(request, messages.ERROR, "Error opening project: Bad Encoding")
             return redirect('index')
@@ -132,18 +139,40 @@ def edit_project(request, project_id):
             form = EditProjectForm(request.POST)
 
             if form.is_valid():
+                actual_name = project.name
+                existing = Project.objects.filter(user=request.user).filter(
+                    name=form.cleaned_data['proj_name']).exclude(id=project.id)
+                if existing:
+                    messages.add_message(request, messages.ERROR, "Project name already existing")
+                    return render(request, 'AWD_Zanasi/projects/edit_project.html',
+                                  {'project': project, 'form': form})
+
+                new_name = form.cleaned_data['proj_name']
                 new_project = Project(
-                    name=form.cleaned_data['proj_name'],
+                    name=new_name,
                     user=request.user,
                     proj_desc=form.cleaned_data['proj_desc'],
                 )
+                try:
+                    logger.debug("removing %s" % project.matlab_file.path)
+                    os.remove(project.matlab_file.path)
+                except WindowsError as e:
+                    logger.error(e)
+
                 new_project.matlab_file.save("%s.txt" % form.cleaned_data['proj_name'],
                                              ContentFile(form.cleaned_data['proj_code']))
-                new_project.save()
 
+                new_project.save()
+                logger.debug("New project created: %s" % new_project.name)
+                logger.debug("Matlab File %s " % new_project.matlab_file.path)
                 old_proj_path = "%s\\user_%s\\%s" % (settings.MEDIA_ROOT, request.user, project.name)
                 project.delete()
-                shutil.rmtree(old_proj_path)
+                try:
+                    if actual_name != new_name:
+                        shutil.rmtree(old_proj_path)
+                        logger.debug("succesfully deleted %s" % old_proj_path)
+                except WindowsError as e:
+                    logger.error(e)
 
                 messages.add_message(request, messages.SUCCESS, 'Project successfully edited')
                 return redirect('index')
@@ -177,12 +206,16 @@ def delete_project(request, project_id):
                 # folder_to_delete = settings.MEDIA_ROOT + "\\" + project.project_folder
                 # logger.debug("folder to delete %s" % folder_to_delete )
                 outpath = "%s\\user_%s\\%s" % (settings.MEDIA_ROOT, request.user, project.name)
-                logger.debug("OUT PATH TO DELETE %s" % outpath)
-                shutil.rmtree(outpath)
-                logger.debug("Directory deleted")
+                logger.debug("Out path to delete %s" % outpath)
+
+                try:
+                    shutil.rmtree(outpath)
+                    logger.debug("Directory deleted")
+                except WindowsError as e:
+                    logger.error(e)
 
                 project.delete()
-
+                logger.debug("project %s deleted" % project.name)
                 messages.add_message(request, messages.SUCCESS, 'Project successfully deleted')
             else:
                 messages.add_message(request, messages.ERROR, 'Project not found')
@@ -190,16 +223,6 @@ def delete_project(request, project_id):
             messages.add_message(request, messages.ERROR, 'Project id not valid')
 
     return redirect('index')
-
-
-def delete_empty_dir(project=None):
-    import os
-    for root, dirs, files in os.walk(settings.MEDIA_ROOT):
-        for d in dirs:
-            dir = os.path.join(root, d)
-            # check if dir is empty
-            if not os.listdir(dir):
-                os.rmdir(dir)
 
 
 # noinspection PyCompatibility
@@ -455,10 +478,13 @@ def launch_project(request, project_id):
             for out in project_out:
                 out.delete()
 
-            outpath = "%s\\user_%s\\%s\\out" % (settings.MEDIA_ROOT, request.user, project.name)
-            logger.debug("OUT PATH TO DELETE %s" % outpath)
-            shutil.rmtree(outpath)
-            logger.debug("Directory deleted")
+            outpath = os.path.join(settings.MEDIA_ROOT, "user_%s" % request.user, project.name, "out")
+            logger.debug("Out path to delete %s" % outpath)
+            try:
+                shutil.rmtree(outpath)
+                logger.debug("Directory %s deleted" % outpath)
+            except WindowsError as e:
+                logger.error(e)
 
         watchdog(project)
         messages.add_message(request, messages.SUCCESS, 'Project ' + project.name + ': elaboration complete')

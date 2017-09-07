@@ -21,20 +21,18 @@
   127.0.0.1:80
   127.0.0.1
 
-  %%% --->  Disattivare Editor  (fatto)
+  %%% --->  Deve essere possibile fare il download del file zip.
+  %%% --->  Deve essere visualizzati tutti i file grafici e txt che Django può visualizzare.
   %%% --->  Attivare edit di file vuoto
-  %%% --->  Attivare copia di un altro progetto
-  %%% --->  Il download dei file matlab.txt ha spaziatura doppia (da correggere)
-  %%% --->  Provare a mandare una email di benvenuto.
-  %%% --->  Aggiungere email tra i campi visualizzati ad "admin"
-  %%% --->  "Admin" dovrebbe prima vedere i propri progetti e poi quelli di tutti gli altri
-  %%% --->  Attivare l'ordinamento alfabetico dei vari campi.
+  %%% --->  Mandare una email di benvenuto con il link di attivazione.
+  %%% --->  L'utente deve essere univocamente identificato tramite l'email in modo che io posso contattarlo tramite email.
   %%% --->  L'utente dovrebbe poter modificare anche la sua email
+  %%% --->  Attivare l'ordinamento alfabetico dei vari campi.
   %%% --->  Il manuale va tradotto in inglese
   %%% --->  "Scegli file" -> tradurre in inglese
-
-
-
+  %%% --->  Attivare copia di un altro progetto
+  %%% --->  Il download dei file matlab.txt ha spaziatura doppia (da correggere)
+  %%% --->  Aggiungere email tra i campi visualizzati ad "admin"
 
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -42,20 +40,18 @@
   Pw: *********
   %%%%%%%%%%%%%%%%%%%%%%%%%%
   Us: Alessandro,
-  Pw: zanasi_roberto
-
+  Pw: zanasi_roberto  -> robertozanasi
   %%%%%%%%%%%%%%%%%%%%%%%%%%
 
   manage.py             % File di partenza
   db.sqlite3            % Database (readonly)
-  .gitignore            % ???
-  AWD/AWD               % ??? Può essere tolta ? (forse no)
-  AWD/.idea             % ??? Può essere tolta ?
+ .gitignore             % Contiene i file che NON devono essere caricati/scaricati da GIT
+  db.sqlite3            % Database (readonly)
   AWD/logs/django.log   % Log file
 
   urls.py               % Destinazioni da raggiungere quando si clicca su di un link associatoad un nome
   views.py              % Definizione delle funzioni del sito
-  models.py             % Definizione degli elementi del database
+  models.py             % Definizione di tutti gli elementi del database (Contiene il "Project" e i "ProjectOutputs" )
 
   %%% In AWD\AWD_Zanasi\templates\AWD_Zanasi\
   base.html         % File HTML di partenza per la definizione della pagina iniziale (blocks_in:style+container+javascript)
@@ -70,11 +66,9 @@
   % Python e Apache possono essere copiati.
   % Nella variabile Path di Windows occorre aggiungere: C:\Python27;  C:\Python27\Scripts; C:\Apache24\bin
 
+
   #### GIT
-  nella cartella C:\Apache24\htdocs\AWD
-  tasto destro del mouse -> git bash here
-
-  git add -A && git commit -m "modifiche"
+  Attivare GIT: nella cartella C:\Apache24\htdocs\AWD tasto destro del mouse -> git bash here
+  git add -A && git commit -m "modifiche"       % Caricare in rete le modifiche
   git push
-
   git pull

@@ -64,12 +64,17 @@
                         <li>
                             <a href="{% url 'create_project' %}"><i class="fa fa-fw fa-plus"></i> Create</a>
                         </li>
+                        <li class="divider"></li>
+                        <!-- Temporaneamente sospeso 
                         <li>
                             <a href="{% url 'help_page' %}"><i class="fa fa-fw fa-list"></i> Commands List</a>
                         </li>
+                        <li class="divider"></li>
+                        -->
                         <li>
                             <a href="{% url 'manual' %}"><i class="fa fa-ambulance"></i> Manual</a>
                         </li>
+                        <li class="divider"></li>
                         <li>
                             <a href="{% url 'examples' %}"><i class="fa fa-fw fa-map-o"></i>Examples</a>
                         </li>
@@ -85,9 +90,11 @@
                             <li>
                                 <a href="/admin/"><i class="fa fa-magic"></i> Admin</a>
                             </li>
+                        <li class="divider"></li>
                             <li>
                                 <a href="{% url 'update_commands' %}"><i class="fa fa-list"></i> Update Commands</a>
                             </li>
+                        <li class="divider"></li>
                         {% endif %}
                         <li>
                             <a href="{% url 'auth_password_change' %}"><i class="fa fa-fw fa-user"></i> Profile</a>

@@ -95,7 +95,7 @@
                             {% else %}
                                 <td>No Results</td>
                             {% endif %}
-                            
+
                             {% if user.username == project.user.username  %}
                             <td><a id="launchproj" class="btn btn-default btn-sm" role="button"
                                    href="{% url 'launch_project' project.id %}"><i class="fa fa-play"></i>
@@ -141,6 +141,8 @@
         $(document).ready(function () {
             $(document).on("click", "#launchproj", function () {
                 <!-- alert("Project Launched") -->
+                $(this).addClass( "disabled" );
+
                 });
 
         });

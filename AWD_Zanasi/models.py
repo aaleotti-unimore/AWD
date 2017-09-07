@@ -21,7 +21,7 @@ def project_output_path(instance, filename):
     defines the path of the output files for :model:`AWD_Zanasi.ProjectOutput`
     # file will be uploaded to MEDIA_ROOT/user_<id>/<project_name>/out/<filename>
     """
-    return 'user_{0}/{1}/out/{2}'.format(instance.project.user.username, instance.project.name, filename)
+    return 'user_{0}/{1}/out/{2}'.format(instance.project.user.username, instance.name, filename)
 
 
     
@@ -51,7 +51,11 @@ class Project(models.Model):
         Reads the content of a :model:`AWD_Zanasi.Project` matlab_file
         """
         with open(self.matlab_file.path) as fp:
-            return fp.read()
+            text = fp.read()
+            # fp.truncate()
+
+        return text
+
 
     def __str__(self):
         return self.name

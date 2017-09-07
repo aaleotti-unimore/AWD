@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from crispy_forms.bootstrap import FormActions
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Submit
+from crispy_forms.layout import Layout, Submit, Button
 from django import forms
 
 
@@ -39,7 +39,7 @@ class NewProjectForm(forms.Form):
         'proj_desc',
         FormActions(
             Submit('save_changes', 'Save changes', css_class="btn-primary"),
-            Submit('cancel', 'Cancel', onclick='history.go(-1);'),
+            Button('cancel', 'Cancel', onclick="javascript:location.href = '/pogmodeler';"),
         )
     )
 
@@ -76,7 +76,7 @@ class EditProjectForm(forms.Form):
         'proj_desc',
         FormActions(
             Submit('save_changes', 'Save changes', css_class="btn-primary"),
-            Submit('cancel', 'Cancel', onclick='history.go(-1);'),
+            Button('cancel', 'Cancel', onclick="javascript:location.href = '/pogmodeler';"),
         )
     )
 
@@ -114,6 +114,6 @@ class LoadCommandsListForm(forms.Form):
         'system_list',
         FormActions(
             Submit('save_changes', 'Submit List', css_class="btn-primary"),
-            Submit('cancel', 'Cancel', onclick='history.go(-1);'),
+            Button('cancel', 'Cancel', onclick='history.go(-1);'),
         )
     )

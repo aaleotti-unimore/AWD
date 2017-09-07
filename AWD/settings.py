@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # third-party apps
     'django_jinja',
     'crispy_forms',
+    'django_cleanup',
 ]
 
 MIDDLEWARE = [
