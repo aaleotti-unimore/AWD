@@ -33,7 +33,7 @@ class Project(models.Model):
     """
     name = models.CharField(max_length=200, default='project', help_text='Project name')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, default='admin')
-    matlab_file = models.FileField(upload_to=matlab_file_path, help_text="Matlab POG code file")
+    matlab_file = models.FileField(upload_to=matlab_file_path, help_text="Matlab POG code file",  blank=True, null=True)
     proj_desc = models.CharField(max_length=400, blank=True, null=True, help_text="Project description")
     launch_date = models.DateTimeField(verbose_name='Launch Date', blank=True,
                                        null=True, help_text='Project last execution date')

@@ -1,96 +1,94 @@
 {% extends "AWD_Zanasi/base.html" %}
 
 {% block container %}
-    {% load crispy_forms_tags %}
-    {% load filename %}
+{% load crispy_forms_tags %}
 
-
-    <div class="container-fluid">
-        <!-- Page Heading -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">
-                    Projects
-                    <small>Results for Project: {{ project.name }}</small>
-                </h1>
-            </div>
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Projects
+                <small>Results for Project: {{ project.name }}</small>
+            </h1>
         </div>
+    </div>
 
-        <h3>Description</h3>
-        <p>{{ project.proj_desc }}</p>
+    <h3>Description</h3>
+    <p>{{ project.proj_desc }}</p>
 
-        <h3>Code</h3>
-        <div class="row">
-            <div class="col-lg-8">
+    <h3>Code</h3>
+    <div class="row">
+        <div class="col-lg-8">
                 <pre>
                     {{ project.display_source_file }}
                 </pre>
-                <a href="{{ project.matlab_file.url }}">
-                            <i class="fa fa-download" aria-hidden="true"></i>
-                            Download
-                        </a>
-            </div>
+            <a href="{{ project.matlab_file.url }}">
+                <i class="fa fa-download" aria-hidden="true"></i>
+                Download {{ project.matlab_file.name }}
+            </a>
         </div>
-        
-        
-        <hr>
-        <h3>File scaricabili</h3>
-        <div>
+    </div>
+
+
+    <hr>
+    <h3>File scaricabili</h3>
+    <div>
         <div class="row">
             <div class="col-xs-6 col-md-6">
 
-            <ul class="list-group">
-            {% for out in project_output %}
-                {% if out.generic_file %}
-                  <li class="list-group-item">
+                <ul class="list-group">
+                    {% for out in project_output %}
+                    {% if out.generic_file %}
+                    <li class="list-group-item">
                         <a href="{{ out.generic_file.url }}">
                             <i class="fa fa-download" aria-hidden="true"></i>
-                            Download
+                            Download {{ out.generic_file.name }}
                         </a>
-                  </li>
-                {% endif %}
-            {% endfor %}
-            </ul>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
             </div>
-        </div>  
         </div>
-        <hr>
-        <h3>Output</h3>
-        <div class="row">
-            {% for out in project_output %}
-                {% if out.image_file %}
-                    <div class="col-xs-6 col-md-6">
-                        <div class="thumbnail">
-                            <img class="img-responsive watch-right" alt="not found" src="{{ out.image_file.url }}?v={{ project.launch_date }}"/>
-                            <div class="caption">
-                                <small><a href="{{ out.image_file.url }}"><i class="fa fa-download"
-                                                                             aria-hidden="true"></i>
-                                    Download</a></small>
-                            </div>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
+    </div>
+    <hr>
+    <h3>Output</h3>
+    <div class="row">
+        {% for out in project_output %}
+        {% if out.image_file %}
+        <div class="col-xs-6 col-md-6">
+            <div class="thumbnail">
+                <img class="img-responsive watch-right" alt="not found"
+                     src="{{ out.image_file.url }}?v={{ project.launch_date }}"/>
+                <div class="caption">
+                    <small><a href="{{ out.image_file.url }}"><i class="fa fa-download"
+                                                                 aria-hidden="true"></i>
+                        Download {{ out.image_file.name }}</a></small>
+                </div>
+            </div>
         </div>
-        <hr>
-        <div class="row">
-            {% for out in project_output %}
-                {% if out.text_file %}
-                    <div class="col-lg-6">
+        {% endif %}
+        {% endfor %}
+    </div>
+    <hr>
+    <div class="row">
+        {% for out in project_output %}
+        {% if out.text_file %}
+        <div class="col-lg-6">
                                 <pre>
                                     {{ out.display_text_file }}
                                 </pre>
-                        <a href="{{ out.text_file.url }}">
-                            <i class="fa fa-download" aria-hidden="true"></i>
-                            Download
-                        </a>
-                    </div>
-
-                {% endif %}
-            {% endfor %}
+            <a href="{{ out.text_file.url }}">
+                <i class="fa fa-download" aria-hidden="true"></i>
+                Download {{ out.text_file.name }}
+            </a>
         </div>
-        
-               
 
+        {% endif %}
+        {% endfor %}
     </div>
+
+
+</div>
 {% endblock %}

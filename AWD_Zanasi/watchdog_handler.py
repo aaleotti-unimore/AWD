@@ -9,6 +9,7 @@ import subprocess
 from subprocess import Popen
 from django.utils import timezone
 from watchdog.events import FileSystemEventHandler
+from django.core.exceptions import ObjectDoesNotExist
 
 from .models import *
 
@@ -84,7 +85,7 @@ class MyHandler(FileSystemEventHandler):
         project.save()
         self.project = project
 
-    def process(self, event):
+    def add_output(self, event):
         """
         Tracks the project "out" folder for new .txt or .png files and terminates itself if a ".done" file is created or modified or the timout is reached.
         
@@ -125,22 +126,21 @@ class MyHandler(FileSystemEventHandler):
                 logger.debug(event.src_path + " saved to databse to project " + str(out.project.name))
             else:
                 logger.debug(event.src_path + " updated to databse to project " + str(out.project.name))
-         
-        
-        # if event:
-            # #generic file
-            # logger.debug("event src path " + event.src_path)
-            # logger.debug("media root " + settings.MEDIA_ROOT)
-            # root, generic_file_path = event.src_path.split(settings.MEDIA_ROOT+"\\")
-            # logger.debug("root " + root)
-            # logger.debug("out file path " + img_file_path)
 
-            # out, created = ProjectOutput.objects.get_or_create(project=self.project, generic_file=generic_file_path)
+        if (event.src_path.endswith(".zip")):
+            #generic file
+            logger.debug("event src path " + event.src_path)
+            logger.debug("media root " + settings.MEDIA_ROOT)
+            root, generic_file_path = event.src_path.split(settings.MEDIA_ROOT+"\\")
+            logger.debug("root " + root)
+            logger.debug("out file path " + generic_file_path)
+
+            out, created = ProjectOutput.objects.get_or_create(project=self.project, generic_file=generic_file_path)
             
-            # if created:
-                # logger.debug(event.src_path + " saved to databse to project " + str(out.project.name))
-            # else:
-                # logger.debug(event.src_path + " updated to databse to project " + str(out.project.name))
+            if created:
+                logger.debug(event.src_path + " saved to databse to project " + str(out.project.name))
+            else:
+                logger.debug(event.src_path + " updated to databse to project " + str(out.project.name))
         
         
         if event.src_path.endswith(".done"):
@@ -149,16 +149,24 @@ class MyHandler(FileSystemEventHandler):
             global ALIVE
             ALIVE = False
             
-          
-        
 
         logger.debug(str(event.src_path) + " " + str(event.event_type))
 
+    def rem_output(self,event):
+        # generic file
+        try:
+            root, generic_file_path = event.src_path.split(settings.MEDIA_ROOT + "\\")
+            out_object = ProjectOutput.objects.get(project=self.project, generic_file=generic_file_path)
+            out_object.delete()
+            logger.debug(event.src_path + " deleted from project " + str(out_object.project.name))
+        except ObjectDoesNotExist as e:
+            logger.error(e)
+
     def on_modified(self, event):
-        self.process(event)
+        self.add_output(event)
 
     def on_created(self, event):
-        self.process(event)
+        self.add_output(event)
         
     def on_deleted(self, event):
-        pass
+        self.rem_output(event)

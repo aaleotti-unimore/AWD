@@ -18,6 +18,7 @@ from django.contrib.auth.decorators import user_passes_test
 from django.db import IntegrityError
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, HttpResponse
+from django.core.files import File
 
 from watchdog_handler import watchdog
 from .forms import NewProjectForm, EditProjectForm, LoadCommandsListForm
@@ -69,9 +70,19 @@ def create_project(request):
             new_project = Project(
                 name=form.cleaned_data['name'],
                 user=request.user,
-                matlab_file=form.cleaned_data['matlab_file'],
                 proj_desc=form.cleaned_data['proj_desc'],
             )
+            if form.cleaned_data['matlab_file']:
+                file = form.cleaned_data['matlab_file']
+                # os.rename(file.name, "%s.txt" % form.cleaned_data['name'])
+                file.name = "%s.txt" % form.cleaned_data['name']
+                file.name = file.name.replace(" ", "_")
+                logger.debug("matlab file renamed to %s" % file)
+                new_project.matlab_file = file
+            else:
+                with open('C:\Apache24\htdocs\AWD\AWD_Zanasi\Schema_Vuoto.txt') as schema_vuoto:
+                    new_project.matlab_file.save("%s.txt" % new_project.name, File(schema_vuoto))
+
 
             new_project.save()
             return redirect('index')
@@ -126,10 +137,10 @@ def edit_project(request, project_id):
     """
     try:
         project = Project.objects.get(id=project_id)
-        matlab_filename = project.matlab_file.path
+        # matlab_filename = project.matlab_file.path
 
-        logger.debug('PROJECT ' + project.name)
-        logger.debug('matlab file %s' % project.matlab_file.path)
+        logger.debug('Editing project ' + project.name)
+        # logger.debug('matlab file %s' % project.matlab_file.path)
         # if not __check_encoding(matlab_filename):
         #     messages.add_message(request, messages.ERROR, "Error opening project: Bad Encoding")
         #     return redirect('index')
@@ -138,37 +149,46 @@ def edit_project(request, project_id):
             form = EditProjectForm(request.POST)
 
             if form.is_valid():
-                actual_name = project.name
+                old_name = project.name
+
+                ####################### CONTROLLO SE ESISTE GIA UN ALTRO PROGETTO DELLO STESSO UTENTE CON LO STESSO NOME
                 existing = Project.objects.filter(user=request.user).filter(
                     name=form.cleaned_data['proj_name']).exclude(id=project.id)
+                logger.debug("%s" % existing)
                 if existing:
                     messages.add_message(request, messages.ERROR, "Project name already existing")
                     return render(request, 'AWD_Zanasi/projects/edit_project.html',
                                   {'project': project, 'form': form})
+                #######################
 
-                delete_all(project.matlab_file.path)
+                #### ELIMINAZIONE VECCHIO PROGETTO
+                project.delete()
+                outpath = os.path.join(settings.MEDIA_ROOT, "user_%s" % request.user, project.name)
+                delete_all(outpath)
+                ######
 
+                ##### NUOVO PROGETTO
                 new_name = form.cleaned_data['proj_name']
                 new_project = Project(
                     name=new_name,
                     user=request.user,
                     proj_desc=form.cleaned_data['proj_desc'],
                 )
-
-                new_project.matlab_file.save("%s.txt" % form.cleaned_data['proj_name'],
+                new_project.matlab_file.save("%s.txt" % form.cleaned_data['proj_name'].replace(" ", "_"),
                                              ContentFile(form.cleaned_data['proj_code']))
-
                 new_project.save()
+                ######
+
                 logger.debug("New project created: %s" % new_project.name)
                 logger.debug("Matlab File %s " % new_project.matlab_file.path)
-                old_proj_path = os.path.join(settings.MEDIA_ROOT, 'user_%s' % request.user, project.name)
-                project.delete()
-                try:
-                    if actual_name != new_name:
-                        shutil.rmtree(old_proj_path)
-                        logger.debug("succesfully deleted %s" % old_proj_path)
-                except WindowsError as e:
-                    logger.error(e)
+                # old_proj_path = os.path.join(settings.MEDIA_ROOT, 'user_%s' % request.user, project.name)
+                # try:
+                #     if old_name != new_name:
+                #         shutil.rmtree(old_proj_path)
+                #         logger.debug("succesfully deleted %s" % old_proj_path)
+                # except WindowsError as e:
+                #     logger.error("ERROR deleting %s" % old_proj_path)
+                #     logger.error(e)
 
                 messages.add_message(request, messages.SUCCESS, 'Project successfully edited')
                 return redirect('index')
@@ -481,24 +501,6 @@ def launch_project(request, project_id):
     return redirect('index')
 
 
-#
-# def __check_encoding(filename):
-#     """
-#     Private function, check if the txt file is utf-8 encoded. prevents rendering errors
-#     :param filename: txt file
-#     :return: returns a boolean  for success or fail
-#     """
-#     try:
-#         f = codecs.open(filename, encoding='utf-8', errors='strict')
-#         for line in f:
-#             pass
-#         logger.debug("Valid utf-8")
-#         return True
-#     except UnicodeDecodeError:
-#         logger.error("invalid utf-8")
-#         return False
-
-
 @login_required
 def examples(request):
     """
@@ -517,27 +519,7 @@ def manual(request):
 
 
 def delete_all(outpath):
-
-    # os.rmdir(outpath)
-    # import thread, multiprocessing
-    # # create the process pool once
-    # process_pool = multiprocessing.Pool(1)
-    # results = []
     try:
-        #     files = os.listdir(outpath)
-        #     for filename in files:
-        #         logger.debug("%s" % filename)
-        #         thread.start_new_thread(os.remove, (file,))
-        #         # later on removing a file in async fashion
-        #         # note: need to hold on to the async result till it has completed
-        #         results.append(process_pool.apply_async(os.remove, filename),
-        #                        )
-        #     os.rmdir(outpath)
-        # results = subprocess.check_output(
-        #     "C:\Apache24\htdocs\AWD\AWD_Zanasi\delfiles.bat \"%s\" " % outpath,
-        #     shell=True)
-        # logger.debug("Deletion script output: %s" % results)
-        # logger.debug("Directory succesfully deleted")
         shutil.rmtree(outpath)
     except WindowsError as e:
         logger.error(e)
