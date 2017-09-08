@@ -6,17 +6,18 @@ from __future__ import unicode_literals
 
 import csv
 import logging.config
-import codecs
-import shutil
 import os
+import shutil
+import subprocess
+import sys
+import time
 
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
 from django.db import IntegrityError
 from django.http import JsonResponse
 from django.shortcuts import render, redirect, HttpResponse
-from django.contrib.auth.decorators import login_required
-from django.core.files.base import ContentFile
 
 from watchdog_handler import watchdog
 from .forms import NewProjectForm, EditProjectForm, LoadCommandsListForm
@@ -98,14 +99,12 @@ def project_results(request, project_id):
             output = ProjectOutput.objects.filter(project=project)
             outs = list(output)
 
-            [logger.debug("file output url: " + str(out)) for out in outs if settings.DEBUG]
-
-            if __check_encoding(os.path.join(settings.MEDIA_ROOT, project.matlab_file.name)):
-                return render(request, 'AWD_Zanasi/projects/project_results.html',
-                              {'project': project, 'project_output': output})
-            else:
-                messages.add_message(request, messages.ERROR, 'Error Opening project file: bad encoding')
-        except Project.DoesNotExist:
+            # if __check_encoding(os.path.join(settings.MEDIA_ROOT, project.matlab_file.name)):
+            return render(request, 'AWD_Zanasi/projects/project_results.html',
+                          {'project': project, 'project_output': output})
+            # else:
+            #     messages.add_message(request, messages.ERROR, 'Error Opening project file: bad encoding')
+        except IOError as e:
             logger.error("Project " + project_id + " does not exists")
             messages.add_message(request, messages.ERROR, 'Project ID not found')
 
@@ -131,9 +130,9 @@ def edit_project(request, project_id):
 
         logger.debug('PROJECT ' + project.name)
         logger.debug('matlab file %s' % project.matlab_file.path)
-        if not __check_encoding(matlab_filename):
-            messages.add_message(request, messages.ERROR, "Error opening project: Bad Encoding")
-            return redirect('index')
+        # if not __check_encoding(matlab_filename):
+        #     messages.add_message(request, messages.ERROR, "Error opening project: Bad Encoding")
+        #     return redirect('index')
 
         if request.method == 'POST':
             form = EditProjectForm(request.POST)
@@ -147,17 +146,14 @@ def edit_project(request, project_id):
                     return render(request, 'AWD_Zanasi/projects/edit_project.html',
                                   {'project': project, 'form': form})
 
+                delete_all(project.matlab_file.path)
+
                 new_name = form.cleaned_data['proj_name']
                 new_project = Project(
                     name=new_name,
                     user=request.user,
                     proj_desc=form.cleaned_data['proj_desc'],
                 )
-                try:
-                    logger.debug("removing %s" % project.matlab_file.path)
-                    os.remove(project.matlab_file.path)
-                except WindowsError as e:
-                    logger.error(e)
 
                 new_project.matlab_file.save("%s.txt" % form.cleaned_data['proj_name'],
                                              ContentFile(form.cleaned_data['proj_code']))
@@ -165,7 +161,7 @@ def edit_project(request, project_id):
                 new_project.save()
                 logger.debug("New project created: %s" % new_project.name)
                 logger.debug("Matlab File %s " % new_project.matlab_file.path)
-                old_proj_path = "%s\\user_%s\\%s" % (settings.MEDIA_ROOT, request.user, project.name)
+                old_proj_path = os.path.join(settings.MEDIA_ROOT, 'user_%s' % request.user, project.name)
                 project.delete()
                 try:
                     if actual_name != new_name:
@@ -185,7 +181,7 @@ def edit_project(request, project_id):
         return render(request, 'AWD_Zanasi/projects/edit_project.html',
                       {'project': project, 'form': form})
 
-    except Project.DoesNotExist:
+    except IOError as e:
         messages.add_message(request, messages.ERROR, "Project ID not found")
 
     return redirect('index')
@@ -205,17 +201,12 @@ def delete_project(request, project_id):
             if project:
                 # folder_to_delete = settings.MEDIA_ROOT + "\\" + project.project_folder
                 # logger.debug("folder to delete %s" % folder_to_delete )
-                outpath = "%s\\user_%s\\%s" % (settings.MEDIA_ROOT, request.user, project.name)
+                outpath = os.path.join(settings.MEDIA_ROOT, "user_%s" % request.user, project.name)
                 logger.debug("Out path to delete %s" % outpath)
-
-                try:
-                    shutil.rmtree(outpath)
-                    logger.debug("Directory deleted")
-                except WindowsError as e:
-                    logger.error(e)
-
                 project.delete()
                 logger.debug("project %s deleted" % project.name)
+
+                delete_all(outpath)
                 messages.add_message(request, messages.SUCCESS, 'Project successfully deleted')
             else:
                 messages.add_message(request, messages.ERROR, 'Project not found')
@@ -480,12 +471,9 @@ def launch_project(request, project_id):
 
             outpath = os.path.join(settings.MEDIA_ROOT, "user_%s" % request.user, project.name, "out")
             logger.debug("Out path to delete %s" % outpath)
-            try:
-                shutil.rmtree(outpath)
-                logger.debug("Directory %s deleted" % outpath)
-            except WindowsError as e:
-                logger.error(e)
 
+            delete_all(outpath)
+            time.sleep(1)
         watchdog(project)
         messages.add_message(request, messages.SUCCESS, 'Project ' + project.name + ': elaboration complete')
         return redirect('index')
@@ -493,21 +481,22 @@ def launch_project(request, project_id):
     return redirect('index')
 
 
-def __check_encoding(filename):
-    """
-    Private function, check if the txt file is utf-8 encoded. prevents rendering errors
-    :param filename: txt file
-    :return: returns a boolean  for success or fail
-    """
-    try:
-        f = codecs.open(filename, encoding='utf-8', errors='strict')
-        for line in f:
-            pass
-        logger.debug("Valid utf-8")
-        return True
-    except UnicodeDecodeError:
-        logger.error("invalid utf-8")
-        return False
+#
+# def __check_encoding(filename):
+#     """
+#     Private function, check if the txt file is utf-8 encoded. prevents rendering errors
+#     :param filename: txt file
+#     :return: returns a boolean  for success or fail
+#     """
+#     try:
+#         f = codecs.open(filename, encoding='utf-8', errors='strict')
+#         for line in f:
+#             pass
+#         logger.debug("Valid utf-8")
+#         return True
+#     except UnicodeDecodeError:
+#         logger.error("invalid utf-8")
+#         return False
 
 
 @login_required
@@ -525,3 +514,30 @@ def examples(request):
 def manual(request):
     from watchdog_handler import MAXTIME
     return render(request, 'AWD_Zanasi/manual.html', {'WATCHDOG_TIMEOUT': MAXTIME})
+
+
+def delete_all(outpath):
+
+    # os.rmdir(outpath)
+    # import thread, multiprocessing
+    # # create the process pool once
+    # process_pool = multiprocessing.Pool(1)
+    # results = []
+    try:
+        #     files = os.listdir(outpath)
+        #     for filename in files:
+        #         logger.debug("%s" % filename)
+        #         thread.start_new_thread(os.remove, (file,))
+        #         # later on removing a file in async fashion
+        #         # note: need to hold on to the async result till it has completed
+        #         results.append(process_pool.apply_async(os.remove, filename),
+        #                        )
+        #     os.rmdir(outpath)
+        # results = subprocess.check_output(
+        #     "C:\Apache24\htdocs\AWD\AWD_Zanasi\delfiles.bat \"%s\" " % outpath,
+        #     shell=True)
+        # logger.debug("Deletion script output: %s" % results)
+        # logger.debug("Directory succesfully deleted")
+        shutil.rmtree(outpath)
+    except WindowsError as e:
+        logger.error(e)

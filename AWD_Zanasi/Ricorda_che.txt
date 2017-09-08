@@ -1,4 +1,8 @@
 
+start matlab -nosplash -nodesktop -minimize -noFigureWindows -logfile "%~1\out\logfile.txt" -r "Analizza_il_Sistema('%~2');exit;"
+
+
+
  %%% Riavvio di Apache
  (Aprire PowerShell come superuser)
  httpd -k restart       % per far ripartire il gestore
