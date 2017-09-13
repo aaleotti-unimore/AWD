@@ -32,7 +32,7 @@
 
             <!-- Content -->
             <div class="table-responsive">
-                <table class="table table-hover table-striped">
+                <table class="table table-hover table-striped sortable">
                     <thead>
                     <tr>
                         <th>N</th>
@@ -86,7 +86,7 @@
 
 
                             </td>
-                            <td>{{ project.launch_date }}</td>
+                            <td>{{ project.launch_date|date:"D d/m/y - h:i.s" }}</td>
 
                             {% if project.launch_date %}
                                 <td><a class="btn btn-default btn-sm" role="button"

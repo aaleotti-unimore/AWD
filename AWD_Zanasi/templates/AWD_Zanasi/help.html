@@ -23,21 +23,12 @@
                     <table class="table">
                         <thead class="thead-inverse">
                         <tr>
-                            {% if LANGUAGE_CODE == 'it-it' %}
-                                <th>Codice</th>
-                                <th>Effort</th>
-                                <th>Parameter</th>
-                                <th>Internal</th>
-                                <th>Flow</th>
-                                <th>Descrizione</th>
-                            {% else %}
-                                <th>Code</th>
-                                <th>Effort</th>
-                                <th>Parameter</th>
-                                <th>Internal</th>
-                                <th>Flow</th>
-                                <th>Description</th>
-                            {% endif %}
+                            <th>Code</th>
+                            <!--<th>Effort</th>-->
+                            <!--<th>Parameter</th>-->
+                            <!--<th>Internal</th>-->
+                            <!--<th>Flow</th>-->
+                            <th>Description</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -45,15 +36,13 @@
                             <tr>
                                 <td> {{ cmd.Sigla }}</td>
 
-                                <td>{{ cmd.E_name }}</td>
-                                <td>{{ cmd.K_name }}</td>
-                                <td>{{ cmd.Q_name }}</td>
-                                <td>{{ cmd.F_name }}</td>
-                                {% if LANGUAGE_CODE == 'it-it' %}
-                                    <td>{{ cmd.Help }}</td>
-                                {% else %}
-                                    <td>{{ cmd.Help_ENG }}</td>
-                                {% endif %}
+                                <!--<td>{{ cmd.E_name }}</td>-->
+                                <!--<td>{{ cmd.K_name }}</td>-->
+                                <!--<td>{{ cmd.Q_name }}</td>-->
+                                <!--<td>{{ cmd.F_name }}</td>-->
+
+                                <td>{{ cmd.Help_ENG }}</td>
+
 
                             </tr>
                         {% endfor %}
@@ -83,30 +72,21 @@
                     <table class="table">
                         <thead class="thead-inverse">
                         <tr>
-                            {% if LANGUAGE_CODE == 'it-it' %}
-                                <th>Nome</th>
-                                <th>Tipo</th>
-                                <th>Intervallo dei Valori</th>
-                                <th>Descrizione</th>
-                            {% else %}
-                                <th>Name</th>
+
+                                <th>Code</th>
                                 <th>Type</th>
                                 <th>Range</th>
                                 <th>Description</th>
-                            {% endif %}
                         </tr>
                         </thead>
                         <tbody>
                         {% for cmd in branches %}
                             <tr>
-                                <td> {{ cmd.Nome }}</td>
+                                <td>{{ cmd.Sigla }}</td>
                                 <td>{{ cmd.Type }}</td>
                                 <td>{{ cmd.Range }}</td>
-                                {% if LANGUAGE_CODE == 'it-it' %}
-                                    <td>{{ cmd.Help }}</td>
-                                {% else %}
-                                    <td>{{ cmd.Help_ENG }}</td>
-                                {% endif %}
+
+                                <td>{{ cmd.Help_ENG }}</td>
                             </tr>
                         {% endfor %}
                         </tbody>
@@ -134,30 +114,19 @@
                     <table class="table">
                         <thead class="thead-inverse">
                         <tr>
-                            {% if LANGUAGE_CODE == 'it-it' %}
-                                <th>Nome</th>
-                                <th>Tipo</th>
-                                <th>Intervallo dei Valori</th>
-                                <th>Descrizione</th>
-                            {% else %}
-                                <th>Name</th>
+                                <th>Code</th>
                                 <th>Type</th>
                                 <th>Range</th>
                                 <th>Description</th>
-                            {% endif %}
                         </tr>
                         </thead>
                         <tbody>
                         {% for cmd in system %}
                             <tr>
-                                <td> {{ cmd.Nome }}</td>
+                                <td> {{ cmd.Sigla }}</td>
                                 <td>{{ cmd.Type }}</td>
                                 <td>{{ cmd.Range }}</td>
-                                {% if LANGUAGE_CODE == 'it-it' %}
-                                    <td>{{ cmd.Help }}</td>
-                                {% else %}
-                                    <td>{{ cmd.Help_ENG }}</td>
-                                {% endif %}
+                                <td>{{ cmd.Help_ENG }}</td>
                             </tr>
                         {% endfor %}
                         </tbody>

@@ -22,6 +22,7 @@
     <!-- Custom Fonts -->
     <link href="{% static "/AWD_Zanasi/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
 
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -65,12 +66,12 @@
                             <a href="{% url 'create_project' %}"><i class="fa fa-fw fa-plus"></i> Create</a>
                         </li>
                         <li class="divider"></li>
-                        <!-- Temporaneamente sospeso 
+                        <!-- Temporaneamente sospeso -->
                         <li>
                             <a href="{% url 'help_page' %}"><i class="fa fa-fw fa-list"></i> Commands List</a>
                         </li>
                         <li class="divider"></li>
-                        -->
+
                         <li>
                             <a href="{% url 'manual' %}"><i class="fa fa-ambulance"></i> Manual</a>
                         </li>
@@ -130,6 +131,7 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="{% static "AWD_Zanasi/js/bootstrap.min.js" %}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+<script src="{% static "AWD_Zanasi/js/sorttable.js" %}"></script>
 
 {% block javascript %}
 {% endblock %}
