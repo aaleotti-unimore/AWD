@@ -1,10 +1,10 @@
 Dear {{ user }}
 
-Here's your activation key for {{ site.domain }} :
+Here's your activation key for POG Modeler at {{ site.domain }} :
 
 http://{{site.domain}}/accounts/activate/{{ activation_key }}
 
-you have {{ expiration_days }} days to complete your registration
+You have {{ expiration_days }} days to complete your registration
 
 Sincerely
-POG modeler's admin
+Roberto Zanasi

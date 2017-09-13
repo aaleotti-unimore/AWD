@@ -136,15 +136,16 @@ LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
 
 # django-registration
-ACCOUNT_ACTIVATION_DAYS = 7  # One-week activation window;
-DEFAULT_FROM_EMAIL = 'roberto.zanasi@unimore.it'
+ACCOUNT_ACTIVATION_DAYS = 4  # One-week activation window;
+DEFAULT_FROM_EMAIL = 'venturi.efct@gmail.com'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
-# mail settings
-if DEBUG:
-	DEFAULT_FROM_EMAIL = "webmaster@example.com"
-	EMAIL_HOST = 'localhost'
-	EMAIL_PORT = 1025
-	EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST_USER = 'pogmodeler@gmail.com'
+EMAIL_HOST_PASSWORD = 'postadidjango'
+
 
 # crisy forms
 CRISPY_TEMPLATE_PACK = 'bootstrap3'

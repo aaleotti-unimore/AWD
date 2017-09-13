@@ -1,10 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function Sistema=Analizza_il_Sistema(Sistema)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-clear global
+clear global 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Show_Schema_In='No';
-Show_Schema_ASCII='No';
+Show_Schema_ASCII='Si';
 Crea_Files_CSV='No';
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -26,9 +26,12 @@ if ischar(Sistema)
     Sistema.Schema_In(end)={'**, xPr, Si, sPr, Si'};
 %     B(jj+2)={ '**, Gr, Si, As, Si, Pr, Si, GTy, png, POG, Si, pPr, Si, pGTy, png'};
 %     B(jj+3)={ '**, Sch, Si, SLX, No, xPr, Si, SIM, No, sPr, Si'};
+    diary([Sistema.Dir_out Sistema.Title '_diary.txt'])        % Attiva il diary
 else
     Sistema.Dir_out='.\';
+    diary('diary.txt')        % Attiva il diary
 end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Definisce alcune variabili di sistema
 Sistema.Show_Schema_In=Show_Schema_In;
@@ -65,14 +68,28 @@ catch My_Err
     Sistema.My_Err=My_Err;
     getReport(My_Err)
 end
-diary off
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+diary off        % Disattiva il diary
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Dir_out=Sistema.Dir_out;
+% movefile('diary.txt',[Dir_out Sistema.Grafico.Nome_del_grafico '_diary.txt'])
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Il file ".done" e il file "*.zip" vengono creati solo se "Dir_out"~='.\'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 if not(strcmp(Dir_out,'.\'))
+    delete([Dir_out '*.zip'])                               % Cancella il file zip nel direttorio corrente
+%     Zip_Files=dir(Dir_out);
+%     for ii=1:length(Zip_Files)
+%         File_ii=Zip_Files(ii).name;
+%         if not(strcmp(File_ii(1),'.'))
+%             zip([Dir_out Sistema.Title],{[Dir_out File_ii]})    %
+%         end
+%     end
+%      zip([Dir_out Sistema.Title],{[Dir_out '..\*.txt']})    %
+    zip([Dir_out '..\' Sistema.Title],{[Dir_out '..\*.txt'],[Dir_out '*.*']})    %
+    movefile([Dir_out '..\*.zip'],Dir_out)
     FID=fopen([Dir_out '.done'],'w');
     fclose(FID);
-    delete([Dir_out '*.zip'])                               % Cancella il file zip nel direttorio corrente
-    zip([Dir_out '..\' Sistema.Title],{[Dir_out '..\*.txt'],[Dir_out '*.*']})    % 
-    movefile([Dir_out '..\*.zip'],Dir_out)
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 return
@@ -176,9 +193,9 @@ Sistema.Parms_Rami={...
     {'pog_Color_4'        ,'[]','pCl4','Num','','','POG','Colore RGB dei rami POG di natura trasformatore o giratore','RGB color of the POG branches of type transformer and gyrator'},...
     {'pog_Color_En'      ,'[]','pClEn','Num','','','POG','Colore RGB delle varibili di tipo Effort','RGB color of the Effort variables'},...
     {'pog_Color_Fn'      ,'[]','pClFn','Num','','','POG','Colore RGB delle varibili di tipo Flow','RGB color of the Flow variables'},...
-    {'pog_In_0'          ,'[]','pIn0' ,'Str','','','POG','Valore di default della variabile di ingresso','Default value of the input variable'},...
-    {'pog_Kn_0'          ,'[]','pKn0' ,'Str','','','POG','Valore del parametro interno Kn','Velue of the internal parameter Kn'},...
-    {'pog_Qn_0'          ,'[]','pQn0' ,'Str','','','POG','Valore iniziale della variabile energia Qn','Initial value of the energy variable Qn'},...
+    {'pog_In_0'          ,'[]','In0' ,'Str','','','POG','Valore di default della variabile di ingresso','Default value of the input variable'},...
+    {'pog_Kn_0'          ,'[]','Kn0' ,'Str','','','POG','Valore del parametro interno Kn','Velue of the internal parameter Kn'},...
+    {'pog_Qn_0'          ,'[]','Qn0' ,'Str','','','POG','Valore iniziale della variabile energia Qn','Initial value of the energy variable Qn'},...
     {'pog_IntM'          ,'[]','pIntM','Str','','','POG','Il blocco Integratore precede il blocco M','The Integration block is located before the M block'},...
     {'pog_Show_Psfrag'   ,'[]','pPSF' ,'Str','','','POG','Indica se visualizzare o no i comandi latex di tipo psfrag sul ramo POG','Indicates if the latex commands of type psfrag must be visualized for the POG brance'},...
     {'pog_Underscore'    ,'[]','pUs'  ,'Str','','','POG','Indica se lasciare gli "underscore" nel nome del ramo dello schema a blocchi POG','Indicates if the "underscore" in the brance name of the POG block scheme must be left'},...
@@ -261,9 +278,9 @@ Sistema.Parms_Sistema={...
     {'pog_Color_4'   ,'[0 1 0]'   ,'pCl4','Num','Real','[0 1]'    ,'POG','Colore RGB dei rami POG di natura trasformatore o giratore','RGB color of the POG branches of type transformer and gyrator'},...      
     {'pog_Color_En'  ,'[0 0.5 0]','pClEn','Num','Real','[0 1]'    ,'POG','Colore RGB delle varibili di tipo Effort','RGB color of the Effort variables'},...
     {'pog_Color_Fn'  ,'[0.5 0 0]','pClFn','Num','Real','[0 1]'    ,'POG','Colore RGB delle varibili di tipo Flow','RGB color of the Flow variables'},...
-    {'pog_In_0'      ,'1'        ,'pIn0' ,'Str','Free',''         ,'POG','Valore di default delle variabili di ingresso','Default values of the input variables'},...
-    {'pog_Kn_0'      ,'1'        ,'pKn0' ,'Str','Free',''         ,'POG','Valore di default dei parametri internoi Kn','Default values of the internal parameters Kn'},...
-    {'pog_Qn_0'      ,'0'        ,'pQn0' ,'Str','Free',''         ,'POG','Valore iniziale di default delle variabili energia Qn','Default initial values of the energy variables Qn'},...
+    {'pog_In_0'      ,'1'        ,'In0' ,'Str','Free',''         ,'POG','Valore di default delle variabili di ingresso','Default values of the input variables'},...
+    {'pog_Kn_0'      ,'1'        ,'Kn0' ,'Str','Free',''         ,'POG','Valore di default dei parametri internoi Kn','Default values of the internal parameters Kn'},...
+    {'pog_Qn_0'      ,'0'        ,'Qn0' ,'Str','Free',''         ,'POG','Valore iniziale di default delle variabili energia Qn','Default initial values of the energy variables Qn'},...
     {'pog_IntM'      ,'Si'       ,'pIntM','Str','Set',{'Si','No'} ,'POG','Il blocco Integratore precede il blocco M','The Integration block is located before the M block'},...
     {'pog_Show_Psfrag','No'      ,'pPSF' ,'Str','Set',{'Si','No'} ,'POG','Indica se visualizzare o no i comandi latex di tipo psfrag sullo schema POG','Indicates if the latex commands of type psfrag must be visualized for the POG block scheme'},...
     {'pog_Underscore','No'       ,'pUs'  ,'Str','Set',{'Si','No'} ,'POG','Indica se lasciare gli "underscore" in tutti i nomi dello schema a blocchi POG','Indicates if the "underscore" of all the names of the POG block scheme must be left'},...
@@ -303,8 +320,8 @@ Sistema.Parms_Sistema={...
     {'Show_Grafico'        ,'Si' ,'Gr' ,'Str','Set',{'Si','No'} ,'Grafico','Indica se disegnare il grafico dello schema','Indicates if the physical graphic must be displayed'},...    
     {'Nr_Figura'           ,'0'  ,'Nf' ,'Num','Int','[0 1000]'  ,'Grafico','Numero della figura','Number of the figure where the physical graphic is shown'},...
     {'Print_Grafico'       ,'No' ,'Pr' ,'Str','Set',{'Si','No'} ,'Grafico','Indica se stampare o meno il grafico','Indicates if the physical graphic must be saved in a file'},...
-    {'Nome_del_grafico','This_Sys','Ng','Str','Free',''         ,'Grafico','Nome da usare per il grafico','Name of file storing the the physical graphic'},...
-    {'Dir_out'            ,'','Dir_out','Str','Free',''         ,'Grafico','Nome del direttorio "out"','Name of the directory "out"'},...
+    {'Nome_del_grafico'    ,'__' ,'Ng' ,'Str','Name',''         ,'Grafico','Nome da usare per il grafico','Name of file storing the the physical graphic'},...
+    {'Dir_out'          ,'.\','Dir_out','Str','Free',''         ,'Grafico','Nome del direttorio "out"','Name of the directory "out"'},...
     {'Graphic_Type'       ,'eps','GTy' ,'Str','Set',{'eps','epsc','jpeg','tiff','png'}  ,'Grafico','Tipo di immagine grafica richiesta','Type of the graphical immage of the physical graphic'},...
     {'Show_Dots'           ,'Si' ,'SD' ,'Str','Set',{'Si','No'} ,'Grafico','Indica se visualizzare i "pallini" dei nodi','Indicates if the "dot" of all the nodes of the physical graphic must be visualized'},...
     {'Show_Nomi_Nodi'      ,'Si' ,'Sn' ,'Str','Set',{'Si','No'} ,'Grafico','Indica se visualizzare i nomi dei nodi','Indicates if the names of all the nodes of the physical graphic must be visualized'},...
@@ -329,7 +346,7 @@ Sistema.Parms_Sistema={...
     {'Help_in_English'     ,'No','Heng','Str','Set',{'Si','No'} ,'Sistema','Indica di usare Inglese nel file Help','Indicates if the english language must be used for the help file'},...
     {'Analizza_lo_Schema'  ,'Si' ,'As' ,'Str','Set',{'Si','No'} ,'Sistema','Analizzare il sistema e generare le equazioni differenziali','Analyze the system and write the diferential equations'},...
     {'Genera_il_file_log'  ,'Si' ,'Fl' ,'Str','Set',{'Si','No'} ,'Sistema','Generare il file log?','Do you want to generate the log file?'},...
-    {'Salva_MDL_Diff_Eqs'  ,'No' ,'Sch','Str','Set',{'Si','No'} ,'Sistema','Salva le equazioni differenziali in un file txt','Save the differential equations in a txt file'},...
+    {'Salva_EQN_Diff_Eqs'  ,'No' ,'EQN','Str','Set',{'Si','No'} ,'Sistema','Salva le equazioni differenziali in un file txt','Save the differential equations in a txt file'},...
     {'Show_Diff_Eqs_Latex' ,'0','Latex','Str','Set',{'0','A','AB','LAB','MIN'} ,'Sistema','Visualizza le equazioni differenziali anche in formato Latex','Show the differential equations in latex form'},...
     {'Crea_lo_Schema_POG'  ,'No' ,'POG','Str','Set',{'Si','No'} ,'Sistema','Generare lo schema POG del sistema fisico','Generate the POG block scheme of the physical system'},...
     {'Crea_lo_Schema_SLX'  ,'No' ,'SLX','Str','Set',{'Si','No'} ,'Sistema','Generare lo schema Simulink del sistema fisico','Generate the Simmulink block scheme of the physical system'},...
@@ -784,14 +801,6 @@ switch Graphic_Type
         beep;
         disp(['L''immagine viene salvata in formato ' Graphic_Type ])
 end
-% Ind=strfind(Nome_del_grafico,'.');
-% if not(isempty(Ind))
-%     if Ind(end)==1
-%         Nome_del_grafico='Grafico';
-%     else
-%         Nome_del_grafico=Nome_del_grafico(1:Ind(end)-1);
-%     end
-% end
 if strcmp(Add_Str,'_SLX')
     eval(['print -s -r0 -d' Graphic_Type ' ' Nome_del_grafico Add_Str '.' Graphic_Type])
 else
@@ -1653,7 +1662,8 @@ for ii_ASCII=1:Nr_Linee_ASCII               % La virgola "," separa i parametri
     %%% VENGONO TOLTI I COMANDI CHE NON POSSONO ESSERE UTILIZZATI DALL'UTENTE
     Ind=[find(Riga==',') length(Riga)+1];
     Prima_Riga  = Riga(1:Ind(3)-1);         % Prima_Riga = "Tipo_di_Blocco,Nodo_From,Nodo_To" 
-    for jj=3:2:(length(Ind)-1)              % Ci sono 2 virgole per ogni parametro
+    Nr_Virgole=length(Ind);
+    for jj=3:2:(Nr_Virgole-1)               % Ci sono 2 virgole per ogni parametro
         switch Riga(Ind(jj)+1:Ind(jj+1)-1)  % Sigla del Parametro
             case {'Ge','T_G'}   % 'Ge'=Ramo gemello; 'T_G'=Trasformatori o Giratori;
                 %%% Questi comandi INTERNI, se presenti, vengono tolti da "Prima_Riga"
@@ -1875,7 +1885,7 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Schema_ASCII=Sistema.Schema_In;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%    SI ESTRAGGONO TUTTE LE RIGHE DI COMANDI CHE INIZIANO CON '**'  %%%%
+%%%% SI ESTRAGGONO TUTTE LE RIGHE DI COMANDI CHE INIZIANO CON '**' o '*P' %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Schema_ASCII=char(strrep(Schema_ASCII,' ',''));     % Schema iniziale ASCII
 Aux_Schema={};                                      % Variabile ausiliaria
@@ -2142,62 +2152,67 @@ Schema_POG_Generato='No';  % Indica se lo schema POG è stato generato o no
 Schema_SLX_Generato='No';  % Indica se lo schema Simulink è stato generato o no
 Rami_Orientati='No';        % Indica se i rami dello schema sono stati orientati o no
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% ESECUZIONE DEI COMANDI DI SISTEMA 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% ESECUZIONE DEI COMANDI DI SISTEMA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% .....
 Nr_delle_righe_comando=size(Comandi_ASCII,1);
 for ii_Ramo=1:Nr_delle_righe_comando
     [Lista_Parametri, Nr_Parametri] = ESTRAI_PARAMETRI(Comandi_ASCII(ii_Ramo,:));
-    for jj=2:2:Nr_Parametri
-        Comando=Lista_Parametri{jj}{1};
-        Parametro=Lista_Parametri{jj+1}{1};
-        %%%% GESTIONE DEI COMANDI BASE DI SISTEMA
-        Ind_Sistema=find(strcmp({Parametri_Sistema.Sigla},Comando));
-        if not(isempty(Ind_Sistema))
-            Vincoli=Parametri_Sistema(Ind_Sistema).Vincoli;
-            Range_and_Set=Parametri_Sistema(Ind_Sistema).Range_and_Set;
-            Nome_Var=Parametri_Sistema(Ind_Sistema).Nome;
-            switch Parametri_Sistema(Ind_Sistema).StrNum
-                case 'Num'
-                    Parametro=VERIFICA_NUMERO(Parametro,Vincoli,Range_and_Set,Nome_Var);
-                    eval([Nome_Var '=' Parametro ';'])      % Parametri numerici
-                case 'Str'
-                    Parametro=VERIFICA_STRINGA(Parametro,Vincoli,Range_and_Set,Nome_Var);
-                    eval([Nome_Var '=''' Parametro ''';'])  % Parametri stringa
-                otherwise
-                    beep; disp(' '); disp('Tipo "NumStr" sbagliato di parametro.'); disp(' ')
-            end
-        else
-        %%%% GESTIONE DEI COMANDI "PARTICOLARI" DI SISTEMA
-            switch Comando
-                case 'Rp'                       % Indica il valore da assegnare ad una variabile
-                    [Par1,Par2] = SEPARA(Parametro,'=');
-                    Rimpiazza(size(Rimpiazza,1)+1,:)={Par1,Par2};
-                case 'Help'                     % Help sui "B"locchi, "MB"locchi, "R"ami e "S"istema
-                    if not(strcmp(Parametro,'No'))
-                        Tutti = {...
-                            {'Parms_Rami',        'Indice_R','Comandi Specifici di ciascun Ramo ','R'},...
-                            {'Parms_Blocchi',     'Indice_B','Lista dei Blocchi','B'},...
-                            {'Parms_Meta_Blocchi','Indice_B','Lista dei Meta-Blocchi','B'},...
-                            {'Parms_Sistema',     'Indice_R','Lista dei comandi di Sistema','S'},...
-                            };
-                        fh=fopen('Help_POG.m','w');
-                        fwrite(fh,'echo on'); fprintf(fh,'\n');
-                        for ii=1:length(Tutti)
-                            Lista=CREA_HELP(eval(Tutti{ii}{1}),eval(Tutti{ii}{2}),Tutti{ii}{3},Tutti{ii}{4},Parametro,Help_in_English);
-                            Nr_Righe=length(Lista);
-                            for rr=1:Nr_Righe
-                                fwrite(fh,['% ' Lista{rr}]);
-                                fprintf(fh,'\n');
+    if mod(Nr_Parametri,2)==0
+        beep
+        disp(['The following string is surely wrong: "' Comandi_ASCII(ii_Ramo,:) '"'])
+    else
+        for jj=2:2:Nr_Parametri
+            Comando=Lista_Parametri{jj}{1};
+            Parametro=Lista_Parametri{jj+1}{1};
+            %%%% GESTIONE DEI COMANDI BASE DI SISTEMA
+            Ind_Sistema=find(strcmp({Parametri_Sistema.Sigla},Comando));
+            if not(isempty(Ind_Sistema))
+                Vincoli=Parametri_Sistema(Ind_Sistema).Vincoli;
+                Range_and_Set=Parametri_Sistema(Ind_Sistema).Range_and_Set;
+                Nome_Var=Parametri_Sistema(Ind_Sistema).Nome;
+                switch Parametri_Sistema(Ind_Sistema).StrNum
+                    case 'Num'
+                        Parametro=VERIFICA_NUMERO(Parametro,Vincoli,Range_and_Set,Nome_Var);
+                        eval([Nome_Var '=' Parametro ';'])      % Parametri numerici
+                    case 'Str'
+                        Parametro=VERIFICA_STRINGA(Parametro,Vincoli,Range_and_Set,Nome_Var);
+                        eval([Nome_Var '=''' Parametro ''';'])  % Parametri stringa
+                    otherwise
+                        beep; disp(' '); disp('Tipo "NumStr" sbagliato di parametro.'); disp(' ')
+                end
+            else
+                %%%% GESTIONE DEI COMANDI "PARTICOLARI" DI SISTEMA
+                switch Comando
+                    case 'Rp'                       % Indica il valore da assegnare ad una variabile
+                        [Par1,Par2] = SEPARA(Parametro,'=');
+                        Rimpiazza(size(Rimpiazza,1)+1,:)={Par1,Par2};
+                    case 'Help'                     % Help sui "B"locchi, "MB"locchi, "R"ami e "S"istema
+                        if not(strcmp(Parametro,'No'))
+                            Tutti = {...
+                                {'Parms_Rami',        'Indice_R','Comandi Specifici di ciascun Ramo ','R'},...
+                                {'Parms_Blocchi',     'Indice_B','Lista dei Blocchi','B'},...
+                                {'Parms_Meta_Blocchi','Indice_B','Lista dei Meta-Blocchi','B'},...
+                                {'Parms_Sistema',     'Indice_R','Lista dei comandi di Sistema','S'},...
+                                };
+                            fh=fopen('Help_POG.m','w');
+                            fwrite(fh,'echo on'); fprintf(fh,'\n');
+                            for ii=1:length(Tutti)
+                                Lista=CREA_HELP(eval(Tutti{ii}{1}),eval(Tutti{ii}{2}),Tutti{ii}{3},Tutti{ii}{4},Parametro,Help_in_English);
+                                Nr_Righe=length(Lista);
+                                for rr=1:Nr_Righe
+                                    fwrite(fh,['% ' Lista{rr}]);
+                                    fprintf(fh,'\n');
+                                end
                             end
+                            fwrite(fh,'echo off'); fprintf(fh,'\n');
+                            fclose(fh);
                         end
-                        fwrite(fh,'echo off'); fprintf(fh,'\n');
-                        fclose(fh);
-                    end
-                otherwise
-                    beep; disp(' ')
-                    disp(['Il seguente parametro di SISTEMA non è definito: ' Comando ', ' Parametro ])
-                    disp(' ')
-            end            
+                    otherwise
+                        beep; disp(' ')
+                        disp(['Il seguente parametro di SISTEMA non è definito: ' Comando ', ' Parametro ])
+                        disp(' ')
+                end
+            end
         end
     end
 end
@@ -2222,6 +2237,9 @@ for hh=1:length(Parametri_Sistema)
         disp(['La tipologia di paramatro NON  è definita: ' Parametri_Sistema(hh).Type ])
         disp(' ')
     end
+end
+if strcmp(Grafico.Nome_del_grafico,'__')
+    Grafico.Nome_del_grafico=IS_A_FILE_NAME(Sistema.Title,'Nome_del_grafico'); 
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% I PARAMETRI DI RAMO NON DEFINITI EREDITANO IL VALORE DI SISTEMA
@@ -2585,12 +2603,13 @@ end
 return
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function  Stringa=IS_A_FILE_NAME(Stringa,Nome_Var)
+function  Stringa=IS_A_FILE_NAME(Stringa_In,Nome_Var)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Stringa=strrep(Stringa_In,' ','_');
 New_Str='';
 ii=1;
 while (isempty(New_Str)&&(ii<=length(Stringa)))
-    if ismember(Stringa(ii),'abcdefghilmnopqrstuvzxywABCDEFGHILMNOPQRSTUVZXYW_')
+    if ismember(Stringa(ii),'abcdefghkijlmnopqrstuvzxywABCDEFGHKIJLMNOPQRSTUVZXYW_')
         New_Str=Stringa(ii);
     end
     ii=ii+1;
@@ -3633,42 +3652,38 @@ return
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function  MOSTRA_ABC(Sistema)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-if strcmp(Sistema.Salva_MDL_Diff_Eqs,'Si')
-    File=[Sistema.Grafico.Dir_out Sistema.Grafico.Nome_del_grafico '_MDL.txt'];
+if strcmp(Sistema.Salva_EQN_Diff_Eqs,'Si')
+    File=[Sistema.Grafico.Dir_out Sistema.Grafico.Nome_del_grafico '_EQN.txt'];
 else
     File='';
 end
 Equazioni_In=Sistema.Equazioni_SS;
 Nr_Eq=size(Equazioni_In.L,1);
 if Nr_Eq>=0                 % n>=0 se le equazioni sono state calcolate correttamente
-    if exist(File,'file')
-        diary off
+    if not(isempty(File))
         FID=fopen(File,'w');
-        fclose(FID);
-        diary on
+    else
+        FID=0;
     end
-    echo off
-    diary(File)         % L'uscita vine salvata anche nel file "diary"
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%%%%% Le equazioni differenziali vengono memorizzate in formato ascii
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    disp('State space equations:')  
-    disp('L*dot_X = A*X + B*U')
-    disp('      Y = C*X + D*U')
-    disp(' ')
-    disp('Energy matrix L:');disp(Equazioni_In.L)
-    disp('Power matrix A:');disp(Equazioni_In.A)
-    disp('Input matrix B:');disp(Equazioni_In.B)
-    disp('Output matrix C:');disp(Equazioni_In.C)
-    disp('Input-output matrix D:');disp(Equazioni_In.D)
-    disp('State vector X:');disp(Equazioni_In.X)
-    disp('Input vector U:');disp(Equazioni_In.U)
-    disp('Output vector Y:');disp(Equazioni_In.Y)
+    mydisp('% State space equations:',FID)  
+    mydisp('% L*dot_X = A*X + B*U',FID)
+    mydisp('%       Y = C*X + D*U',FID)
+    mydisp(' ',FID)
+    mydisp('% Energy matrix L:',FID)      ;mydisp('L = ...',FID);mydisp(Equazioni_In.L,FID)
+    mydisp('% Power matrix A:',FID)       ;mydisp('A = ...',FID);mydisp(Equazioni_In.A,FID)
+    mydisp('% Input matrix B:',FID)       ;mydisp('B = ...',FID);mydisp(Equazioni_In.B,FID)
+    mydisp('% Output matrix C:',FID)      ;mydisp('C = ...',FID);mydisp(Equazioni_In.C,FID)
+    mydisp('% Input-output matrix D:',FID);mydisp('D = ...',FID);mydisp(Equazioni_In.D,FID)
+    mydisp('% State vector X:',FID)       ;mydisp('X = ...',FID);mydisp(Equazioni_In.X,FID)
+    mydisp('% Input vector U:',FID)       ;mydisp('U = ...',FID);mydisp(Equazioni_In.U,FID)
+    mydisp('% Output vector Y:',FID)      ;mydisp('Y = ...',FID);mydisp(Equazioni_In.Y,FID)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%%%%% Le equazioni differenziali vengono memorizzate in formato Latex
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    Eqn_Type=Sistema.Show_Diff_Eqs_Latex;
-    switch Eqn_Type
+    switch Sistema.Show_Diff_Eqs_Latex
         case 'A'                % Le matrici vengono salvate separatamente
             disp(' ')
             disp('State space equations:')
@@ -3785,11 +3800,57 @@ if Nr_Eq>=0                 % n>=0 se le equazioni sono state calcolate corretta
                 disp(' ')
             end
     end
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     if not(isempty(File))
-        %         diary off
-        diary('diary.txt')
+        fclose(FID);
     end
+end
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+return
+
+%%%%%%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function  mydisp(Str,FID)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+disp(Str)
+if FID>0
+    if ischar(Str)
+        fwrite(FID,Str);
+    else
+        [Nr_Righe, Nr_Colonne]=size(Str);
+        Str=char(Str);        
+        Ind_Open=strfind(Str,'[');
+        Ind_Close=strfind(Str,']');
+        Spazi=zeros(1,Nr_Colonne);
+        for jj=1:Nr_Righe
+            Riga_jj=[',' Str(Ind_Open(jj+1)+1:Ind_Close(jj)-1) ','];
+            Ind_Virg=strfind(Riga_jj,',');
+            for ii=1:Nr_Colonne
+                Lung=Ind_Virg(ii+1)-Ind_Virg(ii);
+                if Spazi(ii)<Lung
+                    Spazi(ii)=Lung;
+                end
+            end
+        end
+        for jj=1:Nr_Righe
+            Riga_ii='';
+            Riga_jj=[',' Str(Ind_Open(jj+1)+1:Ind_Close(jj)-1) ','];
+            Ind_Virg=strfind(Riga_jj,',');
+            for ii=1:Nr_Colonne
+                Lung=Ind_Virg(ii+1)-Ind_Virg(ii);
+                Riga_ii=[Riga_ii blanks(Spazi(ii)-Lung) Riga_jj(Ind_Virg(ii)+1:Ind_Virg(ii+1))];
+            end
+            Riga_ii=Riga_ii(1:end-1);
+            if jj==1
+                Str_jj=['[' Riga_ii ' ;...'];
+            elseif jj==Nr_Righe
+                Str_jj=[' ' Riga_ii '];'];
+            else
+                Str_jj=[' ' Riga_ii ' ;...'];
+            end
+            fwrite(FID,Str_jj);
+            fprintf(FID,'\n');
+        end
+    end
+    fprintf(FID,'\n');
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 return
@@ -4361,14 +4422,14 @@ Ramo_ii=Lista_Rami(ii);                 % Ramo_ii e' sempre di tipo SP
 Nr_SP_Rami=length(Ramo_ii.SP_Rami);
 Nero=0; 
 %%% Se il ramo SP è di tipo Split, tutti ti blocchi futuri vengono spostati
-%%% e si inserisciscono dei puntini all'inizio
-if strfind(Ramo_ii.POG.Split_POG,'-1')
+%%% e si inseriscono dei puntini all'inizio
+if strfind(Ramo_ii.POG.Split_POG,'-1')      % Mostra quali sono i blocchi "Split"
     disp(['Split block: ' num2str(ii) ' -> ' num2str(Ramo_ii.SP_Rami(1))])
 end
-if strfind(Ramo_ii.POG.Split_POG,num2str(ii))
+if strfind(Ramo_ii.POG.Split_POG,num2str(ii))   % Se il blocco è di tipo "Split"
     Sposta=-real(Ramo_ii.POG.X1)-(Ramo_ii.POG.Altezza+Ramo_ii.POG.Split_POG_Ver_Dx)*1i;
-    Ramo_ii.POG.Draw1=[Ramo_ii.POG.Draw1,... 
-        'Dots_dst'  ,-0.5-0.5*Ramo_ii.POG.Altezza*1i, Nero];    % Puntini
+    Ramo_ii.POG.Draw1=[Ramo_ii.POG.Draw1,...                    % In un blocco Split ...
+        'Dots_dst'  ,-0.5-0.5*Ramo_ii.POG.Altezza*1i, Nero];    %  ... si aggiungono i puntini a destra
     Ramo_ii.POG.X1=Ramo_ii.POG.X1+Sposta;
     Ramo_ii.POG.X2=Ramo_ii.POG.X2+Sposta;
     Ramo_ii.POG.X3=Ramo_ii.POG.X3+Sposta;
@@ -4396,52 +4457,51 @@ for jj=1:Nr_SP_Rami                     % jj cicla in modo inverso su tutti i ra
             POG_jj.X1=POG_jj_m1.X1;
         end
     end
-    if jj<Nr_SP_Rami                    % Per tutti i rami tranne l'ultimo: Draw1={...}, X2=... e X3=...
-        POG_jj=SHAPE_DRAW_1(POG_jj);    
-    else                                % ... mentre per l'ultimo ramo ...
-        if strcmp(POG_jj.Nome_Ramo,'SP')
-            POG_jj.Draw1={};            % ... 1) se il ramo è di tipo 'SP': Draw1={}, X2=X1 e X3=X1 
-            POG_jj.X2=POG_jj.X1;
+    if jj<Nr_SP_Rami                        % Per tutti i rami tranne l'ultimo: Draw1={...}, X2=... e X3=...
+        POG_jj = SHAPE_DRAW_1(POG_jj);      % ... si calcola la parte "esterna" del blocco   
+    else                                    
+        if strcmp(POG_jj.Nome_Ramo,'SP')    % Se l'ultimo ramo è di tipo 'SP': ...
+            POG_jj.Draw1={};                % ... Draw1={}, 
+            POG_jj.X2=POG_jj.X1;            % ... X2=X1 e X3=X1.
             POG_jj.X3=POG_jj.X1;
-        else                            % ... 2) per i rami 'Foglia: 'Draw1={...}, X2=... e X3=...
-            POG_jj=SHAPE_DRAW_1(POG_jj);
+        else                                % ... 2) se l'ultimo ramo è di tipo 'Foglia: 'Draw1={...}, X2=... e X3=...
+            POG_jj=SHAPE_DRAW_1(POG_jj);    % ... si calcola la parte "esterna" del blocco
         end
     end
-    if strcmp(Ramo_jj.SP,'Foglia')
-        POG_jj=SHAPE_DRAW_2(POG_jj);    
+    if strcmp(Ramo_jj.SP,'Foglia')          % Per i rami di tipo 'Foglia: 
+        POG_jj=SHAPE_DRAW_2(POG_jj);        % ... disegna la parte "interna" del blocco
     else
-        if jj<Nr_SP_Rami
-%            POG_jj.Altezza=POG_jj.Altezza-2*imag(POG_jj.X1_Shift);
+        if jj<Nr_SP_Rami                    % Per i rami di tipo 'SP' non ultimi del gruppo ...
             POG_jj.Altezza_2=POG_jj.Altezza-2*imag(POG_jj.X1_Shift);
-        else
+        else                                % Se il ramo di tipo 'SP' è l'ultimo del gruppo ...
             POG_jj.Altezza_2=POG_jj.Altezza;
         end
-        POG_jj.Draw2={};
+        POG_jj.Draw2={};                    % Tutti i rami di tipo 'SP' non hanno la parte "interna"
         Ramo_jj.POG=POG_jj;
         Lista_Rami(Pnt_Ramo_jj)=Ramo_jj;           
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        %%%% Se il ramo SP è di tipo Split, nel precedente blocco 
-        %%%% si inserisce un tratteggio e dei puntini 
-        if strfind(Ramo_jj.POG.Split_POG,num2str(Pnt_Ramo_jj))      % Blocco Split
-            POG_jj_m1=Lista_Rami(Ramo_ii.SP_Rami(jj-1)).POG;
-            Sposta_X=real(Ramo_jj.POG.X1);
-            Dx=POG_jj_m1.Lx_Dst+POG_jj_m1.Lx_Snt;
-            Altezza=POG_jj_m1.Altezza;
-            Vert_Dx=Ramo_ii.POG.Split_POG_Ver_Dx;
+        %%%% Se il ramo "SP" è di tipo Split, nel blocco antecendente ...
+        %%%% ... si inserisce un tratteggio e dei puntini 
+        if strfind(Ramo_jj.POG.Split_POG,num2str(Pnt_Ramo_jj))  % Se il blocco attuale è di tipo Split ...
+            POG_jj_m1=Lista_Rami(Ramo_ii.SP_Rami(jj-1)).POG;    % Si accede al blocco antecendente 
+            Sposta_X=real(Ramo_jj.POG.X1);                      % Si calcola Sposta_X
+            Dx=POG_jj_m1.Lx_Dst+POG_jj_m1.Lx_Snt;               % Largezza dell blocco POG_jj_m1
+            Altezza=POG_jj_m1.Altezza;                          % Altezza dell blocco POG_jj_m1
+            Vert_Dx=Ramo_ii.POG.Split_POG_Ver_Dx;               % Distanza verticale tra i due split
             Sopra_Out = [Dx+0.0*1i Dx+3+0.0*1i Dx+3-(Altezza+Vert_Dx/2+0.5)*1i ...
                 Dx-2-Sposta_X-(Altezza+Vert_Dx/2+0.5)*1i Dx-2-Sposta_X-(Altezza+Vert_Dx)*1i ...
-                Dx-Sposta_X-(Altezza+Vert_Dx)*1i ];
-            Sopra_In = fliplr(Sopra_Out);
+                Dx-Sposta_X-(Altezza+Vert_Dx)*1i ];             % Linea che esce da sopra
+            Sopra_In = fliplr(Sopra_Out);                       % Linea che entra da sopra
             Sotto_Out = [Dx-(Altezza)*1i Dx+2-(Altezza)*1i Dx+2-(Altezza+Vert_Dx/2-0.5)*1i ...
                 Dx-3-Sposta_X-(Altezza+Vert_Dx/2-0.5)*1i Dx-3-Sposta_X-(2*Altezza+Vert_Dx)*1i ...
-                Dx-Sposta_X-(2*Altezza+Vert_Dx)*1i ];
-            Sotto_In = fliplr(Sotto_Out);
+                Dx-Sposta_X-(2*Altezza+Vert_Dx)*1i ];           % Linea che esce da sotto
+            Sotto_In = fliplr(Sotto_Out);                       % Linea che entra da sotto
             POG_jj_m1.Draw1=[POG_jj_m1.Draw1,...
-                'tratteggio', [Dx+0.5*1i Dx-(Altezza+0.5)*1i], Nero,...
-                'Dots_snt'  ,Dx+0.5-0.5*Altezza*1i, Nero];
-            Effort_Su = POG_jj_m1.pog_Effort_Su;
-            TR_o_GY = POG_jj_m1.TR_o_GY;
-            ABC = POG_jj_m1.Str_Type;
+                'tratteggio', [Dx+0.5*1i Dx-(Altezza+0.5)*1i], Nero,... % Aggiunge tratteggio ...
+                'Dots_snt'  ,Dx+0.5-0.5*Altezza*1i, Nero];      % ... e puntini nel blocco POG_jj_m1
+            Effort_Su = POG_jj_m1.pog_Effort_Su;                % Effort_Su del blocco POG_jj_m1
+            TR_o_GY = POG_jj_m1.TR_o_GY;                        % TR_o_GY del blocco POG_jj_m1
+            ABC = POG_jj_m1.Str_Type;                           % ABC del blocco POG_jj_m1
             if (strcmp(ABC,'EEF')&&strcmp(Effort_Su,'Si'))||...
                     (strcmp(ABC,'FEF')&&strcmp(Effort_Su,'Si'))||...
                     (strcmp(ABC,'EFF')&&strcmp(Effort_Su,'Si'))||...
@@ -4465,9 +4525,9 @@ for jj=1:Nr_SP_Rami                     % jj cicla in modo inverso su tutti i ra
         Ramo_jj=Lista_Rami(Pnt_Ramo_jj);
         POG_jj=Ramo_jj.POG;
     end
-    POG_jj=SWAP_POG(POG_jj);
-    Ramo_jj.POG=POG_jj;    
-    Lista_Rami(Pnt_Ramo_jj)=Ramo_jj;
+    POG_jj = SWAP_POG(POG_jj);          % Se necessario inverte la direzione "su/giu" e "dst/snt" dei vettore 
+    Ramo_jj.POG = POG_jj;    
+    Lista_Rami(Pnt_Ramo_jj) = Ramo_jj;
 end
 Lista_Rami(ii)=Ramo_ii;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -4478,20 +4538,16 @@ function     POG=SWAP_POG(POG)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 pog_Effort_Su=POG.pog_Effort_Su;
 ABC=POG.Str_Type;
-if strcmp(POG.TR_o_GY,'T')
+if strcmp(POG.TR_o_GY,'T')      % Se il blocco è un "Trasformatore" ... 
     if ((strcmp(ABC,'FFE')||strcmp(ABC,'EFE'))&&strcmp(pog_Effort_Su,'Si'))||...
             ((strcmp(ABC,'EEF')||strcmp(ABC,'FEF'))&&strcmp(pog_Effort_Su,'No'))
         POG=SU_GIU_POG(POG);
     end
-elseif strcmp(POG.TR_o_GY,'G')
-    if ((strcmp(ABC,'FFE')||strcmp(ABC,'EFE'))&&strcmp(pog_Effort_Su,'No'))||...
-            ((strcmp(ABC,'EEF')||strcmp(ABC,'FEF'))&&strcmp(pog_Effort_Su,'Si'))
+elseif strcmp(POG.TR_o_GY,'G')  % Se il blocco è un "Giratore" ... (uguale al trasformatore)
+    if ((strcmp(ABC,'FFE')||strcmp(ABC,'EFE'))&&strcmp(pog_Effort_Su,'Si'))||...
+            ((strcmp(ABC,'EEF')||strcmp(ABC,'FEF'))&&strcmp(pog_Effort_Su,'No'))
         POG=SU_GIU_POG(POG);
     end
-%     if (strcmp(ABC,'FFE')&&strcmp(pog_Effort_Su,'Si'))||...
-%             (strcmp(ABC,'EEF')&&strcmp(pog_Effort_Su,'No'))
-%         POG=SU_GIU_POG(POG);
-%     end
 else    
     if (strcmp(ABC,'EFE')&&strcmp(pog_Effort_Su,'No'))||...
             (strcmp(ABC,'FEF')&&strcmp(pog_Effort_Su,'Si'))||...
@@ -4632,7 +4688,7 @@ else                                % ... tutti gli altri blocchi
             end
     end
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %%% Aggiunge gli elementi grafici di X1_Shift
+    %%% Aggiunge gli elementi grafici di X1_Shift 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     if strcmp(POG.Nome_Ramo,'SP')      % Solo i Rami SP hanno la variabile 'X1_Shift' definita     
         switch ABC
@@ -4980,8 +5036,7 @@ if exist([SLX_Name '.slx'],'file')
     delete([SLX_Name '.slx'])
 end
 Sistema.SLX.Name=SLX_Name;
-Sistema.SLX.Handle=new_system(SLX_Name);
-open_system(SLX_Name);
+new_system(SLX_Name);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% CREA LO SCHEMA SIMULINK  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -4991,10 +5046,15 @@ for ii=Sistema.Input_POG
     Pnt_Ramo_ii=Partizione(Ind).Ultimo_Ramo;
     CREA_BLOCCHI_SLX(Sistema,Pnt_Ramo_ii);
 end
-save_system(SLX_Name)
-if not(strcmp(Sistema.Grafico.Dir_out,''))
-    movefile([SLX_Name '.slx'],Sistema.Grafico.Dir_out)
+%save_system(SLX_Name)
+save_system([Sistema.Grafico.Dir_out SLX_Name])
+if strcmp(Sistema.POG_SYS.slx_Print_SLX,'Si')
+    PRINT_FIGURA([Sistema.Grafico.Dir_out Sistema.Grafico.Nome_del_grafico],Sistema.POG_SYS.pog_Graphic_Type,'_SLX')
 end
+close_system(SLX_Name)
+% if not(strcmp(Sistema.Grafico.Dir_out,''))
+%     movefile([SLX_Name '.slx'],Sistema.Grafico.Dir_out)
+% end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%  Crea il file "Nome_del_grafico.m"
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -5009,7 +5069,7 @@ for ii=1:length(Nomi)
     end
 end
 Max_Length=Max_Length+5;             % Punto di inizio commenti
-fh=fopen([Sistema.Grafico.Dir_out Sistema.Grafico.Nome_del_grafico '.m'],'w');
+fh=fopen([Sistema.Grafico.Dir_out Sistema.Grafico.Nome_del_grafico '_SLX_m.m'],'w');
 fwrite(fh, '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'); fprintf(fh,'\n');
 fwrite(fh,['%%%% SIMULATION OF SYSTEM: ' Sistema.Grafico.Nome_del_grafico ]); fprintf(fh,'\n');
 fwrite(fh, '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'); fprintf(fh,'\n');
@@ -5025,12 +5085,8 @@ fwrite(fh, ['Tfin=' num2str(Sistema.POG_SYS.sim_Tfin) ';']); fprintf(fh,'\n');
 fwrite(fh, ['Nr_Ts_Points=' num2str(Sistema.POG_SYS.sim_Nr_Ts_Points) ';']); fprintf(fh,'\n');
 fwrite(fh, 'Ts=Tfin/Nr_Ts_Points;'); fprintf(fh,'\n');
 fwrite(fh, ['set_param(''' SLX_Name ''',''Solver'',''ode45'',''stoptime'',num2str(Tfin),''MaxStep'',num2str(Ts),''LimitDataPoints'',''off'')']); fprintf(fh,'\n');
-fwrite(fh, ['Out_Sim=sim(''' SLX_Name ''', ''ReturnWorkspaceOutputs'', ''on'');']); fprintf(fh,'\n');
+fwrite(fh, ['Out_Sim=sim(''' SLX_Name ''', ''SaveState'',''on'',''SaveOutput'',''on'');']); fprintf(fh,'\n');
 fclose(fh);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-if strcmp(Sistema.POG_SYS.slx_Print_SLX,'Si')
-    PRINT_FIGURA([Sistema.Grafico.Dir_out Sistema.Grafico.Nome_del_grafico],Sistema.POG_SYS.pog_Graphic_Type,'_SLX')
-end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Sistema.Schema_SLX_Generato='Si';
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -5232,7 +5288,7 @@ return
 function  Sistema = SIMULA_LO_SCHEMA_SIMULINK(Sistema)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 SLX_Name=Sistema.SLX.Name;
-SLX_Handle=Sistema.SLX.Handle;
+load_system([Sistema.Dir_out Sistema.SLX.Name])
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 [Par_Val, ~] = GET_PARAMETERS_VALUES(Sistema);
 Nomi=fieldnames(Par_Val);
@@ -5276,6 +5332,7 @@ if strcmp(Sistema.POG_SYS.sim_Print_SIM,'Si')
 end
 Sistema.Out_Sim=Out_Sim;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+close_system(SLX_Name)
 return
 
 
@@ -5387,3 +5444,4 @@ return
 % Analizza_il_Sistema('C:\Users\roberto\Documents\POG\Sistemi_POG\media\user_admin\Alt\Alternanza_R_C.txt')
 % Sistema=Analizza_il_Sistema('C:\Users\roberto\Documents\POG\Sistemi_POG\media\user_admin\Alt\Alternanza_R_C.txt');
 % Sistema=Analizza_il_Sistema('C:\Users\roberto\Documents\POG\Sistemi_POG\media\user_admin\Alt\Kers.txt');
+% Sistema=Analizza_il_Sistema('C:\Users\roberto\Documents\POG\Sistemi_POG\media\user_admin\Kers\Kers.txt');

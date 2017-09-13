@@ -18,7 +18,11 @@ logger = logging.getLogger(__name__)
 from watchdog.observers import Observer
 import time, os
 
-MAXTIME = 45  # watchdog timeout
+MAXTIME_0 = 120
+
+global MAXTIME
+MAXTIME = MAXTIME_0  # watchdog timeout fino alla apparizione di .start
+
 
 separator = "/"
 
@@ -67,7 +71,7 @@ def watchdog(project):
         time.sleep(1)
         logger.debug(observer.getName() + ": still alive " + str(i))
         i += 1
-        if (i > MAXTIME):
+        if i > MAXTIME:
             break  # raggiunto tempo massimo.
 
     logger.debug(observer.getName() + ": is dead")
@@ -146,10 +150,17 @@ class MyHandler(FileSystemEventHandler):
                 logger.debug(event.src_path + " updated to databse to project " + str(out.project.name))
 
         if event.src_path.endswith(".done"):
-            # termina l'observer prima dei 45 secondi. indica che matlab ha finito.
+            # termina l'observer prima di MAXTIME secondi. indica che matlab ha finito.
             logger.debug(".done file found. terminating observer")
             global ALIVE
             ALIVE = False
+
+        if event.src_path.endswith(".start"):
+            # rigenera il MAXTIME del valore definito da MAXTIME_0
+            global MAXTIME
+            MAXTIME = MAXTIME_0
+            logger.debug(".start file found. resetting MAXTIME to %s" % MAXTIME_0)
+
 
         logger.debug(str(event.src_path) + " " + str(event.event_type))
 

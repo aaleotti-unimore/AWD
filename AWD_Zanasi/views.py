@@ -190,7 +190,7 @@ def edit_project(request, project_id):
                 #     logger.error("ERROR deleting %s" % old_proj_path)
                 #     logger.error(e)
 
-                messages.add_message(request, messages.SUCCESS, 'Project successfully edited')
+                #     messages.add_message(request, messages.SUCCESS, 'Project successfully edited')
                 return redirect('index')
             else:
                 messages.add_message(request, messages.ERROR, 'Error Editing Project: unable to open project file')
