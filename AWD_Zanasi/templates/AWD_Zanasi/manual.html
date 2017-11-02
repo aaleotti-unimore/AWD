@@ -8,47 +8,75 @@
             <!-- Page Heading -->
             <div class="col-lg-12">
                 <h3 class="page-header">
-                    Manuale
+                    Manual
                 </h3>
-                <p>
-                    Pagina di manuale per le principali funzioni del sito
-                </p>
             </div>
         </div>
+                <!-- MENU HELP =============================================================== -->
+<!-- 
+                <a href="MCSEM_Luc_2017_POG_Modeler_Manual.pdf" target="new">What you have to know</a>  
+-->
+                <!-- Manual  -->
         <div class="row">
             <div class="col-lg-12">
                 <h4>
-                    Home
+                    Help: Manual
+                </h4>
+                <p> Displays this manual.</p>
+            </div>
+        </div>
+                <!-- Examples  -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>
+                    Help: Examples
+                </h4>
+                <p> Displays the Sample Projects List. For each project, the source code and the results processed by Matlab are shown.</p>
+                {% if request.user.is_superuser %}
+                    <pre style="color:red">
+                        ADMIN: Per inserire un esempio, inserire un nuovo progetto, successivamente dalla pagina admin, aprire
+                        la pagina di modifica del progetto, aggiungere la spunta alla voce "is_example" e salvare.
+                    </pre>
+                {% endif %}
+            </div>
+        </div>
+                <!-- Commands List  -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>
+                    Help: Commands List
+                </h4>
+                <p> Displays the list of possible commands to include in the source code and their description.</p>
+            </div>
+        </div>
+                <!-- MENU PROJECTS ============================================================== -->
+                    <hr>
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>
+                    Projects: Home
                 </h4>
                 <p>
-                    Pagina principale del sito, mostra una panoramica dei progetti per ogni utente (l'admin li
-                    visualizzerà tutti, in ordine di inserimento). Sono presenti 5 Bottoni funzione: </p>
-
+                    Main page of the web site. Shows the list of user projects. There are 5 function buttons for each project: </p>
                 <ul>
-                    <li>Description: mostra una descrizione del progetto, inserita da utente</li>
-                    <li>Results: Mostra una pagina con i risultati elaborati da Matlabl assieme al codice sorgente del
-                        progetto
-                    </li>
-                    <li>Launch: lancia un progetto, lasciando in attesa l'utente fino a quando non è completato (o per
-                        un massimo di {{ WATCHDOG_TIMEOUT }} secondi
-                    </li>
-                    <li>Edit: Permette di modificare nome, descrizione e codice di un progetto</li>
-                    <li>Delete: Permette di cancellare un progetto ed i suoi risultati. i files rimarranno nelle
-                        cartelle in cui sono stati salvati: {{ MEDIA_ROOT }}</li>
+                    <li><i>Description</i>: shows the description of the project entered by the user.</li>
+                    <li><i>Results</i>: shows a page with the source code of the project and the results processed by Matlab.</li>
+                    <li><i>Launch</i>: launches the project and leaves the user waiting until processing is completed (or for a maximum of {{ WATCHDOG_TIMEOUT }} seconds).</li>
+                    <li><i>Edit</i>: allows you to change the name, description, and source code of the project.</li>
+                    <li><i>Delete</i>: allows you to completely delete a project.</li>
                 </ul>
-                <p>Dal menu contestuale è possibile accedere ad ulteriori funzioni, spiegate di seguito.
-                </p>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12">
                 <h4>
-                    Menu Projects: Create
+                    Projects: Create
                 </h4>
                 <p>
-                    Pagina di creazione progetto. è possibile accedere all'editor progetti oppure inserire direttamente
-                    un file .txt contenente il codice per completare immediatamente la creazione
+                    Page that allows you to create a new project. The user is asked to enter the name and description of the new 
+                    project. Eventually, the user can upload a "txt" file containing the source code of the new project. 
                 </p>
+                <!-- EDITOR PROGETTI: TEMPORANEAMENTE SOSPESO
                 <h4>
                     Editor progetti
                 </h4>
@@ -64,39 +92,31 @@
                         range in cui le variabili possono essere definite. uscire dal range causerà errore nei risultati
                     </li>
                 </ul>
+                           -->
             </div>
         </div>
+                <!-- ============================================================== -->
+                    <hr>
+                <!-- MENU UTENTE -->
         <div class="row">
             <div class="col-lg-12">
                 <h4>
-                    Menu Projects: Commands List
+                    User: Profile
                 </h4>
-                <p> Lista di possibili comandi da inserire nel codice con la loro descrizione</p>
+                <p> A web page that allows you to change the password.</p>
             </div>
         </div>
+                <!-- MENU UTENTE -->
         <div class="row">
             <div class="col-lg-12">
                 <h4>
-                    Menu Projects: Examples
+                    User: Log Out
                 </h4>
-                <p> Lista di progetti esempio, contenenti codice e risultati elaborati corretti. Da usare come
-                    riferimento.</p>
-                {% if request.user.is_superuser %}
-                    <pre style="color:red">
-                        ADMIN: Per inserire un esempio, inserire un nuovo progetto, successivamente dalla pagina admin, aprire
-                        la pagina di modifica del progetto, aggiungere la spunta alla voce "is_example" e salvare.
-                    </pre>
-                {% endif %}
+                <p> Log Out button from the POG Modeler program.</p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <h4>
-                    Menu Utente: Profile
-                </h4>
-                <p> Pagina per la modifica della password.</p>
-            </div>
-        </div>
+                <!-- ============================================================== -->
+                <!-- SUPERUSER SUPERUSER SUPERUSER SUPERUSER SUPERUSER -->
         {% if request.user.is_superuser %}
             <hr>
             <div class="row">
@@ -107,28 +127,11 @@
 
                 </div>
             </div>
+                        <!-- Admin -->
             <div class="row">
                 <div class="col-lg-12">
                     <h4>
-                        Menu Utente: Update Commands
-                    </h4>
-                    <p> Pagina per l'aggiornamento dei comandi. I file vanno caricati nelle corrette voci di input. i
-                        file devono contere obbligatoriamente i seguenti campi, anche vuoti:</p>
-                    <ul>
-                        <li>Branch - Rami: Nome, Value, Sigla, StrNum, Vincoli, Range, Type, Help, Help_ENG</li>
-                        <li>Block - Blocchi: Sigla, Tipo_di_Ramo, Diretto, Out, E_name, K_name, Q_name, F_name, Help,
-                            Comandi, Help_ENG
-                        </li>
-                        <li>System - Sistema: Nome, Value, Sigla, StrNum, Vincoli, Range, Type, Help, Help_ENG</li>
-                    </ul>
-                    <p>Una volta caricati saranno disponibili nell'Editor progetti e nella Command List dal menu
-                        Projects</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <h4>
-                        Menu Utente: Admin
+                        User: Admin
                     </h4>
                     <p> Pagia di amministrazione del database. Da qui è possibile fare tutte le modifiche manuali alle
                         voci presenti nel database:</p>
@@ -148,6 +151,26 @@
                     </ul>
                 </div>
             </div>
+                        <!-- Update Commands -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4>
+                        User: Update Commands
+                    </h4>
+                    <p> Pagina per l'aggiornamento dei comandi. I file vanno caricati nelle corrette voci di input. i
+                        file devono contere obbligatoriamente i seguenti campi, anche vuoti:</p>
+                    <ul>
+                        <li>Branch - Rami: Nome, Value, Sigla, StrNum, Vincoli, Range, Type, Help, Help_ENG</li>
+                        <li>Block - Blocchi: Sigla, Tipo_di_Ramo, Diretto, Out, E_name, K_name, Q_name, F_name, Help,
+                            Comandi, Help_ENG
+                        </li>
+                        <li>System - Sistema: Nome, Value, Sigla, StrNum, Vincoli, Range, Type, Help, Help_ENG</li>
+                    </ul>
+                    <p>Una volta caricati saranno disponibili nell'Editor progetti e nella Command List dal menu
+                        Projects</p>
+                </div>
+            </div>
+                        <!-- ========================= -->
         {% endif %}
     </div>
 

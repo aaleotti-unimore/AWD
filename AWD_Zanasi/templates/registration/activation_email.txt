@@ -1,10 +1,17 @@
 Dear {{ user }}
 
-Here's your activation key for POG Modeler at {{ site.domain }} :
+Here's your activation key for POG Modeler at zanasi2009.ing.unimo.it ({{ site.domain }}):
 
 http://{{site.domain}}/accounts/activate/{{ activation_key }}
 
 You have {{ expiration_days }} days to complete your registration
 
-Sincerely
+POG Modeler is available for those who want to use the POG modeling technique, 
+and in particular for the unimore students of the course 
+"Modeling and Control of Electromechanical Systems".
+
+Do not reply to thise mail. 
+
+Sincerely,
+
 Roberto Zanasi

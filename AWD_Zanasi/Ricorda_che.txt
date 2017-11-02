@@ -25,18 +25,25 @@ start matlab -nosplash -nodesktop -minimize -noFigureWindows -logfile "%~1\out\l
   127.0.0.1:80
   127.0.0.1
 
-  %%% --->  Deve essere possibile fare il download del file zip.
-  %%% --->  Deve essere visualizzati tutti i file grafici e txt che Django può visualizzare.
-  %%% --->  Attivare edit di file vuoto
-  %%% --->  Mandare una email di benvenuto con il link di attivazione.
-  %%% --->  L'utente deve essere univocamente identificato tramite l'email in modo che io posso contattarlo tramite email.
-  %%% --->  L'utente dovrebbe poter modificare anche la sua email
-  %%% --->  Attivare l'ordinamento alfabetico dei vari campi.
-  %%% --->  Il manuale va tradotto in inglese
+  %%% --->  L'utente dovrebbe fornire Nome, Cognome e User. 
+  %%% --->  Attivare contatore degli accessi per ogni singolo utente (può essere fatto anche in Matlab) 
   %%% --->  "Scegli file" -> tradurre in inglese
-  %%% --->  Attivare copia di un altro progetto
-  %%% --->  Il download dei file matlab.txt ha spaziatura doppia (da correggere)
-  %%% --->  Aggiungere email tra i campi visualizzati ad "admin"
+  %%% --->  La lista degli esempi deve essere in ordine alfabetico
+  %%% --->  La lista degli esempi deve graficare (se presente) una piccola figura dello schema fisico 
+  %%% --->  La descrizione del progetto dovrebbe poter essere modificata senza ricompilare il progetto  
+  %%% --->  La descrizione del progetto dovrebbe essere direttamente visibile.
+  %%% --->  La lista dei comandi dovrebbe essere organizzata a gruppi
+  %%% --->  Dovrebbe essere possibile caricare una immagine del sistema fisico
+  %%% --->  Gli esempi devono essere visibili a admin
+  %%% --->  Gli esempi devono rimanere tali anche l'esempio viene aggiornato
+  %%% --->  La pagina di Login deve essere tradotta in inglese.
+  %%% --->  Visualizzare anche file di tipo *.m
+  
+    
+  %%% --->  Provare ad attivare una funzionalità "a prenotazione" dell`esecuzione di Matlab.  
+  
+
+  
 
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%

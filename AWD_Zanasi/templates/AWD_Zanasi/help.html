@@ -24,6 +24,8 @@
                         <thead class="thead-inverse">
                         <tr>
                             <th>Code</th>
+                            <th>Type</th>
+                            <th>Out</th>
                             <!--<th>Effort</th>-->
                             <!--<th>Parameter</th>-->
                             <!--<th>Internal</th>-->
@@ -34,13 +36,13 @@
                         <tbody>
                         {% for cmd in blocks %}
                             <tr>
-                                <td> {{ cmd.Sigla }}</td>
-
+                                <td>{{ cmd.Sigla }}</td>
+                                <td>{{ cmd.Tipo_di_Ramo }}</td>
+                                <td>{{ cmd.Out }}</td>
                                 <!--<td>{{ cmd.E_name }}</td>-->
                                 <!--<td>{{ cmd.K_name }}</td>-->
                                 <!--<td>{{ cmd.Q_name }}</td>-->
                                 <!--<td>{{ cmd.F_name }}</td>-->
-
                                 <td>{{ cmd.Help_ENG }}</td>
 
 
@@ -72,8 +74,9 @@
                     <table class="table">
                         <thead class="thead-inverse">
                         <tr>
-
                                 <th>Code</th>
+                                <th>Scope</th>
+                                <th>Value</th>
                                 <th>Type</th>
                                 <th>Range</th>
                                 <th>Description</th>
@@ -84,8 +87,9 @@
                             <tr>
                                 <td>{{ cmd.Sigla }}</td>
                                 <td>{{ cmd.Type }}</td>
+                                <td>{{ cmd.Value }}</td>
+                                <td>{{ cmd.StrNum }}</td>
                                 <td>{{ cmd.Range }}</td>
-
                                 <td>{{ cmd.Help_ENG }}</td>
                             </tr>
                         {% endfor %}
@@ -115,6 +119,8 @@
                         <thead class="thead-inverse">
                         <tr>
                                 <th>Code</th>
+                                <th>Scope</th>
+                                <th>Value</th>
                                 <th>Type</th>
                                 <th>Range</th>
                                 <th>Description</th>
@@ -123,8 +129,10 @@
                         <tbody>
                         {% for cmd in system %}
                             <tr>
-                                <td> {{ cmd.Sigla }}</td>
+                                <td>{{ cmd.Sigla }}</td>
                                 <td>{{ cmd.Type }}</td>
+                                <td>{{ cmd.Value }}</td>
+                                <td>{{ cmd.StrNum }}</td>
                                 <td>{{ cmd.Range }}</td>
                                 <td>{{ cmd.Help_ENG }}</td>
                             </tr>

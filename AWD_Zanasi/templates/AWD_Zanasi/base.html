@@ -53,35 +53,41 @@
         <!-- Top Menu Items -->
         <ul class="nav navbar-right top-nav">
             {% if user.is_authenticated %}
+                        <!-- Help -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="fa fa-user"></i> Projects <b
+                            class="fa fa-info-circle"></i> Help <b
                             class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="{% url 'index' %}"><i class="fa fa-fw fa-eye"></i> Home</a>
+                            <a href="{% url 'manual' %}"><i class="fa fa-info-circle"></i> Manual</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="{% url 'create_project' %}"><i class="fa fa-fw fa-plus"></i> Create</a>
-                        </li>
-                        <li class="divider"></li>
-                        <!-- Temporaneamente sospeso -->
-                        <li>
-                            <a href="{% url 'help_page' %}"><i class="fa fa-fw fa-list"></i> Commands List</a>
-                        </li>
-                        <li class="divider"></li>
-
-                        <li>
-                            <a href="{% url 'manual' %}"><i class="fa fa-ambulance"></i> Manual</a>
+                            <a href="{% url 'examples' %}"><i class="fa fa-map-o"></i> Examples</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="{% url 'examples' %}"><i class="fa fa-fw fa-map-o"></i>Examples</a>
+                            <a href="{% url 'help_page' %}"><i class="fa fa-list"></i> Commands List</a>
                         </li>
-
                     </ul>
                 </li>
+                        <!-- Projects -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="fa fa-pencil"></i> Projects <b
+                            class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{% url 'index' %}"><i class="fa fa-eye"></i> Home</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="{% url 'create_project' %}"><i class="fa fa-plus"></i> Create</a>
+                        </li>
+                    </ul>
+                </li>
+                        <!-- User -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
                             class="fa fa-user"></i> {{ user.username }} <b
@@ -98,11 +104,11 @@
                         <li class="divider"></li>
                         {% endif %}
                         <li>
-                            <a href="{% url 'auth_password_change' %}"><i class="fa fa-fw fa-user"></i> Profile</a>
+                            <a href="{% url 'auth_password_change' %}"><i class="fa fa-user"></i> Profile</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="{% url 'auth_logout' %}"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="{% url 'auth_logout' %}"><i class="fa fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>

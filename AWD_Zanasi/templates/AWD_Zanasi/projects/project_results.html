@@ -7,43 +7,42 @@
     <!-- Page Heading -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">
-                Projects
-                <small>Results for Project: {{ project.name }}</small>
-            </h1>
+            <h2 class="page-header">
+                <!-- Projects <small> -->
+                Results of Project: {{ project.name }}
+                <!-- </small> -->
+            </h2>
         </div>
     </div>
 
-    <h3>Description</h3>
-    <p>{{ project.proj_desc }}</p>
+    <h3>Description: {{ project.proj_desc }}</h3>
 
-    <h3>Code</h3>
+    <h3>Source code:</h3>
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-6">
                 <pre>
                     {{ project.display_source_file }}
                 </pre>
+           <!-- 
             <a href="{{ project.matlab_file.url }}">
                 <i class="fa fa-download" aria-hidden="true"></i>
                 Download {{ project.matlab_file.name }}
             </a>
+            -->
         </div>
     </div>
-
-
     <hr>
-    <h3>File scaricabili</h3>
+    <h3>Zip file of all the generated files:</h3>
     <div>
         <div class="row">
-            <div class="col-xs-6 col-md-6">
-
+            <div class="col-xs-12">
                 <ul class="list-group">
                     {% for out in project_output %}
                     {% if out.generic_file %}
                     <li class="list-group-item">
                         <a href="{{ out.generic_file.url }}">
-                            <i class="fa fa-download" aria-hidden="true"></i>
-                            Download {{ out.generic_file.name }}
+                            <h4 style="color:blue"><i class="fa fa-download" aria-hidden="true"></i>
+                            Download {{ out.generic_file.name }}</h4>
                         </a>
                     </li>
                     {% endif %}
@@ -53,19 +52,22 @@
         </div>
     </div>
     <hr>
-    <h3>Output</h3>
+    <h3>Outputs:</h3>
     <div class="row">
         {% for out in project_output %}
         {% if out.image_file %}
         <div class="col-xs-6 col-md-6">
+            <h5 style="color:blue">{{ out.image_file.name }}</h5>
             <div class="thumbnail">
                 <img class="img-responsive watch-right" alt="not found"
                      src="{{ out.image_file.url }}?v={{ project.launch_date }}"/>
+                <!-- ->
                 <div class="caption">
                     <small><a href="{{ out.image_file.url }}"><i class="fa fa-download"
                                                                  aria-hidden="true"></i>
                         Download {{ out.image_file.name }}</a></small>
                 </div>
+                <!- -->
             </div>
         </div>
         {% endif %}
@@ -76,13 +78,16 @@
         {% for out in project_output %}
         {% if out.text_file %}
         <div class="col-lg-6">
+            <h5 style="color:blue">{{ out.text_file.name }}</h5>
                                 <pre>
                                     {{ out.display_text_file }}
                                 </pre>
+                <!-- ->
             <a href="{{ out.text_file.url }}">
                 <i class="fa fa-download" aria-hidden="true"></i>
                 Download {{ out.text_file.name }}
             </a>
+                <!- -->
         </div>
 
         {% endif %}

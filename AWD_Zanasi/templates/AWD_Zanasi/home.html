@@ -39,13 +39,14 @@
                         <th>Name</th>
                         {% if user.is_superuser %}
                             <th>Owner</th>
+                            <th>Email</th>
                         {% endif %}
                         <th>Description</th>
                         <th>Launch Date</th>
                         <th>Results</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th>Launch</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -55,6 +56,7 @@
                             <td>{{ project.name }}</td>
                             {% if user.is_superuser %}
                                 <td>{{ project.user.username }}</td>
+                                <td>{{ project.user.email }}</td>
                             {% endif %}
                             <td>
                                 <!-- Button trigger modal -->
@@ -86,7 +88,7 @@
 
 
                             </td>
-                            <td>{{ project.launch_date|date:"D d/m/y - h:i.s" }}</td>
+                            <td>{{ project.launch_date|date:"d M Y - H:i" }}</td>
 
                             {% if project.launch_date %}
                                 <td><a class="btn btn-default btn-sm" role="button"
@@ -125,7 +127,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="jumbotron">
-                        <h1>Benvenuti</h1>
+                        <h1>Welcome</h1>
                         <!--  <p>(DO NOT USE NOW)</p>  -->
                         <p>Login here to start working</p>
                         <p><a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Login</a></p>
