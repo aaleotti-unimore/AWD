@@ -23777,3 +23777,691 @@ C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
 [02/Nov/2017 14:41:59] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_dacancellare\progetto_da_cancellare\out\.done created
 [02/Nov/2017 14:42:00] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-701: still alive 31
 [02/Nov/2017 14:42:00] DEBUG [AWD_Zanasi.watchdog_handler:77] obsv-701: is dead
+[02/Nov/2017 15:18:27] DEBUG [AWD_Zanasi.views:495] Out path to delete C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out
+[02/Nov/2017 15:18:28] DEBUG [AWD_Zanasi.watchdog_handler:50] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_admin/Azzone
+[02/Nov/2017 15:18:28] DEBUG [AWD_Zanasi.watchdog_handler:54] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone
+[02/Nov/2017 15:18:28] DEBUG [AWD_Zanasi.watchdog_handler:57] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.txt
+[02/Nov/2017 15:18:29] DEBUG [AWD_Zanasi.watchdog_handler:66] 
+C:\Apache24\htdocs\AWD>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[02/Nov/2017 15:18:30] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 0
+[02/Nov/2017 15:18:31] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 1
+[02/Nov/2017 15:18:32] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 2
+[02/Nov/2017 15:18:33] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 3
+[02/Nov/2017 15:18:34] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 4
+[02/Nov/2017 15:18:36] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 5
+[02/Nov/2017 15:18:37] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 6
+[02/Nov/2017 15:18:38] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 7
+[02/Nov/2017 15:18:39] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 8
+[02/Nov/2017 15:18:40] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 9
+[02/Nov/2017 15:18:41] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 10
+[02/Nov/2017 15:18:41] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out created
+[02/Nov/2017 15:18:42] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 11
+[02/Nov/2017 15:18:43] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 12
+[02/Nov/2017 15:18:44] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 13
+[02/Nov/2017 15:18:45] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 14
+[02/Nov/2017 15:18:46] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 15
+[02/Nov/2017 15:18:47] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 16
+[02/Nov/2017 15:18:48] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 17
+[02/Nov/2017 15:18:49] DEBUG [AWD_Zanasi.watchdog_handler:108] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txt
+[02/Nov/2017 15:18:49] DEBUG [AWD_Zanasi.watchdog_handler:109] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:18:49] DEBUG [AWD_Zanasi.watchdog_handler:111] out file path user_admin\Azzone\out\Azzone_EQN.txt
+[02/Nov/2017 15:18:49] DEBUG [AWD_Zanasi.watchdog_handler:112] root 
+[02/Nov/2017 15:18:49] DEBUG [AWD_Zanasi.watchdog_handler:118] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txt saved to databse to project Azzone
+[02/Nov/2017 15:18:49] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txt created
+[02/Nov/2017 15:18:49] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 18
+[02/Nov/2017 15:18:49] DEBUG [AWD_Zanasi.watchdog_handler:108] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txt
+[02/Nov/2017 15:18:49] DEBUG [AWD_Zanasi.watchdog_handler:109] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:18:49] DEBUG [AWD_Zanasi.watchdog_handler:111] out file path user_admin\Azzone\out\Azzone_EQN.txt
+[02/Nov/2017 15:18:49] DEBUG [AWD_Zanasi.watchdog_handler:112] root 
+[02/Nov/2017 15:18:49] DEBUG [AWD_Zanasi.watchdog_handler:120] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txtupdate to databse to project Azzone
+[02/Nov/2017 15:18:49] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txt modified
+[02/Nov/2017 15:18:50] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 19
+[02/Nov/2017 15:18:51] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 20
+[02/Nov/2017 15:18:51] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 15:18:51] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 15:18:51] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:18:51] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 15:18:51] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 15:18:51] DEBUG [AWD_Zanasi.watchdog_handler:133] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png saved to databse to project Azzone
+[02/Nov/2017 15:18:51] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png created
+[02/Nov/2017 15:18:51] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 15:18:51] ERROR [AWD_Zanasi.watchdog_handler:175] ProjectOutput matching query does not exist.
+[02/Nov/2017 15:18:52] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 21
+[02/Nov/2017 15:18:52] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 15:18:52] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 15:18:52] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:18:52] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 15:18:52] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 15:18:52] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png updated to databse to project Azzone
+[02/Nov/2017 15:18:52] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png created
+[02/Nov/2017 15:18:52] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 15:18:52] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 15:18:52] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:18:52] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 15:18:52] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 15:18:52] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png updated to databse to project Azzone
+[02/Nov/2017 15:18:52] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png modified
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:133] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png saved to databse to project Azzone
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png created
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 15:18:53] ERROR [AWD_Zanasi.watchdog_handler:175] ProjectOutput matching query does not exist.
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 22
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png updated to databse to project Azzone
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png created
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png updated to databse to project Azzone
+[02/Nov/2017 15:18:53] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png modified
+[02/Nov/2017 15:18:54] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 23
+[02/Nov/2017 15:18:55] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 24
+[02/Nov/2017 15:18:56] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 25
+[02/Nov/2017 15:18:57] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 26
+[02/Nov/2017 15:18:58] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 27
+[02/Nov/2017 15:18:59] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 28
+[02/Nov/2017 15:19:00] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 29
+[02/Nov/2017 15:19:01] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 30
+[02/Nov/2017 15:19:02] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 31
+[02/Nov/2017 15:19:03] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 32
+[02/Nov/2017 15:19:04] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 33
+[02/Nov/2017 15:19:05] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 34
+[02/Nov/2017 15:19:06] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 35
+[02/Nov/2017 15:19:07] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 36
+[02/Nov/2017 15:19:08] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 37
+[02/Nov/2017 15:19:09] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 38
+[02/Nov/2017 15:19:10] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 39
+[02/Nov/2017 15:19:11] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 40
+[02/Nov/2017 15:19:12] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 41
+[02/Nov/2017 15:19:13] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 42
+[02/Nov/2017 15:19:14] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 43
+[02/Nov/2017 15:19:15] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 44
+[02/Nov/2017 15:19:16] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 45
+[02/Nov/2017 15:19:17] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 46
+[02/Nov/2017 15:19:18] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 47
+[02/Nov/2017 15:19:19] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 48
+[02/Nov/2017 15:19:20] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 49
+[02/Nov/2017 15:19:21] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 50
+[02/Nov/2017 15:19:22] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 51
+[02/Nov/2017 15:19:23] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 52
+[02/Nov/2017 15:19:24] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 53
+[02/Nov/2017 15:19:25] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 54
+[02/Nov/2017 15:19:26] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 55
+[02/Nov/2017 15:19:27] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 56
+[02/Nov/2017 15:19:28] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 57
+[02/Nov/2017 15:19:29] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 58
+[02/Nov/2017 15:19:30] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 59
+[02/Nov/2017 15:19:31] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 60
+[02/Nov/2017 15:19:32] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 61
+[02/Nov/2017 15:19:33] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 62
+[02/Nov/2017 15:19:34] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 63
+[02/Nov/2017 15:19:35] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 64
+[02/Nov/2017 15:19:36] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 65
+[02/Nov/2017 15:19:37] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 66
+[02/Nov/2017 15:19:38] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 67
+[02/Nov/2017 15:19:39] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 68
+[02/Nov/2017 15:19:40] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 69
+[02/Nov/2017 15:19:41] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 70
+[02/Nov/2017 15:19:42] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 71
+[02/Nov/2017 15:19:43] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 72
+[02/Nov/2017 15:19:44] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 73
+[02/Nov/2017 15:19:45] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 74
+[02/Nov/2017 15:19:46] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 75
+[02/Nov/2017 15:19:47] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 76
+[02/Nov/2017 15:19:48] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 77
+[02/Nov/2017 15:19:49] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 78
+[02/Nov/2017 15:19:50] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 79
+[02/Nov/2017 15:19:51] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 80
+[02/Nov/2017 15:19:52] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 81
+[02/Nov/2017 15:19:53] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 82
+[02/Nov/2017 15:19:54] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 83
+[02/Nov/2017 15:19:55] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 84
+[02/Nov/2017 15:19:55] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 15:19:56] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 85
+[02/Nov/2017 15:19:57] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 86
+[02/Nov/2017 15:19:58] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 87
+[02/Nov/2017 15:19:59] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.slx created
+[02/Nov/2017 15:19:59] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.slx modified
+[02/Nov/2017 15:19:59] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 88
+[02/Nov/2017 15:20:00] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 89
+[02/Nov/2017 15:20:00] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 15:20:00] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png
+[02/Nov/2017 15:20:00] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:20:00] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 15:20:00] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_SLX.png
+[02/Nov/2017 15:20:01] DEBUG [AWD_Zanasi.watchdog_handler:133] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png saved to databse to project Azzone
+[02/Nov/2017 15:20:01] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png created
+[02/Nov/2017 15:20:01] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 15:20:01] ERROR [AWD_Zanasi.watchdog_handler:175] ProjectOutput matching query does not exist.
+[02/Nov/2017 15:20:01] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 15:20:01] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png
+[02/Nov/2017 15:20:01] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:20:01] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 15:20:01] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_SLX.png
+[02/Nov/2017 15:20:01] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png updated to databse to project Azzone
+[02/Nov/2017 15:20:01] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png created
+[02/Nov/2017 15:20:01] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png
+[02/Nov/2017 15:20:01] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:20:01] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 15:20:01] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_SLX.png
+[02/Nov/2017 15:20:01] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png updated to databse to project Azzone
+[02/Nov/2017 15:20:01] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png modified
+[02/Nov/2017 15:20:01] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 90
+[02/Nov/2017 15:20:02] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 15:20:02] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX_m.m created
+[02/Nov/2017 15:20:02] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX_m.m modified
+[02/Nov/2017 15:20:02] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 15:20:02] DEBUG [AWD_Zanasi.watchdog_handler:139] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.zip
+[02/Nov/2017 15:20:02] DEBUG [AWD_Zanasi.watchdog_handler:140] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:20:02] DEBUG [AWD_Zanasi.watchdog_handler:142] root 
+[02/Nov/2017 15:20:02] DEBUG [AWD_Zanasi.watchdog_handler:143] out file path user_admin\Azzone\Azzone.zip
+[02/Nov/2017 15:20:02] DEBUG [AWD_Zanasi.watchdog_handler:148] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.zip saved to databse to project Azzone
+[02/Nov/2017 15:20:02] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.zip created
+[02/Nov/2017 15:20:02] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 91
+[02/Nov/2017 15:20:02] DEBUG [AWD_Zanasi.watchdog_handler:139] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.zip
+[02/Nov/2017 15:20:02] DEBUG [AWD_Zanasi.watchdog_handler:140] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:20:02] DEBUG [AWD_Zanasi.watchdog_handler:142] root 
+[02/Nov/2017 15:20:02] DEBUG [AWD_Zanasi.watchdog_handler:143] out file path user_admin\Azzone\Azzone.zip
+[02/Nov/2017 15:20:02] DEBUG [AWD_Zanasi.watchdog_handler:150] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.zip updated to databse to project Azzone
+[02/Nov/2017 15:20:02] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.zip modified
+[02/Nov/2017 15:20:03] DEBUG [AWD_Zanasi.watchdog_handler:173] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.zip deleted from project Azzone
+[02/Nov/2017 15:20:03] DEBUG [AWD_Zanasi.watchdog_handler:139] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone.zip
+[02/Nov/2017 15:20:03] DEBUG [AWD_Zanasi.watchdog_handler:140] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:20:03] DEBUG [AWD_Zanasi.watchdog_handler:142] root 
+[02/Nov/2017 15:20:03] DEBUG [AWD_Zanasi.watchdog_handler:143] out file path user_admin\Azzone\out\Azzone.zip
+[02/Nov/2017 15:20:03] DEBUG [AWD_Zanasi.watchdog_handler:148] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone.zip saved to databse to project Azzone
+[02/Nov/2017 15:20:03] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone.zip created
+[02/Nov/2017 15:20:03] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 15:20:03] DEBUG [AWD_Zanasi.watchdog_handler:154] .done file found. terminating observer
+[02/Nov/2017 15:20:03] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\.done created
+[02/Nov/2017 15:20:03] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 92
+[02/Nov/2017 15:20:03] DEBUG [AWD_Zanasi.watchdog_handler:77] obsv-700: is dead
+[02/Nov/2017 15:25:50] DEBUG [AWD_Zanasi.views:495] Out path to delete C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out
+[02/Nov/2017 15:25:51] DEBUG [AWD_Zanasi.watchdog_handler:50] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_Zanasi/Circuito_RCLRC
+[02/Nov/2017 15:25:51] DEBUG [AWD_Zanasi.watchdog_handler:54] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC
+[02/Nov/2017 15:25:51] DEBUG [AWD_Zanasi.watchdog_handler:57] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\Circuito_RCLRC.txt
+[02/Nov/2017 15:25:52] DEBUG [AWD_Zanasi.watchdog_handler:66] 
+C:\Apache24\htdocs\AWD>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\Circuito_RCLRC.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[02/Nov/2017 15:25:53] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-532: still alive 0
+[02/Nov/2017 15:25:54] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-532: still alive 1
+[02/Nov/2017 15:25:55] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-532: still alive 2
+[02/Nov/2017 15:25:56] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-532: still alive 3
+[02/Nov/2017 15:25:57] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out created
+[02/Nov/2017 15:25:57] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-532: still alive 4
+[02/Nov/2017 15:25:58] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-532: still alive 5
+[02/Nov/2017 15:25:59] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-532: still alive 6
+[02/Nov/2017 15:26:00] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-532: still alive 7
+[02/Nov/2017 15:26:01] DEBUG [AWD_Zanasi.watchdog_handler:108] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_EQN.txt
+[02/Nov/2017 15:26:01] DEBUG [AWD_Zanasi.watchdog_handler:109] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:26:01] DEBUG [AWD_Zanasi.watchdog_handler:111] out file path user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_EQN.txt
+[02/Nov/2017 15:26:01] DEBUG [AWD_Zanasi.watchdog_handler:112] root 
+[02/Nov/2017 15:26:01] DEBUG [AWD_Zanasi.watchdog_handler:118] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_EQN.txt saved to databse to project Circuito_RCLRC
+[02/Nov/2017 15:26:01] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_EQN.txt created
+[02/Nov/2017 15:26:01] DEBUG [AWD_Zanasi.watchdog_handler:108] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_EQN.txt
+[02/Nov/2017 15:26:01] DEBUG [AWD_Zanasi.watchdog_handler:109] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:26:01] DEBUG [AWD_Zanasi.watchdog_handler:111] out file path user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_EQN.txt
+[02/Nov/2017 15:26:01] DEBUG [AWD_Zanasi.watchdog_handler:112] root 
+[02/Nov/2017 15:26:01] DEBUG [AWD_Zanasi.watchdog_handler:120] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_EQN.txtupdate to databse to project Circuito_RCLRC
+[02/Nov/2017 15:26:01] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_EQN.txt modified
+[02/Nov/2017 15:26:01] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-532: still alive 8
+[02/Nov/2017 15:26:02] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-532: still alive 9
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out modified
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_SCH.png
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_SCH.png
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:133] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_SCH.png saved to databse to project Circuito_RCLRC
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_SCH.png created
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out modified
+[02/Nov/2017 15:26:03] ERROR [AWD_Zanasi.watchdog_handler:175] ProjectOutput matching query does not exist.
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out modified
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_SCH.png
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_SCH.png
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_SCH.png updated to databse to project Circuito_RCLRC
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_SCH.png created
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out modified
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_SCH.png
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_SCH.png
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_SCH.png updated to databse to project Circuito_RCLRC
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_SCH.png modified
+[02/Nov/2017 15:26:03] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-532: still alive 10
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_POG.png
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_POG.png
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:133] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_POG.png saved to databse to project Circuito_RCLRC
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_POG.png created
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out modified
+[02/Nov/2017 15:26:04] ERROR [AWD_Zanasi.watchdog_handler:175] ProjectOutput matching query does not exist.
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out modified
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_POG.png
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_POG.png
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_POG.png updated to databse to project Circuito_RCLRC
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_POG.png created
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_POG.png
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_POG.png
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_POG.png updated to databse to project Circuito_RCLRC
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC_POG.png modified
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out modified
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:139] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\Circuito_RCLRC.zip
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:140] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:142] root 
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:143] out file path user_Zanasi\Circuito_RCLRC\Circuito_RCLRC.zip
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:148] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\Circuito_RCLRC.zip saved to databse to project Circuito_RCLRC
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\Circuito_RCLRC.zip created
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:139] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\Circuito_RCLRC.zip
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:140] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:142] root 
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:143] out file path user_Zanasi\Circuito_RCLRC\Circuito_RCLRC.zip
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:150] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\Circuito_RCLRC.zip updated to databse to project Circuito_RCLRC
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\Circuito_RCLRC.zip modified
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-532: still alive 11
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:173] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\Circuito_RCLRC.zip deleted from project Circuito_RCLRC
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:139] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC.zip
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:140] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:142] root 
+[02/Nov/2017 15:26:04] DEBUG [AWD_Zanasi.watchdog_handler:143] out file path user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC.zip
+[02/Nov/2017 15:26:05] DEBUG [AWD_Zanasi.watchdog_handler:148] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC.zip saved to databse to project Circuito_RCLRC
+[02/Nov/2017 15:26:05] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\Circuito_RCLRC.zip created
+[02/Nov/2017 15:26:05] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out modified
+[02/Nov/2017 15:26:05] DEBUG [AWD_Zanasi.watchdog_handler:154] .done file found. terminating observer
+[02/Nov/2017 15:26:05] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_Zanasi\Circuito_RCLRC\out\.done created
+[02/Nov/2017 15:26:05] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-532: still alive 12
+[02/Nov/2017 15:26:05] DEBUG [AWD_Zanasi.watchdog_handler:77] obsv-532: is dead
+[02/Nov/2017 15:46:13] DEBUG [AWD_Zanasi.views:143] Editing project Example_02
+[02/Nov/2017 15:46:17] DEBUG [AWD_Zanasi.views:143] Editing project Example_02
+[02/Nov/2017 15:46:17] DEBUG [AWD_Zanasi.views:158] <QuerySet []>
+[02/Nov/2017 15:48:08] DEBUG [AWD_Zanasi.views:142] Editing project Example_02
+[02/Nov/2017 15:48:12] DEBUG [AWD_Zanasi.views:142] Editing project Example_02
+[02/Nov/2017 15:48:12] DEBUG [AWD_Zanasi.views:157] <QuerySet []>
+[02/Nov/2017 15:48:12] DEBUG [AWD_Zanasi.views:184] New project created: Example_02
+[02/Nov/2017 15:48:12] DEBUG [AWD_Zanasi.views:185] Matlab File C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Example_02\Example_02.txt 
+[02/Nov/2017 15:49:08] DEBUG [AWD_Zanasi.views:142] Editing project Example_02
+[02/Nov/2017 15:49:15] DEBUG [AWD_Zanasi.views:142] Editing project Example_02
+[02/Nov/2017 15:49:15] DEBUG [AWD_Zanasi.views:157] <QuerySet []>
+[02/Nov/2017 15:49:15] DEBUG [AWD_Zanasi.views:184] New project created: Example_02
+[02/Nov/2017 15:49:15] DEBUG [AWD_Zanasi.views:185] Matlab File C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Example_02\Example_02.txt 
+[02/Nov/2017 17:09:53] DEBUG [AWD_Zanasi.views:496] Out path to delete C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out
+[02/Nov/2017 17:09:54] DEBUG [AWD_Zanasi.watchdog_handler:50] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_admin/Azzone
+[02/Nov/2017 17:09:54] DEBUG [AWD_Zanasi.watchdog_handler:54] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone
+[02/Nov/2017 17:09:54] DEBUG [AWD_Zanasi.watchdog_handler:57] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.txt
+[02/Nov/2017 17:09:57] DEBUG [AWD_Zanasi.watchdog_handler:66] 
+C:\Apache24\htdocs\AWD>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[02/Nov/2017 17:09:58] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 0
+[02/Nov/2017 17:09:59] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 1
+[02/Nov/2017 17:10:00] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 2
+[02/Nov/2017 17:10:01] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 3
+[02/Nov/2017 17:10:02] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 4
+[02/Nov/2017 17:10:03] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 5
+[02/Nov/2017 17:10:04] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 6
+[02/Nov/2017 17:10:05] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 7
+[02/Nov/2017 17:10:06] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 8
+[02/Nov/2017 17:10:07] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 9
+[02/Nov/2017 17:10:08] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 10
+[02/Nov/2017 17:10:09] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 11
+[02/Nov/2017 17:10:10] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 12
+[02/Nov/2017 17:10:11] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 13
+[02/Nov/2017 17:10:12] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 14
+[02/Nov/2017 17:10:13] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 15
+[02/Nov/2017 17:10:14] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 16
+[02/Nov/2017 17:10:15] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 17
+[02/Nov/2017 17:10:16] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 18
+[02/Nov/2017 17:10:17] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 19
+[02/Nov/2017 17:10:18] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 20
+[02/Nov/2017 17:10:19] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 21
+[02/Nov/2017 17:10:20] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 22
+[02/Nov/2017 17:10:21] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 23
+[02/Nov/2017 17:10:22] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 24
+[02/Nov/2017 17:10:23] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 25
+[02/Nov/2017 17:10:24] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 26
+[02/Nov/2017 17:10:25] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 27
+[02/Nov/2017 17:10:26] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 28
+[02/Nov/2017 17:10:27] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 29
+[02/Nov/2017 17:10:28] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 30
+[02/Nov/2017 17:10:29] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 31
+[02/Nov/2017 17:10:30] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 32
+[02/Nov/2017 17:10:30] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out created
+[02/Nov/2017 17:10:31] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 33
+[02/Nov/2017 17:10:32] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 34
+[02/Nov/2017 17:10:33] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 35
+[02/Nov/2017 17:10:34] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 36
+[02/Nov/2017 17:10:35] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 37
+[02/Nov/2017 17:10:36] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 38
+[02/Nov/2017 17:10:37] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 39
+[02/Nov/2017 17:10:38] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 40
+[02/Nov/2017 17:10:39] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 41
+[02/Nov/2017 17:10:40] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 42
+[02/Nov/2017 17:10:41] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 43
+[02/Nov/2017 17:10:41] DEBUG [AWD_Zanasi.watchdog_handler:108] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txt
+[02/Nov/2017 17:10:41] DEBUG [AWD_Zanasi.watchdog_handler:109] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:10:41] DEBUG [AWD_Zanasi.watchdog_handler:111] out file path user_admin\Azzone\out\Azzone_EQN.txt
+[02/Nov/2017 17:10:41] DEBUG [AWD_Zanasi.watchdog_handler:112] root 
+[02/Nov/2017 17:10:41] DEBUG [AWD_Zanasi.watchdog_handler:118] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txt saved to databse to project Azzone
+[02/Nov/2017 17:10:41] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txt created
+[02/Nov/2017 17:10:41] DEBUG [AWD_Zanasi.watchdog_handler:108] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txt
+[02/Nov/2017 17:10:41] DEBUG [AWD_Zanasi.watchdog_handler:109] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:10:41] DEBUG [AWD_Zanasi.watchdog_handler:111] out file path user_admin\Azzone\out\Azzone_EQN.txt
+[02/Nov/2017 17:10:41] DEBUG [AWD_Zanasi.watchdog_handler:112] root 
+[02/Nov/2017 17:10:41] DEBUG [AWD_Zanasi.watchdog_handler:120] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txtupdate to databse to project Azzone
+[02/Nov/2017 17:10:41] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txt modified
+[02/Nov/2017 17:10:42] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 44
+[02/Nov/2017 17:10:43] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 45
+[02/Nov/2017 17:10:44] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 46
+[02/Nov/2017 17:10:45] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 47
+[02/Nov/2017 17:10:46] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 48
+[02/Nov/2017 17:10:46] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:10:46] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 17:10:46] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:10:46] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 17:10:46] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 17:10:47] DEBUG [AWD_Zanasi.watchdog_handler:133] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png saved to databse to project Azzone
+[02/Nov/2017 17:10:47] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png created
+[02/Nov/2017 17:10:47] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:10:47] ERROR [AWD_Zanasi.watchdog_handler:175] ProjectOutput matching query does not exist.
+[02/Nov/2017 17:10:47] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 49
+[02/Nov/2017 17:10:48] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 50
+[02/Nov/2017 17:10:49] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 51
+[02/Nov/2017 17:10:49] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:10:49] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 17:10:49] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:10:49] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 17:10:49] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 17:10:49] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png updated to databse to project Azzone
+[02/Nov/2017 17:10:49] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png created
+[02/Nov/2017 17:10:49] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 17:10:49] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:10:49] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 17:10:49] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 17:10:49] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png updated to databse to project Azzone
+[02/Nov/2017 17:10:49] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png modified
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:133] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png saved to databse to project Azzone
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png created
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 52
+[02/Nov/2017 17:10:50] ERROR [AWD_Zanasi.watchdog_handler:175] ProjectOutput matching query does not exist.
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png updated to databse to project Azzone
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png created
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png updated to databse to project Azzone
+[02/Nov/2017 17:10:50] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png modified
+[02/Nov/2017 17:10:51] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 53
+[02/Nov/2017 17:10:52] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 54
+[02/Nov/2017 17:10:53] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 55
+[02/Nov/2017 17:10:54] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 56
+[02/Nov/2017 17:10:55] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 57
+[02/Nov/2017 17:10:56] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 58
+[02/Nov/2017 17:10:57] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 59
+[02/Nov/2017 17:10:58] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 60
+[02/Nov/2017 17:10:59] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 61
+[02/Nov/2017 17:11:00] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 62
+[02/Nov/2017 17:11:01] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 63
+[02/Nov/2017 17:11:02] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 64
+[02/Nov/2017 17:11:03] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 65
+[02/Nov/2017 17:11:04] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 66
+[02/Nov/2017 17:11:05] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 67
+[02/Nov/2017 17:11:06] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 68
+[02/Nov/2017 17:11:07] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 69
+[02/Nov/2017 17:11:08] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 70
+[02/Nov/2017 17:11:09] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 71
+[02/Nov/2017 17:11:10] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 72
+[02/Nov/2017 17:11:11] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 73
+[02/Nov/2017 17:11:12] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 74
+[02/Nov/2017 17:11:13] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 75
+[02/Nov/2017 17:11:14] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 76
+[02/Nov/2017 17:11:15] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 77
+[02/Nov/2017 17:11:16] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 78
+[02/Nov/2017 17:11:17] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 79
+[02/Nov/2017 17:11:18] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 80
+[02/Nov/2017 17:11:19] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 81
+[02/Nov/2017 17:11:20] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 82
+[02/Nov/2017 17:11:21] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 83
+[02/Nov/2017 17:11:22] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 84
+[02/Nov/2017 17:11:23] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 85
+[02/Nov/2017 17:11:24] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 86
+[02/Nov/2017 17:11:25] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 87
+[02/Nov/2017 17:11:26] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 88
+[02/Nov/2017 17:11:27] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 89
+[02/Nov/2017 17:11:28] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 90
+[02/Nov/2017 17:11:29] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 91
+[02/Nov/2017 17:11:30] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 92
+[02/Nov/2017 17:11:31] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 93
+[02/Nov/2017 17:11:32] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 94
+[02/Nov/2017 17:11:33] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 95
+[02/Nov/2017 17:11:34] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 96
+[02/Nov/2017 17:11:35] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 97
+[02/Nov/2017 17:11:36] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 98
+[02/Nov/2017 17:11:37] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 99
+[02/Nov/2017 17:11:38] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 100
+[02/Nov/2017 17:11:39] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 101
+[02/Nov/2017 17:11:40] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 102
+[02/Nov/2017 17:11:41] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 103
+[02/Nov/2017 17:11:42] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 104
+[02/Nov/2017 17:11:43] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 105
+[02/Nov/2017 17:11:44] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 106
+[02/Nov/2017 17:11:45] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 107
+[02/Nov/2017 17:11:46] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 108
+[02/Nov/2017 17:11:47] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 109
+[02/Nov/2017 17:11:48] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 110
+[02/Nov/2017 17:11:49] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 111
+[02/Nov/2017 17:11:50] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 112
+[02/Nov/2017 17:11:51] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 113
+[02/Nov/2017 17:11:52] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 114
+[02/Nov/2017 17:11:53] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 115
+[02/Nov/2017 17:11:54] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 116
+[02/Nov/2017 17:11:55] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 117
+[02/Nov/2017 17:11:56] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 118
+[02/Nov/2017 17:11:56] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:11:57] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 119
+[02/Nov/2017 17:11:58] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 120
+[02/Nov/2017 17:11:58] DEBUG [AWD_Zanasi.watchdog_handler:77] obsv-700: is dead
+[02/Nov/2017 17:12:21] DEBUG [AWD_Zanasi.views:496] Out path to delete C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out
+[02/Nov/2017 17:12:22] DEBUG [AWD_Zanasi.watchdog_handler:50] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media/user_admin/Azzone
+[02/Nov/2017 17:12:22] DEBUG [AWD_Zanasi.watchdog_handler:54] scheduler path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone
+[02/Nov/2017 17:12:22] DEBUG [AWD_Zanasi.watchdog_handler:57] launching: C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.txt
+[02/Nov/2017 17:12:24] DEBUG [AWD_Zanasi.watchdog_handler:66] 
+C:\Apache24\htdocs\AWD>cd C:\Apache24\htdocs\AWD\AWD_Zanasi\ 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>start matlab -nosplash -nodesktop -minimize -noFigureWindows -r "Analizza_il_Sistema('C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.txt');exit;" 
+
+C:\Apache24\htdocs\AWD\AWD_Zanasi>exit
+
+[02/Nov/2017 17:12:25] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 0
+[02/Nov/2017 17:12:26] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 1
+[02/Nov/2017 17:12:27] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 2
+[02/Nov/2017 17:12:28] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 3
+[02/Nov/2017 17:12:29] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 4
+[02/Nov/2017 17:12:30] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 5
+[02/Nov/2017 17:12:31] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 6
+[02/Nov/2017 17:12:32] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 7
+[02/Nov/2017 17:12:33] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 8
+[02/Nov/2017 17:12:34] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 9
+[02/Nov/2017 17:12:35] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out created
+[02/Nov/2017 17:12:35] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 10
+[02/Nov/2017 17:12:36] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 11
+[02/Nov/2017 17:12:37] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 12
+[02/Nov/2017 17:12:38] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 13
+[02/Nov/2017 17:12:39] DEBUG [AWD_Zanasi.watchdog_handler:108] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txt
+[02/Nov/2017 17:12:39] DEBUG [AWD_Zanasi.watchdog_handler:109] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:12:39] DEBUG [AWD_Zanasi.watchdog_handler:111] out file path user_admin\Azzone\out\Azzone_EQN.txt
+[02/Nov/2017 17:12:39] DEBUG [AWD_Zanasi.watchdog_handler:112] root 
+[02/Nov/2017 17:12:39] DEBUG [AWD_Zanasi.watchdog_handler:118] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txt saved to databse to project Azzone
+[02/Nov/2017 17:12:39] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txt created
+[02/Nov/2017 17:12:39] DEBUG [AWD_Zanasi.watchdog_handler:108] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txt
+[02/Nov/2017 17:12:39] DEBUG [AWD_Zanasi.watchdog_handler:109] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:12:39] DEBUG [AWD_Zanasi.watchdog_handler:111] out file path user_admin\Azzone\out\Azzone_EQN.txt
+[02/Nov/2017 17:12:39] DEBUG [AWD_Zanasi.watchdog_handler:112] root 
+[02/Nov/2017 17:12:39] DEBUG [AWD_Zanasi.watchdog_handler:120] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txtupdate to databse to project Azzone
+[02/Nov/2017 17:12:39] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_EQN.txt modified
+[02/Nov/2017 17:12:39] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 14
+[02/Nov/2017 17:12:40] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 15
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:133] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png saved to databse to project Azzone
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png created
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:12:41] ERROR [AWD_Zanasi.watchdog_handler:175] ProjectOutput matching query does not exist.
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 16
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png updated to databse to project Azzone
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png created
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_SCH.png
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png updated to databse to project Azzone
+[02/Nov/2017 17:12:41] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SCH.png modified
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:133] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png saved to databse to project Azzone
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png created
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:12:42] ERROR [AWD_Zanasi.watchdog_handler:175] ProjectOutput matching query does not exist.
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png updated to databse to project Azzone
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png created
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_POG.png
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png updated to databse to project Azzone
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_POG.png modified
+[02/Nov/2017 17:12:42] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 17
+[02/Nov/2017 17:12:43] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 18
+[02/Nov/2017 17:12:44] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 19
+[02/Nov/2017 17:12:45] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 20
+[02/Nov/2017 17:12:46] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 21
+[02/Nov/2017 17:12:47] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 22
+[02/Nov/2017 17:12:48] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 23
+[02/Nov/2017 17:12:49] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 24
+[02/Nov/2017 17:12:50] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 25
+[02/Nov/2017 17:12:51] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.slx created
+[02/Nov/2017 17:12:51] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.slx modified
+[02/Nov/2017 17:12:51] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 26
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_SLX.png
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:133] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png saved to databse to project Azzone
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png created
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:12:52] ERROR [AWD_Zanasi.watchdog_handler:175] ProjectOutput matching query does not exist.
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_SLX.png
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png updated to databse to project Azzone
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png created
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_SLX.png
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png updated to databse to project Azzone
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png modified
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:124] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:125] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:127] root 
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:128] out file path user_admin\Azzone\out\Azzone_SLX.png
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:135] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png updated to databse to project Azzone
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX.png modified
+[02/Nov/2017 17:12:52] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 27
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:108] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX_m.m
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:109] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:111] out file path user_admin\Azzone\out\Azzone_SLX_m.m
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:112] root 
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:118] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX_m.m saved to databse to project Azzone
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX_m.m created
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:108] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX_m.m
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:109] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:111] out file path user_admin\Azzone\out\Azzone_SLX_m.m
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:112] root 
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:120] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX_m.mupdate to databse to project Azzone
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone_SLX_m.m modified
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:139] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.zip
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:140] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:142] root 
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:143] out file path user_admin\Azzone\Azzone.zip
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:148] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.zip saved to databse to project Azzone
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.zip created
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:139] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.zip
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:140] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:142] root 
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:143] out file path user_admin\Azzone\Azzone.zip
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:150] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.zip updated to databse to project Azzone
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.zip modified
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:173] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\Azzone.zip deleted from project Azzone
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:139] event src path C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone.zip
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:140] media root C:\Apache24\htdocs\AWD\AWD_Zanasi\media
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:142] root 
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:143] out file path user_admin\Azzone\out\Azzone.zip
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 28
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:148] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone.zip saved to databse to project Azzone
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\Azzone.zip created
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out modified
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:154] .done file found. terminating observer
+[02/Nov/2017 17:12:53] DEBUG [AWD_Zanasi.watchdog_handler:165] C:\Apache24\htdocs\AWD\AWD_Zanasi\media\user_admin\Azzone\out\.done created
+[02/Nov/2017 17:12:54] DEBUG [AWD_Zanasi.watchdog_handler:72] obsv-700: still alive 29
+[02/Nov/2017 17:12:54] DEBUG [AWD_Zanasi.watchdog_handler:77] obsv-700: is dead

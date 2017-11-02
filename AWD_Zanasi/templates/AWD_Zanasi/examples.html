@@ -14,7 +14,7 @@
             <ul class="messages">
                 {% for message in messages %}
                     <div
-                            {% if message.tags == 'success' %}
+                            {% if message.tags == "success" %}
                                 class="alert alert-success"
                             {% else %}
                                 class="alert alert-danger"
@@ -35,13 +35,41 @@
                       </h4>
                     <p class="mb-1">{{ project.proj_desc }}</p>
                   </div>
-                  <div class="col-sm-3">
-                     <img src="three_phase_rectifier.jpg" class="img-thumbnail" alt="Scheme" width="304" height="236"> 
+                    {% for out in project_output %}
+
+                            {% if project == out.project %}
+
+                                {% if 'SCH' in out.image_file.url %}
+
+                                     <div class="col-sm-2">
+                                         <img src="{{ out.image_file.url }}?v={{ project.launch_date }}" class="img-thumbnail" alt="Scheme">
+                                              <!--width="304" height="236"-->
+
+                                     </div>
+                                {% endif %}
+
+
+                                {% if 'POG' in out.image_file.url %}
+                                     <div class="col-sm-2">
+                                        <img src="{{ out.image_file.url }}?v={{ project.launch_date }}" class="img-thumbnail" alt="POG Scheme">
+                                             <!--width="304" height="236"-->
+
+                                     </div>
+                                {% endif %}
+
+                                {% if 'SLX' in out.image_file.url %}
+                                     <div class="col-sm-2">
+                                        <img src="{{ out.image_file.url }}?v={{ project.launch_date }}" class="img-thumbnail" alt="POG Scheme">
+                                             <!--width="304" height="236"-->
+
+                                     </div>
+                                {% endif %}
+
+                            {% endif %}
+                      {% endfor %}
                   </div>
-                  <div class="col-sm-3">
-                     <img src="three_phase_rectifier.jpg" class="img-thumbnail" alt="POG Scheme" width="304" height="236"> 
-                  </div>
-                  </div>
+
+
                 </a>                 
                 <!-- 
                 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Modified version

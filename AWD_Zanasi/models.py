@@ -171,9 +171,9 @@ class CommandSystem(CommandBranch):
     pass
 
 
-# class TimeTable(models.Model):
-#     username = models.CharField(max_length=100)
-#     email = models.CharField(max_length=100)
-#     timestamp = models.DateTimeField(verbose_name='Launch timestamp')
-#     pass
+class TimeTable(models.Model):
+    username = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    timestamp = models.DateTimeField(verbose_name='Launch timestamp')
+    pass
 

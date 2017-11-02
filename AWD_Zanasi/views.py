@@ -12,6 +12,7 @@ import subprocess
 import sys
 import time
 
+from django.utils import timezone
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
@@ -82,7 +83,6 @@ def create_project(request):
             else:
                 with open('C:\Apache24\htdocs\AWD\AWD_Zanasi\Schema_Vuoto.txt') as schema_vuoto:
                     new_project.matlab_file.save("%s.txt" % new_project.name, File(schema_vuoto))
-
 
             new_project.save()
             return redirect('index')
@@ -162,6 +162,7 @@ def edit_project(request, project_id):
                 #######################
 
                 #### ELIMINAZIONE VECCHIO PROGETTO
+                is_example = project.is_example
                 project.delete()
                 outpath = os.path.join(settings.MEDIA_ROOT, "user_%s" % request.user, project.name)
                 delete_all(outpath)
@@ -173,6 +174,7 @@ def edit_project(request, project_id):
                     name=new_name,
                     user=request.user,
                     proj_desc=form.cleaned_data['proj_desc'],
+                    is_example=is_example
                 )
                 new_project.matlab_file.save("%s.txt" % form.cleaned_data['proj_name'].replace(" ", "_"),
                                              ContentFile(form.cleaned_data['proj_code']))
@@ -483,6 +485,7 @@ def launch_project(request, project_id):
     :return: Renders Index with a success message when the elaboration is finished 
     """
     if project_id:
+
         project = Project.objects.get(id=project_id)
         project_out = ProjectOutput.objects.filter(project=project)
         if project_out:
@@ -495,6 +498,13 @@ def launch_project(request, project_id):
             delete_all(outpath)
             time.sleep(1)
         watchdog(project)
+        timetable = TimeTable(
+            username=request.user.username,
+            email=request.user.email,
+            timestamp=timezone.now()
+        )
+        timetable.save()
+
         messages.add_message(request, messages.SUCCESS, 'Project ' + project.name + ': elaboration complete')
         return redirect('index')
 
@@ -509,7 +519,9 @@ def examples(request):
     :return: renders the Example Page
     """
     projects = Project.objects.filter(is_example=True)
-    return render(request, 'AWD_Zanasi/examples.html', {'projects': projects})
+    output = ProjectOutput.objects.filter(project__in=projects)
+
+    return render(request, 'AWD_Zanasi/examples.html', {'projects': projects, 'project_output': output})
 
 
 @login_required()

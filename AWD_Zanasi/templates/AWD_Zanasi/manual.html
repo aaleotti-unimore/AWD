@@ -1,6 +1,7 @@
 {% extends "AWD_Zanasi/base.html" %}
 {% block container %}
     {% load i18n %}
+    {% load static %}
     {% get_current_language as LANGUAGE_CODE %}
 
     <div class="container-fluid">
@@ -13,9 +14,9 @@
             </div>
         </div>
                 <!-- MENU HELP =============================================================== -->
-<!-- 
-                <a href="MCSEM_Luc_2017_POG_Modeler_Manual.pdf" target="new">What you have to know</a>  
--->
+
+                <a href="{% static "MCSEM_Luc_2017_POG_Modeler_Manual.pdf" %}"  target="new">What you have to know</a>
+
                 <!-- Manual  -->
         <div class="row">
             <div class="col-lg-12">

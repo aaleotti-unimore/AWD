@@ -104,7 +104,7 @@ class MyHandler(FileSystemEventHandler):
         """
 
         # cerca nuovi file txt
-        if event.src_path.endswith(".txt"):
+        if event.src_path.endswith(".txt") | event.src_path.endswith(".m"):
             logger.debug("event src path " + event.src_path)
             logger.debug("media root " + settings.MEDIA_ROOT)
             root, text_file_path = event.src_path.split(settings.MEDIA_ROOT + "\\")

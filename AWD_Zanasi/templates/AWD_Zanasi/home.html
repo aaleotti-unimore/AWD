@@ -38,10 +38,11 @@
                         <th>N</th>
                         <th>Name</th>
                         {% if user.is_superuser %}
+                            <th>Is Example</th>
                             <th>Owner</th>
                             <th>Email</th>
                         {% endif %}
-                        <th>Description</th>
+                        <!--<th>Description</th>-->
                         <th>Launch Date</th>
                         <th>Results</th>
                         <th>Launch</th>
@@ -53,41 +54,42 @@
                     {% for project in projects %}
                         <tr>
                             <td>{{ forloop.counter }}</td>
-                            <td>{{ project.name }}</td>
+                            <td>{{ project.name }}<br><p style="white-space: nowrap; overflow: hidden;  text-overflow: ellipsis; max-width: 300px; font-size:80%">{{ project.proj_desc}}</p></td>
                             {% if user.is_superuser %}
+                                <td>{% if project.is_example == 1 %} <i class="fa fa-check" aria-hidden="true"></i> {% endif %} </td>
                                 <td>{{ project.user.username }}</td>
                                 <td>{{ project.user.email }}</td>
                             {% endif %}
-                            <td>
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-default btn-sm" data-toggle="modal"
-                                        data-target="#modal-{{ forloop.counter }}">
-                                    Description
-                                </button>
+                            <!--<td>-->
+                                <!--&lt;!&ndash; Button trigger modal &ndash;&gt;-->
+                                <!--<button type="button" class="btn btn-default btn-sm" data-toggle="modal"-->
+                                        <!--data-target="#modal-{{ forloop.counter }}">-->
+                                    <!--Description-->
+                                <!--</button>-->
 
-                                <!-- Modal -->
-                                <div class="modal fade" id="modal-{{ forloop.counter }}" tabindex="-1"
-                                     role="dialog"
-                                     aria-labelledby="myModalLabel">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close"><span aria-hidden="true">&times;</span>
-                                                </button>
-                                                <h4 class="modal-title" id="modalLabel-{{ forloop.counter }}">
-                                                    Description</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                {{ project.proj_desc }}
-                                            </div>
+                                <!--&lt;!&ndash; Modal &ndash;&gt;-->
+                                <!--<div class="modal fade" id="modal-{{ forloop.counter }}" tabindex="-1"-->
+                                     <!--role="dialog"-->
+                                     <!--aria-labelledby="myModalLabel">-->
+                                    <!--<div class="modal-dialog" role="document">-->
+                                        <!--<div class="modal-content">-->
+                                            <!--<div class="modal-header">-->
+                                                <!--<button type="button" class="close" data-dismiss="modal"-->
+                                                        <!--aria-label="Close"><span aria-hidden="true">&times;</span>-->
+                                                <!--</button>-->
+                                                <!--<h4 class="modal-title" id="modalLabel-{{ forloop.counter }}">-->
+                                                    <!--Description</h4>-->
+                                            <!--</div>-->
+                                            <!--<div class="modal-body">-->
+                                                <!--{{ project.proj_desc }}-->
+                                            <!--</div>-->
 
-                                        </div>
-                                    </div>
-                                </div>
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
 
 
-                            </td>
+                            <!--</td>-->
                             <td>{{ project.launch_date|date:"d M Y - H:i" }}</td>
 
                             {% if project.launch_date %}
